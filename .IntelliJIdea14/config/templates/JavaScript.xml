@@ -12,4 +12,11 @@
       <option name="JS_STATEMENT" value="true" />
     </context>
   </template>
+  <template name="()" value="($PARAM$) =&gt; {&#10;  $END$&#10;}" description="Insert lamba" toReformat="true" toShortenFQNames="true">
+    <variable name="PARAM" expression="" defaultValue="" alwaysStopAt="true" />
+    <context>
+      <option name="JS_EXPRESSION" value="true" />
+      <option name="JS_STATEMENT" value="true" />
+    </context>
+  </template>
 </templateSet>
