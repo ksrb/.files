@@ -1,0 +1,19 @@
+<templateSet group="React">
+  <template name="ri" value="import React from 'react';" description="Import React module" toReformat="false" toShortenFQNames="true">
+    <context>
+      <option name="JS_STATEMENT" value="true" />
+    </context>
+  </template>
+  <template name="rt" value="'use strict';&#10;&#10;import React from 'react';&#10;&#10;class $className$ extends React.Component{&#10;&#10;    render(){&#10;        return(&#10;            $END$&#10;        );&#10;    }&#10;    &#10;}&#10;&#10;export default $className$;&#10;" description="Create React component using template" toReformat="false" toShortenFQNames="true">
+    <variable name="className" expression="capitalize(fileNameWithoutExtension())" defaultValue="" alwaysStopAt="true" />
+    <context>
+      <option name="JS_STATEMENT" value="true" />
+    </context>
+  </template>
+  <template name="rc" value="class $className$ extends React.Component{&#10;&#10;    render(){&#10;        return(&#10;            $END$&#10;        );&#10;    }&#10;    &#10;}&#10;" description="Create React component" toReformat="false" toShortenFQNames="true">
+    <variable name="className" expression="" defaultValue="" alwaysStopAt="true" />
+    <context>
+      <option name="JS_STATEMENT" value="true" />
+    </context>
+  </template>
+</templateSet>

@@ -25,4 +25,20 @@
       <option name="JS_STATEMENT" value="true" />
     </context>
   </template>
+  <template name="us" value="'use strict';&#10;$END$" description="Inserts 'use strict' statement" toReformat="true" toShortenFQNames="true">
+    <context />
+  </template>
+  <template name="expd" value="export default $PARAM$;$END$" description="Exports default" toReformat="false" toShortenFQNames="true">
+    <variable name="PARAM" expression="capitalize(fileNameWithoutExtension())" defaultValue="" alwaysStopAt="true" />
+    <context>
+      <option name="JS_STATEMENT" value="true" />
+    </context>
+  </template>
+  <template name="im" value="import $MODULE$ from '$PATH$';&#10;$END$" description="Import module" toReformat="false" toShortenFQNames="true">
+    <variable name="MODULE" expression="" defaultValue="" alwaysStopAt="true" />
+    <variable name="PATH" expression="" defaultValue="" alwaysStopAt="true" />
+    <context>
+      <option name="JS_STATEMENT" value="true" />
+    </context>
+  </template>
 </templateSet>
