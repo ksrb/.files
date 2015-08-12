@@ -1,0 +1,11 @@
+<application>
+  <component name="FileTypeManager" version="14">
+    <ignoreFiles list="*.hprof;*.pyc;*.pyo;*.rbc;*~;.DS_Store;.bundle;.git;.hg;.svn;.tox;CVS;RCS;SCCS;__pycache__;_svn;rcs;vssver.scc;vssver2.scc;" />
+    <extensionMap>
+      <mapping ext="svg" type="HTML" />
+      <mapping ext="liquid" type="HTML" />
+      <mapping pattern="*.js.liquid" type="JavaScript" />
+      <mapping pattern="*.scss.liquid" type="SCSS" />
+    </extensionMap>
+  </component>
+</application>
