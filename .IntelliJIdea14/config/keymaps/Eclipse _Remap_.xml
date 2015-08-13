@@ -688,8 +688,8 @@
   </action>
   <action id="NextTab">
     <keyboard-shortcut first-keystroke="meta F6" />
-    <keyboard-shortcut first-keystroke="meta alt LEFT" />
     <keyboard-shortcut first-keystroke="meta PAGE_DOWN" />
+    <keyboard-shortcut first-keystroke="meta alt RIGHT" />
   </action>
   <action id="NextTemplateVariable">
     <keyboard-shortcut first-keystroke="TAB" />
@@ -722,8 +722,8 @@
   </action>
   <action id="PreviousTab">
     <keyboard-shortcut first-keystroke="shift meta F6" />
-    <keyboard-shortcut first-keystroke="meta alt RIGHT" />
     <keyboard-shortcut first-keystroke="meta PAGE_UP" />
+    <keyboard-shortcut first-keystroke="meta alt LEFT" />
   </action>
   <action id="PreviousTemplateVariable">
     <keyboard-shortcut first-keystroke="shift TAB" />
