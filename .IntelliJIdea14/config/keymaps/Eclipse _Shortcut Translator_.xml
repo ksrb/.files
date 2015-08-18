@@ -1,4 +1,10 @@
 <keymap version="1" name="Eclipse (Shortcut Translator)" parent="Eclipse">
+  <action id="CloseAllEditorsButActive">
+    <keyboard-shortcut first-keystroke="control alt F4" />
+  </action>
+  <action id="Images.EditExternally">
+    <keyboard-shortcut first-keystroke="shift control alt F4" />
+  </action>
   <action id="NextTab">
     <keyboard-shortcut first-keystroke="control F6" />
     <keyboard-shortcut first-keystroke="control PAGE_DOWN" />

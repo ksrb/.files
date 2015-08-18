@@ -97,6 +97,9 @@
     <keyboard-shortcut first-keystroke="shift meta F4" />
     <keyboard-shortcut first-keystroke="shift meta W" />
   </action>
+  <action id="CloseAllEditorsButActive">
+    <keyboard-shortcut first-keystroke="meta alt F4" />
+  </action>
   <action id="CloseContent">
     <keyboard-shortcut first-keystroke="meta F4" />
   </action>
