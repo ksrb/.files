@@ -209,6 +209,9 @@
   <action id="EditSourceInNewWindow">
     <keyboard-shortcut first-keystroke="shift F4" />
   </action>
+  <action id="Editor Paste">
+    <keyboard-shortcut first-keystroke="meta V" />
+  </action>
   <action id="EditorAddOrRemoveCaret">
     <mouse-shortcut keystroke="shift alt button1" />
   </action>
