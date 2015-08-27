@@ -1,7 +1,7 @@
 
 " set the runtime path to include Vundle and initialize
 
-call plug#begin('~/.vim/plugged')
+call plug#begin('C:/Users/Kevin Suen/.vim/plugged')
 " File Utils
 
 Plug 'scrooloose/nerdtree', { 'on':  'NERDTreeToggle' }
@@ -23,8 +23,7 @@ Plug 'tpope/vim-fugitive'
 Plug 'airblade/vim-gitgutter'
 
 " Source Utils
-
-Plug 'Valloric/YouCompleteMe', { 'do': './install.py --gocode-completer --clang-completer' }
+" Plug 'Valloric/YouCompleteMe', { 'do': './install.py --gocode-completer --clang-completer' }
 Plug 'SirVer/ultisnips'
 Plug 'majutsushi/tagbar'
 Plug 'marijnh/tern_for_vim', { 'do' : 'npm install' }
@@ -112,4 +111,3 @@ au FileType go nmap <Leader>gb <Plug>(go-doc-browser)
 au FileType go nmap <Leader>s <Plug>(go-implements)
 au FileType go nmap <Leader>i <Plug>(go-info)
 au FileType go nmap <Leader>e <Plug>(go-rename)
-

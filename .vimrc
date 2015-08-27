@@ -134,7 +134,7 @@ nnoremap <C-l> <C-w>l
 " imap jj <ESC>
 
 " Tab between buffers
-noremap <tab> <c-w><c-w>
+" noremap <tab> <c-w><c-w>
 nnoremap <leader>h :bprev<CR>
 nnoremap <leader>l :bnext<CR>
 nnoremap <leader>b :b
