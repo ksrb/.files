@@ -1,0 +1,281 @@
+<?xml version="1.0"?>
+<root>
+  <appdef>
+    <appname>IntelliJ</appname>
+    <prefix>com.jetbrains.intellij</prefix>
+    <prefix>com.jetbrains.intellij-EAP</prefix>
+  </appdef>
+  <item>
+    <name>External Keyboard</name>
+    <item>
+      <name>Ctrl_L+Space to Command_L+Space (except Terminal and IntelliJ)</name>
+      <identifier>ekeyboard.ctrlLSpace2commandLSpaceExpTerminalAndIntelliJ</identifier>
+      <not>TERMINAL, IntelliJ</not>
+      <autogen>
+          __KeyToKey__
+          KeyCode::SPACE, ModifierFlag::CONTROL_L | ModifierFlag::NONE,
+          KeyCode::SPACE, ModifierFlag::COMMAND_L
+      </autogen>
+    </item>
+    <item>
+      <name>Command+Space to Escape (except Terminal and IntelliJ)</name>
+      <identifier>ekeyboard.commandSpace2escape</identifier>
+      <not>TERMINAL, IntelliJ</not>
+      <autogen>
+          __KeyToKey__
+          KeyCode::SPACE, MODIFIERFLAG_EITHER_LEFT_OR_RIGHT_COMMAND | ModifierFlag::NONE,
+          KeyCode::ESCAPE
+      </autogen>
+    </item>
+    <item>
+      <name>Control_L to Command_L (except Terminal and IntelliJ)</name>
+      <identifier>ekeyboard.controlL2commandL_excustomExpTerminalAndIntelliJ</identifier>
+      <not>TERMINAL, IntelliJ</not>
+      <autogen>__KeyToKey__ KeyCode::CONTROL_L, KeyCode::COMMAND_L</autogen>
+    </item>
+    <item>
+      <name>Command_L to Control_L (except Terminal and IntelliJ)</name>
+      <identifier>ekeyboard.commandL2controlL_excustomExpTerminalAndIntelliJ</identifier>
+      <not>TERMINAL, IntelliJ</not>
+      <autogen>__KeyToKey__ KeyCode::COMMAND_L, KeyCode::CONTROL_L</autogen>
+    </item>
+    <item>
+      <name>Additional Options</name>
+        <item>
+          <name>Ctrl_L+Space to Command_L+Space</name>
+          <identifier>ekeyboard.ctrlLSpace2commandLSpace</identifier>
+          <autogen>
+              __KeyToKey__
+              KeyCode::SPACE, ModifierFlag::CONTROL_L | ModifierFlag::NONE,
+              KeyCode::SPACE, ModifierFlag::COMMAND_L
+          </autogen>
+        </item>
+        <item>
+          <name>Control_L to Command_L (except Terminal)</name>
+          <identifier>ekeyboard.controlL2commandL_excustomExpTerm</identifier>
+          <not>TERMINAL</not>
+          <autogen>__KeyToKey__ KeyCode::CONTROL_L, KeyCode::COMMAND_L</autogen>
+        </item>
+        <item>
+          <name>Command_L to Control_L (except Terminal)</name>
+          <identifier>ekeyboard.commandL2controlL_excustomExpTerm</identifier>
+          <not>TERMINAL</not>
+          <autogen>__KeyToKey__ KeyCode::COMMAND_L, KeyCode::CONTROL_L</autogen>
+        </item>
+        <item>
+          <name>Control_L to Command_L (except IntelliJ)</name>
+          <identifier>ekeyboard.controlL2commandL_excustomExpIntelliJ</identifier>
+          <not>IntelliJ</not>
+          <autogen>__KeyToKey__ KeyCode::CONTROL_L, KeyCode::COMMAND_L</autogen>
+        </item>
+        <item>
+          <name>Command_L to Control_L (except IntelliJ)</name>
+          <identifier>ekeyboard.commandL2controlL_excustomExpIntelliJ</identifier>
+          <not>IntelliJ</not>
+          <autogen>__KeyToKey__ KeyCode::COMMAND_L, KeyCode::CONTROL_L</autogen>
+        </item>
+    </item>
+    <item>
+      <name>Control_L+Option_L q,w,e,a,s,d,z,x,c to Command_L+Option_L q,w,e,a,s,d,z,x,c (only in Terminal and IntelliJ)</name>
+      <identifier>ekeyboard.controlLOptionL2CommandLOptionLqweasdzxcOnlyTerminalAndIntelliJ</identifier>
+      <only>TERMINAL, IntelliJ</only>
+      <autogen>
+        __KeyToKey__ 
+        KeyCode::Q, ModifierFlag::CONTROL_L | ModifierFlag::OPTION_L | ModifierFlag::NONE,
+        KeyCode::Q, ModifierFlag::COMMAND_L | ModifierFlag::OPTION_L
+      </autogen>
+      <autogen>
+        __KeyToKey__ 
+        KeyCode::W, ModifierFlag::CONTROL_L | ModifierFlag::OPTION_L | ModifierFlag::NONE,
+        KeyCode::W, ModifierFlag::COMMAND_L | ModifierFlag::OPTION_L
+      </autogen>
+      <autogen>
+        __KeyToKey__ 
+        KeyCode::E, ModifierFlag::CONTROL_L | ModifierFlag::OPTION_L | ModifierFlag::NONE,
+        KeyCode::E, ModifierFlag::COMMAND_L | ModifierFlag::OPTION_L
+      </autogen>
+      <autogen>
+        __KeyToKey__ 
+        KeyCode::A, ModifierFlag::CONTROL_L | ModifierFlag::OPTION_L | ModifierFlag::NONE,
+        KeyCode::A, ModifierFlag::COMMAND_L | ModifierFlag::OPTION_L
+      </autogen>
+      <autogen>
+        __KeyToKey__ 
+        KeyCode::S, ModifierFlag::CONTROL_L | ModifierFlag::OPTION_L | ModifierFlag::NONE,
+        KeyCode::S, ModifierFlag::COMMAND_L | ModifierFlag::OPTION_L
+      </autogen>
+      <autogen>
+        __KeyToKey__ 
+        KeyCode::D, ModifierFlag::CONTROL_L | ModifierFlag::OPTION_L | ModifierFlag::NONE,
+        KeyCode::D, ModifierFlag::COMMAND_L | ModifierFlag::OPTION_L
+      </autogen>
+      <autogen>
+        __KeyToKey__ 
+        KeyCode::Z, ModifierFlag::CONTROL_L | ModifierFlag::OPTION_L | ModifierFlag::NONE,
+        KeyCode::Z, ModifierFlag::COMMAND_L | ModifierFlag::OPTION_L
+      </autogen>
+      <autogen>
+        __KeyToKey__ 
+        KeyCode::X, ModifierFlag::CONTROL_L | ModifierFlag::OPTION_L | ModifierFlag::NONE,
+        KeyCode::X, ModifierFlag::COMMAND_L | ModifierFlag::OPTION_L
+      </autogen>
+      <autogen>
+        __KeyToKey__ 
+        KeyCode::C, ModifierFlag::CONTROL_L | ModifierFlag::OPTION_L | ModifierFlag::NONE,
+        KeyCode::C, ModifierFlag::COMMAND_L | ModifierFlag::OPTION_L
+      </autogen>
+    </item>
+  </item>
+  <item>
+    <name>Laptop</name>
+    <item>
+      <appendix>Control -> Command</appendix>
+      <appendix>Alt -> Ctrl</appendix>
+      <appendix>Command -> Alt</appendix>
+      <item>
+        <name>Control_L to Command_R (except Terminal and IntelliJ)</name>
+        <identifier>laptop.ctrlL2commandRexceptTermainalAndIntelliJ</identifier>
+        <not>TERMINAL, IntelliJ</not>
+        <autogen>
+          __KeyToKey__ 
+          KeyCode::CONTROL_L,
+          KeyCode::COMMAND_R
+        </autogen>
+      </item>
+      <item>
+        <name>Command_L to Option_R</name>
+        <identifier>laptop.commandL2OptionR</identifier>
+        <autogen>
+          __KeyToKey__ 
+          KeyCode::COMMAND_L,
+          KeyCode::OPTION_R
+        </autogen>
+      </item>
+      <item>
+        <name>Option_L to Control_R (except Terminal and IntelliJ)</name>
+        <identifier>laptop.OptionL2Control_RExpTerminalAndIntellij</identifier>
+        <not>TERMINAL, IntelliJ</not>
+        <autogen>
+          __KeyToKey__ 
+          KeyCode::OPTION_L,
+          KeyCode::CONTROL_R
+        </autogen>
+      </item>
+    </item>
+    <item>
+      <name>Option_L to Command_R (only in Terminal and IntelliJ)</name>
+      <identifier>laptop.OptionL2Control_ROnlyTerminalAndINtellij</identifier>
+      <only>TERMINAL, IntelliJ</only>
+      <autogen>
+        __KeyToKey__ 
+        KeyCode::OPTION_L,
+        KeyCode::COMMAND_R
+      </autogen>
+    </item>
+    <item>
+      <appendix>Option+Tab -> Command+Tab</appendix>
+      <appendix>Option+Backquote -> Command+Backquote</appendix>
+      <appendix>Option+Q -> Command+Q</appendix>
+      <item>
+        <name>Options_R+Tab to Command_R+Tab</name>
+        <identifier>laptop.OptionRTab2Command_RTab</identifier>
+        <autogen>
+          __KeyToKey__ 
+          KeyCode::TAB, ModifierFlag::OPTION_R | ModifierFlag::NONE,
+          KeyCode::TAB, ModifierFlag::COMMAND_R
+        </autogen>
+      </item>
+      <item>
+        <name>Options_R+Backquote to Command_R+Backquote</name>
+        <identifier>laptop.OptionRBackquote2Command_RBackquote</identifier>
+        <autogen>
+          __KeyToKey__ 
+          KeyCode::BACKQUOTE, ModifierFlag::OPTION_R,
+          KeyCode::BACKQUOTE, ModifierFlag::COMMAND_R
+        </autogen>
+      </item>
+      <item>
+        <name>Options_R+Q to Command_R+Q</name>
+        <identifier>laptop.OptionRQ2Command_RQ</identifier>
+        <autogen>
+          __KeyToKey__
+          KeyCode::Q, ModifierFlag::OPTION_R | ModifierFlag::NONE,
+          KeyCode::Q, ModifierFlag::COMMAND_R
+        </autogen>
+      </item>
+    </item>
+    <item>
+      <name>Command+Space to Ctrl+Space</name>
+      <item>
+        <name>Command_R+Space to Escape (except Termainal and IntelliJ)</name>
+        <identifier>laptop.command_RSpace2Esc</identifier>
+        <not>TERMINAL, IntelliJ</not>
+        <autogen>
+          __KeyToKey__ 
+          KeyCode::SPACE, ModifierFlag::COMMAND_R | ModifierFlag::NONE,
+          KeyCode::ESCAPE
+        </autogen>
+      </item>
+      <item>
+        <name>Control_R+Space to Command_R+Space (except Termainal and IntelliJ)</name>
+        <identifier>laptop.controlRSpace2CommandRSpace</identifier>
+        <not>TERMINAL, IntelliJ</not>
+        <autogen>
+          __KeyToKey__ 
+          KeyCode::SPACE, ModifierFlag::CONTROL_R | ModifierFlag::NONE,
+          KeyCode::SPACE, ModifierFlag::COMMAND_R
+        </autogen>
+      </item>
+    </item>
+    <item>
+      <name>Control_L+Option_R q,w,e,a,s,d,z,x,c to Command_L+Option_R q,w,e,a,s,d,z,x,c (only in Terminal and IntelliJ)</name>
+      <identifier>laptop.controlLOptionR2CommandLOptionRqweasdzxcOnlyTerminalAndIntelliJ</identifier>
+      <only>TERMINAL, IntelliJ</only>
+      <autogen>
+        __KeyToKey__ 
+        KeyCode::Q, ModifierFlag::CONTROL_L | ModifierFlag::OPTION_R | ModifierFlag::NONE,
+        KeyCode::Q, ModifierFlag::COMMAND_L | ModifierFlag::OPTION_R
+      </autogen>
+      <autogen>
+        __KeyToKey__ 
+        KeyCode::W, ModifierFlag::CONTROL_L | ModifierFlag::OPTION_R | ModifierFlag::NONE,
+        KeyCode::W, ModifierFlag::COMMAND_L | ModifierFlag::OPTION_R
+      </autogen>
+      <autogen>
+        __KeyToKey__ 
+        KeyCode::E, ModifierFlag::CONTROL_L | ModifierFlag::OPTION_R | ModifierFlag::NONE,
+        KeyCode::E, ModifierFlag::COMMAND_L | ModifierFlag::OPTION_R
+      </autogen>
+      <autogen>
+        __KeyToKey__ 
+        KeyCode::A, ModifierFlag::CONTROL_L | ModifierFlag::OPTION_R | ModifierFlag::NONE,
+        KeyCode::A, ModifierFlag::COMMAND_L | ModifierFlag::OPTION_R
+      </autogen>
+      <autogen>
+        __KeyToKey__ 
+        KeyCode::S, ModifierFlag::CONTROL_L | ModifierFlag::OPTION_R | ModifierFlag::NONE,
+        KeyCode::S, ModifierFlag::COMMAND_L | ModifierFlag::OPTION_R
+      </autogen>
+      <autogen>
+        __KeyToKey__ 
+        KeyCode::D, ModifierFlag::CONTROL_L | ModifierFlag::OPTION_R | ModifierFlag::NONE,
+        KeyCode::D, ModifierFlag::COMMAND_L | ModifierFlag::OPTION_R
+      </autogen>
+      <autogen>
+        __KeyToKey__ 
+        KeyCode::Z, ModifierFlag::CONTROL_L | ModifierFlag::OPTION_R | ModifierFlag::NONE,
+        KeyCode::Z, ModifierFlag::COMMAND_L | ModifierFlag::OPTION_R
+      </autogen>
+      <autogen>
+        __KeyToKey__ 
+        KeyCode::X, ModifierFlag::CONTROL_L | ModifierFlag::OPTION_R | ModifierFlag::NONE,
+        KeyCode::X, ModifierFlag::COMMAND_L | ModifierFlag::OPTION_R
+      </autogen>
+      <autogen>
+        __KeyToKey__ 
+        KeyCode::C, ModifierFlag::CONTROL_L | ModifierFlag::OPTION_R | ModifierFlag::NONE,
+        KeyCode::C, ModifierFlag::COMMAND_L | ModifierFlag::OPTION_R
+      </autogen>
+    </item>
+  </item>
+</root>
