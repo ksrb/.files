@@ -1,0 +1,10 @@
+<application>
+  <component name="FileTypeManager" version="15">
+    <extensionMap>
+      <mapping ext="svg" type="HTML" />
+      <mapping ext="liquid" type="HTML" />
+      <mapping pattern="*.js.liquid" type="JavaScript" />
+      <mapping pattern="*.scss.liquid" type="SCSS" />
+    </extensionMap>
+  </component>
+</application>
