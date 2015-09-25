@@ -7,7 +7,9 @@ profiles=('Legacy' 'External Keyboard' "$laptop")
 
 #Export all profiles to individual sh files
 export(){
+  echo 'Exporting:'
   for profile in "${profiles[@]}"; do
+    echo "$profile"
     $cli select_by_name "$profile"
     $cli export "$profile" > "$profile".sh
   done
@@ -15,7 +17,9 @@ export(){
 }
 
 clean(){
+  echo 'Removing:'
   for profile in "${profiles[@]}"; do
+    echo "$profile"
     rm "$profile".sh
   done
 }
@@ -25,4 +29,21 @@ cli(){
   $cli "$@"
 }
 
-"$@"
+#Process commands
+process(){
+  case "$@" in
+    "export" )
+      export;;
+    "clean" )
+      clean;;
+    "-h" )
+      echo "exports - ${profiles[@]} profiles changes active profile to $laptop"
+      echo "clean - remove ${profiles[@]} profiles"
+      echo "other commands are sent to karabiner cli see:"
+      echo "(https://pqrs.org/osx/karabiner/document.html.en#commandlineinterface)";;
+    "*" )
+      $cli "$@";;
+  esac
+}
+
+process "$@"

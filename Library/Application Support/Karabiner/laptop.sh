@@ -10,6 +10,8 @@ $cli set laptop.ctrlL2commandRexceptTermainalAndIntelliJ 1
 /bin/echo -n .
 $cli set laptop.OptionRQ2Command_RQ 1
 /bin/echo -n .
+$cli set custom.mediaKeys2FnKeys 1
+/bin/echo -n .
 $cli set laptop.OptionL2Control_ROnlyTerminalAndINtellij 1
 /bin/echo -n .
 $cli set laptop.OptionL2Control_RExpTerminalAndIntellij 1
