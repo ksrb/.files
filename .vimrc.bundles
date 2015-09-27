@@ -43,8 +43,8 @@ filetype plugin indent on
 " ----------------------------------------- "
 
 " ==================== Color Schema =================
-let base16colorspace=256
-colorscheme base16-eighties
+" let base16colorspace=256
+" colorscheme base16-eighties
 
 " ==================== Indent Guides ================
 set ts=2 sw=2 et
