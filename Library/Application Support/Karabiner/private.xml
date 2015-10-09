@@ -43,9 +43,9 @@
       <identifier>ekeyboard.ctrlLSpace2commandLSpaceExpTerminalAndIntelliJ</identifier>
       <not>TERMINAL, IntelliJ</not>
       <autogen>
-          __KeyToKey__
-          KeyCode::SPACE, ModifierFlag::CONTROL_L | ModifierFlag::NONE,
-          KeyCode::SPACE, ModifierFlag::COMMAND_L
+        __KeyToKey__
+        KeyCode::SPACE, ModifierFlag::CONTROL_L | ModifierFlag::NONE,
+        KeyCode::SPACE, ModifierFlag::COMMAND_L
       </autogen>
     </item>
     <item>
@@ -53,9 +53,9 @@
       <identifier>ekeyboard.commandSpace2escape</identifier>
       <not>TERMINAL, IntelliJ</not>
       <autogen>
-          __KeyToKey__
-          KeyCode::SPACE, MODIFIERFLAG_EITHER_LEFT_OR_RIGHT_COMMAND | ModifierFlag::NONE,
-          KeyCode::ESCAPE
+        __KeyToKey__
+        KeyCode::SPACE, MODIFIERFLAG_EITHER_LEFT_OR_RIGHT_COMMAND | ModifierFlag::NONE,
+        KeyCode::ESCAPE
       </autogen>
     </item>
     <item>
@@ -76,9 +76,9 @@
           <name>Ctrl_L+Space to Command_L+Space</name>
           <identifier>ekeyboard.ctrlLSpace2commandLSpace</identifier>
           <autogen>
-              __KeyToKey__
-              KeyCode::SPACE, ModifierFlag::CONTROL_L | ModifierFlag::NONE,
-              KeyCode::SPACE, ModifierFlag::COMMAND_L
+            __KeyToKey__
+            KeyCode::SPACE, ModifierFlag::CONTROL_L | ModifierFlag::NONE,
+            KeyCode::SPACE, ModifierFlag::COMMAND_L
           </autogen>
         </item>
         <item>
@@ -165,7 +165,7 @@
       <appendix>Command -> Alt</appendix>
       <item>
         <name>Control_L to Command_R (except Terminal and IntelliJ)</name>
-        <identifier>laptop.ctrlL2commandRexceptTermainalAndIntelliJ</identifier>
+        <identifier>laptop.ctrlL2commandRexceptTerminalAndIntelliJ</identifier>
         <not>TERMINAL, IntelliJ</not>
         <autogen>
           __KeyToKey__ 
@@ -238,7 +238,8 @@
     <item>
       <name>Command+Space to Ctrl+Space</name>
       <item>
-        <name>Command_R+Space to Escape (except Termainal and IntelliJ)</name>
+        <name>Command_R+Space to Escape (except Terminal and IntelliJ)</name>
+        <appendix>Disable Command+Space</appendix>
         <identifier>laptop.command_RSpace2Esc</identifier>
         <not>TERMINAL, IntelliJ</not>
         <autogen>
@@ -248,7 +249,7 @@
         </autogen>
       </item>
       <item>
-        <name>Control_R+Space to Command_R+Space (except Termainal and IntelliJ)</name>
+        <name>Control_R+Space to Command_R+Space (except Terminal and IntelliJ)</name>
         <identifier>laptop.controlRSpace2CommandRSpace</identifier>
         <not>TERMINAL, IntelliJ</not>
         <autogen>
@@ -260,6 +261,7 @@
     </item>
     <item>
       <name>Control_L+Option_R q,w,e,a,s,d,z,x,c to Command_L+Option_R q,w,e,a,s,d,z,x,c (only in Terminal and IntelliJ)</name>
+      <appendix>Bettersnap: Snap windows to designated snapping areas</appendix>
       <identifier>laptop.controlLOptionR2CommandLOptionRqweasdzxcOnlyTerminalAndIntelliJ</identifier>
       <only>TERMINAL, IntelliJ</only>
       <autogen>

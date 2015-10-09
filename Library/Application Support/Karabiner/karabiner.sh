@@ -37,11 +37,12 @@ process(){
     "clean" )
       clean;;
     "-h" )
-      echo "exports - ${profiles[@]} profiles changes active profile to $laptop"
+      echo "export - ${profiles[@]} profiles changes active profile to $laptop"
       echo "clean - remove ${profiles[@]} profiles"
       echo "other commands are sent to karabiner cli see:"
       echo "(https://pqrs.org/osx/karabiner/document.html.en#commandlineinterface)";;
-    "*" )
+    * )
+      echo "Command not found forwarding to karabiner cli"
       $cli "$@";;
   esac
 }
