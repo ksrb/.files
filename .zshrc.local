@@ -1,0 +1,11 @@
+# Docker config
+export DOCKER_TLS_VERIFY="1"
+export DOCKER_HOST="tcp://192.168.99.100:2376"
+export DOCKER_CERT_PATH="/Users/ksuen/.docker/machine/machines/default"
+export DOCKER_MACHINE_NAME="default"
+
+# Remove git branch alias for go gb tool (https://github.com/constabulary/gb)
+unalias gb
+
+# Disable ctrl-s and ctrl-q http://unix.stackexchange.com/a/72092
+stty -ixon

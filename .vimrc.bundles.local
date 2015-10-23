@@ -1,0 +1,29 @@
+" Simple es6 snippets WIP
+Plug 'ksrb/vim-react-es6-snippets'
+
+" Automatic ctag generation
+Plug 'xolox/vim-misc'
+Plug 'xolox/vim-easytags'
+
+" Show identation levels
+Plug 'Yggdroot/indentLine'
+
+" ==================== identline ================
+" Don't show identation levels for json files as there is a bug
+let g:indentLine_fileTypeExclude=['json']
+
+" ==================== easytag ================
+" Use jsctags for javascript ctag generation
+let g:easytags_languages = {
+            \   'javascript': {
+            \       'cmd': 'jsctags',
+            \       'args': [],
+            \       'fileoutput_opt': '-f',
+            \       'stdout_opt': '-f-',
+            \       'recurse_flag': '-R'
+            \   }
+            \}
+
+let g:easytags_async = 1
+" Stop easy tags from updating dotfiles
+autocmd BufReadPost .* let b:easytags_auto_update = 0

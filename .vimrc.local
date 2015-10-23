@@ -1,0 +1,17 @@
+" Show divider at column 80
+set colorcolumn=80
+
+noremap <F5> :redraw!<CR>
+
+" ==================== Overrides ================
+" Restore tab 
+noremap <tab> <tab>
+
+" Restore enter
+"map <CR> <CR>
+
+" Restore normal mode space
+" nnoremap <space> <space>
+
+" Change ultisnip trigger to Ctrl-Space
+let g:UltiSnipsExpandTrigger="<C-space>"
