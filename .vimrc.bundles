@@ -2,8 +2,8 @@
 " set the runtime path to include Vundle and initialize
 
 call plug#begin('C:/Users/Kevin Suen/.vim/plugged')
-" File Utils
 
+" File Utils
 Plug 'scrooloose/nerdtree', { 'on':  'NERDTreeToggle' }
 Plug 'kien/ctrlp.vim'
 
@@ -26,7 +26,7 @@ Plug 'airblade/vim-gitgutter'
 " Plug 'Valloric/YouCompleteMe', { 'do': './install.py --gocode-completer --clang-completer' }
 Plug 'SirVer/ultisnips'
 Plug 'majutsushi/tagbar'
-Plug 'marijnh/tern_for_vim', { 'do' : 'npm install' }
+" Plug 'marijnh/tern_for_vim', { 'do' : 'npm install' }
 Plug 'fatih/vim-go'
 
 if filereadable(expand("~/.vimrc.bundles.local"))

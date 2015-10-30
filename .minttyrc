@@ -1,13 +1,14 @@
 BoldAsFont=no
 Columns=100
 Rows=35
-Font=Lucida Console
+Font=Source Code Pro
 FontHeight=10
 IMECursorColour=128,224,160
 Transparency=off
 OpaqueWhenFocused=no
 CursorType=block
 CursorBlinks=yes
+CopyOnSelect=no
 FontSmoothing=full
 Locale=en_US
 Charset=UTF-8
@@ -17,6 +18,7 @@ PgUpDnScroll=yes
 Term=xterm-256color
 CopyAsRTF=no
 RightClickAction=menu
+FontIsBold=no
 
 # Colors base16-eighties from https://github.com/oumu/mintty-color-schemes/blob/master/base16-default-mod-lighten.minttyrc
 ForegroundColour=208,208,208

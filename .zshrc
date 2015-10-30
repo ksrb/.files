@@ -53,9 +53,6 @@ plugins=(git docker)
 
 # User configuration
 
-# export PATH="/usr/local/bin:/usr/bin:/usr/bin:/cygdrive/c/Program Files/Java/jdk1.8.0_60/bin:/cygdrive/c/Program Files/nodejs:/cygdrive/c/Go/bin:%GOBIN%:/cygdrive/c/Program Files/Git/cmd:/cygdrive/c/Program Files (x86)/Notepad++:/cygdrive/c/Windows/system32:/cygdrive/c/Windows:/cygdrive/c/Windows/System32/Wbem:/cygdrive/c/Windows/System32/WindowsPowerShell/v1.0:/cygdrive/c/Program Files (x86)/NVIDIA Corporation/PhysX/Common:/cygdrive/c/Users/Kevin Suen/AppData/Roaming/npm"
-# export MANPATH="/usr/local/man:$MANPATH"
-
 source "$ZSH"/oh-my-zsh.sh
 
 # You may need to manually set your language environment
