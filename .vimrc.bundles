@@ -25,6 +25,7 @@ Plug 'airblade/vim-gitgutter'
 " Source Utils
 " Plug 'Valloric/YouCompleteMe', { 'do': './install.py --gocode-completer --clang-completer' }
 Plug 'SirVer/ultisnips'
+Plug 'ksrb/vim-react-es6-snippets'
 Plug 'majutsushi/tagbar'
 " Plug 'marijnh/tern_for_vim', { 'do' : 'npm install' }
 Plug 'fatih/vim-go'
@@ -50,7 +51,9 @@ colorscheme base16-eighties
 set ts=2 sw=2 et
 
 " ==================== UltiSnips ====================
-let g:UltiSnipsExpandTrigger="<c-b>"
+" This is the equivalant of <C-Space> in mintty
+" See https://groups.google.com/forum/#!topic/mintty-discuss/tPsV-iPnO4k
+let g:UltiSnipsExpandTrigger="<C-@>" 
 "au CompleteDone * pclose
 
 " ==================== BuffKill ====================
@@ -76,7 +79,7 @@ let g:NERDTreeDirArrows=0
 
 " ==================== CtrlP ====================
 let g:ctrlp_custom_ignore = '\v[\/](node_modules|build)|(\.(git|hg|svn))$'
-let g:ctrlp_working_path_mode = 'ra'
+let g:ctrlp_working_path_mode = 'ra' " set working dir to first folder with .git or folder with file ctrlp was called on
 let g:ctrlp_switch_buffer = 'et'	" jump to a file if it's open already
 let g:ctrlp_mruf_max=450 		" number of recently opened files
 let g:ctrlp_max_files=0  		" do not limit the number of searchable files

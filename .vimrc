@@ -121,7 +121,7 @@ nnoremap <leader>a :cclose<CR>
 nnoremap <leader><space> :nohlsearch<CR>
 
 " Center the screen
-nnoremap <space> zz
+" nnoremap <space> zz
 
 " Quicker window movement
 nnoremap <C-j> <C-w>j
@@ -138,6 +138,8 @@ nnoremap <C-l> <C-w>l
 nnoremap <leader>h :bprev<CR>
 nnoremap <leader>l :bnext<CR>
 nnoremap <leader>b :b
+
+noremap <F5> :redraw!<CR>
 
 " Prettify json
 com! JSONFormat %!python -m json.tool
