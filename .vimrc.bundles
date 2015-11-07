@@ -78,7 +78,7 @@ noremap <Leader>j :NERDTreeFind<cr>
 let g:NERDTreeDirArrows=0
 
 " ==================== CtrlP ====================
-let g:ctrlp_custom_ignore = '\v[\/](node_modules|build)|(\.(git|hg|svn))$'
+let g:ctrlp_custom_ignore = '\v[\/](node_modules|build|jspm_packages)|(\.(git|hg|svn))$'
 let g:ctrlp_working_path_mode = 'ra' " set working dir to first folder with .git or folder with file ctrlp was called on
 let g:ctrlp_switch_buffer = 'et'	" jump to a file if it's open already
 let g:ctrlp_mruf_max=450 		" number of recently opened files
