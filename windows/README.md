@@ -1,6 +1,6 @@
-##Windows
+#Windows
 
-###Cygwin
+##Cygwin
 * Install
 	* ncures - for [clear](http://stackoverflow.com/a/11249071)
 	* python - Ultisnips dependency
@@ -11,17 +11,17 @@
 	* make - git-extras dependency
 	* tmux
 
-####Zsh
+###Zsh
 * [Set as default shell](https://cygwin.com/cygwin-ug-net/ntsec.html#ntsec-mapping-nsswitch)
 	* /etc/nsswitch.conf << echo "db_shell: /bin/zsh"
 * Set user folder as root
 	* /etc/nsswitch.conf << echo "db_home: windows"
 
 
-####[git-extras]
+###[git-extras](https://github.com/tj/git-extras)
 * Install make
 
-####Vim
+###Vim
 * Some plugins fail to work because of cygwin will send incorrect paths to windows programs and vice versa
 	* [vim-easytags](https://github.com/xolox/vim-easytags)
 	* [tern_for_vim](https://github.com/ternjs/tern_for_vim)

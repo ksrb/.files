@@ -1,0 +1,93 @@
+#!/usr/bin/env zsh
+
+# cd to the directory that script is being executed and set configs_dir to directory
+configs_dir=$( cd "$(dirname "$0")" ; pwd )
+target="$configs_dir/.."
+ignore=(README.md)
+
+shared_configs_dir="$configs_dir/shared"
+shared_ignores+=($ignore linker mac windows scripts)
+
+mac_configs_dir="$configs_dir/mac"
+mac_configs_ignore+=($ignore Karabiner defaults.sh)
+
+ignored() {
+  local elements="$2"
+  # For each element
+  # Note: Zsh specific expansion syntax expand
+  # See http://stackoverflow.com/a/14693738
+  for e in ${(P)${elements}[@]}; do 
+    # If the element matches the 1st arg
+    if [[ "$e" == "$1" ]] then;
+      return 1; #true, ignored
+    fi
+  done
+  return 0 #false, not ignored
+}
+
+linkFiles(){
+  local configs_dir="$1"
+  local shared_ignores_local="$2"
+  # For each file in the configs_dir
+  for file in $(ls "${configs_dir}"); do
+    # Check if the file is in list of ignores
+    ignored "$file" "$shared_ignores_local"
+
+    # If the file is ignored 
+    # Note: ($? gets the exit status of the previous command)
+    if [ $? -eq 1 ]; then
+      # Skip it 
+      continue
+    fi
+
+    # Else
+    printf "$configs_dir/$file => $target/.$file\n"
+    # If the link exits
+    if [[ -L "$target/.$file" ]]; then 
+      # Remove it
+      rm "$target/.$file"
+    fi
+    # Link each file in the configs_dir to a '.' target file 
+    ln -s "$configs_dir/$file" "$target/.$file"
+  done
+}
+
+linkKarabiner(){
+  local karabiner_config_file="$mac_configs_dir/Karabiner/private.xml"
+  local karabiner_target_file="$target/Library/Application Support/Karabiner/private.xml"
+  printf "$karabiner_config_file => $karabiner_target_file\n"
+  rm "$karabiner_target_file"
+  ln -s "$karabiner_config_file" "$karabiner_target_file"
+}
+
+clean(){
+  echo "TODO"
+}
+
+help(){
+cat <<-EOF
+  lr      link shared dot files
+  lm      link mac files 
+  help    help
+  clean   TODO
+EOF
+}
+
+process(){
+  case "$1" in
+    "ls")
+      linkFiles "$shared_configs_dir" "shared_ignores";;
+    "lm")
+      linkFiles "$mac_configs_dir" "mac_configs_ignore"
+      linkKarabiner;;
+    "clean")
+      clean;;
+    "help")
+      help;;
+    *)
+      echo "Not a argument valid"
+      help;;
+  esac
+}
+
+process "$@"
