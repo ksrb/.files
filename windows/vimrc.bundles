@@ -1,4 +1,3 @@
-
 " set the runtime path to include Vundle and initialize
 
 call plug#begin('C:/Users/Kevin Suen/.vim/plugged')

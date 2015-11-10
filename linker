@@ -11,10 +11,21 @@ shared_ignores+=($ignore linker mac windows scripts)
 mac_configs_dir="$configs_dir/mac"
 mac_configs_ignore+=($ignore Karabiner defaults.sh)
 
+windows_configs_dir="$configs_dir/windows"
+
+setEnv(){
+  case "$(uname -s)" in
+    CYGWIN*)
+      export CYGWIN=winsymlinks:native
+  esac
+}
+
+setEnv
+
 ignored() {
   local elements="$2"
   # For each element
-  # Note: Zsh specific expansion syntax expand
+  # Note: Zsh specific expansion syntax
   # See http://stackoverflow.com/a/14693738
   for e in ${(P)${elements}[@]}; do 
     # If the element matches the 1st arg
@@ -66,8 +77,9 @@ clean(){
 
 help(){
 cat <<-EOF
-  lr      link shared dot files
+  ls      link shared dot files
   lm      link mac files 
+  lw      link windows files
   help    help
   clean   TODO
 EOF
@@ -80,6 +92,8 @@ process(){
     "lm")
       linkFiles "$mac_configs_dir" "mac_configs_ignore"
       linkKarabiner;;
+    "lw")
+      linkFiles "$windows_configs_dir" "ignore";;
     "clean")
       clean;;
     "help")
