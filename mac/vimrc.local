@@ -2,6 +2,8 @@
 set colorcolumn=80
 
 noremap <F5> :redraw!<CR>
+" Show relative numbers to the cursor
+set relativenumber 
 
 " ==================== Overrides ================
 " Restore tab 

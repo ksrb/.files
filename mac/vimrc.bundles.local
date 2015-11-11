@@ -8,11 +8,16 @@ Plug 'xolox/vim-easytags'
 " Show identation levels
 Plug 'Yggdroot/indentLine'
 
-" ==================== identline ================
-" Don't show identation levels for json files as there is a bug
-let g:indentLine_fileTypeExclude=['json']
+Plug 'tpope/vim-repeat'
+Plug 'tpope/vim-surround'
 
-" ==================== easytag ================
+Plug 'tomtom/tcomment_vim'
+
+" ==================== identline ==================== 
+" Don't show identation levels for json files as there is a bug
+let g:indentLine_fileTypeExclude = ['json']
+
+" ==================== easytag ====================
 " Use jsctags for javascript ctag generation
 let g:easytags_languages = {
             \   'javascript': {
@@ -27,3 +32,7 @@ let g:easytags_languages = {
 let g:easytags_async = 1
 " Stop easy tags from updating dotfiles
 autocmd BufReadPost .* let b:easytags_auto_update = 0
+
+" ==================== tcomment ====================
+" Turn off leader key shortcuts
+let g:tcommentMapLeader2 = ''
