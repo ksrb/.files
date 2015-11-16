@@ -1,7 +1,7 @@
 " Show divider at column 80
 set colorcolumn=80
 
-noremap <F5> :redraw!<CR>
+nnoremap <F5> :redraw!<CR>
 " Show relative numbers to the cursor
 set relativenumber 
 
