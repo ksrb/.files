@@ -29,6 +29,16 @@ Plug 'majutsushi/tagbar'
 " Plug 'marijnh/tern_for_vim', { 'do' : 'npm install' }
 Plug 'fatih/vim-go'
 
+" Show identation levels
+Plug 'Yggdroot/indentLine'
+
+" Misc
+Plug 'tpope/vim-repeat'
+Plug 'tpope/vim-surround'
+
+Plug 'tomtom/tcomment_vim'
+
+
 if filereadable(expand("~/.vimrc.bundles.local"))
   source ~/.vimrc.bundles.local
 endif
@@ -114,3 +124,14 @@ au FileType go nmap <Leader>gb <Plug>(go-doc-browser)
 au FileType go nmap <Leader>s <Plug>(go-implements)
 au FileType go nmap <Leader>i <Plug>(go-info)
 au FileType go nmap <Leader>e <Plug>(go-rename)
+
+" ==================== identline ==================== 
+" Don't show identation levels for json files as there is a bug
+let g:indentLine_fileTypeExclude = ['json']
+
+" ==================== tcomment ====================
+" Turn off leader key shortcuts
+let g:tcommentMapLeader2 = ''
+
+" ==================== surround ====================
+let g:surround_indent = 0
