@@ -111,47 +111,47 @@
       <identifier>ekeyboard.controlLOptionL2CommandLOptionLqweasdzxcOnlyTerminalAndIntelliJ</identifier>
       <only>TERMINAL, IntelliJ</only>
       <autogen>
-        __KeyToKey__ 
+        __KeyToKey__
         KeyCode::Q, ModifierFlag::CONTROL_L | ModifierFlag::OPTION_L | ModifierFlag::NONE,
         KeyCode::Q, ModifierFlag::COMMAND_L | ModifierFlag::OPTION_L
       </autogen>
       <autogen>
-        __KeyToKey__ 
+        __KeyToKey__
         KeyCode::W, ModifierFlag::CONTROL_L | ModifierFlag::OPTION_L | ModifierFlag::NONE,
         KeyCode::W, ModifierFlag::COMMAND_L | ModifierFlag::OPTION_L
       </autogen>
       <autogen>
-        __KeyToKey__ 
+        __KeyToKey__
         KeyCode::E, ModifierFlag::CONTROL_L | ModifierFlag::OPTION_L | ModifierFlag::NONE,
         KeyCode::E, ModifierFlag::COMMAND_L | ModifierFlag::OPTION_L
       </autogen>
       <autogen>
-        __KeyToKey__ 
+        __KeyToKey__
         KeyCode::A, ModifierFlag::CONTROL_L | ModifierFlag::OPTION_L | ModifierFlag::NONE,
         KeyCode::A, ModifierFlag::COMMAND_L | ModifierFlag::OPTION_L
       </autogen>
       <autogen>
-        __KeyToKey__ 
+        __KeyToKey__
         KeyCode::S, ModifierFlag::CONTROL_L | ModifierFlag::OPTION_L | ModifierFlag::NONE,
         KeyCode::S, ModifierFlag::COMMAND_L | ModifierFlag::OPTION_L
       </autogen>
       <autogen>
-        __KeyToKey__ 
+        __KeyToKey__
         KeyCode::D, ModifierFlag::CONTROL_L | ModifierFlag::OPTION_L | ModifierFlag::NONE,
         KeyCode::D, ModifierFlag::COMMAND_L | ModifierFlag::OPTION_L
       </autogen>
       <autogen>
-        __KeyToKey__ 
+        __KeyToKey__
         KeyCode::Z, ModifierFlag::CONTROL_L | ModifierFlag::OPTION_L | ModifierFlag::NONE,
         KeyCode::Z, ModifierFlag::COMMAND_L | ModifierFlag::OPTION_L
       </autogen>
       <autogen>
-        __KeyToKey__ 
+        __KeyToKey__
         KeyCode::X, ModifierFlag::CONTROL_L | ModifierFlag::OPTION_L | ModifierFlag::NONE,
         KeyCode::X, ModifierFlag::COMMAND_L | ModifierFlag::OPTION_L
       </autogen>
       <autogen>
-        __KeyToKey__ 
+        __KeyToKey__
         KeyCode::C, ModifierFlag::CONTROL_L | ModifierFlag::OPTION_L | ModifierFlag::NONE,
         KeyCode::C, ModifierFlag::COMMAND_L | ModifierFlag::OPTION_L
       </autogen>
@@ -168,7 +168,7 @@
         <identifier>laptop.ctrlL2commandRexceptTerminalAndIntelliJ</identifier>
         <not>TERMINAL, IntelliJ</not>
         <autogen>
-          __KeyToKey__ 
+          __KeyToKey__
           KeyCode::CONTROL_L,
           KeyCode::COMMAND_R
         </autogen>
@@ -177,7 +177,7 @@
         <name>Command_L to Option_R</name>
         <identifier>laptop.commandL2OptionR</identifier>
         <autogen>
-          __KeyToKey__ 
+          __KeyToKey__
           KeyCode::COMMAND_L,
           KeyCode::OPTION_R
         </autogen>
@@ -187,7 +187,7 @@
         <identifier>laptop.OptionL2Control_RExpTerminalAndIntellij</identifier>
         <not>TERMINAL, IntelliJ</not>
         <autogen>
-          __KeyToKey__ 
+          __KeyToKey__
           KeyCode::OPTION_L,
           KeyCode::CONTROL_R
         </autogen>
@@ -198,7 +198,7 @@
       <identifier>laptop.OptionL2Control_ROnlyTerminalAndINtellij</identifier>
       <only>TERMINAL, IntelliJ</only>
       <autogen>
-        __KeyToKey__ 
+        __KeyToKey__
         KeyCode::OPTION_L,
         KeyCode::COMMAND_R
       </autogen>
@@ -211,8 +211,8 @@
         <name>Options_R+Tab to Command_R+Tab</name>
         <identifier>laptop.OptionRTab2Command_RTab</identifier>
         <autogen>
-          __KeyToKey__ 
-          KeyCode::TAB, ModifierFlag::OPTION_R | ModifierFlag::NONE,
+          __KeyToKey__
+          KeyCode::TAB, ModifierFlag::OPTION_R,
           KeyCode::TAB, ModifierFlag::COMMAND_R
         </autogen>
       </item>
@@ -220,7 +220,7 @@
         <name>Options_R+Backquote to Command_R+Backquote</name>
         <identifier>laptop.OptionRBackquote2Command_RBackquote</identifier>
         <autogen>
-          __KeyToKey__ 
+          __KeyToKey__
           KeyCode::BACKQUOTE, ModifierFlag::OPTION_R,
           KeyCode::BACKQUOTE, ModifierFlag::COMMAND_R
         </autogen>
@@ -243,7 +243,7 @@
         <identifier>laptop.command_RSpace2Esc</identifier>
         <not>TERMINAL, IntelliJ</not>
         <autogen>
-          __KeyToKey__ 
+          __KeyToKey__
           KeyCode::SPACE, ModifierFlag::COMMAND_R | ModifierFlag::NONE,
           KeyCode::ESCAPE
         </autogen>
@@ -253,7 +253,7 @@
         <identifier>laptop.controlRSpace2CommandRSpace</identifier>
         <not>TERMINAL, IntelliJ</not>
         <autogen>
-          __KeyToKey__ 
+          __KeyToKey__
           KeyCode::SPACE, ModifierFlag::CONTROL_R | ModifierFlag::NONE,
           KeyCode::SPACE, ModifierFlag::COMMAND_R
         </autogen>
@@ -263,49 +263,49 @@
       <name>Control_L+Option_R q,w,e,a,s,d,z,x,c to Command_L+Option_R q,w,e,a,s,d,z,x,c (only in Terminal and IntelliJ)</name>
       <appendix>Bettersnap: Snap windows to designated snapping areas</appendix>
       <identifier>laptop.controlLOptionR2CommandLOptionRqweasdzxcOnlyTerminalAndIntelliJ</identifier>
-      <only>TERMINAL, IntelliJ</only>
+      <only>TERMINAL, IntelliJ, EMACS</only>
       <autogen>
-        __KeyToKey__ 
+        __KeyToKey__
         KeyCode::Q, ModifierFlag::CONTROL_L | ModifierFlag::OPTION_R | ModifierFlag::NONE,
         KeyCode::Q, ModifierFlag::COMMAND_L | ModifierFlag::OPTION_R
       </autogen>
       <autogen>
-        __KeyToKey__ 
+        __KeyToKey__
         KeyCode::W, ModifierFlag::CONTROL_L | ModifierFlag::OPTION_R | ModifierFlag::NONE,
         KeyCode::W, ModifierFlag::COMMAND_L | ModifierFlag::OPTION_R
       </autogen>
       <autogen>
-        __KeyToKey__ 
+        __KeyToKey__
         KeyCode::E, ModifierFlag::CONTROL_L | ModifierFlag::OPTION_R | ModifierFlag::NONE,
         KeyCode::E, ModifierFlag::COMMAND_L | ModifierFlag::OPTION_R
       </autogen>
       <autogen>
-        __KeyToKey__ 
+        __KeyToKey__
         KeyCode::A, ModifierFlag::CONTROL_L | ModifierFlag::OPTION_R | ModifierFlag::NONE,
         KeyCode::A, ModifierFlag::COMMAND_L | ModifierFlag::OPTION_R
       </autogen>
       <autogen>
-        __KeyToKey__ 
+        __KeyToKey__
         KeyCode::S, ModifierFlag::CONTROL_L | ModifierFlag::OPTION_R | ModifierFlag::NONE,
         KeyCode::S, ModifierFlag::COMMAND_L | ModifierFlag::OPTION_R
       </autogen>
       <autogen>
-        __KeyToKey__ 
+        __KeyToKey__
         KeyCode::D, ModifierFlag::CONTROL_L | ModifierFlag::OPTION_R | ModifierFlag::NONE,
         KeyCode::D, ModifierFlag::COMMAND_L | ModifierFlag::OPTION_R
       </autogen>
       <autogen>
-        __KeyToKey__ 
+        __KeyToKey__
         KeyCode::Z, ModifierFlag::CONTROL_L | ModifierFlag::OPTION_R | ModifierFlag::NONE,
         KeyCode::Z, ModifierFlag::COMMAND_L | ModifierFlag::OPTION_R
       </autogen>
       <autogen>
-        __KeyToKey__ 
+        __KeyToKey__
         KeyCode::X, ModifierFlag::CONTROL_L | ModifierFlag::OPTION_R | ModifierFlag::NONE,
         KeyCode::X, ModifierFlag::COMMAND_L | ModifierFlag::OPTION_R
       </autogen>
       <autogen>
-        __KeyToKey__ 
+        __KeyToKey__
         KeyCode::C, ModifierFlag::CONTROL_L | ModifierFlag::OPTION_R | ModifierFlag::NONE,
         KeyCode::C, ModifierFlag::COMMAND_L | ModifierFlag::OPTION_R
       </autogen>
