@@ -5,7 +5,7 @@
 	* ncures - for [clear](http://stackoverflow.com/a/11249071)
 	* python - Ultisnips dependency
 	* curl
-	* git - git msys has problems
+	* git - [msysgit](https://git-for-windows.github.io/) has some  compatibility issues cygwin
 	* vim
 	* emacs
 	* make - git-extras dependency

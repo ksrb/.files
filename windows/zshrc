@@ -80,6 +80,27 @@ source "$ZSH"/oh-my-zsh.sh
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
+MSYS_GIT='/cygdrive/c/Users/Kevin Suen/AppData/Local/Programs/Git/bin'
+
+# Set git to msysgit for compatablity (node)
+setMsysGit(){
+  export PATH=$MSYS_GIT:$PATH
+}
+
+# Set git to cygwin git for compatabilty
+unsetMsysGit(){
+  # http://stackoverflow.com/a/2108540
+  # Normalize path to have ':' at start and end of path
+  CURRENT_PATH=:$PATH:
+  # Remove msysgit from path
+  CURRENT_PATH=${CURRENT_PATH/:$MSYS_GIT:/:}
+  # Remove starting ':'
+  CURRENT_PATH=${CURRENT_PATH%:}
+  # Remove starting ':'
+  CURRENT_PATH=${CURRENT_PATH#:}
+  export PATH=$CURRENT_PATH
+}
+
 # Docker machine default variables
 export DOCKER_TLS_VERIFY="1"
 export DOCKER_HOST="tcp://192.168.99.101:2376"
