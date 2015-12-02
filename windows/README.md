@@ -31,3 +31,12 @@
 ```cmd
 mklink /j c:\tmp c:\cygwin64\tmp
 ```
+
+###Docker
+* Cannot enable tty mode on non tty input
+	* [ssh into docker-machine](https://github.com/docker/docker/issues/12469#issuecomment-138426213)
+```bash
+docker-machine ssh default
+```
+* Docker machine not failing to create machine
+	* Uninstall virtualbox and remove ~/.VirtualBox folder reinstall
