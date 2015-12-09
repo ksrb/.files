@@ -9,6 +9,10 @@
 	* Laptop
 	* Legacy
 
+##iTerm
+* Set Alt key to be compatible with Tmux
+	* Profiles → Keys →  Left/Right Option key acts as: +Esc
+
 ##Intellijj
 * Set config directory to ~/.IntelliJ[XX]
 	* /Applications/IntelliJ IDEA 15.app/Contents/bin/idea.properties << echo idea.config.path=~/.IntelliJIdea[XX]/config 
