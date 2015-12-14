@@ -11,17 +11,17 @@
 	* make - git-extras dependency
 	* tmux
 
-###Zsh
+##Zsh
 * [Set as default shell](https://cygwin.com/cygwin-ug-net/ntsec.html#ntsec-mapping-nsswitch)
 	* /etc/nsswitch.conf << echo "db_shell: /bin/zsh"
 * Set user folder as root
 	* /etc/nsswitch.conf << echo "db_home: windows"
 
 
-###[git-extras](https://github.com/tj/git-extras)
+##[git-extras](https://github.com/tj/git-extras)
 * Install make
 
-###Vim
+##Vim
 * Some plugins fail to work because of cygwin will send incorrect paths to windows programs and vice versa
 	* [vim-easytags](https://github.com/xolox/vim-easytags)
 	* [tern_for_vim](https://github.com/ternjs/tern_for_vim)
@@ -32,7 +32,7 @@
 mklink /j c:\tmp c:\cygwin64\tmp
 ```
 
-###Docker
+##Docker
 * Cannot enable tty mode on non tty input
 	* [ssh into docker-machine](https://github.com/docker/docker/issues/12469#issuecomment-138426213)
 ```bash
@@ -40,3 +40,11 @@ docker-machine ssh default
 ```
 * Docker machine not failing to create machine
 	* Uninstall virtualbox and remove ~/.VirtualBox folder reinstall
+
+##Node-gyp
+* Install python 2.7 from [online](https://www.python.org/downloads/)
+* Install [Microsoft Visual C++ Build Tools 2015 Technical Preview](http://www.microsoft.com/en-us/download/details.aspx?id=49983)
+* npm config set msvs_version 2015 --global
+* npm config set python python2.7
+* Remove cygwin64/bin from windows environment variables
+* Additional information [here](https://github.com/nodejs/node-gyp/issues/629#issuecomment-153196245)

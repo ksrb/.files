@@ -107,5 +107,9 @@ then
   eval $(docker-machine env default)
 fi
 
+## Directory shortcuts
+prog (){ cd ~/Documents/Programming/$1; }
+compctl -W $HOME/Documents/programming/ -/ prog
+
 # Base16 Shell
 [[ -s "$HOME/.notes/base16-eighties.dark.sh" ]] && source "$HOME/.notes/base16-eighties.dark.sh"
