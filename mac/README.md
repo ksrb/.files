@@ -15,7 +15,11 @@
 
 ##Intellijj
 * Set config directory to ~/.IntelliJ[XX]
-	* /Applications/IntelliJ IDEA 15.app/Contents/bin/idea.properties << echo idea.config.path=~/.IntelliJIdea[XX]/config 
+```bash
+rm ~/Library/Preferences/IntelliJIdea[XX]
+echo idea.config.path=~/.IntelliJIdea[XX]/config  >> /Applications/IntelliJ IDEA 15.app/Contents/bin/idea.properties
+```
+
 * Conflicting Keys and Resolution
 	* Ctrl + F4 - System Preferences → Keyboard → Shortcuts → Keyboard → Move Focus to active or next Window
 	* Ctrl + F1 - System Preferences → Keyboard → Shortcuts → Turn keyboard access on or off

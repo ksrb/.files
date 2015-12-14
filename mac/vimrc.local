@@ -1,7 +1,9 @@
 " Show divider at column 80
 set colorcolumn=80
 
+" Hotkey to redraw/refresh screen
 nnoremap <F5> :redraw!<CR>
+
 " Show relative numbers to the cursor
 set relativenumber 
 
@@ -17,3 +19,6 @@ noremap <tab> <tab>
 
 " Change ultisnip trigger to Ctrl-Space
 let g:UltiSnipsExpandTrigger="<C-space>"
+
+" Strip Trailing Whitespace & turn off hightlight
+nnoremap <Leader>kw :%s/\s\+$//e<CR>:noh<CR>

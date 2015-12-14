@@ -6,3 +6,7 @@ export DOCKER_MACHINE_NAME="default"
 
 # Disable ctrl-s and ctrl-q http://unix.stackexchange.com/a/72092
 stty -ixon
+
+# Directory shortcuts
+prog (){ cd ~/Documents/Programming/$1; }
+compctl -W $HOME/Documents/Programming/ -/ p
