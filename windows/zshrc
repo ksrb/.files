@@ -80,6 +80,8 @@ source "$ZSH"/oh-my-zsh.sh
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
+
+# ==================== Git ==================== 
 MSYS_GIT='/cygdrive/c/Users/Kevin Suen/AppData/Local/Programs/Git/bin'
 
 # Set git to msysgit for compatablity (node)
@@ -101,11 +103,30 @@ unsetMsysGit(){
   export PATH=$CURRENT_PATH
 }
 
-if [[ $(docker-machine status default) != "Stopped" ]]
-then
+# Unalias git branch
+unalias gb
+
+# ==================== Docker ==================== 
+if [[ $(docker-machine status default) != "Stopped" ]]; then
   # Docker machine default variables
   eval $(docker-machine env default)
 fi
+
+## Docker machine set env
+dm-set-env (){
+  if [[ -z "$1" ]]; then
+    eval "$(docker-machine env default)"
+  fi
+  if [[ -n "$1" ]]; then
+    eval "$(docker-machine env "$1")"
+  fi
+}
+
+# ==================== Misc ==================== 
+# Add relative bin to PATH
+export PATH=$PATH:./bin
+# Add relative node_modules/.bin to PATH
+export PATH=$PATH:./node_modules/.bin
 
 ## Directory shortcuts
 prog (){ cd ~/Documents/Programming/$1; }
