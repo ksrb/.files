@@ -184,7 +184,7 @@
       </item>
       <item>
         <name>Option_L to Control_R (except Terminal and IntelliJ)</name>
-        <identifier>laptop.OptionL2Control_RExpTerminalAndIntellij</identifier>
+        <identifier>laptop.OptionL2Control_RExpTerminalAndIntelliJ</identifier>
         <not>TERMINAL, IntelliJ</not>
         <autogen>
           __KeyToKey__
@@ -192,16 +192,16 @@
           KeyCode::CONTROL_R
         </autogen>
       </item>
-    </item>
-    <item>
-      <name>Option_L to Command_R (only in Terminal and IntelliJ)</name>
-      <identifier>laptop.OptionL2Control_ROnlyTerminalAndINtellij</identifier>
-      <only>TERMINAL, IntelliJ</only>
-      <autogen>
-        __KeyToKey__
-        KeyCode::OPTION_L,
-        KeyCode::COMMAND_R
-      </autogen>
+      <item>
+        <name>Option_L to Command_R (only in Terminal and IntelliJ)</name>
+        <identifier>laptop.OptionL2Control_ROnlyTerminalAndINtelliJ</identifier>
+        <only>TERMINAL, IntelliJ</only>
+        <autogen>
+          __KeyToKey__
+          KeyCode::OPTION_L,
+          KeyCode::COMMAND_R
+        </autogen>
+      </item>
     </item>
     <item>
       <appendix>Option+Tab -> Command+Tab</appendix>
