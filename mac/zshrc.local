@@ -8,5 +8,9 @@ export DOCKER_MACHINE_NAME="default"
 stty -ixon
 
 # Directory shortcuts
-prog (){ cd ~/Documents/Programming/$1; }
-compctl -W $HOME/Documents/Programming/ -/ p
+prog (){ cd ~/Documents/Programming/$1 }
+compctl -W $HOME/Documents/Programming/ -/ prog
+
+# Init docker env variables
+# dm-init comes from ~/.zshrc.extras
+dm-init default
