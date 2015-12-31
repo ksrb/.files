@@ -1,10 +1,5 @@
 <?xml version="1.0"?>
 <root>
-  <appdef>
-    <appname>IntelliJ</appname>
-    <prefix>com.jetbrains.intellij</prefix>
-    <prefix>com.jetbrains.intellij-EAP</prefix>
-  </appdef>
   <item>
     <name>Custom</name>
     <item>
@@ -166,7 +161,7 @@
       <item>
         <name>Control_L to Command_R (except Terminal and IntelliJ)</name>
         <identifier>laptop.ctrlL2commandRexceptTerminalAndIntelliJ</identifier>
-        <not>TERMINAL, IntelliJ</not>
+        <not>TERMINAL, IntelliJ, EMACS</not>
         <autogen>
           __KeyToKey__
           KeyCode::CONTROL_L,
@@ -185,7 +180,7 @@
       <item>
         <name>Option_L to Control_R (except Terminal and IntelliJ)</name>
         <identifier>laptop.OptionL2Control_RExpTerminalAndIntelliJ</identifier>
-        <not>TERMINAL, IntelliJ</not>
+        <not>TERMINAL, IntelliJ, EMACS</not>
         <autogen>
           __KeyToKey__
           KeyCode::OPTION_L,
@@ -195,7 +190,7 @@
       <item>
         <name>Option_L to Command_R (only in Terminal and IntelliJ)</name>
         <identifier>laptop.OptionL2Control_ROnlyTerminalAndINtelliJ</identifier>
-        <only>TERMINAL, IntelliJ</only>
+        <only>TERMINAL, IntelliJ, EMACS</only>
         <autogen>
           __KeyToKey__
           KeyCode::OPTION_L,
@@ -241,7 +236,7 @@
         <name>Command_R+Space to Escape (except Terminal and IntelliJ)</name>
         <appendix>Disable Command+Space</appendix>
         <identifier>laptop.command_RSpace2Esc</identifier>
-        <not>TERMINAL, IntelliJ</not>
+        <not>TERMINAL, IntelliJ, EMACS</not>
         <autogen>
           __KeyToKey__
           KeyCode::SPACE, ModifierFlag::COMMAND_R | ModifierFlag::NONE,
@@ -251,7 +246,7 @@
       <item>
         <name>Control_R+Space to Command_R+Space (except Terminal and IntelliJ)</name>
         <identifier>laptop.controlRSpace2CommandRSpace</identifier>
-        <not>TERMINAL, IntelliJ</not>
+        <not>TERMINAL, IntelliJ, EMACS</not>
         <autogen>
           __KeyToKey__
           KeyCode::SPACE, ModifierFlag::CONTROL_R | ModifierFlag::NONE,
