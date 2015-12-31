@@ -80,8 +80,8 @@ cat <<-EOF
   ls      link shared dot files
   lm      link mac files 
   lw      link windows files
-  help    help
   clean   TODO
+  help    help
 EOF
 }
 

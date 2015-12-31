@@ -32,7 +32,7 @@ echo idea.config.path=~/.IntelliJIdea[XX]/config  >> /Applications/IntelliJ IDEA
 	* Dock → Minimize Windows using: Scale effect
 * Context menu for opening terminal by right clicking on folder
 	* Keyboard → Shortcuts → Services → Files and Folders → New Terminal at Folder
-* Override Command+H in Intellij
+* Override Command+H in IntelliJ
 	* Keyboard → App Shortcuts → + → Application: IntelliJ IDEA 14 → Menu Title: Find in Path... → + Keyboard Shortcut: Command H
 * Ctrl Arrow Keys
 	* Keyboard -> Mission Control/Application windows/Move left a space/Move right a space

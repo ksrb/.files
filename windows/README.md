@@ -39,7 +39,7 @@ mklink /j c:\tmp c:\cygwin64\tmp
 docker-machine ssh default
 ```
 * Docker machine not failing to create machine
-	* Uninstall virtualbox and remove ~/.VirtualBox folder reinstall
+	* Uninstall virtualbox and remove ~/.VirtualBox folder and then reinstall
 
 ##Node-gyp
 * Install python 2.7 from [online](https://www.python.org/downloads/)
