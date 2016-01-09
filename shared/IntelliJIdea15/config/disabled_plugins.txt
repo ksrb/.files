@@ -77,6 +77,7 @@ com.intellij.spring.websocket
 com.intellij.spring.ws
 com.intellij.struts2
 com.intellij.tapestry
+com.intellij.tasks.timeTracking
 com.intellij.thymeleaf
 com.intellij.uiDesigner
 com.intellij.vaadin
