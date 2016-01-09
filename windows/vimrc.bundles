@@ -1,6 +1,6 @@
 " set the runtime path to include Vundle and initialize
 
-call plug#begin('C:/Users/Kevin Suen/.vim/plugged')
+call plug#begin('~/.vim/plugged')
 
 " File Utils
 Plug 'scrooloose/nerdtree', { 'on':  'NERDTreeToggle' }

@@ -26,6 +26,12 @@
 	* [vim-easytags](https://github.com/xolox/vim-easytags)
 	* [tern_for_vim](https://github.com/ternjs/tern_for_vim)
 * Plugins that work with some hacks
+	* [vim-plug](https://github.com/junegunn/vim-plug)
+		* PlugInstall works however PlugUpdate doesn't simply remove the ~/.vim/plugged folder and rerun PlugInstall
+```
+	rm -r ~/.vimr/plugged
+	vim -c PlugInstall
+```
 	* [tagbar](https://github.com/majutsushi/tagbar) 
 		* [From Windows cmd run](https://github.com/majutsushi/tagbar/issues/260#issuecomment-135898610)
 ```cmd
