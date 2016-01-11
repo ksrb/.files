@@ -1,7 +1,7 @@
 BoldAsFont=no
 Columns=100
 Rows=35
-Font=Source Code Pro
+Font=Consolas
 FontHeight=10
 IMECursorColour=128,224,160
 Transparency=off
