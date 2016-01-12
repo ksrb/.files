@@ -1,24 +1,22 @@
-" Plugins {
-  " Simple es6 snippets WIP
-  Plug 'ksrb/vim-react-es6-snippets'
+" Simple es6 snippets WIP
+Plug 'ksrb/vim-react-es6-snippets'
 
-  " Automatic ctag generation
-  Plug 'xolox/vim-misc'
-  Plug 'xolox/vim-easytags'
+" Automatic ctag generation
+Plug 'xolox/vim-misc'
+Plug 'xolox/vim-easytags'
 
-  " Show identation levels
-  Plug 'Yggdroot/indentLine'
+" Show identation levels
+Plug 'Yggdroot/indentLine'
 
-  " Misc
-  Plug 'tpope/vim-repeat'
-  Plug 'tpope/vim-surround'
-  Plug 'tomtom/tcomment_vim'
-" }
+" Misc
+Plug 'tpope/vim-repeat'
+Plug 'tpope/vim-surround'
+Plug 'tomtom/tcomment_vim'
 
 " Plugin settings {
   " identline {
-      " Don't show identation levels for json files as there is a bug
-      let g:indentLine_fileTypeExclude = ['json']
+    " Don't show identation levels for json files as there is a bug
+    let g:indentLine_fileTypeExclude = ['json']
   " }
 
   " easytag {
@@ -40,27 +38,30 @@
   " }
 
   " tcomment {
-      " Turn off leader key shortcuts
-      let g:tcommentMapLeader2 = ''
+    " Turn off leader key shortcuts
+    let g:tcommentMapLeader2 = ''
   " }
 
   " surround {
-      let g:surround_indent = 0
+    let g:surround_indent = 0
   " }
 " }
 
 " Overrides {
-  " Change ultisnip trigger to Ctrl-Space
-  let g:UltiSnipsExpandTrigger="<C-space>"
+  " Ultisnips {
+    " Change ultisnip trigger to Ctrl-Space
+    let g:UltiSnipsExpandTrigger="<C-space>"
+  " }
 
-  " ==================== CtrlP ====================
-  " Use The Silver Searcher https://github.com/ggreer/the_silver_searcher
-  if executable('ag')
-    " Use Ag over Grep
-    set grepprg=ag\ --nogroup\ --nocolor
-    " Use ag in CtrlP for listing files. Lightning fast and respects .gitignore
-    let g:ctrlp_user_command = 'ag %s -l --nocolor --hidden -g ""'
-    " ag is fast enough that CtrlP doesn't need to cache
-    let g:ctrlp_use_caching = 0
-  endif
+  " CtrlP {
+    " Use The Silver Searcher https://github.com/ggreer/the_silver_searcher
+    if executable('ag')
+      " Use Ag over Grep
+      set grepprg=ag\ --nogroup\ --nocolor
+      " Use ag in CtrlP for listing files. Lightning fast and respects .gitignore
+      let g:ctrlp_user_command = 'ag %s -l --nocolor --hidden -g ""'
+      " ag is fast enough that CtrlP doesn't need to cache
+      let g:ctrlp_use_caching = 0
+    endif
+  " }
 " }

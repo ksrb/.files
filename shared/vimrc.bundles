@@ -43,85 +43,86 @@ if filereadable(expand("~/.vimrc.bundles.local"))
   source ~/.vimrc.bundles.local
 endif
 
-" All of your Plugins must be added before the following line
 call plug#end()
 
 filetype plugin indent on
 
-" ----------------------------------------- "
-" Plug configs 			    			            "
-" ----------------------------------------- "
+" Color Schema {
+  let base16colorspace=256
+  colorscheme base16-eighties
+" }
 
-" ==================== Color Schema =================
-let base16colorspace=256
-colorscheme base16-eighties
+" Indent Guides {
+  set ts=2 sw=2 et
+" }
 
-" ==================== Indent Guides ================
-set ts=2 sw=2 et
+" BuffKill {
+    nnoremap <leader>q :call CloseSplitOrDeleteBuffer()<CR>
+" }
 
-" ==================== UltiSnips ====================
-" This is the equivalant of <C-Space> in mintty
-" See https://groups.google.com/forum/#!topic/mintty-discuss/tPsV-iPnO4k
-let g:UltiSnipsExpandTrigger="<C-@>" 
-"au CompleteDone * pclose
+" VimAirline {
+  let g:airline_powerline_fonts = 1
+  let g:airline#extensions#tabline#enabled = 1
+" }
 
-" ==================== BuffKill ====================
-nnoremap <leader>q :call CloseSplitOrDeleteBuffer()<CR>
+" Tagbar {
+  nnoremap <Leader>t :TagbarToggle<cr>
+" }
 
-" ==================== VimAirline ====================
-let g:airline_powerline_fonts = 1
-let g:airline#extensions#tabline#enabled = 1
+" Syntastic {
+  let g:syntastic_javascript_checkers = ['eslint']
+  let g:jsx_ext_required = 0
+" }
 
-" ==================== Tagbar ====================
-nnoremap <Leader>t :TagbarToggle<cr>
+" NERDTree {
+  " For toggling
+  noremap <Leader>n :NERDTreeToggle<cr>
+  " For refreshing current file and showing current dir
+  noremap <Leader>j :NERDTreeFind<cr>
+  let g:NERDTreeDirArrows=0
+" }
 
-" ==================== Syntastic ====================
-let g:syntastic_javascript_checkers = ['eslint']
-let g:jsx_ext_required = 0
+" CtrlP {
+  let g:ctrlp_custom_ignore = '\v[\/](node_modules|build|jspm_packages)|(\.(git|hg|svn))$'
+  let g:ctrlp_working_path_mode = 'ra' " set working dir to first folder with .git or folder with file ctrlp was called on
+  let g:ctrlp_switch_buffer = 'et'	" jump to a file if it's open already
+  let g:ctrlp_mruf_max=450 		" number of recently opened files
+  let g:ctrlp_max_files=0  		" do not limit the number of searchable files
+" }
 
-" ==================== NERDTree ====================
-" For toggling
-noremap <Leader>n :NERDTreeToggle<cr>
-" For refreshing current file and showing current dir
-noremap <Leader>j :NERDTreeFind<cr>
-let g:NERDTreeDirArrows=0
+" Vim Golang {
+  let g:go_fmt_command = "goimports"
+  let g:go_highlight_functions = 1
+  let g:go_highlight_methods = 1
+  let g:go_highlight_structs = 1
+  let g:go_highlight_operators = 1
+  let g:go_highlight_build_constraints = 1
 
-" ==================== CtrlP ====================
-let g:ctrlp_custom_ignore = '\v[\/](node_modules|build|jspm_packages)|(\.(git|hg|svn))$'
-let g:ctrlp_working_path_mode = 'ra' " set working dir to first folder with .git or folder with file ctrlp was called on
-let g:ctrlp_switch_buffer = 'et'	" jump to a file if it's open already
-let g:ctrlp_mruf_max=450 		" number of recently opened files
-let g:ctrlp_max_files=0  		" do not limit the number of searchable files
+  au FileType go nmap <leader>r <Plug>(go-run)
+  au FileType go nmap <leader>b <Plug>(go-build)
+  au FileType go nmap <leader>t <Plug>(go-test)
+  au FileType go nmap <leader>c <Plug>(go-coverage)
+  au FileType go nmap <Leader>ds <Plug>(go-def-split)
+  au FileType go nmap <Leader>dv <Plug>(go-def-vertical)
+  au FileType go nmap <Leader>dt <Plug>(go-def-tab)
+  au FileType go nmap <Leader>gd <Plug>(go-doc)
+  au FileType go nmap <Leader>gv <Plug>(go-doc-vertical)
+  au FileType go nmap <Leader>gb <Plug>(go-doc-browser)
+  au FileType go nmap <Leader>s <Plug>(go-implements)
+  au FileType go nmap <Leader>i <Plug>(go-info)
+  au FileType go nmap <Leader>e <Plug>(go-rename)
+" }
 
-" ==================== Vim Golang =====================
-let g:go_fmt_command = "goimports"
-let g:go_highlight_functions = 1
-let g:go_highlight_methods = 1
-let g:go_highlight_structs = 1
-let g:go_highlight_operators = 1
-let g:go_highlight_build_constraints = 1
+" identline {
+  " Don't show identation levels for json files as there is a bug
+  let g:indentLine_fileTypeExclude = ['json']
+" }
 
-au FileType go nmap <leader>r <Plug>(go-run)
-au FileType go nmap <leader>b <Plug>(go-build)
-au FileType go nmap <leader>t <Plug>(go-test)
-au FileType go nmap <leader>c <Plug>(go-coverage)
-au FileType go nmap <Leader>ds <Plug>(go-def-split)
-au FileType go nmap <Leader>dv <Plug>(go-def-vertical)
-au FileType go nmap <Leader>dt <Plug>(go-def-tab)
-au FileType go nmap <Leader>gd <Plug>(go-doc)
-au FileType go nmap <Leader>gv <Plug>(go-doc-vertical)
-au FileType go nmap <Leader>gb <Plug>(go-doc-browser)
-au FileType go nmap <Leader>s <Plug>(go-implements)
-au FileType go nmap <Leader>i <Plug>(go-info)
-au FileType go nmap <Leader>e <Plug>(go-rename)
+" tcomment {
+  " Turn off leader key shortcuts
+  let g:tcommentMapLeader2 = ''
+" }
 
-" ==================== identline ==================== 
-" Don't show identation levels for json files as there is a bug
-let g:indentLine_fileTypeExclude = ['json']
-
-" ==================== tcomment ====================
-" Turn off leader key shortcuts
-let g:tcommentMapLeader2 = ''
-
-" ==================== surround ====================
-let g:surround_indent = 0
+" surround {
+  let g:surround_indent = 0
+" }
