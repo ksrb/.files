@@ -9,7 +9,14 @@ shared_configs_dir="$configs_dir/shared"
 shared_ignores+=($ignore)
 
 mac_configs_dir="$configs_dir/mac"
-mac_configs_ignore+=($ignore Karabiner vimrc.bundles.oss defaults.sh override.sh)
+mac_configs_ignore+=(
+  $ignore 
+  Karabiner 
+  vimrc.bundles.oss 
+  tmux.conf.oss 
+  defaults.sh 
+  override.sh
+)
 
 windows_configs_dir="$configs_dir/windows"
 
