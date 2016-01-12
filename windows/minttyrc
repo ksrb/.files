@@ -19,6 +19,7 @@ Term=xterm-256color
 CopyAsRTF=no
 RightClickAction=menu
 FontIsBold=no
+WindowShortcuts=no
 
 # Colors base16-eighties from https://github.com/oumu/mintty-color-schemes/blob/master/base16-default-mod-lighten.minttyrc
 ForegroundColour=208,208,208
