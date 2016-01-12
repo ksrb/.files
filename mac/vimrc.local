@@ -1,24 +1,33 @@
-" Show divider at column 80
-set colorcolumn=80
+" General {
+  " Show divider at column 80
+  set colorcolumn=80
 
-" Hotkey to redraw/refresh screen
-nnoremap <F5> :redraw!<CR>
+  " Show relative numbers to the cursor
+  set relativenumber 
+" }
 
-" Show relative numbers to the cursor
-set relativenumber 
+" Overrides {
 
-" ==================== Overrides ================
-" Restore tab 
-noremap <tab> <tab>
+  " Bindings {
 
-" Restore enter
-"map <CR> <CR>
+    " Hotkey to redraw/refresh screen
+    nnoremap <F5> :redraw!<CR>
 
-" Restore normal mode space
-" nnoremap <space> <space>
+    " Restore tab 
+    noremap <tab> <tab>
 
-" Change ultisnip trigger to Ctrl-Space
-let g:UltiSnipsExpandTrigger="<C-space>"
+    " Restore enter
+    "map <CR> <CR>
 
-" Strip Trailing Whitespace & turn off hightlight
-nnoremap <Leader>kw :%s/\s\+$//e<CR>:noh<CR>
+    " Restore normal mode space
+    " nnoremap <space> <space>
+  " }
+
+  " Change ultisnip trigger to Ctrl-Space
+  let g:UltiSnipsExpandTrigger="<C-space>"
+
+  " Strip Trailing Whitespace & turn off hightlight
+  nnoremap <Leader>kw :%s/\s\+$//e<CR>:noh<CR>
+" }
+
+
