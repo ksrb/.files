@@ -1,0 +1,21 @@
+# Set tmux current path see http://stackoverflow.com/a/26840429
+set-environment -g CHERE_INVOKING 1
+
+# Bindings {
+  # copy mode
+  unbind p
+  bind p run "cat /dev/clipboard | tmux load-buffer - ; tmux paste-buffer"
+  bind -t vi-copy 'v' begin-selection
+  bind -t vi-copy 'r' rectangle-toggle
+  bind -t vi-copy 'y' copy-pipe "cat > /dev/clipboard"
+  unbind -t vi-copy Enter
+  bind -t vi-copy Enter copy-pipe "cat > /dev/clipboard"
+
+  # use regular ctrl+hjkl to switch between tmux and vim panes
+  # Requires vim to respond to ctrl+hjkl in a certain way:
+  # https://github.com/aaronjensen/vimfiles/blob/4299d9341ccc52443239bebff2111abe9989565e/vimrc#L468-L500
+  bind -n ^H run "(tmux display-message -p '#{pane_current_command}' | grep -iq vim && tmux send-keys ^H) || tmux select-pane -L"
+  bind -n ^J run "(tmux display-message -p '#{pane_current_command}' | grep -iq vim && tmux send-keys ^J) || tmux select-pane -D"
+  bind -n ^K run "(tmux display-message -p '#{pane_current_command}' | grep -iq vim && tmux send-keys ^K) || tmux select-pane -U"
+  bind -n ^L run "(tmux display-message -p '#{pane_current_command}' | grep -iq vim && tmux send-keys ^L) || tmux select-pane -R"
+# }

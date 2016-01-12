@@ -83,8 +83,13 @@ source "$ZSH"/oh-my-zsh.sh
 # OS specific settings
 source "$HOME/.zshrc.oss"
 
-# Unalias git branch
-unalias gb
+# General {
+  ## Disable ctrl-s and ctrl-q http://unix.stackexchange.com/a/72092
+  stty -ixon
+
+  # Unalias git branch
+  unalias gb
+# }
 
 # Docker {
   if [[ $(docker-machine status default) != "Stopped" ]]; then
