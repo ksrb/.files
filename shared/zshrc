@@ -1,5 +1,5 @@
 # Path to your oh-my-zsh installation.
-export ZSH="$HOME/oh-my-zsh"
+export ZSH="$HOME/.oh-my-zsh"
 
 # Set name of the theme to load.
 # Look in ~/.oh-my-zsh/themes/
@@ -81,7 +81,7 @@ source "$ZSH"/oh-my-zsh.sh
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
 # OS specific settings
-source "$HOME/.zshrc.oss"
+[[ -s "$HOME/.zshrc.oss" ]] && source "$HOME/.zshrc.oss"
 
 # General {
     ## Disable ctrl-s and ctrl-q http://unix.stackexchange.com/a/72092
@@ -119,5 +119,5 @@ source "$HOME/.zshrc.oss"
     compctl -W $HOME/Documents/programming/ -/ prog
 
     # Base16 Shell
-    [[ -s "$HOME/.notes/base16-eighties.dark.sh" ]] && source "$HOME/.notes/base16-eighties.dark.sh"
+    [[ -s "$HOME/.files/config/base16-eighties.dark.sh" ]] && source "$HOME/.files/config/base16-eighties.dark.sh"
 # }
