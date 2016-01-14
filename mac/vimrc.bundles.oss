@@ -6,37 +6,37 @@ Plug 'xolox/vim-misc'
 Plug 'xolox/vim-easytags'
 
 " Ultisnips {
-  " Change ultisnip trigger to Ctrl-Space
-  let g:UltiSnipsExpandTrigger="<C-space>"
+    " Change ultisnip trigger to Ctrl-Space
+    let g:UltiSnipsExpandTrigger="<C-space>"
 " }
 
 " easytag {
   " Use jsctags for javascript ctag generation
   let g:easytags_languages = {
-              \   'javascript': {
-              \       'cmd': 'jsctags',
-              \       'args': [],
-              \       'fileoutput_opt': '-f',
-              \       'stdout_opt': '-f-',
-              \       'recurse_flag': '-R'
-              \   }
-              \}
+                \   'javascript': {
+                \       'cmd': 'jsctags',
+                \       'args': [],
+                \       'fileoutput_opt': '-f',
+                \       'stdout_opt': '-f-',
+                \       'recurse_flag': '-R'
+                \   }
+                \}
 
-  let g:easytags_async = 1
+    let g:easytags_async = 1
 
-  " Stop easy tags from generating tags for dotfiles
-  autocmd BufReadPost .* let b:easytags_auto_update = 0
+    " Stop easy tags from generating tags for dotfiles
+    autocmd BufReadPost .* let b:easytags_auto_update = 0
 " }
 
 " CtrlP {
-  " Use The Silver Searcher https://github.com/ggreer/the_silver_searcher
-  if executable('ag')
-    " Use Ag over Grep
-    set grepprg=ag\ --nogroup\ --nocolor
-    " Use ag in CtrlP for listing files. Lightning fast and respects .gitignore
-    let g:ctrlp_user_command = 'ag %s -l --nocolor --hidden -g ""'
-    " ag is fast enough that CtrlP doesn't need to cache
-    let g:ctrlp_use_caching = 0
-  endif
+    " Use The Silver Searcher https://github.com/ggreer/the_silver_searcher
+    if executable('ag')
+      " Use Ag over Grep
+      set grepprg=ag\ --nogroup\ --nocolor
+      " Use ag in CtrlP for listing files. Lightning fast and respects .gitignore
+      let g:ctrlp_user_command = 'ag %s -l --nocolor --hidden -g ""'
+      " ag is fast enough that CtrlP doesn't need to cache
+      let g:ctrlp_use_caching = 0
+    endif
 " }
 

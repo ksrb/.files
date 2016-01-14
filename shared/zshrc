@@ -84,40 +84,40 @@ source "$ZSH"/oh-my-zsh.sh
 source "$HOME/.zshrc.oss"
 
 # General {
-  ## Disable ctrl-s and ctrl-q http://unix.stackexchange.com/a/72092
-  stty -ixon
+    ## Disable ctrl-s and ctrl-q http://unix.stackexchange.com/a/72092
+    stty -ixon
 
-  # Unalias git branch
-  unalias gb
+    # Unalias git branch
+    unalias gb
 # }
 
 # Docker {
-  if [[ $(docker-machine status default) != "Stopped" ]]; then
-    # Docker machine default variables
-    eval $(docker-machine env default)
-  fi
+    if [[ $(docker-machine status default) != "Stopped" ]]; then
+      # Docker machine default variables
+      eval $(docker-machine env default)
+    fi
 
-  ## Docker machine set env
-  dm-set-env (){
-    if [[ -z "$1" ]]; then
-      eval "$(docker-machine env default)"
-    fi
-    if [[ -n "$1" ]]; then
-      eval "$(docker-machine env "$1")"
-    fi
-  }
+    ## Docker machine set env
+    dm-set-env (){
+      if [[ -z "$1" ]]; then
+        eval "$(docker-machine env default)"
+      fi
+      if [[ -n "$1" ]]; then
+        eval "$(docker-machine env "$1")"
+      fi
+    }
 # }
 
 # Misc {
-  # Add relative bin to PATH
-  export PATH=$PATH:./bin
-  # Add relative node_modules/.bin to PATH
-  export PATH=$PATH:./node_modules/.bin
+    # Add relative bin to PATH
+    export PATH=$PATH:./bin
+    # Add relative node_modules/.bin to PATH
+    export PATH=$PATH:./node_modules/.bin
 
-  ## Directory shortcuts
-  prog (){ cd ~/Documents/Programming/$1; }
-  compctl -W $HOME/Documents/programming/ -/ prog
+    ## Directory shortcuts
+    prog (){ cd ~/Documents/Programming/$1; }
+    compctl -W $HOME/Documents/programming/ -/ prog
 
-  # Base16 Shell
-  [[ -s "$HOME/.notes/base16-eighties.dark.sh" ]] && source "$HOME/.notes/base16-eighties.dark.sh"
+    # Base16 Shell
+    [[ -s "$HOME/.notes/base16-eighties.dark.sh" ]] && source "$HOME/.notes/base16-eighties.dark.sh"
 # }

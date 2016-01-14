@@ -101,8 +101,8 @@ set wildignore+=*.orig                           " Merge resolution files
 " the very bottom (see :help :wincmd and :help ^WJ).
 autocmd FileType qf wincmd J
 
-" Strip Trailing Whitespace
-nnoremap <Leader>kw :%s/\s\+$//e<CR>
+" Strip Trailing Whitespace & turn off hightlighting
+nnoremap <Leader>kw :%s/\s\+$//e<CR>:noh<CR>
 
 "Dont show me any output when I build something
 "Because I am using quickfix for errors

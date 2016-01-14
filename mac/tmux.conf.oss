@@ -3,10 +3,10 @@
 set-option -g default-command "reattach-to-user-namespace -l zsh"
 
 # Bindings {
-  # copy mode
-  unbind p
-  bind p paste-buffer
-  bind -t vi-copy 'v' begin-selection
-  bind -t vi-copy 'r' rectangle-toggle
-  bind -t vi-copy 'y' copy-pipe "reattach-to-user-namespace pbcopy"
+    # copy mode
+    unbind p
+    bind p paste-buffer
+    bind -t vi-copy 'v' begin-selection
+    bind -t vi-copy 'r' rectangle-toggle
+    bind -t vi-copy 'y' copy-pipe "reattach-to-user-namespace pbcopy"
 # }

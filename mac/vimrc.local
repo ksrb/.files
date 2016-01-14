@@ -1,9 +1,9 @@
 " General {
-  " Show divider at column 80
-  set colorcolumn=80
+    " Show divider at column 80
+    set colorcolumn=80
 
-  " Show relative numbers to the cursor
-  set relativenumber 
+    " Show relative numbers to the cursor
+    set relativenumber 
 " }
 
 " Overrides {
@@ -26,7 +26,7 @@
   " Change ultisnip trigger to Ctrl-Space
   let g:UltiSnipsExpandTrigger="<C-space>"
 
-  " Strip Trailing Whitespace & turn off hightlight
+  " Strip Trailing Whitespace & turn off hightlighting
   nnoremap <Leader>kw :%s/\s\+$//e<CR>:noh<CR>
 " }
 
