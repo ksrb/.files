@@ -47,10 +47,14 @@ docker-machine ssh default
 * Docker machine not failing to create machine
 	* Uninstall virtualbox and remove ~/.VirtualBox folder and then reinstall
 
-##Node-gyp
-* Install python 2.7 from [online](https://www.python.org/downloads/)
-* Install [Microsoft Visual C++ Build Tools 2015 Technical Preview](http://www.microsoft.com/en-us/download/details.aspx?id=49983)
-* npm config set msvs_version 2015 --global
-* npm config set python python2.7
-* Remove cygwin64/bin from windows environment variables
-* Additional information [here](https://github.com/nodejs/node-gyp/issues/629#issuecomment-153196245)
+##[Node-gyp](https://github.com/nodejs/node-gyp)
+Node-gyp is a native build tool but has a extensive installation process for windows:
+	* Install python 2.7 from [online](https://www.python.org/downloads/)
+	* Install [Microsoft Visual C++ Build Tools 2015 Technical Preview](http://www.microsoft.com/en-us/download/details.aspx?id=49983)
+	* npm config set msvs_version 2015 --global
+	* npm config set python python2.7
+	* Remove cygwin64/bin from windows environment variables
+	* Additional information [here](https://github.com/nodejs/node-gyp/issues/629#issuecomment-153196245)
+
+Install dependencies that require node-gyp using cmd
+
