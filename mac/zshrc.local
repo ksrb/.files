@@ -5,15 +5,6 @@
     # Directory shortcuts
     prog (){ cd ~/Documents/Programming/$1 }
     compctl -W $HOME/Documents/Programming/ -/ prog
-
-    # Init docker env variables
-    # dm-init comes from ~/.zshrc.extras
-    dm-init default
 # }
 
-# Docker {
-    export DOCKER_TLS_VERIFY="1"
-    export DOCKER_HOST="tcp://192.168.99.100:2376"
-    export DOCKER_CERT_PATH="/Users/ksuen/.docker/machine/machines/default"
-    export DOCKER_MACHINE_NAME="default"
-# }
+
