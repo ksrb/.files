@@ -5,7 +5,7 @@
 	* ncures - for [clear](http://stackoverflow.com/a/11249071)
 	* python - Ultisnips dependency
 	* curl
-	* git - [msysgit](https://git-for-windows.github.io/) has some compatibility issues cygwin
+	* git
 	* vim
 	* emacs
 	* make - git-extras dependency
@@ -28,15 +28,30 @@
 * Plugins that work with some hacks
 	* [vim-plug](https://github.com/junegunn/vim-plug)
 		* PlugInstall works however PlugUpdate doesn't simply remove the ~/.vim/plugged folder and rerun PlugInstall
-```
+```bash
 	rm -r ~/.vimr/plugged
 	vim -c PlugInstall
 ```
-	* [tagbar](https://github.com/majutsushi/tagbar) 
+	* [tagbar](https://github.com/majutsushi/tagbar)
 		* [From Windows cmd run](https://github.com/majutsushi/tagbar/issues/260#issuecomment-135898610)
 ```cmd
 mklink /j c:\tmp c:\cygwin64\tmp
 ```
+
+##Git
+
+###Gitk and Git Gui
+* Options 1 - install cygwin X11 packages and server see this [link](http://stackoverflow.com/questions/9393462/cannot-launch-git-gui-using-cygwin-on-windows/9418800#9418800)
+* Options 2 - use [MsysGit](https://git-for-windows.github.io/)
+	* Committing shows
+```bash
+Vim: Warning: Output is not to a terminal
+Vim: Warning: Input is not from a terminal
+```
+Set path to cygwin git as the first path in PATH (see zshrc.oss)
+	* Gitk showing incorrect diff
+Set MsysGit as the first path in PATH (see zshrc.oss)
+
 
 ##Docker
 * Cannot enable tty mode on non tty input
@@ -49,12 +64,11 @@ docker-machine ssh default
 
 ##[Node-gyp](https://github.com/nodejs/node-gyp)
 Node-gyp is a native build tool but has a extensive installation process for windows:
+	* Remove cygwin64/bin from windows environment variables
 	* Install python 2.7 from [online](https://www.python.org/downloads/)
 	* Install [Microsoft Visual C++ Build Tools 2015 Technical Preview](http://www.microsoft.com/en-us/download/details.aspx?id=49983)
 	* npm config set msvs_version 2015 --global
 	* npm config set python python2.7
-	* Remove cygwin64/bin from windows environment variables
 	* Additional information [here](https://github.com/nodejs/node-gyp/issues/629#issuecomment-153196245)
 
 Install dependencies that require node-gyp using cmd
-
