@@ -20,6 +20,9 @@ Plug 'tpope/vim-fugitive'
 Plug 'airblade/vim-gitgutter'
 
 " Source Utils
+if !has("win32unix") " if not cygwin
+  Plug 'Valloric/YouCompleteMe'
+endif
 Plug 'SirVer/ultisnips'
 Plug 'ksrb/vim-react-es6-snippets'
 Plug 'marijnh/tern_for_vim', { 'do' : 'npm install' }

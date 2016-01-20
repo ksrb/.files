@@ -1,6 +1,13 @@
 " UltiSnips {
-    " This is the equivalant of <C-Space> in mintty
-    " See https://groups.google.com/forum/#!topic/mintty-discuss/tPsV-iPnO4k
-    let g:UltiSnipsExpandTrigger="<C-@>"
-" }
+    " if windows
+    if has("win32")
+      " This is the equivalant of <C-Space> in mintty
+      " See https://groups.google.com/forum/#!topic/mintty-discuss/tPsV-iPnO4k
+      let g:UltiSnipsExpandTrigger="<C-Space>"
+    endif
 
+    " if cygwin
+    if has("win32unix")
+      let g:UltiSnipsExpandTrigger="<C-@>"
+    endif
+" }

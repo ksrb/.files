@@ -30,7 +30,9 @@ set showcmd       " display incomplete commands
 set incsearch     " do incremental searching
 set laststatus=2  " Always display the status line
 set autowrite     " Automatically :write before running commands
-set term=xterm-256color
+if !has("win32")  " if not windows
+  set term=xterm-256color
+endif
 set mouse=a       " Enable mouse use in all modes
 set number        " Show line numbers
 set showmode      " Show the current mode
@@ -152,6 +154,11 @@ if filereadable(expand("~/.vimrc.bundles"))
 endif
 
 " Local config
-if filereadable($HOME . "/.vimrc.local")
+if filereadable(expand("/.vimrc.local"))
   source ~/.vimrc.local
+endif
+
+" OS specific config
+if filereadable(expand("~/.vimrc.oss"))
+  source ~/.vimrc.oss
 endif
