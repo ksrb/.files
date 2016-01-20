@@ -80,14 +80,11 @@ source "$ZSH"/oh-my-zsh.sh
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
-# OS specific settings
-[[ -s "$HOME/.zshrc.oss" ]] && source "$HOME/.zshrc.oss"
-
 # General {
     ## Disable ctrl-s and ctrl-q http://unix.stackexchange.com/a/72092
     stty -ixon
 
-    # Unalias git branch
+    # Unalias git branch alias from git zsh git plugin
     unalias gb
 # }
 
@@ -121,3 +118,9 @@ source "$ZSH"/oh-my-zsh.sh
     # Base16 Shell
     [[ -s "$HOME/.files/config/base16-eighties.dark.sh" ]] && source "$HOME/.files/config/base16-eighties.dark.sh"
 # }
+
+# Local settings
+[[ -s "$HOME/.zshrc.local" ]] && source "$HOME/.zshrc.local"
+
+# OS specific settings
+[[ -s "$HOME/.zshrc.oss" ]] && source "$HOME/.zshrc.oss"

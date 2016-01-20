@@ -34,23 +34,7 @@ Plug 'tpope/vim-repeat'
 Plug 'tpope/vim-surround'
 Plug 'tomtom/tcomment_vim'
 
-" OS Specific settings
-if filereadable(expand("~/.vimrc.bundles.oss"))
-  source ~/.vimrc.bundles.oss
-endif
-
-if filereadable(expand("~/.vimrc.bundles.local"))
-  source ~/.vimrc.bundles.local
-endif
-
-call plug#end()
-
 filetype plugin indent on
-
-" Color Schema {
-    let base16colorspace=256
-    colorscheme base16-eighties
-" }
 
 " Indent Guides {
     set ts=2 sw=2 et
@@ -125,4 +109,21 @@ filetype plugin indent on
 
 " surround {
     let g:surround_indent = 0
+" }
+
+" Local settings
+if filereadable(expand("~/.vimrc.bundles.local"))
+  source ~/.vimrc.bundles.local
+endif
+
+" OS Specific settings
+if filereadable(expand("~/.vimrc.bundles.oss"))
+  source ~/.vimrc.bundles.oss
+endif
+
+call plug#end()
+
+" Color Schema {
+    let base16colorspace=256
+    colorscheme base16-eighties
 " }
