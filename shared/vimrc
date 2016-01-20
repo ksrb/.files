@@ -12,7 +12,12 @@ set secure          " disable unsafe commands in local .vimrc files
 
 " set font
 if has('gui_running')
-  set guifont=Sauce\ Code\ Powerline:h12
+  set guioptions -=m "Hide menubar
+  set guioptions -=T "Hide toolbar
+
+  if has('win32')
+    set guifont=Consolas:h10
+  endif
 endif
 
 " Color Theme
