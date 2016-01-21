@@ -20,6 +20,4 @@ home directory e.g.:
 The script will first remove conflicting symlinks and add its own
 
 ##TODO##
-* Shared basis for dotfiles (currently all files are either mac or windows specific)
-* Linker script not implemented from windows dotfiles
 * No Linux dotfiles

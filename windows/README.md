@@ -38,6 +38,13 @@
 mklink /j c:\tmp c:\cygwin64\tmp
 ```
 
+##Windows GVim
+* [YouCompleteMe](https://github.com/Valloric/YouCompleteMe)
+	* Can be compiled and work on windows using the instruction in the
+	  [README](https://github.com/Valloric/YouCompleteMe#windows-installation)
+	* Python 2.7.9 is
+	  [suggested](http://stackoverflow.com/questions/32025090/vim-for-windows-python-doesnt-load-properly-crashes)
+
 ##Git
 
 ###Gitk and Git Gui
