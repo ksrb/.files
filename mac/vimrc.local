@@ -3,31 +3,44 @@
     set colorcolumn=80
 
     " Show relative numbers to the cursor
-    set relativenumber 
+    set relativenumber
 " }
 
-" Overrides {
 
-  " Bindings {
-
+" Bindings {
     " Hotkey to redraw/refresh screen
     nnoremap <F5> :redraw!<CR>
 
-    " Restore tab 
-    noremap <tab> <tab>
+    " Center screen after search
+    nnoremap n nzz
+    nnoremap N Nzz
+    nnoremap * *zz
+    nnoremap # #zz
+    nnoremap g* g*zz
+    nnoremap g# g#zz
 
-    " Restore enter
-    "map <CR> <CR>
+    " Overrides {
+      " Restore tab
+      noremap <tab> <tab>
 
-    " Restore normal mode space
-    " nnoremap <space> <space>
-  " }
+      " Disable F1
+      " http://vim.wikia.com/wiki/Disable_F1_built-in_help_key
+      map <F1> <nop>
 
-  " Change ultisnip trigger to Ctrl-Space
-  let g:UltiSnipsExpandTrigger="<C-space>"
+      " Change ultisnip trigger to Ctrl-Space
+      let g:UltiSnipsExpandTrigger="<C-space>"
 
-  " Strip Trailing Whitespace & turn off hightlighting
-  nnoremap <Leader>kw :%s/\s\+$//e<CR>:noh<CR>
+      " Strip Trailing Whitespace & turn off hightlighting
+      nnoremap <Leader>kw :%s/\s\+$//e<CR>:noh<CR>
+
+      " Restore normal mode space
+      " nnoremap <space> <space>
+
+      " Restore enter
+      " http://stackoverflow.com/questions/3935970/vim-how-to-map-ctrl-m-without-affecting-return-keypress-as-well
+      "map <CR> <CR>
+    " }
 " }
+
 
 

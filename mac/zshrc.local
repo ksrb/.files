@@ -1,4 +1,7 @@
 # General {
+    # Add node_modules/.bin to path
+    export PATH=./node_modules/.bin:$PATH
+
     # Disable ctrl-s and ctrl-q http://unix.stackexchange.com/a/72092
     stty -ixon
 
@@ -6,5 +9,3 @@
     prog (){ cd ~/Documents/Programming/$1 }
     compctl -W $HOME/Documents/Programming/ -/ prog
 # }
-
-
