@@ -21,7 +21,7 @@ Plug 'airblade/vim-gitgutter'
 
 " Source Utils
 if !has("win32unix") " if not cygwin
-  Plug 'Valloric/YouCompleteMe'
+  Plug 'Valloric/YouCompleteMe', { 'do': './install.py --gocode-completer --clang-completer' }
 endif
 Plug 'SirVer/ultisnips'
 Plug 'ksrb/vim-react-es6-snippets'
