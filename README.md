@@ -20,4 +20,4 @@ home directory e.g.:
 The script will first remove conflicting symlinks and add its own
 
 ##TODO##
-* No Linux dotfiles
+* Linux dotfiles
