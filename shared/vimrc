@@ -1,157 +1,122 @@
-" Use Vim settings, rather then Vi settings. This setting must be as early as
-" possible, as it has side effects.
-set nocompatible
+" Settings {
+  set nocompatible                   " Use Vim settings, over Vi settings, has side effects must be set as early as possible
 
-autocmd BufWritePost .vimrc source %
+  if has('gui_running') "If gvim
+    set guioptions -=m               " Hide menubar
+    set guioptions -=T               " Hide toolbar
 
-let mapleader = ","
-
-" Allow project specific .vimrc
-set exrc            " enable per-directory .vimrc files
-set secure          " disable unsafe commands in local .vimrc files
-
-" set font
-if has('gui_running')
-  set guioptions -=m "Hide menubar
-  set guioptions -=T "Hide toolbar
-
-  if has('win32')
-    set guifont=Consolas:h10
+    if has('win32') " If windows
+      set guifont=Consolas:h10       " Set font
+    endif
   endif
-endif
 
-" Color Theme
-set background=dark
+  if !has("win32") " If not windows
+    set term=xterm-256color          " Terminal color
+  endif
 
-syntax on
-set iminsert=0    " Disable capslock"
-set backspace=2   " Backspace deletes like most programs in insert mode
-set nobackup
-set nowritebackup
-set noswapfile    " http://robots.thoughtbot.com/post/18739402579/global-gitignore#comment-458413287
-set history=50
-set ruler         " show the cursor position all the time
-set showcmd       " display incomplete commands
-set incsearch     " do incremental searching
-set laststatus=2  " Always display the status line
-set autowrite     " Automatically :write before running commands
-if !has("win32")  " if not windows
-  set term=xterm-256color
-endif
-set mouse=a       " Enable mouse use in all modes
-set number        " Show line numbers
-set showmode      " Show the current mode
-set tabstop=2     " Softtabs, 2 spaces
-set shiftwidth=2
-set shiftround
-set expandtab
-set nowrap
-set splitbelow " pen new split panes to right and bottom, which feels more natural
-set splitright
-set nocursorcolumn   " speed up syntax highlighting
-set nocursorline
-syntax sync minlines=256
-set synmaxcol=150
-set re=1
-set incsearch                   " Shows the match while typing
-set hlsearch                    " Highlight found searches
-set ttyfast
-set timeoutlen=1000 ttimeoutlen=0
-set completeopt=menu
-set relativenumber
-set colorcolumn=80
+  set background=dark                " Color Theme
+  set exrc                           " Allow project specific vimrc
+  set secure                         " Disable unsafe commands in local .vimrc files
+  set iminsert=0                     " Disable capslock"
+  set backspace=2                    " Backspace deletes like most programs in insert mode
+  set nobackup
+  set nowritebackup
+  set noswapfile                     " http://robots.thoughtbot.com/post/18739402579/global-gitignore#comment-458413287
+  set history=50
+  set ruler                          " Show the cursor position all the time
+  set showcmd                        " Display incomplete commands
+  set incsearch                      " Do incremental searching
+  set laststatus=2                   " Always display the status line
+  set autowrite                      " Automatically :write before running commands
+  set mouse=a                        " Enable mouse use in all modes
+  set number                         " Show line numbers
+  set showmode                       " Show the current mode
+  set tabstop=2                      " Softtabs, 2 spaces
+  set shiftwidth=2
+  set shiftround
+  set expandtab
+  set nowrap
+  set splitbelow                     " Pen new split panes to right and bottom, which feels more natural
+  set splitright
+  set nocursorcolumn                 " Speed up syntax highlighting
+  set nocursorline
+  syntax sync minlines=256
+  set synmaxcol=150
+  set re=1
+  set incsearch                      " Shows the match while typing
+  set hlsearch                       " Highlight found searches
+  set ttyfast
+  set timeoutlen=1000 ttimeoutlen=0
+  set completeopt=menu
+  set relativenumber
+  set colorcolumn=80
+" }
 
-" ----------------------------------------- "
-" File Type settings              "
-" ----------------------------------------- "
-"
-" Hard code tabs in Makefiles
-au FileType make setlocal noexpandtab
+" Wildmenu settings {
+  set wildmenu
+  set wildmode=list:longest
+  set wildmode=list:full
+  set wildignore+=*.hg,*.git,*.svn                 " Version control
+  set wildignore+=*.aux,*.out,*.toc                " LaTeX intermediate files
+  set wildignore+=*.jpg,*.bmp,*.gif,*.png,*.jpeg   " Binary images
+  set wildignore+=*.o,*.obj,*.exe,*.dll,*.manifest " compiled object files
+  set wildignore+=*.spl                            " compiled spelling word lists
+  set wildignore+=*.sw?                            " Vim swap files
+  set wildignore+=*.DS_Store                       " OSX bullshit
+  set wildignore+=*.luac                           " Lua byte code
+  set wildignore+=migrations                       " Django migrations
+  set wildignore+=go/pkg                           " Go static files
+  set wildignore+=go/bin                           " Go bin files
+  set wildignore+=go/bin-vagrant                   " Go bin-vagrant files
+  set wildignore+=*.pyc                            " Python byte code
+  set wildignore+=*.orig                           " Merge resolution files
+" }
 
-" Spell checking
-au FileType markdown,gitcommit set spell
+" File Type settings {
+  au FileType make setlocal noexpandtab    " Hard code tabs in Makefiles
+  au FileType markdown,gitcommit set spell " Spell checking
 
-au BufNewFile,BufRead *.vim setlocal noet ts=2 sw=2 sts=2
-au BufNewFile,BufRead *.txt setlocal noet ts=2 sw=2
-au BufNewFile,BufRead *.md setlocal noet ts=2 sw=2
+  au BufNewFile,BufRead *.vim setlocal noet ts=2 sw=2 sts=2
+  au BufNewFile,BufRead *.txt setlocal noet ts=2 sw=2
+  au BufNewFile,BufRead *.md setlocal noet ts=2 sw=2
 
-augroup filetypedetect
+  augroup filetypedetect
     au BufNewFile,BufRead *.swift setf swift
     au BufNewFile,BufRead .tmux.conf*,tmux.conf* setf tmux
     au BufNewFile,BufRead .nginx.conf*,nginx.conf* setf nginx
-augroup END
+  augroup END
+" }
 
-" Wildmenu completion {{{
-set wildmenu
-set wildmode=list:longest
-set wildmode=list:full
+" Misc {
+  syntax on                            " Turn on syntax highlighting
+  let mapleader = ","                  " Leader key to ','
+  autocmd BufWritePost .vimrc source % " Autoreload vimrc on change
+  autocmd FileType qf wincmd J         " Move quickfix window to the bottom
 
-set wildignore+=*.hg,*.git,*.svn                    " Version control
-set wildignore+=*.aux,*.out,*.toc                " LaTeX intermediate files
-set wildignore+=*.jpg,*.bmp,*.gif,*.png,*.jpeg   " binary images
-set wildignore+=*.o,*.obj,*.exe,*.dll,*.manifest " compiled object files
-set wildignore+=*.spl                            " compiled spelling word lists
-set wildignore+=*.sw?                            " Vim swap files
-set wildignore+=*.DS_Store                       " OSX bullshit
-set wildignore+=*.luac                           " Lua byte code
-set wildignore+=migrations                       " Django migrations
-set wildignore+=go/pkg                       " Go static files
-set wildignore+=go/bin                       " Go bin files
-set wildignore+=go/bin-vagrant               " Go bin-vagrant files
-set wildignore+=*.pyc                            " Python byte code
-set wildignore+=*.orig                           " Merge resolution files
+  " Prettify json
+  com! JSONFormat %!python -m json.tool
+" }
 
+" Bindings {
+  " Strip Trailing Whitespace & turn off hightlighting
+  nnoremap <Leader>kw :%s/\s\+$//e<CR>:noh<CR>
 
-" This trigger takes advantage of the fact that the quickfix window can be
-" easily distinguished by its file-type, qf. The wincmd J command is
-" equivalent to the Ctrl+W, Shift+J shortcut telling Vim to move a window to
-" the very bottom (see :help :wincmd and :help ^WJ).
-autocmd FileType qf wincmd J
+  " Next error
+  map <C-n> :cn<CR>
+  " Previous error
+  map <C-m> :cp<CR>
 
-" Strip Trailing Whitespace & turn off hightlighting
-nnoremap <Leader>kw :%s/\s\+$//e<CR>:noh<CR>
+  " Remove search highlight
+  nnoremap <leader><space> :nohlsearch<CR>
 
-"Dont show me any output when I build something
-"Because I am using quickfix for errors
-nmap <leader>m :make<CR><enter>
+  " Tab between buffers
+  nnoremap <leader>h :bprev<CR>
+  nnoremap <leader>l :bnext<CR>
+  nnoremap <leader>b :b
 
-" Some useful quickfix shortcuts
-":cc      see the current error
-":cn      next error
-":cp      previous error
-":clist   list all errors
-map <C-n> :cn<CR>
-map <C-m> :cp<CR>
-
-" Close quickfix easily
-nnoremap <leader>a :cclose<CR>
-
-" Remove search highlight
-nnoremap <leader><space> :nohlsearch<CR>
-
-" Center the screen
-" nnoremap <space> zz
-
-" Quicker window movement
-nnoremap <C-j> <C-w>j
-nnoremap <C-k> <C-w>k
-nnoremap <C-h> <C-w>h
-nnoremap <C-l> <C-w>l
-
-" Quick ESC
-" Disabled for now due to project with jj in the name
-" imap jj <ESC>
-
-" Tab between buffers
-nnoremap <leader>h :bprev<CR>
-nnoremap <leader>l :bnext<CR>
-nnoremap <leader>b :b
-
-" Redraw screen
-noremap <F5> :redraw!<CR>
-
-" Prettify json
-com! JSONFormat %!python -m json.tool
+  " Redraw screen
+  noremap <F5> :redraw!<CR>
+" }
 
 " Load plugins
 if filereadable(expand("~/.vimrc.bundles"))
