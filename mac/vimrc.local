@@ -27,8 +27,6 @@
       " http://vim.wikia.com/wiki/Disable_F1_built-in_help_key
       map <F1> <nop>
 
-      " Change ultisnip trigger to Ctrl-Space
-      let g:UltiSnipsExpandTrigger="<C-space>"
 
       " Strip Trailing Whitespace & turn off hightlighting
       nnoremap <Leader>kw :%s/\s\+$//e<CR>:noh<CR>

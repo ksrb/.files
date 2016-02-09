@@ -51,6 +51,9 @@ Plug 'tomtom/tcomment_vim'
   " Ultisnips {
       " Change ultisnip trigger to Ctrl-Space
       let g:UltiSnipsExpandTrigger="<C-space>"
+
+      " Open snippet editing window as vertical split
+      let g:UltiSnipsEditSplit="vertical"
   " }
 
   " CtrlP {
