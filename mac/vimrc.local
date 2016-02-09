@@ -25,11 +25,15 @@
 
       " Disable F1
       " http://vim.wikia.com/wiki/Disable_F1_built-in_help_key
-      map <F1> <nop>
-
+      noremap <F1> <nop>
+      inoremap <F1> <nop>
 
       " Strip Trailing Whitespace & turn off hightlighting
       nnoremap <Leader>kw :%s/\s\+$//e<CR>:noh<CR>
+
+      " Search selected
+      " http://vim.wikia.com/wiki/Search_for_visually_selected_text
+      vnoremap // y/\V<C-R>"<CR>
 
       " Restore normal mode space
       " nnoremap <space> <space>

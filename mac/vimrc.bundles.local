@@ -48,6 +48,9 @@ Plug 'tomtom/tcomment_vim'
 " }
 
 " Overrides {
+  " Nerdtree {
+      let g:NERDTreeShowLineNumbers=1
+  " }
   " Ultisnips {
       " Change ultisnip trigger to Ctrl-Space
       let g:UltiSnipsExpandTrigger="<C-space>"
