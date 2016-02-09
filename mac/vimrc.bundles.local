@@ -20,21 +20,21 @@ Plug 'tomtom/tcomment_vim'
   " }
 
   " easytag {
-    " Use jsctags for javascript ctag generation
-    let g:easytags_languages = {
-                \   'javascript': {
-                \       'cmd': 'jsctags',
-                \       'args': [],
-                \       'fileoutput_opt': '-f',
-                \       'stdout_opt': '-f-',
-                \       'recurse_flag': '-R'
-                \   }
-                \}
+      " Use jsctags for javascript ctag generation
+      let g:easytags_languages = {
+                  \   'javascript': {
+                  \       'cmd': 'jsctags',
+                  \       'args': [],
+                  \       'fileoutput_opt': '-f',
+                  \       'stdout_opt': '-f-',
+                  \       'recurse_flag': '-R'
+                  \   }
+                  \}
 
-    let g:easytags_async = 1
+      let g:easytags_async = 1
 
-    " Stop easy tags from generating tags for dotfiles
-    autocmd BufReadPost .* let b:easytags_auto_update = 0
+      " Stop easy tags from generating tags for dotfiles
+      autocmd BufReadPost .* let b:easytags_auto_update = 0
   " }
 
   " tcomment {
