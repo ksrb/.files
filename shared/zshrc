@@ -46,8 +46,9 @@
     }
 # }
 
+# OS specific settings
+[[ -s "$HOME/.zshrc.oss" ]] && source "$HOME/.zshrc.oss"
+
 # Local settings
 [[ -s "$HOME/.zshrc.local" ]] && source "$HOME/.zshrc.local"
 
-# OS specific settings
-[[ -s "$HOME/.zshrc.oss" ]] && source "$HOME/.zshrc.oss"
