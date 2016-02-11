@@ -4,14 +4,6 @@
   if has('gui_running') "If gvim
     set guioptions -=m               " Hide menubar
     set guioptions -=T               " Hide toolbar
-
-    if has('win32') " If windows
-      set guifont=Consolas:h10       " Set font
-    endif
-  endif
-
-  if !has("win32") " If not windows
-    set term=xterm-256color          " Terminal color
   endif
 
   set background=dark                " Color Theme
@@ -123,12 +115,13 @@ if filereadable(expand("~/.vimrc.bundles"))
   source ~/.vimrc.bundles
 endif
 
+" OS specific config
+if filereadable(expand("~/.vimrc.oss"))
+  source ~/.vimrc.oss
+endif
+
 " Local config
 if filereadable(expand("/.vimrc.local"))
   source ~/.vimrc.local
 endif
 
-" OS specific config
-if filereadable(expand("~/.vimrc.oss"))
-  source ~/.vimrc.oss
-endif
