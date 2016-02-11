@@ -3,14 +3,14 @@
 # cd to the directory that script is being executed and set configs_dir to directory
 configs_dir=$( cd "$(dirname "$0")" ; pwd )
 target="$configs_dir/.."
-ignore=(README.md)
+ignores_global=(README.md)
 
 shared_configs_dir="$configs_dir/shared"
-shared_ignores+=($ignore)
+shared_config_ignores+=($ignores_global)
 
 mac_configs_dir="$configs_dir/mac"
-mac_configs_ignore+=(
-  $ignore 
+mac_configs_ignores+=(
+  $ignores_global 
   Karabiner 
   vimrc.bundles.oss 
   tmux.conf.oss 
@@ -45,11 +45,11 @@ ignored() {
 
 linkFiles(){
   local configs_dir="$1"
-  local shared_ignores_local="$2"
+  local ignores_local="$2"
   # For each file in the configs_dir
   for file in $(ls "${configs_dir}"); do
     # Check if the file is in list of ignores
-    ignored "$file" "$shared_ignores_local"
+    ignored "$file" "$ignores_local"
 
     # If the file is ignored 
     # Note: ($? gets the exit status of the previous command)
@@ -95,12 +95,12 @@ EOF
 process(){
   case "$1" in
     "ls")
-      linkFiles "$shared_configs_dir" "shared_ignores";;
+      linkFiles "$shared_configs_dir" "shared_config_ignores";;
     "lm")
-      linkFiles "$mac_configs_dir" "mac_configs_ignore"
+      linkFiles "$mac_configs_dir" "mac_configs_ignores"
       linkKarabiner;;
     "lw")
-      linkFiles "$windows_configs_dir" "ignore";;
+      linkFiles "$windows_configs_dir" "ignores_global";;
     "clean")
       clean;;
     "help")
