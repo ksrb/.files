@@ -70,12 +70,18 @@ linkFiles(){
   done
 }
 
-linkKarabiner(){
-  local karabiner_config_file="$mac_configs_dir/Karabiner/private.xml"
-  local karabiner_target_file="$target/Library/Application Support/Karabiner/private.xml"
-  printf "$karabiner_config_file => $karabiner_target_file\n"
-  rm "$karabiner_target_file"
-  ln -s "$karabiner_config_file" "$karabiner_target_file"
+linkFile(){
+  local src="$1"
+  local dest="$2"
+  printf "$src => $dest"
+  if [[ -L "$dest" ]]; then
+    rm "$dest"
+  fi
+  ln -s "$src" "$dest"
+}
+
+linkMacFiles() {
+  linkFile "$mac_configs_dir/Karabiner/private.xml" "$target/Library/Application Support/Karabiner/private.xml"
 }
 
 clean(){
@@ -98,7 +104,7 @@ process(){
       linkFiles "$shared_configs_dir" "shared_config_ignores";;
     "lm")
       linkFiles "$mac_configs_dir" "mac_configs_ignores"
-      linkKarabiner;;
+      linkMacFiles;;
     "lw")
       linkFiles "$windows_configs_dir" "ignores_global";;
     "clean")
