@@ -82,6 +82,7 @@ linkFile(){
 
 linkMacFiles() {
   linkFile "$mac_configs_dir/Karabiner/private.xml" "$target/Library/Application Support/Karabiner/private.xml"
+  linkFile "$shared_configs_dir/ideavimrc" "$target/.ideavimrc"
 }
 
 clean(){
