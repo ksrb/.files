@@ -1,3 +1,10 @@
-set surround
-set hlsearch
-set rnu
+set surround        " vim-surround emulation
+set hlsearch        " Progressive highlighting while searching
+set relativenumber  
+set number          "Absolute line number at cursor
+
+" Ctrl + hjkl to switch splits
+nnoremap <C-j> <C-w>j
+nnoremap <C-k> <C-w>k
+nnoremap <C-h> <C-w>h
+nnoremap <C-l> <C-w>l
