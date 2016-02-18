@@ -13,38 +13,43 @@ Plug 'tpope/vim-repeat'
 Plug 'tpope/vim-surround'
 Plug 'tomtom/tcomment_vim'
 
-" Plugin settings {
-  " identline {
-      " Don't show identation levels for json files as there is a bug
-      let g:indentLine_fileTypeExclude = ['json']
-  " }
+" identline {
+    " Don't show identation levels for json files as there is a bug
+    let g:indentLine_fileTypeExclude = ['json']
+" }
 
-  " easytag {
-      " Use jsctags for javascript ctag generation
-      let g:easytags_languages = {
-                  \   'javascript': {
-                  \       'cmd': 'jsctags',
-                  \       'args': [],
-                  \       'fileoutput_opt': '-f',
-                  \       'stdout_opt': '-f-',
-                  \       'recurse_flag': '-R'
-                  \   }
-                  \}
+" easytag {
+    " Use jsctags for javascript ctag generation
+    let g:easytags_languages = {
+                \   'javascript': {
+                \       'cmd': 'jsctags',
+                \       'args': [],
+                \       'fileoutput_opt': '-f',
+                \       'stdout_opt': '-f-',
+                \       'recurse_flag': '-R'
+                \   }
+                \}
 
-      let g:easytags_async = 1
+    let g:easytags_async = 1
 
-      " Stop easy tags from generating tags for dotfiles
-      autocmd BufReadPost .* let b:easytags_auto_update = 0
-  " }
+    " Stop easy tags from generating tags for dotfiles
+    autocmd BufReadPost .* let b:easytags_auto_update = 0
+" }
 
-  " tcomment {
-      " Turn off leader key shortcuts
-      let g:tcommentMapLeader2 = ''
-  " }
+" tcomment {
+    " Turn off leader key shortcuts
+    let g:tcommentMapLeader2 = ''
+" }
 
-  " surround {
-      let g:surround_indent = 0
-  " }
+" surround {
+    let g:surround_indent = 0
+" }
+
+" vim-go {
+    " Find reference
+    au FileType go nmap <F2> <Plug>(go-doc)
+    " Go to source
+    au FileType go nmap <F3> <Plug>(go-def)
 " }
 
 " Overrides {
