@@ -1,5 +1,5 @@
 " Simple es6 snippets WIP
-Plug 'ksrb/vim-react-es6-snippets'
+Plug 'ksrb/vim-javascript-es6-snippets'
 
 " Automatic ctag generation
 Plug 'xolox/vim-misc'

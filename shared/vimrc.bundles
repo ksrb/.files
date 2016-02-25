@@ -24,7 +24,7 @@ if !has("win32unix") " if not cygwin
   Plug 'Valloric/YouCompleteMe', { 'do': './install.py --gocode-completer --clang-completer' }
 endif
 Plug 'SirVer/ultisnips'
-Plug 'ksrb/vim-react-es6-snippets'
+Plug 'ksrb/vim-javascript-es6-snippets'
 Plug 'marijnh/tern_for_vim', { 'do' : 'npm install' }
 Plug 'majutsushi/tagbar'
 Plug 'fatih/vim-go'
