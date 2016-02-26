@@ -1,10 +1,6 @@
 " Settings {
   if !has("win32") " If not windows
     set term=xterm-256color          " Terminal color
-
-    if has('gui_running') "If gvim
-      set guifont=Consolas:h10       " Set font
-    endif
   endif
 " }
 

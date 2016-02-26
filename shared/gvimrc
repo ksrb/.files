@@ -1,0 +1,17 @@
+" Settings {
+    set guioptions-=r        "remove right-hand scroll bar
+    set guioptions-=L        "remove left-hand scroll bar
+    set guioptions-=m       " Hide menubar
+    set guioptions-=T       " Hide toolbar
+" }
+
+" OS specific config
+if filereadable(expand("~/.gvimrc.oss"))
+  source ~/.gvimrc.oss
+endif
+
+" Local config
+if filereadable(expand("/.gvimrc.local"))
+  source ~/.gvimrc.local
+endif
+

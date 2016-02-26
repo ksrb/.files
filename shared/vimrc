@@ -1,11 +1,5 @@
 " Settings {
     set nocompatible                   " Use Vim settings, over Vi settings, has side effects must be set as early as possible
-
-    if has('gui_running') "If gvim
-      set guioptions -=m               " Hide menubar
-      set guioptions -=T               " Hide toolbar
-    endif
-
     set background=dark                " Color Theme
     set exrc                           " Allow project specific vimrc
     set secure                         " Disable unsafe commands in local .vimrc files
