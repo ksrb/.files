@@ -10,7 +10,8 @@ Plug 'sheerun/vim-polyglot'
 Plug 'yamaya/vim-swift'
 
 " GUI
-Plug 'bling/vim-airline'
+Plug 'vim-airline/vim-airline'
+Plug 'vim-airline/vim-airline-themes'
 Plug 'chriskempson/base16-vim'
 Plug 'bufkill.vim'
 Plug 'christoomey/vim-tmux-navigator'
