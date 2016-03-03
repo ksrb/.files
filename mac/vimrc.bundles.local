@@ -47,9 +47,12 @@ Plug 'tomtom/tcomment_vim'
 
 " vim-go {
     " Find reference
-    au FileType go nmap <F2> <Plug>(go-doc)
+    au FileType go nmap <F2> <Plug>(go-doc-vertical)
     " Go to source
-    au FileType go nmap <F3> <Plug>(go-def)
+    au FileType go nmap <F3> <Plug>(go-def-vertical)
+    " Rename Alt+Shift+R
+    au FileType go nmap <ESC>^[R <Plug>(go-rename)
+    au FileType go nmap gr <Plug>(go-rename)
 " }
 
 " Overrides {
