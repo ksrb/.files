@@ -1,5 +1,8 @@
 <code_scheme name="NeftJS">
   <option name="RIGHT_MARGIN" value="80" />
+  <MultiMarkdownCodeStyleSettings>
+    <option name="RIGHT_MARGIN" value="72" />
+  </MultiMarkdownCodeStyleSettings>
   <XML>
     <option name="XML_LEGACY_SETTINGS_IMPORTED" value="true" />
   </XML>
