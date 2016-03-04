@@ -1,3 +1,7 @@
 " Settings {
     set guifont=Consolas:h10
 " }
+
+" UltiSnips {
+    let g:UltiSnipsExpandTrigger="<C-Space>"
+" }
