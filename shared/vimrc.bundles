@@ -115,14 +115,14 @@ filetype plugin indent on
     let g:surround_indent = 0
 " }
 
-" Local settings
-if filereadable(expand("~/.vimrc.bundles.local"))
-  source ~/.vimrc.bundles.local
-endif
-
 " OS Specific settings
 if filereadable(expand("~/.vimrc.bundles.oss"))
   source ~/.vimrc.bundles.oss
+endif
+
+" Local settings
+if filereadable(expand("~/.vimrc.bundles.local"))
+  source ~/.vimrc.bundles.local
 endif
 
 call plug#end()
