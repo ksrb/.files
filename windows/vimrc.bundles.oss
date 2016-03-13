@@ -1,4 +1,6 @@
-Plug 'Shougo/neocomplcache.vim'
+if has("win32unix")
+  Plug 'Shougo/neocomplcache.vim'
+endif
 
 " Neocomplcache {
     let g:neocomplcache_enable_at_startup=1

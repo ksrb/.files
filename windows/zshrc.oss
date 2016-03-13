@@ -1,5 +1,5 @@
 # Git {
-    MSYS_GIT='/cygdrive/c/Users/Kevin Suen/AppData/Local/Programs/Git/bin'
+    MSYS_GIT='/cygdrive/c/Users/Kevin Suen/AppData/Local/Programs/Git/cmd'
 
     # Set git to msysgit for compatibility (node and gitk)
     setMsysGit(){
