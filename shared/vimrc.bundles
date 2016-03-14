@@ -86,6 +86,12 @@ filetype plugin indent on
     let g:go_highlight_operators = 1
     let g:go_highlight_build_constraints = 1
 
+    " Find reference
+    au FileType go nmap <F2> <Plug>(go-doc-vertical)
+    " Go to source
+    au FileType go nmap <F3> <Plug>(go-def-vertical)
+    " Rename with Alt+Shift+R
+    au FileType go nmap R <Plug>(go-rename)
 " }
 
 " identLine {
