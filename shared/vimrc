@@ -1,14 +1,14 @@
 " Settings {
     set nocompatible                   " Use Vim settings, over Vi settings, has side effects must be set as early as possible
     set background=dark                " Color Theme
-    set exrc                           " Allow project specific vimrc
+    set exrc                           " Allow local (./) specific vimrc
     set secure                         " Disable unsafe commands in local .vimrc files
     set iminsert=0                     " Disable capslock"
     set backspace=2                    " Backspace deletes like most programs in insert mode
-    set nobackup
-    set nowritebackup
+    set nobackup                       " Stop vim from creating a backup file before overwriting
+    set nowritebackup                  " Stop vim from creating a backup before writing
     set noswapfile                     " http://robots.thoughtbot.com/post/18739402579/global-gitignore#comment-458413287
-    set history=50
+    set history=50                     " Set search and command history to 50
     set ruler                          " Show the cursor position all the time
     set showcmd                        " Display incomplete commands
     set incsearch                      " Do incremental searching
@@ -18,24 +18,25 @@
     set number                         " Show line numbers
     set showmode                       " Show the current mode
     set tabstop=2                      " Softtabs, 2 spaces
-    set shiftwidth=2
+    set shiftwidth=2                   " Set >>, << to use 2 spaces
     set shiftround
-    set expandtab
-    set nowrap
-    set splitbelow                     " Pen new split panes to right and bottom, which feels more natural
-    set splitright
+    set expandtab                      " Insert spaces when tab is pressed
+    set nowrap                         " Prevent word wrapping on long lines
+    set splitbelow                     " Horizontal splits with open to the bottom
+    set splitright                     " Vertical splits with open to the right
     set nocursorcolumn                 " Speed up syntax highlighting
-    set nocursorline
+    set nocursorline                   " Don't highlight line cursor is on
     syntax sync minlines=256
     set synmaxcol=150
-    set re=1
+    set re=1                           " Use old regex engine
     set incsearch                      " Shows the match while typing
     set hlsearch                       " Highlight found searches
-    set ttyfast
-    set timeoutlen=1000 ttimeoutlen=0
+    set ttyfast                        " Fast terminal connecion improves responsiveness
+    set timeoutlen=1000                " Set timeout waiting for mapped keys (<Leader>) to 1sec i.e.
+    set ttimeoutlen=0                  " Set timeout waiting for keycodes (<ESC>) to 0
     set completeopt=menu
     set relativenumber
-    set colorcolumn=80
+    set colorcolumn=80                 " Color the 80th column (max line width for code)
 " }
 
 " Wildmenu settings {
