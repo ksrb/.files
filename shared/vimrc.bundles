@@ -9,9 +9,6 @@ Plug 'Yggdroot/indentLine'
 Plug 'scrooloose/nerdtree', { 'on':  'NERDTreeToggle' }
 
 " Code
-if !has("win32unix") " if not cygwin
-  Plug 'Valloric/YouCompleteMe', { 'do': './install.py --gocode-completer --clang-completer' }
-endif
 Plug 'SirVer/ultisnips'
 Plug 'ksrb/vim-javascript-es6-snippets'
 Plug 'marijnh/tern_for_vim', { 'do' : 'npm install' }
@@ -52,8 +49,8 @@ Plug 'tomtom/tcomment_vim'
     let g:ctrlp_custom_ignore = '\v[\/](node_modules|build|jspm_packages)|(\.(git|hg|svn))$'
     let g:ctrlp_working_path_mode = 'ra' " Set working dir to first folder with .git or folder with file ctrlp was called on
     let g:ctrlp_switch_buffer = 'et'     " Jump to a file if it's open already
-    let g:ctrlp_mruf_max=450             " Number of recently opened files
-    let g:ctrlp_max_files=0              " Do not limit the number of searchable files
+    let g:ctrlp_mruf_max = 450             " Number of recently opened files
+    let g:ctrlp_max_files = 0              " Do not limit the number of searchable files
 " }
 
 " vim-go {

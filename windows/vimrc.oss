@@ -1,6 +1,6 @@
 " Settings {
   if !has("win32") " If not windows
-    set term=xterm-256color          " Terminal color
+    set term=xterm-256color " Terminal color
   endif
 " }
 

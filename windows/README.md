@@ -32,7 +32,8 @@
 	rm -r ~/.vimrc/plugged
 	vim -c PlugInstall
 ```
-* [tagbar](https://github.com/majutsushi/tagbar)
+
+	* [tagbar](https://github.com/majutsushi/tagbar)
 		* [From Windows cmd run](https://github.com/majutsushi/tagbar/issues/260#issuecomment-135898610)
 ```bash
 mklink /j c:\tmp c:\cygwin64\tmp
@@ -51,7 +52,7 @@ mklink /j c:\tmp c:\cygwin64\tmp
 Vim: Warning: Output is not to a terminal
 Vim: Warning: Input is not from a terminal
 ```
-	* Set path to cygwin git as the first path in PATH (see zshrc.oss)
+* Set path to cygwin git as the first path in PATH (see zshrc.oss)
 
 ###Gitk and Git Gui
 * Gitk and Git Gui needs a X11 server to render

@@ -13,11 +13,6 @@ Plug 'tpope/vim-repeat'
 Plug 'tpope/vim-surround'
 Plug 'tomtom/tcomment_vim'
 
-" identline {
-    " Don't show identation levels for json files as there is a bug
-    let g:indentLine_fileTypeExclude = ['json']
-" }
-
 " easytag {
     " Use jsctags for javascript ctag generation
     let g:easytags_languages = {
@@ -57,14 +52,14 @@ Plug 'tomtom/tcomment_vim'
 
 " Overrides {
   " Nerdtree {
-      let g:NERDTreeShowLineNumbers=1
+      let g:NERDTreeShowLineNumbers = 1
   " }
   " Ultisnips {
       " Change ultisnip trigger to Ctrl-Space
-      let g:UltiSnipsExpandTrigger="<C-space>"
+      let g:UltiSnipsExpandTrigger = "<C-space>"
 
       " Open snippet editing window as vertical split
-      let g:UltiSnipsEditSplit="vertical"
+      let g:UltiSnipsEditSplit = "vertical"
   " }
 
   " CtrlP {

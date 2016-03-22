@@ -1,7 +1,7 @@
 set surround        " vim-surround emulation
 set hlsearch        " Progressive highlighting while searching
-set relativenumber  
-set number          "Absolute line number at cursor
+set relativenumber  " Show line numbers relative to cursor
+set number          " Absolute line number at cursor
 
 " Ctrl + hjkl to switch splits
 nnoremap <C-j> <C-w>j
