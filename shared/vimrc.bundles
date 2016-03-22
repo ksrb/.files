@@ -1,26 +1,14 @@
 call plug#begin('~/.vim/plugged')
 
-" File Utils
-Plug 'scrooloose/nerdtree', { 'on':  'NERDTreeToggle' }
-Plug 'kien/ctrlp.vim'
-
-" Syntax highlight
-Plug 'scrooloose/syntastic'
-Plug 'sheerun/vim-polyglot'
-Plug 'yamaya/vim-swift'
-
-" GUI
+" Gui
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 Plug 'chriskempson/base16-vim'
-Plug 'bufkill.vim'
 Plug 'christoomey/vim-tmux-navigator'
+Plug 'Yggdroot/indentLine'
+Plug 'scrooloose/nerdtree', { 'on':  'NERDTreeToggle' }
 
-" Git integration
-Plug 'tpope/vim-fugitive'
-Plug 'airblade/vim-gitgutter'
-
-" Source Utils
+" Code
 if !has("win32unix") " if not cygwin
   Plug 'Valloric/YouCompleteMe', { 'do': './install.py --gocode-completer --clang-completer' }
 endif
@@ -29,24 +17,18 @@ Plug 'ksrb/vim-javascript-es6-snippets'
 Plug 'marijnh/tern_for_vim', { 'do' : 'npm install' }
 Plug 'majutsushi/tagbar'
 Plug 'fatih/vim-go'
+Plug 'scrooloose/syntastic'
+Plug 'sheerun/vim-polyglot'
 
-" Show identation levels
-Plug 'Yggdroot/indentLine'
+" Git
+Plug 'tpope/vim-fugitive'
+Plug 'airblade/vim-gitgutter'
 
 " Misc
+Plug 'kien/ctrlp.vim'
 Plug 'tpope/vim-repeat'
 Plug 'tpope/vim-surround'
 Plug 'tomtom/tcomment_vim'
-
-filetype plugin indent on
-
-" Indent Guides {
-    set ts=2 sw=2 et
-" }
-
-" BuffKill {
-    nnoremap <leader>q :call CloseSplitOrDeleteBuffer()<CR>
-" }
 
 " vim-airline {
     let g:airline_powerline_fonts = 1
@@ -63,19 +45,15 @@ filetype plugin indent on
 " }
 
 " nerdtree {
-    " For toggling
     noremap <Leader>n :NERDTreeToggle<cr>
-    " For refreshing current file and showing current dir
-    noremap <Leader>j :NERDTreeFind<cr>
-    let g:NERDTreeDirArrows=0
 " }
 
 " ctrlP {
     let g:ctrlp_custom_ignore = '\v[\/](node_modules|build|jspm_packages)|(\.(git|hg|svn))$'
-    let g:ctrlp_working_path_mode = 'ra' " set working dir to first folder with .git or folder with file ctrlp was called on
-    let g:ctrlp_switch_buffer = 'et'	" jump to a file if it's open already
-    let g:ctrlp_mruf_max=450 		" number of recently opened files
-    let g:ctrlp_max_files=0  		" do not limit the number of searchable files
+    let g:ctrlp_working_path_mode = 'ra' " Set working dir to first folder with .git or folder with file ctrlp was called on
+    let g:ctrlp_switch_buffer = 'et'     " Jump to a file if it's open already
+    let g:ctrlp_mruf_max=450             " Number of recently opened files
+    let g:ctrlp_max_files=0              " Do not limit the number of searchable files
 " }
 
 " vim-go {
@@ -92,11 +70,6 @@ filetype plugin indent on
     au FileType go nmap <F3> <Plug>(go-def-vertical)
     " Rename with Alt+Shift+R
     au FileType go nmap R <Plug>(go-rename)
-" }
-
-" identLine {
-    " Don't show identation levels for json files as there is a bug
-    let g:indentLine_fileTypeExclude = ['json']
 " }
 
 " tcomment {
