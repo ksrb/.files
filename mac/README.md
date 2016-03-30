@@ -13,11 +13,11 @@
 * Set Alt key to be compatible with Tmux
 	* Profiles → Keys →  Left/Right Option key acts as: +Esc
 
-##Intellijj
+##IntelliJ
 * Set config directory to ~/.IntelliJ[XX]
 ```bash
-rm ~/Library/Preferences/IntelliJIdea[XX]
-echo idea.config.path=~/.IntelliJIdea[XX]/config  >> /Applications/IntelliJ IDEA 15.app/Contents/bin/idea.properties
+rm -rf ~/Library/Preferences/IntelliJIdea[XX]
+echo idea.config.path=~/.IntelliJIdea/config  >> /Applications/IntelliJ IDEA [XX].app/Contents/bin/idea.properties
 ```
 
 * Conflicting Keys and Resolution
@@ -25,7 +25,7 @@ echo idea.config.path=~/.IntelliJIdea[XX]/config  >> /Applications/IntelliJ IDEA
 	* Ctrl + F1 - System Preferences → Keyboard → Shortcuts → Turn keyboard access on or off
 
 ##[BetterSnapTool](https://itunes.apple.com/us/app/bettersnaptool/id417375580?mt=12)
- 
+
 ##System Preferences
 * [Remove system beep](http://superuser.com/a/287085)
 * Increase minimize & maximize animation speed

@@ -6,7 +6,7 @@ target="$configs_dir/.."
 ignores_global=(README.md)
 
 shared_configs_dir="$configs_dir/shared"
-shared_config_ignores+=($ignores_global)
+shared_config_ignores+=($ignores_global IntelliJIdea)
 
 mac_configs_dir="$configs_dir/mac"
 mac_configs_ignores+=(
@@ -34,7 +34,7 @@ ignored() {
   # For each element
   # Note: Zsh specific expansion syntax
   # See http://stackoverflow.com/a/14693738
-  for e in ${(P)${elements}[@]}; do 
+  for e in ${(P)${elements}[@]}; do
     # If the element matches the 1st arg
     if [[ "$e" == "$1" ]] then;
       return 1; #true, ignored
@@ -80,9 +80,27 @@ linkFile(){
   ln -s "$src" "$dest"
 }
 
+linkSharedFiles() {
+  linkFiles "$shared_configs_dir" "shared_config_ignores"
+  linkIntelliJ
+}
+
+linkWindowFiles() {
+  linkFiles "$windows_configs_dir" "ignores_global"
+  echo idea.config.path=~/.IntelliJIdea/config  >> "C:/Program Files (x86)/IntelliJIdea/bin/idea.properties"
+}
+
 linkMacFiles() {
+  linkFiles "$mac_configs_dir" "mac_configs_ignores"
   linkFile "$mac_configs_dir/Karabiner/private.xml" "$target/Library/Application Support/Karabiner/private.xml"
   linkFile "$shared_configs_dir/ideavimrc" "$target/.ideavimrc"
+
+  echo idea.config.path=~/.IntelliJIdea/config  >> "/Applications/IntelliJ IDEA.app/Contents/bin/idea.properties"
+  linkIntelliJ
+}
+
+linkIntelliJ() {
+  linkFile "$shared_configs_dir/IntelliJIdea" "$target/.IntelliJIdea"
 }
 
 clean(){
@@ -92,7 +110,7 @@ clean(){
 help(){
 cat <<-EOF
   ls      link shared dot files
-  lm      link mac files 
+  lm      link mac files
   lw      link windows files
   clean   TODO
   help    help
@@ -102,12 +120,11 @@ EOF
 process(){
   case "$1" in
     "ls")
-      linkFiles "$shared_configs_dir" "shared_config_ignores";;
+      linkSharedFiles;;
     "lm")
-      linkFiles "$mac_configs_dir" "mac_configs_ignores"
       linkMacFiles;;
     "lw")
-      linkFiles "$windows_configs_dir" "ignores_global";;
+      linkWindowFiles;;
     "clean")
       clean;;
     "help")
