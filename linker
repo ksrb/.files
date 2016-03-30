@@ -19,6 +19,9 @@ mac_configs_ignores+=(
 )
 
 windows_configs_dir="$configs_dir/windows"
+window_configs_ignores+=(
+  $ignores_global
+)
 
 setEnv(){
   case "$(uname -s)" in
@@ -43,9 +46,11 @@ ignored() {
   return 0 #false, not ignored
 }
 
-linkFiles(){
-  local configs_dir="$1"
-  local ignores_local="$2"
+linkDotFiles(){
+  local mode="$1"
+  local configs_dir="$2"
+  local ignores_local="$3"
+
   # For each file in the configs_dir
   for file in $(ls "${configs_dir}"); do
     # Check if the file is in list of ignores
@@ -58,29 +63,45 @@ linkFiles(){
       continue
     fi
 
-    # else
-    printf "$configs_dir/$file => $target/.$file\n"
     # If the link exits
     if [[ -L "$target/.$file" ]]; then
+      if [ "$mode" = "clean" ]; then
+        printf "$target/.$file removed\n"
+      fi
       # Remove it
       rm "$target/.$file"
     fi
-    # Link each file in the configs_dir to a '.' target file
-    ln -s "$configs_dir/$file" "$target/.$file"
+
+    if [ "$mode" = "link" ]; then
+      printf "$configs_dir/$file => $target/.$file\n"
+      # Link each file in the configs_dir to a '.' target file
+      ln -s "$configs_dir/$file" "$target/.$file"
+    fi
   done
 }
 
 linkFile(){
-  local src="$1"
-  local dest="$2"
-  printf "$src => $dest\n"
+  local mode="$1"
+  local src="$2"
+  local dest="$3"
+
   if [[ -L "$dest" ]]; then
+    if [ "$mode" = "clean" ]; then
+      dest="$2"
+    fi
     rm "$dest"
+    if [ "$mode" = "clean" ]; then
+      printf "$dest removed\n"
+    fi
   fi
-  ln -s "$src" "$dest"
+
+  if [ "$mode" = "link" ]; then
+    ln -s "$src" "$dest"
+    printf "$src => $dest\n"
+  fi
 }
 
-linkFilesForOs() {
+linkDotFilesForOs() {
   echo "Link OS independent dotfiles"
   linkSharedFiles
   case "$(uname -s)" in
@@ -103,20 +124,32 @@ setIntelliJConfig() {
 }
 
 linkSharedFiles() {
-  linkFiles "$shared_configs_dir" "shared_config_ignores"
+  linkDotFiles "link" "$shared_configs_dir" "shared_config_ignores"
 }
 
 linkWindowFiles() {
-  linkFiles "$windows_configs_dir" "ignores_global"
+  linkDotFiles "link" "$windows_configs_dir" "ignores_global"
 }
 
 linkMacFiles() {
-  linkFiles "$mac_configs_dir" "mac_configs_ignores"
-  linkFile "$mac_configs_dir/Karabiner/private.xml" "$target/Library/Application Support/Karabiner/private.xml"
+  linkDotFiles "link" "$mac_configs_dir" "mac_configs_ignores"
+  linkFile "link" "$mac_configs_dir/Karabiner/private.xml" "$target/Library/Application Support/Karabiner/private.xml"
+}
+
+linkNVim() {
+  linkFile "link" "$shared_configs_dir/vimrc" "$target/.config/nvim/init.vim"
+  linkFile "link" "$shared_configs_dir/vimrc.bundles" "$target/.config/nvim/vimrc.bundles"
+  linkFile "link" "$mac_configs_dir/vimrc.bundles.oss" "$target/.config/nvim/vimrc.bundles.oss"
 }
 
 clean(){
-  echo "TODO"
+  linkDotFiles "clean" "$shared_configs_dir"
+  case "$(uname -s)" in
+    "Darwin")
+      linkDotFiles "clean" "$mac_configs_dir" "mac_configs_ignores";;
+    "CYGWIN*")
+      linkDotFiles "clean" "$windows_configs_dir" "window_configs_ignores";;
+  esac
 }
 
 help(){
@@ -126,14 +159,14 @@ cat <<-EOF
   ls      Link Shared dot files
   lm      Link Mac files
   lw      Link Windows files
-  clean   TODO
+  clean   clean files automatically based on OS
 EOF
 }
 
 process(){
   case "$1" in
     "ln")
-      linkFilesForOs;;
+      linkDotFilesForOs;;
     "si")
       setIntelliJConfig;;
     "ls")
