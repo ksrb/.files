@@ -84,11 +84,11 @@
     " Strip Trailing Whitespace & turn off hightlighting
     nnoremap <Leader>kw :%s/\s\+$//e<CR>:noh<CR>
 
-    " Remove search highlight
-    nnoremap <leader><space> :nohlsearch<CR>
-
     " Redraw screen
     noremap <F5> :redraw!<CR>
+
+    " Disable Ex mode binding
+    nnoremap Q <nop>
 " }
 
 " Load plugins
