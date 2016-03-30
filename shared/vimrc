@@ -1,5 +1,6 @@
 " Settings {
     set nocompatible           " Use Vim settings, over Vi settings, has side effects must be set as early as possible
+    set ttyfast                " Fast terminal connecion improves responsiveness
 
     syntax on                  " Turn on syntax highlighting
     syntax sync minlines=256   " Start parsing for syntax highlighting 256 lines before buffer
@@ -22,26 +23,24 @@
     set nocursorcolumn         " Speed up syntax highlighting
     set nocursorline           " Don't highlight line cursor is on
 
-    set history=50             " Set search and command history to 50
-    set nobackup               " Stop vim from creating a backup file before overwriting
-    set nowritebackup          " Stop vim from creating a backup before writing
+    set history=50             " Search and command history to 50
+    set nobackup               " Don't create a backup file before overwriting
+    set nowritebackup          " Don't create a backup before writing
     set noswapfile             " http://robots.thoughtbot.com/post/18739402579/global-gitignore#comment-458413287
     set showcmd                " Display incomplete commands
     set autowrite              " Automatically :write before running commands
     set mouse=a                " Enable mouse use in all modes
     set splitbelow             " Horizontal splits with open to the bottom
     set splitright             " Vertical splits with open to the right
-    set timeoutlen=1000        " Set timeout waiting for mapped keys (<Leader>) to 1sec i.e.
-    set ttimeoutlen=0          " Set timeout waiting for keycodes (<ESC>) to 0
+    set timeoutlen=1000        " Wait 1s for followup keys after entering a mapped key (<Leader>)
+    set ttimeoutlen=0          " Don't Wait for follup keys after entering a keycodes (<ESC>)
     set iminsert=0             " Disable capslock
     set backspace=2            " Backspace deletes like most programs in insert mode
 
-    set tabstop=2              " Softtabs, 2 spaces
-    set shiftwidth=2           " Set >>, << to use 2 spaces
+    set tabstop=2              " Use 2 spaces for tabs
+    set shiftwidth=2           " >>, << to use 2 spaces
     set shiftround
     set expandtab              " Insert spaces when tab is pressed
-
-    set ttyfast                " Fast terminal connecion improves responsiveness
 
     set re=1                   " Use old regex engine
 " }
