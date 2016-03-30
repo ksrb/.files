@@ -1,39 +1,50 @@
 call plug#begin('~/.vim/plugged')
 
 " Gui
-Plug 'vim-airline/vim-airline'
-Plug 'vim-airline/vim-airline-themes'
 Plug 'chriskempson/base16-vim'
 Plug 'christoomey/vim-tmux-navigator'
-Plug 'Yggdroot/indentLine'
+Plug 'nathanaelkane/vim-indent-guides'
 Plug 'scrooloose/nerdtree', { 'on':  'NERDTreeToggle' }
+Plug 'vim-airline/vim-airline'
+Plug 'vim-airline/vim-airline-themes'
 
 " Code
 Plug 'SirVer/ultisnips'
-Plug 'ksrb/vim-javascript-es6-snippets'
-Plug 'marijnh/tern_for_vim', { 'do' : 'npm install' }
-Plug 'majutsushi/tagbar'
 Plug 'fatih/vim-go'
+Plug 'ksrb/vim-javascript-es6-snippets'
+Plug 'majutsushi/tagbar'
+Plug 'marijnh/tern_for_vim', { 'do' : 'npm install' }
+Plug 'mxw/vim-jsx'
 Plug 'scrooloose/syntastic'
 Plug 'sheerun/vim-polyglot'
 
 " Git
-Plug 'tpope/vim-fugitive'
 Plug 'airblade/vim-gitgutter'
+Plug 'tpope/vim-fugitive'
 
 " Misc
+Plug 'bronson/vim-visual-star-search'
+Plug 'easymotion/vim-easymotion'
 Plug 'kien/ctrlp.vim'
+Plug 'tomtom/tcomment_vim'
 Plug 'tpope/vim-repeat'
 Plug 'tpope/vim-surround'
-Plug 'tomtom/tcomment_vim'
+
+" ctrlP {
+    let g:ctrlp_custom_ignore = '\v[\/](node_modules|build|jspm_packages)|(\.(git|hg|svn))$' "ignore node_modules|build|jspm_packages|git|hg|svn folders
+    let g:ctrlp_working_path_mode = 'ra'                                                     " Set working dir to first folder with .git or folder which file ctrlp was called on
+    let g:ctrlp_switch_buffer = 'et'                                                         " Jump to a file if it's open already
+    let g:ctrlp_mruf_max = 450                                                               " Number of recently opened files
+    let g:ctrlp_max_files = 0                                                                " Do not limit the number of searchable files
+" }
+
+" nerdtree {
+    noremap <Leader>n :NERDTreeToggle<cr>
+" }
 
 " vim-airline {
     let g:airline_powerline_fonts = 1
     let g:airline#extensions#tabline#enabled = 1
-" }
-
-" tagbar {
-    nnoremap <Leader>t :TagbarToggle<cr>
 " }
 
 " syntastic {
@@ -41,16 +52,13 @@ Plug 'tomtom/tcomment_vim'
     let g:jsx_ext_required = 0
 " }
 
-" nerdtree {
-    noremap <Leader>n :NERDTreeToggle<cr>
+" tagbar {
+    nnoremap <Leader>t :TagbarToggle<cr>
 " }
 
-" ctrlP {
-    let g:ctrlp_custom_ignore = '\v[\/](node_modules|build|jspm_packages)|(\.(git|hg|svn))$'
-    let g:ctrlp_working_path_mode = 'ra' " Set working dir to first folder with .git or folder with file ctrlp was called on
-    let g:ctrlp_switch_buffer = 'et'     " Jump to a file if it's open already
-    let g:ctrlp_mruf_max = 450             " Number of recently opened files
-    let g:ctrlp_max_files = 0              " Do not limit the number of searchable files
+" tcomment {
+    " Turn off leader key shortcuts
+    let g:tcommentMapLeader2 = ''
 " }
 
 " vim-go {
@@ -65,16 +73,18 @@ Plug 'tomtom/tcomment_vim'
     au FileType go nmap <F2> <Plug>(go-doc-vertical)
     " Go to source
     au FileType go nmap <F3> <Plug>(go-def-vertical)
-    " Rename with Alt+Shift+R
-    au FileType go nmap R <Plug>(go-rename)
 " }
 
-" tcomment {
-    " Turn off leader key shortcuts
-    let g:tcommentMapLeader2 = ''
+" vim-indent-guides {
+    let g:indent_guides_auto_colors = 0
+    let g:indent_guides_enable_on_vim_startup = 1
+    " https://upload.wikimedia.org/wikipedia/en/1/15/Xterm_256color_chart.svg
+    autocmd VimEnter,Colorscheme * :hi IndentGuidesOdd  ctermbg = 237
+    autocmd VimEnter,Colorscheme * :hi IndentGuidesEven ctermbg = 0
 " }
 
 " vim-surround {
+    " Turn off autoindent after surround motion
     let g:surround_indent = 0
 " }
 
