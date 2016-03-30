@@ -77,7 +77,6 @@
 
 " Misc {
     let mapleader = ","                  " Leader key to ','
-    autocmd BufWritePost .vimrc source % " Autoreload vimrc on change
     autocmd FileType qf wincmd J         " Move quickfix window to the bottom
 " }
 
