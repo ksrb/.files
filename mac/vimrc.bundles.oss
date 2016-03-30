@@ -1,40 +1,55 @@
-Plug 'Valloric/YouCompleteMe', { 'do': './install.py --gocode-completer --clang-completer' }
-
-" Automatic ctag generation
-Plug 'xolox/vim-misc'
-Plug 'xolox/vim-easytags'
-
-" ultisnips {
-    " Change ultisnip trigger to Ctrl-Space
-    let g:UltiSnipsExpandTrigger = "<C-space>"
-" }
-
-" easytag {
-  " Use jsctags for javascript ctag generation
-  let g:easytags_languages = {
-                \   'javascript': {
-                \       'cmd': 'jsctags',
-                \       'args': [],
-                \       'fileoutput_opt': '-f',
-                \       'stdout_opt': '-f-',
-                \       'recurse_flag': '-R'
-                \   }
-                \}
-
-    let g:easytags_async = 1
-
-    " Stop easy tags from generating tags for dotfiles
-    autocmd BufReadPost .* let b:easytags_auto_update = 0
-" }
-
 " ctrlp {
     " Use The Silver Searcher https://github.com/ggreer/the_silver_searcher
     if executable('ag')
       " Use Ag over Grep
-      set grepprg = ag\ --nogroup\ --nocolor
+      set grepprg=ag\ --nogroup\ --nocolor
       " Use ag in CtrlP for listing files. Lightning fast and respects .gitignore
       let g:ctrlp_user_command = 'ag %s -l --nocolor --hidden -g ""'
       " ag is fast enough that CtrlP doesn't need to cache
       let g:ctrlp_use_caching = 0
     endif
 " }
+
+if has('nvim')
+  Plug 'Shougo/deoplete.nvim'
+  Plug 'zchee/deoplete-go', { 'do': 'make'}
+
+  " deoplete {
+      let g:deoplete#enable_at_startup = 1
+      let g:deoplete#auto_complete_start_length = 1
+      inoremap <expr><TAB> pumvisible() ? "\<C-n>" : "\<TAB>"
+      inoremap <expr><S-TAB> pumvisible() ? "\<C-p>" : "\<S-TAB>"
+  " }
+
+  " vim-easymotion {
+      map <M-e> <Plug>(easymotion-prefix)
+  " }
+
+  " vim-go {
+      " Rename with Alt+Shift+R
+      au FileType go nmap <M-R> <Plug>(go-rename)
+  " }
+
+  " ultisnips {
+      " Change ultisnip trigger to Ctrl-Space
+      let g:UltiSnipsExpandTrigger = "<C-@>"
+  " }
+endif
+
+if !has('nvim')
+  Plug 'Valloric/YouCompleteMe', { 'do': './install.py --gocode-completer --clang-completer' }
+
+  " vim-easymotion {
+      map e <Plug>(easymotion-prefix)
+  " }
+
+  " vim-go {
+      " Rename with Alt+Shift+R
+      au FileType go nmap R <Plug>(go-rename)
+  " }
+
+  " ultisnips {
+      " Change ultisnip trigger to Ctrl-Space
+      let g:UltiSnipsExpandTrigger = "<C-Space>"
+  " }
+endif
