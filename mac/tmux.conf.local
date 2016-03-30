@@ -1,4 +1,0 @@
-# Alias unbound keys
-bind S choose-session
-bind R refresh-client
-bind P previous-window
