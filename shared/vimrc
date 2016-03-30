@@ -66,19 +66,13 @@
 " }
 
 " FileType {
-    filetype plugin on "Load plugin files for specific file types
-    filetype indent on "File type specific indents
+    " Load filetype specific plugins + indentation settings + turn on filetype feature
+    filetype plugin indent on
 
-    au FileType make setlocal noet
-    au FileType markdown,gitcommit set spell
+    au FileType markdown setlocal spell noexpandtab tabstop=2 shiftwidth=2
 
-    au BufNewFile,BufRead *.vim setlocal ts=2 sw=2 sts=2
-    au BufNewFile,BufRead *.txt setlocal noet ts=2 sw=2
-    au BufNewFile,BufRead *.md setlocal noet ts=2 sw=2
-
-    augroup filetypedetect
-      au BufNewFile,BufRead .tmux.conf*,tmux.conf* setf tmux
-    augroup END
+    au FileType gitcommit setlocal spell
+    au FileType make setlocal noexpandtab
 " }
 
 " Misc {
