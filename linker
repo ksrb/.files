@@ -51,21 +51,21 @@ linkFiles(){
     # Check if the file is in list of ignores
     ignored "$file" "$ignores_local"
 
-    # If the file is ignored 
+    # If the file is ignored
     # Note: ($? gets the exit status of the previous command)
     if [ $? -eq 1 ]; then
-      # Skip it 
+      # Skip it
       continue
     fi
 
     # else
     printf "$configs_dir/$file => $target/.$file\n"
     # If the link exits
-    if [[ -L "$target/.$file" ]]; then 
+    if [[ -L "$target/.$file" ]]; then
       # Remove it
       rm "$target/.$file"
     fi
-    # Link each file in the configs_dir to a '.' target file 
+    # Link each file in the configs_dir to a '.' target file
     ln -s "$configs_dir/$file" "$target/.$file"
   done
 }
