@@ -16,6 +16,6 @@ endif
 " ultiSnips {
     " if cygwin
     if has("win32unix")
-      let g:UltiSnipsExpandTrigger="<C-@>"
+      let g:UltiSnipsExpandTrigger = "<C-@>"
     endif
 " }
