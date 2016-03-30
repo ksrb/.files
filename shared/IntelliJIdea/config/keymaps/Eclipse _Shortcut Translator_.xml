@@ -2,6 +2,11 @@
   <action id="CloseAllEditorsButActive">
     <keyboard-shortcut first-keystroke="ctrl alt f4" />
   </action>
+  <action id="FileChooser.TogglePathShowing" />
+  <action id="GotoFile">
+    <keyboard-shortcut first-keystroke="shift ctrl r" />
+    <keyboard-shortcut first-keystroke="ctrl p" />
+  </action>
   <action id="Images.EditExternally">
     <keyboard-shortcut first-keystroke="shift ctrl alt f4" />
   </action>
@@ -21,6 +26,7 @@
     <keyboard-shortcut first-keystroke="ctrl page_up" />
     <keyboard-shortcut first-keystroke="ctrl alt left" />
   </action>
+  <action id="Print" />
   <action id="ShortcutLookup.ShortcutLookup">
     <keyboard-shortcut first-keystroke="ctrl alt k" />
   </action>
@@ -45,4 +51,5 @@
   <action id="ToggleDistractionFreeMode">
     <keyboard-shortcut first-keystroke="shift ctrl alt d" />
   </action>
+  <action id="com.vladsch.idea.multimarkdown.editor.actions.editorLayout.ToggleSplitLayoutChangeAction" />
 </keymap>

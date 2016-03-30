@@ -6,15 +6,15 @@ target="$configs_dir/.."
 ignores_global=(README.md)
 
 shared_configs_dir="$configs_dir/shared"
-shared_config_ignores+=($ignores_global IntelliJIdea)
+shared_config_ignores+=(
+  $ignores_global
+)
 
 mac_configs_dir="$configs_dir/mac"
 mac_configs_ignores+=(
-  $ignores_global 
-  Karabiner 
-  vimrc.bundles.oss 
-  tmux.conf.oss 
-  defaults.sh 
+  $ignores_global
+  Karabiner
+  defaults.sh
   override.sh
 )
 
@@ -73,34 +73,46 @@ linkFiles(){
 linkFile(){
   local src="$1"
   local dest="$2"
-  printf "$src => $dest"
+  printf "$src => $dest\n"
   if [[ -L "$dest" ]]; then
     rm "$dest"
   fi
   ln -s "$src" "$dest"
 }
 
+linkFilesForOs() {
+  echo "Link OS independent dotfiles"
+  linkSharedFiles
+  case "$(uname -s)" in
+    "Darwin")
+      echo "Darwin based environment detected"
+      linkMacFiles;;
+    "CYGWIN*")
+      echo "Cygwin based environment detected"
+      linkWindowFiles;;
+  esac
+}
+
+setIntelliJConfig() {
+  case "$(uname -s)" in
+    "Darwin")
+      echo idea.config.path=~/.IntelliJIdea/config  >> "/Applications/IntelliJ IDEA.app/Contents/bin/idea.properties";;
+    "CYGWIN*")
+      echo idea.config.path=~/.IntelliJIdea/config  >> "C:/Program Files (x86)/JetBrains/IntelliJ IDEA 2016.1/bin/idea.properties";;
+  esac
+}
+
 linkSharedFiles() {
   linkFiles "$shared_configs_dir" "shared_config_ignores"
-  linkIntelliJ
 }
 
 linkWindowFiles() {
   linkFiles "$windows_configs_dir" "ignores_global"
-  echo idea.config.path=~/.IntelliJIdea/config  >> "C:/Program Files (x86)/IntelliJIdea/bin/idea.properties"
 }
 
 linkMacFiles() {
   linkFiles "$mac_configs_dir" "mac_configs_ignores"
   linkFile "$mac_configs_dir/Karabiner/private.xml" "$target/Library/Application Support/Karabiner/private.xml"
-  linkFile "$shared_configs_dir/ideavimrc" "$target/.ideavimrc"
-
-  echo idea.config.path=~/.IntelliJIdea/config  >> "/Applications/IntelliJ IDEA.app/Contents/bin/idea.properties"
-  linkIntelliJ
-}
-
-linkIntelliJ() {
-  linkFile "$shared_configs_dir/IntelliJIdea" "$target/.IntelliJIdea"
 }
 
 clean(){
@@ -109,16 +121,21 @@ clean(){
 
 help(){
 cat <<-EOF
-  ls      link shared dot files
-  lm      link mac files
-  lw      link windows files
+  ln      Link files automatically based on OS
+  si      Set IntelliJ config directory to ~/.IntelliJIdea based on OS
+  ls      Link Shared dot files
+  lm      Link Mac files
+  lw      Link Windows files
   clean   TODO
-  help    help
 EOF
 }
 
 process(){
   case "$1" in
+    "ln")
+      linkFilesForOs;;
+    "si")
+      setIntelliJConfig;;
     "ls")
       linkSharedFiles;;
     "lm")

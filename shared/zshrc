@@ -10,7 +10,7 @@
 
     plugins=(git docker)
 
-    # Initialize oh-my-zsh 
+    # Initialize oh-my-zsh
     source "$ZSH"/oh-my-zsh.sh
 
     ## Disable ctrl-s and ctrl-q http://unix.stackexchange.com/a/72092
