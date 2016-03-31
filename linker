@@ -154,12 +154,16 @@ clean(){
 
 help(){
 cat <<-EOF
-  ln      Link files automatically based on OS
+  Usage: linker [COMMAND]
+  Commands:
+  ln      Link dotfiles based on OS, will replace existing symlinks
+  clean   clean symlinks based on OS
+
+  Additional Commands:
+  ls      Link only shared dotfiles
+  lm      Link only Mac dotfiles
+  lw      Link only Windows dotfiles
   si      Set IntelliJ config directory to ~/.IntelliJIdea based on OS
-  ls      Link Shared dot files
-  lm      Link Mac files
-  lw      Link Windows files
-  clean   clean files automatically based on OS
 EOF
 }
 
@@ -180,7 +184,7 @@ process(){
     "help")
       help;;
     *)
-      echo "Not a valid argument"
+      echo "Not a valid command"
       help;;
   esac
 }
