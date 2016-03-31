@@ -17,6 +17,7 @@ Plug 'marijnh/tern_for_vim', { 'do' : 'npm install' }
 Plug 'mxw/vim-jsx'
 Plug 'scrooloose/syntastic'
 Plug 'sheerun/vim-polyglot'
+Plug 'uarun/vim-protobuf'
 
 " Git
 Plug 'airblade/vim-gitgutter'
