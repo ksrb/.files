@@ -69,8 +69,6 @@
     " Load filetype specific plugins + indentation settings + turn on filetype feature
     filetype plugin indent on
 
-    au FileType markdown setlocal spell noexpandtab tabstop=2 shiftwidth=2
-
     au FileType gitcommit setlocal spell
     au FileType make setlocal noexpandtab
 " }
