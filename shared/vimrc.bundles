@@ -37,6 +37,16 @@ Plug 'tpope/vim-surround'
     let g:ctrlp_switch_buffer = 'et'                                                         " Jump to a file if it's open already
     let g:ctrlp_mruf_max = 450                                                               " Number of recently opened files
     let g:ctrlp_max_files = 0                                                                " Do not limit the number of searchable files
+
+    " Use The Silver Searcher https://github.com/ggreer/the_silver_searcher
+    if executable('ag')
+      " Use Ag over Grep
+      set grepprg=ag\ --nogroup\ --nocolor
+      " Use ag in CtrlP for listing files. Lightning fast and respects .gitignore
+      let g:ctrlp_user_command = 'ag %s -l --nocolor --hidden -g ""'
+      " ag is fast enough that CtrlP doesn't need to cache
+      let g:ctrlp_use_caching = 0
+    endif
 " }
 
 " nerdtree {
