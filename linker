@@ -10,6 +10,11 @@ shared_config_ignores+=(
   "${ignores_global[@]}"
   Code
   idea.properties
+  gvimrc
+  tmux.conf
+  vimrc
+  vimrc.bundles
+  zshrc
 )
 
 mac_configs_dir="$configs_dir/mac"
@@ -18,6 +23,9 @@ mac_configs_ignores+=(
   Karabiner
   defaults
   override
+  tmux.conf.oss
+  vimrc.bundles.oss
+  vimrc.oss
 )
 
 windows_configs_dir="$configs_dir/windows"
@@ -173,6 +181,7 @@ linkMacFiles() {
 linkNVim() {
   linkFile $link "$shared_configs_dir/vimrc" "$target/.config/nvim/init.vim"
   linkFile $link "$shared_configs_dir/vimrc.bundles" "$target/.config/nvim/vimrc.bundles"
+  linkFile $link "$mac_configs_dir/vimrc.oss" "$target/.config/nvim/vimrc.oss"
   linkFile $link "$mac_configs_dir/vimrc.bundles.oss" "$target/.config/nvim/vimrc.bundles.oss"
 }
 
@@ -203,6 +212,7 @@ help(){
   lm      Link only Mac dotfiles
   lw      Link only Windows dotfiles
   si      Set IntelliJ config directory to ~/.IntelliJIdea based on OS
+  lnv     Link Nvim files only
 EOF
 }
 
@@ -210,6 +220,8 @@ process(){
   case "$1" in
     "ln")
       linkDotFilesForOs;;
+    "lnv")
+      linkNVim;;
     "ls")
       linkSharedFiles $link;;
     "lm")

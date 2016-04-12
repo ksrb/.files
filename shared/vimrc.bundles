@@ -1,6 +1,6 @@
 runtime macros/matchit.vim
 
-call plug#begin('~/.vim/plugged')
+call plug#begin('~/.config/nvim/plugged')
 
 " Gui
 Plug 'airblade/vim-gitgutter'
@@ -125,13 +125,13 @@ Plug 'tpope/vim-surround'
 " }
 
 " OS Specific settings
-if filereadable(expand("~/.vimrc.bundles.oss"))
-  source ~/.vimrc.bundles.oss
+if filereadable(expand("~/.config/nvim/vimrc.bundles.oss"))
+  source ~/.config/nvim/vimrc.bundles.oss
 endif
 
 " Local settings
-if filereadable(expand("~/.vimrc.bundles.local"))
-  source ~/.vimrc.bundles.local
+if filereadable(expand("~/.config/nvim/vimrc.bundles.local"))
+  source ~/.config/nvim/vimrc.bundles.local
 endif
 
 call plug#end()

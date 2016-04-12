@@ -92,16 +92,16 @@
 " }
 
 " Load plugins
-if filereadable(expand("~/.vimrc.bundles"))
-  source ~/.vimrc.bundles
+if filereadable(expand("~/.config/nvim/vimrc.bundles"))
+  source ~/.config/nvim/vimrc.bundles
 endif
 
 " OS specific config
-if filereadable(expand("~/.vimrc.oss"))
-  source ~/.vimrc.oss
+if filereadable(expand("~/.config/nvim/vimrc.oss"))
+  source ~/.config/nvim/vimrc.oss
 endif
 
 " Local config
-if filereadable(expand("/.vimrc.local"))
-  source ~/.vimrc.local
+if filereadable(expand("~/.config/nvim/vimrc.local"))
+  source ~/.config/nvim/vimrc.local
 endif
