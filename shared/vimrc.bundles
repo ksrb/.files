@@ -32,7 +32,7 @@ Plug 'tpope/vim-repeat'
 Plug 'tpope/vim-surround'
 
 " ctrlP {
-    let g:ctrlp_custom_ignore = '\v[\/](node_modules|build|jspm_packages)|(\.(git|hg|svn))$' "ignore node_modules|build|jspm_packages|git|hg|svn folders
+    let g:ctrlp_custom_ignore = '\v[\/](node_modules|build|jspm_packages)|(\.(git|hg|svn))$' " ignore node_modules|build|jspm_packages|git|hg|svn folders
     let g:ctrlp_working_path_mode = 'ra'                                                     " Set working dir to first folder with .git or folder which file ctrlp was called on
     let g:ctrlp_switch_buffer = 'et'                                                         " Jump to a file if it's open already
     let g:ctrlp_mruf_max = 450                                                               " Number of recently opened files
@@ -90,7 +90,7 @@ Plug 'tpope/vim-surround'
     let g:indent_guides_auto_colors = 0
     let g:indent_guides_enable_on_vim_startup = 1
     " https://upload.wikimedia.org/wikipedia/en/1/15/Xterm_256color_chart.svg
-    autocmd VimEnter,Colorscheme * :hi IndentGuidesOdd  ctermbg = 237
+    autocmd VimEnter,Colorscheme * :hi IndentGuidesOdd  ctermbg = 239
     autocmd VimEnter,Colorscheme * :hi IndentGuidesEven ctermbg = 0
 " }
 

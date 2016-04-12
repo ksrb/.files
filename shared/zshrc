@@ -13,7 +13,7 @@
     # Initialize oh-my-zsh
     source "$ZSH"/oh-my-zsh.sh
 
-    ## Disable ctrl-s and ctrl-q http://unix.stackexchange.com/a/72092
+    # Disable ctrl-s and ctrl-q http://unix.stackexchange.com/a/72092
     stty -ixon
 
     # Unalias git branch alias from git zsh git plugin
@@ -24,9 +24,14 @@
     # Add relative node_modules/.bin to PATH
     export PATH=$PATH:./node_modules/.bin
 
-    ## Directory shortcuts
+    # Directory shortcuts
     prog (){ cd ~/Documents/Programming/$1; }
     compctl -W $HOME/Documents/programming/ -/ prog
+
+    # Print Path in human readable format
+    ppath (){
+      echo -e ${PATH//:/\\n}
+    }
 # }
 
 # Docker {
@@ -35,7 +40,7 @@
       eval $(docker-machine env default)
     fi
 
-    ## Docker machine set env
+    # Docker machine set env
     dm-set-env (){
       if [[ -z "$1" ]]; then
         eval "$(docker-machine env default)"
