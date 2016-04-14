@@ -1,4 +1,10 @@
+if !has('nvim')
+  noremap <F5> :source $MYVIMRC<CR>
+endif
+
 if has('nvim')
+  noremap <F17> :source $MYVIMRC<CR>
+
   " Bindings {
       " Use Ctrl+hjkl to switch buffers while in terminal mode
       tnoremap <C-h> <C-\><C-n><C-w>h
@@ -6,6 +12,7 @@ if has('nvim')
       tnoremap <C-k> <C-\><C-n><C-w>k
       tnoremap <C-l> <C-\><C-n><C-w>l
   " }
+  "
   " Misc {
       autocmd BufWinEnter,WinEnter term://* startinsert " Enter insert mode when entering terminal
       autocmd BufLeave term://* stopinsert              " Leave insert mode when leaving terminal

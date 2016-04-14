@@ -1,6 +1,9 @@
 " Settings {
-  if !has("win32") " If not windows
-    set term=xterm-256color " Terminal color
-  endif
+    if !has("win32") " If not windows
+      set term=xterm-256color " Terminal color
+    endif
 " }
 
+" Bindings {
+    noremap  <F5> :redraw!<CR>
+" }
