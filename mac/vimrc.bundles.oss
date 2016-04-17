@@ -1,3 +1,5 @@
+Plug 'marijnh/tern_for_vim', { 'do' : 'npm install' }
+
 if has('nvim')
   Plug 'Shougo/deoplete.nvim'
   Plug 'zchee/deoplete-go', { 'do': 'make'}

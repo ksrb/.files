@@ -13,7 +13,6 @@ Plug 'SirVer/ultisnips'
 Plug 'fatih/vim-go'
 Plug 'ksrb/vim-javascript-es6-snippets'
 Plug 'majutsushi/tagbar'
-Plug 'marijnh/tern_for_vim', { 'do' : 'npm install' }
 Plug 'mxw/vim-jsx'
 Plug 'scrooloose/syntastic'
 Plug 'sheerun/vim-polyglot'
