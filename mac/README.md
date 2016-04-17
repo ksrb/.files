@@ -1,41 +1,41 @@
-#Mac
+# Mac
 
-##Dotfiles
+## Dotfiles
 * The base dotfiles are from [bodhi5](https://github.com/bodhi5/.dotfiles)
 
-##Karabiner
+## Karabiner
 * Profiles and custom keybindings available for:
-	* External keyboards
-	* Laptop
-	* Legacy
+  * External keyboards
+  * Laptop
+  * Legacy
 
-##iTerm
+## iTerm
 * Set Alt key to be compatible with Tmux
-	* Profiles → Keys →  Left/Right Option key acts as: +Esc
+  * Profiles → Keys →  Left/Right Option key acts as: +Esc
 
-##IntelliJ
+## IntelliJ
 * Set config directory to ~/.IntelliJ[XX]
-```bash
-rm -rf ~/Library/Preferences/IntelliJIdea[XX]
-echo idea.config.path=~/.IntelliJIdea/config  >> /Applications/IntelliJ IDEA [XX].app/Contents/bin/idea.properties
-```
+    ```bash
+    rm -rf ~/Library/Preferences/IntelliJIdea[XX]
+    echo idea.config.path=~/.IntelliJIdea/config  >> /Applications/IntelliJ IDEA [XX].app/Contents/bin/idea.properties
+    ```
 
 * Conflicting Keys and Resolution
-	* Ctrl + F4 - System Preferences → Keyboard → Shortcuts → Keyboard → Move Focus to active or next Window
-	* Ctrl + F1 - System Preferences → Keyboard → Shortcuts → Turn keyboard access on or off
+  * Ctrl + F4 - System Preferences → Keyboard → Shortcuts → Keyboard → Move Focus to active or next Window
+  * Ctrl + F1 - System Preferences → Keyboard → Shortcuts → Turn keyboard access on or off
 
-##[BetterSnapTool](https://itunes.apple.com/us/app/bettersnaptool/id417375580?mt=12)
+## [BetterSnapTool](https://itunes.apple.com/us/app/bettersnaptool/id417375580?mt=12)
 
-##System Preferences
+## System Preferences
 * [Remove system beep](http://superuser.com/a/287085)
 * Increase minimize & maximize animation speed
-	* Dock → Minimize Windows using: Scale effect
+  * Dock → Minimize Windows using: Scale effect
 * Context menu for opening terminal by right clicking on folder
-	* Keyboard → Shortcuts → Services → Files and Folders → New Terminal at Folder
+  * Keyboard → Shortcuts → Services → Files and Folders → New Terminal at Folder
 * Override Command+H in IntelliJ
-	* Keyboard → App Shortcuts → + → Application: IntelliJ IDEA 14 → Menu Title: Find in Path... → + Keyboard Shortcut: Command H
+  * Keyboard → App Shortcuts → + → Application: IntelliJ IDEA 14 → Menu Title: Find in Path... → + Keyboard Shortcut: Command H
 * Ctrl Arrow Keys
-	* Keyboard -> Mission Control/Application windows/Move left a space/Move right a space
+  * Keyboard -> Mission Control/Application windows/Move left a space/Move right a space
 
-##Defaults
+## Defaults
 * Set using defaults.sh script
