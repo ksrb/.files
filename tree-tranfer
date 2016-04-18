@@ -1,0 +1,36 @@
+#!/usr/bin/env zsh
+
+transfer(){
+  git rebase --onto master master bodhi5PatchVim
+  git rebase --onto bodhi5PatchVim~1 bodhi5PatchNvim~1 bodhi5PatchNvim
+}
+
+reset(){
+  git branch -f bodhi5PatchNvim origin/bodhi5PatchNvim
+  git branch -f bodhi5PatchVim origin/bodhi5PatchVim
+}
+
+help(){
+cat <<-EOF
+  Usage: transfer-tree [COMMAND]
+  Commands:
+  t Transfer patch branches onto master
+  r Reset patch branches to remotes
+EOF
+}
+
+process(){
+  case "$1" in
+    "t")
+      transfer;;
+    "r")
+      reset;;
+    "help")
+      help;;
+    *)
+      echo "Not a valid command"
+      help;;
+  esac
+}
+
+process "$@"
