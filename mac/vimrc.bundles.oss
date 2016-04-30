@@ -1,4 +1,10 @@
+" Code
 Plug 'marijnh/tern_for_vim', { 'do' : 'npm install' }
+
+" tern_for_vim  {
+    au FileType javascript nnoremap <F2> :TernDoc<CR>
+    au FileType javascript nnoremap <F3> :TernDef<CR>
+" }
 
 if has('nvim')
   Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
@@ -9,6 +15,12 @@ if has('nvim')
       let g:deoplete#auto_complete_start_length = 1
       inoremap <expr><TAB> pumvisible() ? "\<C-n>" : "\<TAB>"
       inoremap <expr><S-TAB> pumvisible() ? "\<C-p>" : "\<S-TAB>"
+  " }
+
+  " tern_for_vim {
+      " Tern commands are only loaded when a JS file is detected so using <Plug>
+      " bindings isn't possible
+      au FileType javascript nnoremap <M-R> :TernRename<CR>
   " }
 
   " vim-easymotion {
@@ -35,7 +47,13 @@ if !has('nvim')
 
   " vim-go {
       " Rename with Alt+Shift+R
-      au FileType go nmap R <Plug>(go-rename)
+      au FileType go nnoremap R <Plug>(go-rename)
+  " }
+
+  " tern_for_vim {
+      " Tern commands are only loaded when a JS file is detected so using <Plug>
+      " bindings isn't possible
+      au FileType javascript nnoremap R :TernRename<CR>
   " }
 
   " ultisnips {
