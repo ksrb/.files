@@ -1,3 +1,5 @@
+alias nvim=vim
+
 # Git {
     MSYS_GIT='/cygdrive/c/Users/Kevin Suen/AppData/Local/Programs/Git/cmd'
 
@@ -23,7 +25,7 @@
 
 
 # IntelliJ {
-    #Execute command if first argument is 'eval'
+    # Execute command if first argument is 'eval'
     # see http://superuser.com/a/230090
     if [[ $1 == "eval" ]]; then
       "$@"
@@ -31,4 +33,10 @@
     # Combine with C:\cygwin64\bin\zsh.exe -is eval 'unsetopt PROMPT_SP'
     # To eliminate extra '%' after every prompt
     # See http://superuser.com/questions/645599/why-is-a-percent-sign-appearing-before-each-prompt-on-zsh-in-windows
+# }
+
+# Node {
+    killNode() {
+       taskkill /f /im node.exe
+    }
 # }
