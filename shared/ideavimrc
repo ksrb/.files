@@ -1,5 +1,6 @@
 set surround        " vim-surround emulation
-set hlsearch        " Progressive highlighting while searching
+set hlsearch        " Highlight searched
+set incsearch       " Progressive highlighting while searching
 set relativenumber  " Show line numbers relative to cursor
 set number          " Absolute line number at cursor
 
