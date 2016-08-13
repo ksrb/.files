@@ -17,7 +17,7 @@
 * Set config directory to ~/.IntelliJ[XX]
     ```bash
     rm -rf ~/Library/Preferences/IntelliJIdea[XX]
-    echo idea.config.path=~/.IntelliJIdea/config  >> /Applications/IntelliJ IDEA [XX].app/Contents/bin/idea.properties
+    echo idea.config.path=~/.IntelliJIdea/config  >> "/Applications/IntelliJ IDEA [XX].app/Contents/bin/idea.properties"
     ```
 
 * Conflicting Keys and Resolution
