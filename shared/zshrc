@@ -51,6 +51,11 @@
     }
 # }
 
+# Emacs {
+    # Allow emacs to use Shift + tab in term mode when showing completion list
+    bindkey '^[[Z' reverse-menu-complete
+# }
+
 # OS specific settings
 [[ -s "$HOME/.zshrc.oss" ]] && source "$HOME/.zshrc.oss"
 
