@@ -1,10 +1,13 @@
 <application>
-  <component name="FileTypeManager" version="16">
+  <component name="FileTypeManager" version="17">
     <extensionMap>
-      <mapping ext="svg" type="HTML" />
       <mapping ext="liquid" type="HTML" />
+      <mapping ext="svg" type="HTML" />
+      <mapping ext="js" type="JSX Harmony" />
       <mapping pattern="*.js.liquid" type="JavaScript" />
+      <removed_mapping ext="js" type="JavaScript" />
       <mapping pattern="*.scss.liquid" type="SCSS" />
+      <removed_mapping ext="svg" type="XML" />
     </extensionMap>
   </component>
 </application>
