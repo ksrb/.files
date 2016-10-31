@@ -94,39 +94,39 @@
     </item>
     <item>
       <name>Additional Options</name>
-        <item>
-          <name>Ctrl_L+Space to Command_L+Space</name>
-          <identifier>ekeyboard.ctrlLSpace2commandLSpace</identifier>
-          <autogen>
-            __KeyToKey__
-            KeyCode::SPACE, ModifierFlag::CONTROL_L | ModifierFlag::NONE,
-            KeyCode::SPACE, ModifierFlag::COMMAND_L
-          </autogen>
-        </item>
-        <item>
-          <name>Control_L to Command_L (except Terminal)</name>
-          <identifier>ekeyboard.controlL2commandL_excustomExpTerm</identifier>
-          <not>TERMINAL</not>
-          <autogen>__KeyToKey__ KeyCode::CONTROL_L, KeyCode::COMMAND_L</autogen>
-        </item>
-        <item>
-          <name>Command_L to Control_L (except Terminal)</name>
-          <identifier>ekeyboard.commandL2controlL_excustomExpTerm</identifier>
-          <not>TERMINAL</not>
-          <autogen>__KeyToKey__ KeyCode::COMMAND_L, KeyCode::CONTROL_L</autogen>
-        </item>
-        <item>
-          <name>Control_L to Command_L (except IntelliJ)</name>
-          <identifier>ekeyboard.controlL2commandL_excustomExpIntelliJ</identifier>
-          <not>IntelliJ</not>
-          <autogen>__KeyToKey__ KeyCode::CONTROL_L, KeyCode::COMMAND_L</autogen>
-        </item>
-        <item>
-          <name>Command_L to Control_L (except IntelliJ)</name>
-          <identifier>ekeyboard.commandL2controlL_excustomExpIntelliJ</identifier>
-          <not>IntelliJ</not>
-          <autogen>__KeyToKey__ KeyCode::COMMAND_L, KeyCode::CONTROL_L</autogen>
-        </item>
+      <item>
+        <name>Ctrl_L+Space to Command_L+Space</name>
+        <identifier>ekeyboard.ctrlLSpace2commandLSpace</identifier>
+        <autogen>
+          __KeyToKey__
+          KeyCode::SPACE, ModifierFlag::CONTROL_L | ModifierFlag::NONE,
+          KeyCode::SPACE, ModifierFlag::COMMAND_L
+        </autogen>
+      </item>
+      <item>
+        <name>Control_L to Command_L (except Terminal)</name>
+        <identifier>ekeyboard.controlL2commandL_excustomExpTerm</identifier>
+        <not>TERMINAL</not>
+        <autogen>__KeyToKey__ KeyCode::CONTROL_L, KeyCode::COMMAND_L</autogen>
+      </item>
+      <item>
+        <name>Command_L to Control_L (except Terminal)</name>
+        <identifier>ekeyboard.commandL2controlL_excustomExpTerm</identifier>
+        <not>TERMINAL</not>
+        <autogen>__KeyToKey__ KeyCode::COMMAND_L, KeyCode::CONTROL_L</autogen>
+      </item>
+      <item>
+        <name>Control_L to Command_L (except IntelliJ)</name>
+        <identifier>ekeyboard.controlL2commandL_excustomExpIntelliJ</identifier>
+        <not>IntelliJ</not>
+        <autogen>__KeyToKey__ KeyCode::CONTROL_L, KeyCode::COMMAND_L</autogen>
+      </item>
+      <item>
+        <name>Command_L to Control_L (except IntelliJ)</name>
+        <identifier>ekeyboard.commandL2controlL_excustomExpIntelliJ</identifier>
+        <not>IntelliJ</not>
+        <autogen>__KeyToKey__ KeyCode::COMMAND_L, KeyCode::CONTROL_L</autogen>
+      </item>
     </item>
     <item>
       <name>Control_L+Option_L q,w,e,a,s,d,z,x,c to Command_L+Option_L q,w,e,a,s,d,z,x,c (only in Terminal and IntelliJ)</name>
