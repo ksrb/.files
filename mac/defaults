@@ -1,4 +1,6 @@
-set(){
+#!/bin/bash
+setDefaults(){
+  echo "Settings defaults"
   # Remove mouse acceleration
   defaults write .GlobalPreferences com.apple.mouse.scaling -1
   # Show full path in finder
@@ -11,13 +13,39 @@ set(){
   defaults write -g NSAutomaticWindowAnimationsEnabled -bool false
 }
 
-# TODO
-reset(){
+resetDefaults(){
+  echo "Resets defaults"
+  echo "TODO"
 }
 
 # Add Dock Spacer
-ads(){
+addDockerSpacer(){
   defaults write com.apple.dock persistent-apps -array-add '{tile-data={}; tile-type="spacer-tile";}'; killall Dock
 }
 
-"$@"
+help(){
+  cat <<-EOF
+  Usage: default [COMMAND]
+  Commands:
+  sd  Set default mac settings
+  rd  Reset default mac settings set by 'sd'
+  ads add spacer to docker
+EOF
+}
+
+process(){
+  case "$1" in
+    sd)
+      setDefaults;;
+    ads)
+      addDockerSpacer;;
+    help)
+      help;;
+    -h)
+      help;;
+    *)
+      help;;
+  esac
+}
+
+process "$@"
