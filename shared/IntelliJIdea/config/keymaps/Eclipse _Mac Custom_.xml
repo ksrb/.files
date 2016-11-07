@@ -10,6 +10,9 @@
   <action id="ActivateANTLRPreviewToolWindow">
     <keyboard-shortcut first-keystroke="alt f9" />
   </action>
+  <action id="ActivateInspectionResultsToolWindow">
+    <keyboard-shortcut first-keystroke="alt 8" />
+  </action>
   <action id="CallHierarchy" />
   <action id="CloseAllEditorsButActive">
     <keyboard-shortcut first-keystroke="ctrl alt f4" />
