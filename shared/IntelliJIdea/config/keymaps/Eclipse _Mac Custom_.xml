@@ -62,6 +62,7 @@
     <keyboard-shortcut first-keystroke="ctrl alt h" />
   </action>
   <action id="Print" />
+  <action id="RecentFiles" />
   <action id="ShortcutLookup.ShortcutLookup">
     <keyboard-shortcut first-keystroke="ctrl alt k" />
   </action>
