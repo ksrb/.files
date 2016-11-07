@@ -12,7 +12,7 @@
       <option name="JS_STATEMENT" value="true" />
     </context>
   </template>
-  <template name="()" value="($PARAM$) =&gt; {&#10;  $END$&#10;}" description="Insert lamba" toReformat="true" toShortenFQNames="true">
+  <template name="lam" value="($PARAM$) =&gt; {&#10;  $END$&#10;}" description="Insert lamba" toReformat="true" toShortenFQNames="true">
     <variable name="PARAM" expression="" defaultValue="" alwaysStopAt="true" />
     <context>
       <option name="JAVA_SCRIPT" value="true" />
@@ -48,7 +48,7 @@
       <option name="JS_STATEMENT" value="true" />
     </context>
   </template>
-  <template name="()s" value="($PARAM$) =&gt; {&#10;  $END$&#10;};" description="Insert lamba statement" toReformat="true" toShortenFQNames="true">
+  <template name="lamst" value="($PARAM$) =&gt; {&#10;  $END$&#10;};" description="Insert lamba statement" toReformat="true" toShortenFQNames="true">
     <variable name="PARAM" expression="" defaultValue="" alwaysStopAt="true" />
     <context>
       <option name="JAVA_SCRIPT" value="true" />
