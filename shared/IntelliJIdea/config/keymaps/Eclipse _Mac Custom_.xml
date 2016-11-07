@@ -1,4 +1,4 @@
-<keymap version="1" name="Eclipse (Mac Shortcut Translator)" parent="Eclipse">
+<keymap version="1" name="Eclipse (Mac Custom)" parent="Eclipse">
   <action id="$Copy">
     <keyboard-shortcut first-keystroke="ctrl c" />
     <keyboard-shortcut first-keystroke="meta c" />
