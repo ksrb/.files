@@ -34,23 +34,6 @@
     }
 # }
 
-# Docker {
-    if [[ $(docker-machine status default) != "Stopped" ]]; then
-      # Docker machine default variables
-      eval $(docker-machine env default)
-    fi
-
-    # Docker machine set env
-    dm-set-env (){
-      if [[ -z "$1" ]]; then
-        eval "$(docker-machine env default)"
-      fi
-      if [[ -n "$1" ]]; then
-        eval "$(docker-machine env "$1")"
-      fi
-    }
-# }
-
 # Emacs {
     # Allow emacs to use Shift + tab in term mode when showing completion list
     bindkey '^[[Z' reverse-menu-complete
