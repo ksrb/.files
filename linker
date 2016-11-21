@@ -10,6 +10,9 @@ shared_config_ignores+=(
   "${ignores_global[@]}"
   Code
   idea.properties
+  gvimrc
+  tmux.conf
+  zshrc
 )
 
 mac_configs_dir="$configs_dir/mac"
@@ -18,6 +21,7 @@ mac_configs_ignores+=(
   Karabiner
   defaults
   override
+  tmux.conf.oss
 )
 
 windows_configs_dir="$configs_dir/windows"
