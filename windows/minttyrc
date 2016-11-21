@@ -23,7 +23,7 @@ WindowShortcuts=no
 
 # Colors base16-eighties from https://github.com/oumu/mintty-color-schemes/blob/master/base16-default-mod-lighten.minttyrc
 ForegroundColour=208,208,208
-BackgroundColour=21,21,21
+BackgroundColour=45,45,45
 CursorColour=253,157,79
 Black=21,21,21
 BoldBlack=80,80,80
