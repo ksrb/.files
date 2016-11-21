@@ -1,7 +1,7 @@
 alias nvim=vim
 
 # Git {
-    MSYS_GIT='/cygdrive/c/Users/Kevin Suen/AppData/Local/Programs/Git/cmd'
+    MSYS_GIT='/cygdrive/c/Program Files/Git/cmd'
 
     # Set git to msysgit for compatibility (node and gitk)
     setMsysGit(){
