@@ -30,7 +30,7 @@ alias nvim=vim
     if [[ $1 == "eval" ]]; then
       "$@"
     fi
-    # Combine with C:\cygwin64\bin\zsh.exe -is eval 'unsetopt PROMPT_SP'
+    # Combine with "C:\cygwin64\bin\zsh.exe" -is eval 'unsetopt PROMPT_SP'
     # To eliminate extra '%' after every prompt
     # See http://superuser.com/questions/645599/why-is-a-percent-sign-appearing-before-each-prompt-on-zsh-in-windows
 # }
