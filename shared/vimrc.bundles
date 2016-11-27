@@ -1,7 +1,7 @@
 call plug#begin('~/.vim/plugged')
 
 " Gui
-Plug 'chriskempson/base16-vim'
+Plug 'ksrb/base16-vim'
 Plug 'christoomey/vim-tmux-navigator'
 Plug 'nathanaelkane/vim-indent-guides'
 Plug 'scrooloose/nerdtree', { 'on':  'NERDTreeToggle' }
@@ -89,7 +89,7 @@ Plug 'tpope/vim-surround'
     let g:indent_guides_auto_colors = 0
     let g:indent_guides_enable_on_vim_startup = 1
     " https://upload.wikimedia.org/wikipedia/en/1/15/Xterm_256color_chart.svg
-    autocmd VimEnter,Colorscheme * :hi IndentGuidesOdd  ctermbg = 18
+    autocmd VimEnter,Colorscheme * :hi IndentGuidesOdd  ctermbg = 235
     autocmd VimEnter,Colorscheme * :hi IndentGuidesEven ctermbg = 00
 " }
 
