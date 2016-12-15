@@ -6,7 +6,7 @@
     ZSH_THEME="robbyrussell"
 
     # Base16 Shell colors
-    [[ -s "$HOME/.files/config/base16-eighties.dark.sh" ]] && source "$HOME/.files/config/base16-eighties.dark.sh"
+    source "$HOME/.files/config/base16-eighties.dark.sh"
 
     plugins=(git docker)
 
