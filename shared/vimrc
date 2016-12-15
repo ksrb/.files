@@ -9,7 +9,6 @@
     set exrc                   " Allow local (./) specific vimrc
     set secure                 " Disable unsafe commands in local .vimrc files
 
-    set background=dark        " Color Theme
     set completeopt=menu       " Show completion options as dropdown list
     set relativenumber         " Show line numbers relative to cursor
     set number                 " Show line numbers
