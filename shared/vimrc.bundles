@@ -1,8 +1,9 @@
 call plug#begin('~/.vim/plugged')
 
 " Gui
-Plug 'ksrb/base16-vim'
+Plug 'airblade/vim-gitgutter'
 Plug 'christoomey/vim-tmux-navigator'
+Plug 'ksrb/base16-vim'
 Plug 'nathanaelkane/vim-indent-guides'
 Plug 'scrooloose/nerdtree', { 'on':  'NERDTreeToggle' }
 Plug 'vim-airline/vim-airline'
@@ -14,12 +15,12 @@ Plug 'fatih/vim-go'
 Plug 'ksrb/vim-javascript-es6-snippets'
 Plug 'majutsushi/tagbar'
 Plug 'mxw/vim-jsx'
+Plug 'pangloss/vim-javascript'
 Plug 'scrooloose/syntastic'
 Plug 'sheerun/vim-polyglot'
 Plug 'uarun/vim-protobuf'
 
 " Git
-Plug 'airblade/vim-gitgutter'
 Plug 'tpope/vim-fugitive'
 
 " Misc
