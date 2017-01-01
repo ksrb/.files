@@ -1,6 +1,6 @@
-import React from 'react';
+import React, { Component, PropTypes } from 'react';
 
-class #parse("Capitalized Filename.js") extends React.Component {
+class #parse("Capitalized Filename.js") extends Component {
 
   render() {
     return (
