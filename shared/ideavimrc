@@ -3,9 +3,21 @@ set hlsearch        " Highlight searched
 set incsearch       " Progressive highlighting while searching
 set relativenumber  " Show line numbers relative to cursor
 set number          " Absolute line number at cursor
+set ic              " Case insensitive search
 
 " Ctrl + hjkl to switch splits
 nnoremap <C-j> <C-w>j
 nnoremap <C-k> <C-w>k
 nnoremap <C-h> <C-w>h
 nnoremap <C-l> <C-w>l
+
+let mapleader = " "
+" For reference of available actions see:
+" https://github.com/JetBrains/intellij-community/blob/master/platform/platform-resources-en/src/messages/ActionsBundle.properties
+map <leader><C-[> :action EditorCodeBlockStart<CR>
+map <leader><C-]> :action EditorCodeBlockEnd<CR>
+map <leader><C-f> :action Replace<CR>
+map <leader><C-g> :action FindUsages<CR>
+map <leader><C-h> :action FindInPath<CR>
+map <leader>n :action ActivateProjectToolWindow<CR>
+map <leader>t :action ActivateStructureToolWindow<CR>
