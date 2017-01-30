@@ -20,8 +20,10 @@ let mapleader = " "
 " https://github.com/JetBrains/intellij-community/blob/master/platform/platform-resources-en/src/messages/ActionsBundle.properties
 map <leader><C-[> :action EditorCodeBlockStart<CR>
 map <leader><C-]> :action EditorCodeBlockEnd<CR>
+map <leader><C-e> :action RecentFiles<CR>
 map <leader><C-f> :action Replace<CR>
 map <leader><C-g> :action FindUsages<CR>
 map <leader><C-h> :action FindInPath<CR>
+map <leader>co :action CloseAllEditorsButActive<CR>
 map <leader>n :action ActivateProjectToolWindow<CR>
 map <leader>t :action ActivateStructureToolWindow<CR>
