@@ -11,6 +11,10 @@ nnoremap <C-k> <C-w>k
 nnoremap <C-h> <C-w>h
 nnoremap <C-l> <C-w>l
 
+" Emulate window move behavior
+nnoremap <C-w>L :action MoveEditorToOppositeTabGroup<CR>
+nnoremap <C-w>H :action MoveEditorToOppositeTabGroup<CR>
+
 let mapleader = " "
 " For reference of available actions see:
 " https://github.com/JetBrains/intellij-community/blob/master/platform/platform-resources-en/src/messages/ActionsBundle.properties
