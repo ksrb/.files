@@ -17,6 +17,7 @@
     set nowrap                 " Prevent word wrapping on long lines
     set incsearch              " Shows the match while typing
     set hlsearch               " Highlight found searches
+    set ic                     " Case insensitive search
     set laststatus=2           " Always display the status line
     set showmode               " Show the current mode
     set nocursorcolumn         " Speed up syntax highlighting
