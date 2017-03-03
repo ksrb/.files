@@ -30,7 +30,7 @@ map <leader><C-h> :action FindInPath<CR>
 map <leader>co :action CloseAllEditorsButActive<CR>
 map <leader>n :action ActivateProjectToolWindow<CR>
 map <leader>t :action ActivateStructureToolWindow<CR>
-map <leader>s :action SynchronizeCurrentFile<CR>
-map <leader>sa :action Synchronize<CR>
+map <leader>s :action SynchronizeCurrentFile<CR> :action VimInsertExitMode<CR>
+map <leader>sa :action Synchronize<CR> :action VimInsertExitMode<CR>
 map <leader>wl :action com.andrewbrookins.idea.wrap.WrapAction<CR>
 map <leader>wp :action com.andrewbrookins.idea.wrap.WrapParagraphAction<CR>
