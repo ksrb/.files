@@ -11,6 +11,8 @@ nnoremap <C-k> <C-w>k
 nnoremap <C-h> <C-w>h
 nnoremap <C-l> <C-w>l
 
+nnoremap <C-c>pp :action ManageRecentProjects<CR>
+
 " Emulate window move behavior
 nnoremap <C-w>L :action MoveEditorToOppositeTabGroup<CR>
 nnoremap <C-w>H :action MoveEditorToOppositeTabGroup<CR>
