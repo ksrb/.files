@@ -16,9 +16,11 @@ nnoremap <C-c>pp :action ManageRecentProjects<CR>
 " Emulate window move behavior
 nnoremap <C-w>L :action MoveEditorToOppositeTabGroup<CR>
 nnoremap <C-w>H :action MoveEditorToOppositeTabGroup<CR>
+nnoremap <C-w>D :action OpenEditorInOppositeTabGroup<CR>
 
 " tcomment like comment command
 nnoremap gcc :action CommentByLineComment<CR>
+nnoremap gqq :action com.andrewbrookins.idea.wrap.WrapAction<CR>
 
 let mapleader = " "
 " For reference of available actions see:
