@@ -1,13 +1,13 @@
 #!/usr/bin/env zsh
 
 transfer(){
-  git rebase --onto master master bodhi5PatchVim
-  git rebase --onto bodhi5PatchVim~1 bodhi5PatchNvim~1 bodhi5PatchNvim
+  git rebase --onto master master link-vim-only
+  git rebase --onto link-vim-only~1 link-nvim-only~1 link-nvim-only
 }
 
 reset(){
-  git branch -f bodhi5PatchNvim origin/bodhi5PatchNvim
-  git branch -f bodhi5PatchVim origin/bodhi5PatchVim
+  git branch -f link-nvim-only origin/link-nvim-only
+  git branch -f link-vim-only origin/link-vim-only
 }
 
 help(){
