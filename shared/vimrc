@@ -74,7 +74,7 @@
 " }
 
 " Misc {
-    let mapleader = ","                  " Leader key to ','
+    let mapleader = "\<SPACE>"           " Leader key to ','
     autocmd FileType qf wincmd J         " Move quickfix window to the bottom
 " }
 
