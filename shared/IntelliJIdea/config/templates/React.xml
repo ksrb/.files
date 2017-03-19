@@ -1,5 +1,5 @@
 <templateSet group="React">
-  <template name="ri" value="import React, { Component, PropTypes } from 'react';" description="Import React module" toReformat="false" toShortenFQNames="true">
+  <template name="imr" value="import React, { Component, PropTypes } from 'react';" description="Import React module" toReformat="false" toShortenFQNames="true">
     <context>
       <option name="JS_STATEMENT" value="true" />
     </context>
