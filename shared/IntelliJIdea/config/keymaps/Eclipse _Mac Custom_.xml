@@ -4,7 +4,6 @@
     <keyboard-shortcut first-keystroke="meta c" />
   </action>
   <action id="$Paste">
-    <keyboard-shortcut first-keystroke="ctrl v" />
     <keyboard-shortcut first-keystroke="meta v" />
   </action>
   <action id="ActivateANTLRPreviewToolWindow">
@@ -14,9 +13,6 @@
     <keyboard-shortcut first-keystroke="alt 8" />
   </action>
   <action id="CallHierarchy" />
-  <action id="CloseAllEditorsButActive">
-    <keyboard-shortcut first-keystroke="ctrl alt f4" />
-  </action>
   <action id="CloseProject">
     <keyboard-shortcut first-keystroke="meta w" />
   </action>
