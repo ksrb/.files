@@ -104,6 +104,10 @@ Plug 'tpope/vim-surround'
     let g:jsx_ext_required = 0
 " }
 
+" vim-polyglot {
+    let g:polyglot_disabled = ['js', 'jsx', 'go']
+" }
+
 " OS Specific settings
 if filereadable(expand("~/.vimrc.bundles.oss"))
   source ~/.vimrc.bundles.oss
