@@ -2,7 +2,6 @@
     set nocompatible           " Use Vim settings, over Vi settings, has side effects must be set as early as possible
     set ttyfast                " Fast terminal connecion improves responsiveness
 
-    syntax on                  " Turn on syntax highlighting
     syntax sync minlines=256   " Start parsing for syntax highlighting 256 lines before buffer
     set synmaxcol=150          " Stop syntax higlighting after 150 cols
 
@@ -39,7 +38,7 @@
 
     set tabstop=2              " Use 2 spaces for tabs
     set shiftwidth=2           " >>, << to use 2 spaces
-    set shiftround
+    set shiftround             " Round indent to multiple of 'shiftwidth'
     set expandtab              " Insert spaces when tab is pressed
 
     set re=1                   " Use old regex engine
