@@ -25,8 +25,8 @@ nnoremap gqq :action com.andrewbrookins.idea.wrap.WrapAction<CR>
 let mapleader = " "
 " For reference of available actions see:
 " https://github.com/JetBrains/intellij-community/blob/master/platform/platform-resources-en/src/messages/ActionsBundle.properties
-map <leader><C-[> :action EditorCodeBlockStart<CR>
-map <leader><C-]> :action EditorCodeBlockEnd<CR>
+map <leader>[{ :action EditorCodeBlockStart<CR>
+map <leader>]} :action EditorCodeBlockEnd<CR>
 map <leader><C-e> :action RecentFiles<CR>
 map <leader><C-f> :action Replace<CR>
 map <leader><C-g> :action FindUsages<CR>
