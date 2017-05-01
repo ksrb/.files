@@ -1,18 +1,18 @@
-#!/usr/bin/env zsh
+#!/usr/bin/env bash
 
 # cd to the directory that script is being executed and set configs_dir to directory
-configs_dir=$( cd "$(dirname "$0")" ; pwd )
+configs_dir=$( cd "$(dirname "$0")" || exit ; pwd )
 target="$configs_dir/.."
 ignores_global=(README.md)
 
 shared_configs_dir="$configs_dir/shared"
 shared_config_ignores+=(
-  $ignores_global
+  "${ignores_global[@]}"
 )
 
 mac_configs_dir="$configs_dir/mac"
 mac_configs_ignores+=(
-  $ignores_global
+  "${ignores_global[@]}"
   Karabiner
   defaults.sh
   override.sh
@@ -20,7 +20,7 @@ mac_configs_ignores+=(
 
 windows_configs_dir="$configs_dir/windows"
 window_configs_ignores+=(
-  $ignores_global
+  "${ignores_global[@]}"
 )
 
 setEnv(){
@@ -33,13 +33,13 @@ setEnv(){
 setEnv
 
 ignored() {
-  local elements="$2"
-  # For each element
-  # Note: Zsh specific expansion syntax
-  # See http://stackoverflow.com/a/14693738
-  for e in ${(P)${elements}[@]}; do
+  # TODO: consider string expanding the final parameter when invoking
+  # linkDotFiles and using ${@:3} to get remaining arguments instead of using a
+  # indirect reference see: http://stackoverflow.com/a/11180835
+  local elements=${!2}
+  for e in $elements; do
     # If the element matches the 1st arg
-    if [[ "$e" == "$1" ]] then;
+    if [[ "$e" == "$1" ]]; then
       return 1; #true, ignored
     fi
   done
@@ -47,12 +47,16 @@ ignored() {
 }
 
 linkDotFiles(){
-  local mode="$1"
-  local configs_dir="$2"
-  local ignores_local="$3"
+  local mode=$1
+  local configs_dir=$2
+  local ignores_local=$3
 
+  # TODO: consider using find with while loop
   # For each file in the configs_dir
-  for file in $(ls "${configs_dir}"); do
+  for file in $configs_dir/*; do
+    # Get the filename by removing everything before the last '/'
+    # see: http://stackoverflow.com/a/9011264
+    local file=${file##*/}
     # Check if the file is in list of ignores
     ignored "$file" "$ignores_local"
 
@@ -66,14 +70,14 @@ linkDotFiles(){
     # If the link exits
     if [[ -L "$target/.$file" ]]; then
       if [ "$mode" = "clean" ]; then
-        printf "$target/.$file removed\n"
+        printf "%s/.%s removed\n" "$target" "$file"
       fi
       # Remove it
       rm "$target/.$file"
     fi
 
     if [ "$mode" = "link" ]; then
-      printf "$configs_dir/$file => $target/.$file\n"
+      printf "%s/%s => %s/.%s\n" "$configs_dir" "$file" "$target" "$file"
       # Link each file in the configs_dir to a '.' target file
       ln -s "$configs_dir/$file" "$target/.$file"
     fi
@@ -81,9 +85,9 @@ linkDotFiles(){
 }
 
 linkFile(){
-  local mode="$1"
-  local src="$2"
-  local dest="$3"
+  local mode=$1
+  local src=$2
+  local dest=$3
 
   if [[ -L "$dest" ]]; then
     if [ "$mode" = "clean" ]; then
@@ -91,13 +95,13 @@ linkFile(){
     fi
     rm "$dest"
     if [ "$mode" = "clean" ]; then
-      printf "$dest removed\n"
+      printf "%s removed\n" "$dest"
     fi
   fi
 
   if [ "$mode" = "link" ]; then
     ln -s "$src" "$dest"
-    printf "$src => $dest\n"
+    printf "%s => %s\n" "$src" "$dest"
   fi
 }
 
