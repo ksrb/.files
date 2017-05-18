@@ -1,8 +1,8 @@
 set surround        " vim-surround emulation
 set hlsearch        " Highlight searched
 set incsearch       " Progressive highlighting while searching
-set relativenumber  " Show line numbers relative to cursor
-set number          " Absolute line number at cursor
+" set relativenumber  " Show line numbers relative to cursor
+" set number          " Absolute line number at cursor
 set ic              " Case insensitive search
 
 " Ctrl + hjkl to switch splits
