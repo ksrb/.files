@@ -1,8 +1,9 @@
-#!/usr/bin/env zsh
+#!/usr/bin/env bash
 
 transfer(){
-  git rebase --onto master master link-vim-only
+  git rebase --onto master link-vim-only~3 link-vim-only
   git rebase --onto link-vim-only~1 link-nvim-only~1 link-nvim-only
+  git checkout link-vim-only
 }
 
 reset(){
