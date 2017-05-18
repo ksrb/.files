@@ -1,5 +1,43 @@
 <?xml version="1.0"?>
 <root>
+  <appdef>
+    <appname>HIPCHAT</appname>
+    <equal>com.hipchat.HipChat</equal>
+  </appdef>
+  <appdef>
+    <appname>TERMLIKE</appname>
+
+    <!-- TERMINAL -->
+    <equal>com.apple.Terminal</equal>
+    <equal>iTerm</equal>
+    <equal>net.sourceforge.iTerm</equal>
+    <equal>com.googlecode.iterm2</equal>
+    <equal>co.zeit.hyperterm</equal>
+    <equal>co.zeit.hyper</equal>
+
+    <!-- EMACS -->
+    <equal>org.gnu.Emacs</equal>
+    <equal>org.gnu.AquamacsEmacs</equal>
+    <equal>org.gnu.Aquamacs</equal>
+    <equal>org.pqrs.unknownapp.conkeror</equal>
+
+    <!-- IntelliJ -->
+    <equal>com.jetbrains.intellij</equal>
+
+    <!-- Visual Studio Code -->
+    <equal>com.microsoft.VSCode</equal>
+
+    <!-- VIRTUALMACHINE -->
+    <equal>com.vmware.fusion</equal>
+    <equal>com.vmware.horizon</equal>
+    <equal>com.vmware.view</equal>
+    <equal>com.parallels.desktop</equal>
+    <equal>com.parallels.vm</equal>
+    <equal>com.parallels.desktop.console</equal>
+    <equal>org.virtualbox.app.VirtualBoxVM</equal>
+    <prefix>com.vmware.proxyApp.</prefix>
+    <prefix>com.parallels.winapp.</prefix>
+  </appdef>
   <item>
     <name>Custom</name>
     <item>
@@ -30,15 +68,11 @@
       <autogen>__KeyToKey__ KeyCode::F11, ConsumerKeyCode::VOLUME_DOWN</autogen>
       <autogen>__KeyToKey__ KeyCode::F12, ConsumerKeyCode::VOLUME_UP</autogen>
     </item>
-    <appdef>
-      <appname>HIPCHAT</appname>
-      <equal>com.hipchat.HipChat</equal>
-    </appdef>
     <item>
       <name>HipChat</name>
       <item>
         <name>Command+Shift+W to Command+W (only in HipChat)</name>
-        <identifier>laptop.cmdShiftW2CmdWOnlyHipChat</identifier>
+        <identifier>custom.cmdShiftW2CmdWOnlyHipChat</identifier>
         <only>HIPCHAT</only>
         <autogen>
           __KeyToKey__
@@ -48,12 +82,47 @@
       </item>
       <item>
         <name>Command+W to Command+Shift+W (only in HipChat)</name>
-        <identifier>laptop.cmdWOnlyHipChat2cmdShiftW</identifier>
+        <identifier>custom.cmdWOnlyHipChat2cmdShiftW</identifier>
         <only>HIPCHAT</only>
         <autogen>
           __KeyToKey__
           KeyCode::W, MODIFIERFLAG_EITHER_LEFT_OR_RIGHT_COMMAND | ModifierFlag::NONE,
           KeyCode::W, MODIFIERFLAG_EITHER_LEFT_OR_RIGHT_COMMAND | MODIFIERFLAG_EITHER_LEFT_OR_RIGHT_SHIFT
+        </autogen>
+      </item>
+    </item>
+    <item>
+      <name>Virtual Machine</name>
+      <item>
+        <name>Command+Tab to Alt+Tab (only in Virtual Machine)</name>
+        <identifier>custom.cmdTab2AltTabOnlyVirtualMachine</identifier>
+        <only>VIRTUALMACHINE</only>
+        <autogen>
+          __KeyToKey__
+          KeyCode::TAB, MODIFIERFLAG_EITHER_LEFT_OR_RIGHT_COMMAND,
+          KeyCode::TAB, ModifierFlag::OPTION_R,
+        </autogen>
+      </item>
+    </item>
+    <appdef>
+      <appname>SKETCH</appname>
+      <equal>com.bohemiancoding.sketch3</equal>
+    </appdef>
+    <item>
+      <name>Sketch</name>
+      <item>
+        <name>Reverse scrolling when pressing Command</name>
+        <identifier>custom.reverseScrollWheelWhenPressingCommandOnlySketch</identifier>
+        <only>SKETCH</only>
+        <autogen>
+          __ScrollWheelToKey__
+          ScrollWheel::UP, ModifierFlag::FN | ModifierFlag::NONE,
+          KeyCode::VK_CONSUMERKEY_BRIGHTNESS_UP,
+        </autogen>
+        <autogen>
+          __ScrollWheelToKey__
+          ScrollWheel::DOWN, ModifierFlag::FN | ModifierFlag::NONE,
+          KeyCode::VK_CONSUMERKEY_BRIGHTNESS_DOWN,
         </autogen>
       </item>
     </item>
@@ -186,9 +255,9 @@
       <appendix>Alt -> Ctrl</appendix>
       <appendix>Command -> Alt</appendix>
       <item>
-        <name>Control_L to Command_R (except Terminal and IntelliJ)</name>
-        <identifier>laptop.ctrlL2commandRexceptTerminalAndIntelliJ</identifier>
-        <not>TERMINAL, IntelliJ, EMACS</not>
+        <name>Control_L to Command_R (except TERMLIKE)</name>
+        <identifier>laptop.ctrlL2commandR</identifier>
+        <not>TERMLIKE</not>
         <autogen>
           __KeyToKey__
           KeyCode::CONTROL_L,
@@ -205,9 +274,9 @@
         </autogen>
       </item>
       <item>
-        <name>Option_L to Control_R (except Terminal and IntelliJ)</name>
-        <identifier>laptop.OptionL2Control_RExpTerminalAndIntelliJ</identifier>
-        <not>TERMINAL, IntelliJ, EMACS</not>
+        <name>Option_L to Control_R (except TERMLIKE)</name>
+        <identifier>laptop.OptionL2Control_R</identifier>
+        <not>TERMLIKE</not>
         <autogen>
           __KeyToKey__
           KeyCode::OPTION_L,
@@ -215,9 +284,9 @@
         </autogen>
       </item>
       <item>
-        <name>Option_L to Command_R (only in Terminal and IntelliJ)</name>
-        <identifier>laptop.OptionL2Control_ROnlyTerminalAndINtelliJ</identifier>
-        <only>TERMINAL, IntelliJ, EMACS</only>
+        <name>Option_L to Command_R (except TERMLIKE)</name>
+        <identifier>laptop.OptionL2Command_R</identifier>
+        <only>TERMLIKE</only>
         <autogen>
           __KeyToKey__
           KeyCode::OPTION_L,
@@ -260,10 +329,10 @@
     <item>
       <name>Command+Space to Ctrl+Space</name>
       <item>
-        <name>Command_R+Space to Escape (except Terminal and IntelliJ)</name>
+        <name>Command_R+Space to Escape (except TERMLIKE)</name>
         <appendix>Disable Command+Space</appendix>
         <identifier>laptop.command_RSpace2Esc</identifier>
-        <not>TERMINAL, IntelliJ, EMACS</not>
+        <not>TERMLIKE</not>
         <autogen>
           __KeyToKey__
           KeyCode::SPACE, ModifierFlag::COMMAND_R | ModifierFlag::NONE,
@@ -271,21 +340,21 @@
         </autogen>
       </item>
       <item>
-        <name>Control_R+Space to Command_R+Space (except Terminal and IntelliJ)</name>
+        <name>Control_R+Space to Command_R+Space (except TERMLIKE)</name>
         <identifier>laptop.controlRSpace2CommandRSpace</identifier>
-        <not>TERMINAL, IntelliJ, EMACS</not>
+        <not>TERMLIKE</not>
         <autogen>
           __KeyToKey__
           KeyCode::SPACE, ModifierFlag::CONTROL_R | ModifierFlag::NONE,
-          KeyCode::SPACE, ModifierFlag::COMMAND_R
+          KeyCode::SPACE, ModifierFlag::COMMAND_R,
         </autogen>
       </item>
     </item>
     <item>
-      <name>Control_L+Option_R q,w,e,a,s,d,z,x,c to Command_L+Option_R q,w,e,a,s,d,z,x,c (only in Terminal and IntelliJ)</name>
+      <name>Control_L+Option_R q,w,e,a,s,d,z,x,c to Command_L+Option_R q,w,e,a,s,d,z,x,c (only in TERMLIKE)</name>
       <appendix>Bettersnap: Snap windows to designated snapping areas</appendix>
-      <identifier>laptop.controlLOptionR2CommandLOptionRqweasdzxcOnlyTerminalAndIntelliJ</identifier>
-      <only>TERMINAL, IntelliJ, EMACS</only>
+      <identifier>laptop.controlLOptionR2CommandLOptionRqweasdzxc</identifier>
+      <only>TERMLIKE</only>
       <autogen>
         __KeyToKey__
         KeyCode::Q, ModifierFlag::CONTROL_L | ModifierFlag::OPTION_R | ModifierFlag::NONE,
