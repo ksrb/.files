@@ -3,8 +3,5 @@ set-environment -g CHERE_INVOKING 1
 
 # Bindings {
     # copy mode
-    unbind p
-    bind p run "cat /dev/clipboard | tmux load-buffer - ; tmux paste-buffer"
     bind -t vi-copy 'y' copy-pipe "cat > /dev/clipboard"
-    bind -t vi-copy Enter copy-pipe "cat > /dev/clipboard"
 # }
