@@ -12,15 +12,15 @@ shared_config_ignores+=(
 
 mac_configs_dir="$configs_dir/mac"
 mac_configs_ignores+=(
-  "${ignores_global[@]}"
+  "${shared_config_ignores[@]}"
   Karabiner
-  defaults.sh
-  override.sh
+  defaults
+  override
 )
 
 windows_configs_dir="$configs_dir/windows"
 window_configs_ignores+=(
-  "${ignores_global[@]}"
+  "${shared_config_ignores[@]}"
 )
 
 setEnv(){
@@ -36,8 +36,8 @@ ignored() {
   # TODO: consider string expanding the final parameter when invoking
   # linkDotFiles and using ${@:3} to get remaining arguments instead of using a
   # indirect reference see: http://stackoverflow.com/a/11180835
-  local elements=${!2}
-  for e in $elements; do
+  local elements="${2}[@]"
+  for e in ${!elements}; do
     # If the element matches the 1st arg
     if [[ "$e" == "$1" ]]; then
       return 1; #true, ignored
