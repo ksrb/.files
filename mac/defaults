@@ -1,4 +1,5 @@
-#!/bin/bash
+#!/usr/bin/env bash
+
 setDefaults(){
   echo "Settings defaults"
   # Remove mouse acceleration
