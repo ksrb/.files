@@ -46,6 +46,9 @@ ignored() {
   return 0 #false, not ignored
 }
 
+link="link"
+clean="clean"
+
 linkDotFiles(){
   local mode=$1
   local configs_dir=$2
@@ -69,14 +72,14 @@ linkDotFiles(){
 
     # If the link exits
     if [[ -L "$target/.$file" ]]; then
-      if [ "$mode" = "clean" ]; then
+      if [ "$mode" = $clean ]; then
         printf "%s/.%s removed\n" "$target" "$file"
       fi
       # Remove it
       rm "$target/.$file"
     fi
 
-    if [ "$mode" = "link" ]; then
+    if [ "$mode" = $link ]; then
       printf "%s/%s => %s/.%s\n" "$configs_dir" "$file" "$target" "$file"
       # Link each file in the configs_dir to a '.' target file
       ln -s "$configs_dir/$file" "$target/.$file"
@@ -90,16 +93,13 @@ linkFile(){
   local dest=$3
 
   if [[ -L "$dest" ]]; then
-    if [ "$mode" = "clean" ]; then
-      dest="$2"
-    fi
-    rm "$dest"
-    if [ "$mode" = "clean" ]; then
+    if [ "$mode" = $clean ]; then
+      rm "$dest"
       printf "%s removed\n" "$dest"
     fi
   fi
 
-  if [ "$mode" = "link" ]; then
+  if [ "$mode" = $link ]; then
     ln -s "$src" "$dest"
     printf "%s => %s\n" "$src" "$dest"
   fi
@@ -107,11 +107,11 @@ linkFile(){
 
 linkDotFilesForOs() {
   echo "Link OS independent dotfiles"
-  linkSharedFiles
+  linkSharedFiles $link
   case "$(uname -s)" in
     "Darwin")
       echo "Darwin based environment detected"
-      linkMacFiles;;
+      linkMacFiles $link;;
     "CYGWIN*")
       echo "Cygwin based environment detected"
       linkWindowFiles;;
@@ -128,31 +128,34 @@ setIntelliJConfig() {
 }
 
 linkSharedFiles() {
-  linkDotFiles "link" "$shared_configs_dir" "shared_config_ignores"
+  local mode=$1
+  linkDotFiles "$mode" "$shared_configs_dir" "shared_config_ignores"
 }
 
 linkWindowFiles() {
-  linkDotFiles "link" "$windows_configs_dir" "ignores_global"
+  local mode=$1
+  linkDotFiles "$mode" "$windows_configs_dir" "ignores_global"
 }
 
 linkMacFiles() {
-  linkDotFiles "link" "$mac_configs_dir" "mac_configs_ignores"
-  linkFile "link" "$mac_configs_dir/Karabiner/private.xml" "$target/Library/Application Support/Karabiner/private.xml"
+  local mode=$1
+  linkDotFiles "$mode" "$mac_configs_dir" "mac_configs_ignores"
+  linkFile "$mode" "$mac_configs_dir/Karabiner/private.xml" "$target/Library/Application Support/Karabiner/private.xml"
 }
 
 linkNVim() {
-  linkFile "link" "$shared_configs_dir/vimrc" "$target/.config/nvim/init.vim"
-  linkFile "link" "$shared_configs_dir/vimrc.bundles" "$target/.config/nvim/vimrc.bundles"
-  linkFile "link" "$mac_configs_dir/vimrc.bundles.oss" "$target/.config/nvim/vimrc.bundles.oss"
+  linkFile $link "$shared_configs_dir/vimrc" "$target/.config/nvim/init.vim"
+  linkFile $link "$shared_configs_dir/vimrc.bundles" "$target/.config/nvim/vimrc.bundles"
+  linkFile $link "$mac_configs_dir/vimrc.bundles.oss" "$target/.config/nvim/vimrc.bundles.oss"
 }
 
 clean(){
-  linkDotFiles "clean" "$shared_configs_dir"
+  linkDotFiles $clean "$shared_configs_dir"
   case "$(uname -s)" in
     "Darwin")
-      linkDotFiles "clean" "$mac_configs_dir" "mac_configs_ignores";;
+      linkMacFiles $clean;;
     "CYGWIN*")
-      linkDotFiles "clean" "$windows_configs_dir" "window_configs_ignores";;
+      linkWindowFiles $clean;;
   esac
 }
 
@@ -178,11 +181,11 @@ process(){
     "si")
       setIntelliJConfig;;
     "ls")
-      linkSharedFiles;;
+      linkSharedFiles $link;;
     "lm")
       linkMacFiles;;
     "lw")
-      linkWindowFiles;;
+      linkWindowFiles $link;;
     "clean")
       clean;;
     "help")
