@@ -56,7 +56,7 @@ linkDotFiles(){
 
   # TODO: consider using find with while loop
   # For each file in the configs_dir
-  for file in $configs_dir/*; do
+  for file in "$configs_dir"/*; do
     # Get the filename by removing everything before the last '/'
     # see: http://stackoverflow.com/a/9011264
     local file=${file##*/}
@@ -109,21 +109,23 @@ linkDotFilesForOs() {
   echo "Link OS independent dotfiles"
   linkSharedFiles $link
   case "$(uname -s)" in
-    "Darwin")
+    Darwin)
       echo "Darwin based environment detected"
       linkMacFiles $link;;
-    "CYGWIN*")
+    CYGWIN*)
       echo "Cygwin based environment detected"
-      linkWindowFiles;;
+      linkWindowFiles $link;;
+    *)
+      echo "No environment matched";;
   esac
 }
 
 setIntelliJConfig() {
   case "$(uname -s)" in
     "Darwin")
-      echo idea.config.path=~/.IntelliJIdea/config  >> "/Applications/IntelliJ IDEA.app/Contents/bin/idea.properties";;
+      echo idea.config.path=~/.IntelliJIdea/config >> "/Applications/IntelliJ IDEA.app/Contents/bin/idea.properties";;
     "CYGWIN*")
-      echo idea.config.path=~/.IntelliJIdea/config  >> "C:/Program Files (x86)/JetBrains/IntelliJ IDEA 2016.1/bin/idea.properties";;
+      echo idea.config.path=~/.IntelliJIdea/config >> "C:/Program Files (x86)/JetBrains/IntelliJ IDEA 2016.1/bin/idea.properties";;
   esac
 }
 
@@ -152,9 +154,9 @@ linkNVim() {
 clean(){
   linkDotFiles $clean "$shared_configs_dir"
   case "$(uname -s)" in
-    "Darwin")
+    Darwin)
       linkMacFiles $clean;;
-    "CYGWIN*")
+    CYGWIN*)
       linkWindowFiles $clean;;
   esac
 }
