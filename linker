@@ -70,19 +70,33 @@ linkDotFiles(){
       continue
     fi
 
-    # If the link exits
-    if [[ -L "$target/.$file" ]]; then
-      if [ "$mode" = $clean ]; then
-        printf "%s/.%s removed\n" "$target" "$file"
+    if [ "$mode" = $clean ]; then
+      # If the link does not exits
+      if [[ ! -L "$target/.$file" ]]; then
+        printf "Skipping: %s/.%s as it is not a symlink\n" "$target" "$file"
+        continue
       fi
-      # Remove it
+
+      printf "%s/.%s removed\n" "$target" "$file"
       rm "$target/.$file"
     fi
 
     if [ "$mode" = $link ]; then
-      printf "%s/%s => %s/.%s\n" "$configs_dir" "$file" "$target" "$file"
-      # Link each file in the configs_dir to a '.' target file
+
+      if [[ -L "$target/.$file" ]]; then
+        rm "$target/.$file"
+        ln -s "$configs_dir/$file" "$target/.$file"
+        printf "Relinked: %s/%s => %s/.%s\n" "$configs_dir" "$file" "$target" "$file"
+        continue
+      fi
+
+      if [[ -f "$target/.$file" || -d "$target/.$file" ]]; then
+        printf "Skipping: %s/.%s as there is already a file our folder there\n" "$target" "$file"
+        continue
+      fi
+
       ln -s "$configs_dir/$file" "$target/.$file"
+      printf "%s/%s => %s/.%s\n" "$configs_dir" "$file" "$target" "$file"
     fi
   done
 }
@@ -92,14 +106,29 @@ linkFile(){
   local src=$2
   local dest=$3
 
-  if [[ -L "$dest" ]]; then
-    if [ "$mode" = $clean ]; then
-      rm "$dest"
-      printf "%s removed\n" "$dest"
+  if [ "$mode" = $clean ]; then
+    if [[ ! -L "$dest" ]]; then
+      printf "Skipping: %s as it is not a symlink\n" "$dest"
+      return
     fi
+
+    printf "%s removed\n" "$dest"
+    rm "$dest"
   fi
 
   if [ "$mode" = $link ]; then
+    if [[ -L "$dest" ]]; then
+      rm "$dest"
+      ln -s "$src" "$dest"
+      printf "Relinked: %s => %s\n" "$src" "$dest"
+      return
+    fi
+
+    if [[ -f "$dest" || -d "$dest" ]]; then
+      printf "Skipping: %s as there is already a file our folder there\n" "$dest"
+      return
+    fi
+
     ln -s "$src" "$dest"
     printf "%s => %s\n" "$src" "$dest"
   fi
@@ -152,7 +181,7 @@ linkNVim() {
 }
 
 clean(){
-  linkDotFiles $clean "$shared_configs_dir"
+  linkDotFiles $clean "$shared_configs_dir" "shared_config_ignores"
   case "$(uname -s)" in
     Darwin)
       linkMacFiles $clean;;
