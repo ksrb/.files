@@ -3,5 +3,5 @@ set-environment -g CHERE_INVOKING 1
 
 # Bindings {
     # copy mode
-    bind -t vi-copy 'y' copy-pipe "cat > /dev/clipboard"
+    bind -T copy-mode-vi y send -X copy-pipe "cat > /dev/clipboard"
 # }

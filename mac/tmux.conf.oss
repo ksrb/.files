@@ -4,5 +4,5 @@ set-option -g default-command "reattach-to-user-namespace -l zsh"
 
 # Bindings {
     # copy mode
-    bind -t vi-copy 'y' copy-pipe "reattach-to-user-namespace pbcopy"
+    bind -t copy-mode-vi y send -X copy-pipe "reattach-to-user-namespace pbcopy"
 # }
