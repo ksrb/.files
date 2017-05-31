@@ -86,7 +86,7 @@ linkDotFiles(){
       if [[ -L "$target/.$file" ]]; then
         rm "$target/.$file"
         ln -s "$configs_dir/$file" "$target/.$file"
-        printf "Relinked: %s/%s => %s/.%s\n" "$configs_dir" "$file" "$target" "$file"
+        printf "Overriding: %s/%s => %s/.%s\n" "$configs_dir" "$file" "$target" "$file"
         continue
       fi
 
@@ -120,7 +120,7 @@ linkFile(){
     if [[ -L "$dest" ]]; then
       rm "$dest"
       ln -s "$src" "$dest"
-      printf "Relinked: %s => %s\n" "$src" "$dest"
+      printf "Overriding: %s => %s\n" "$src" "$dest"
       return
     fi
 
@@ -181,12 +181,17 @@ linkNVim() {
 }
 
 clean(){
+  echo "Clean OS independent dotfiles"
   linkDotFiles $clean "$shared_configs_dir" "shared_config_ignores"
   case "$(uname -s)" in
     Darwin)
+      echo "Darwin based environment detected"
       linkMacFiles $clean;;
     CYGWIN*)
+      echo "Cygwin based environment detected"
       linkWindowFiles $clean;;
+    *)
+      echo "No environment matched";;
   esac
 }
 
