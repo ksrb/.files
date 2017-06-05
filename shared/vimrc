@@ -70,6 +70,8 @@
 
     au FileType gitcommit setlocal spell
     au FileType make setlocal noexpandtab
+
+    au BufNewFile,BufRead .eslintrc set filetype=json
 " }
 
 " Misc {
