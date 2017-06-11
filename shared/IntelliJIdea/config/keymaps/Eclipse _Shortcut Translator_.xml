@@ -1,14 +1,15 @@
 <keymap version="1" name="Eclipse (Shortcut Translator)" parent="Eclipse">
-  <action id="CloseAllEditorsButActive">
-    <keyboard-shortcut first-keystroke="ctrl alt f4" />
+  <action id="CollapseAllRegions">
+    <keyboard-shortcut first-keystroke="shift ctrl minus" />
   </action>
-  <action id="FileChooser.TogglePathShowing" />
+  <action id="ExpandAllRegions">
+    <keyboard-shortcut first-keystroke="shift ctrl equals" />
+  </action>
+  <action id="GotoAction">
+    <keyboard-shortcut first-keystroke="alt x" />
+  </action>
   <action id="GotoFile">
-    <keyboard-shortcut first-keystroke="shift ctrl r" />
     <keyboard-shortcut first-keystroke="ctrl p" />
-  </action>
-  <action id="Images.EditExternally">
-    <keyboard-shortcut first-keystroke="shift ctrl alt f4" />
   </action>
   <action id="NextEditorTab">
     <keyboard-shortcut first-keystroke="shift ctrl alt right" />
@@ -16,7 +17,7 @@
   <action id="NextTab">
     <keyboard-shortcut first-keystroke="ctrl f6" />
     <keyboard-shortcut first-keystroke="ctrl page_down" />
-    <keyboard-shortcut first-keystroke="ctrl alt right" />
+    <keyboard-shortcut first-keystroke="ctrl alt l" />
   </action>
   <action id="PreviousEditorTab">
     <keyboard-shortcut first-keystroke="shift ctrl alt left" />
@@ -24,7 +25,7 @@
   <action id="PreviousTab">
     <keyboard-shortcut first-keystroke="shift ctrl f6" />
     <keyboard-shortcut first-keystroke="ctrl page_up" />
-    <keyboard-shortcut first-keystroke="ctrl alt left" />
+    <keyboard-shortcut first-keystroke="ctrl alt h" />
   </action>
   <action id="Print" />
   <action id="ShortcutLookup.ShortcutLookup">
@@ -51,5 +52,7 @@
   <action id="ToggleDistractionFreeMode">
     <keyboard-shortcut first-keystroke="shift ctrl alt d" />
   </action>
-  <action id="com.vladsch.idea.multimarkdown.editor.actions.editorLayout.ToggleSplitLayoutChangeAction" />
+  <action id="VimPluginToggle">
+    <keyboard-shortcut first-keystroke="shift ctrl z" />
+  </action>
 </keymap>
