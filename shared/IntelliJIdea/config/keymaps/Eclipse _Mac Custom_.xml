@@ -12,7 +12,6 @@
   <action id="ActivateInspectionResultsToolWindow">
     <keyboard-shortcut first-keystroke="alt 8" />
   </action>
-  <action id="CallHierarchy" />
   <action id="CloseProject">
     <keyboard-shortcut first-keystroke="meta w" />
   </action>
@@ -34,12 +33,6 @@
   </action>
   <action id="GotoFile">
     <keyboard-shortcut first-keystroke="ctrl p" />
-  </action>
-  <action id="Images.EditExternally">
-    <keyboard-shortcut first-keystroke="shift ctrl alt f4" />
-  </action>
-  <action id="IntroduceVariable">
-    <keyboard-shortcut first-keystroke="shift alt l" />
   </action>
   <action id="NewElement">
     <keyboard-shortcut first-keystroke="ctrl alt i" />
@@ -82,9 +75,6 @@
   </action>
   <action id="SwitchUp">
     <keyboard-shortcut first-keystroke="ctrl alt up" />
-  </action>
-  <action id="ToggleDistractionFreeMode">
-    <keyboard-shortcut first-keystroke="shift ctrl alt d" />
   </action>
   <action id="VimPluginToggle">
     <keyboard-shortcut first-keystroke="shift ctrl z" />
