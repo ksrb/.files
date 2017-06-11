@@ -31,7 +31,9 @@ map <leader><C-e> :action RecentFiles<CR>
 map <leader><C-f> :action Replace<CR>
 map <leader><C-g> :action FindUsages<CR>
 map <leader><C-h> :action FindInPath<CR>
+map <leader><C-t> :action GotoImplementation<CR>
 map <leader>co :action CloseAllEditorsButActive<CR>
+map <leader>df :action ToggleDistractionFreeMode<CR>
 map <leader>n :action ActivateProjectToolWindow<CR>
 map <leader>r :action ReloadFromDisk<CR>
 map <leader>s :action SynchronizeCurrentFile<CR> :action VimInsertExitMode<CR>
