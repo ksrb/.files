@@ -12,7 +12,6 @@ Geronimo
 GlassFish
 Heroku
 J2ME
-JBPM
 JBoss
 JSR45Plugin
 JUnit
@@ -32,11 +31,13 @@ Weblogic
 XPathView
 XSLT-Debugger
 ZKM
+com.intellij.CloudConfig
 com.intellij.aop
 com.intellij.appengine
 com.intellij.aspectj
 com.intellij.beanValidation
 com.intellij.cdi
+com.intellij.clion-python
 com.intellij.copyright
 com.intellij.database
 com.intellij.diagram
@@ -56,6 +57,7 @@ com.intellij.javaee.view
 com.intellij.javaee.webSocket
 com.intellij.jboss.arquillian
 com.intellij.jboss.core
+com.intellij.jbpm
 com.intellij.jsf
 com.intellij.jsp
 com.intellij.persistence
@@ -77,6 +79,7 @@ com.intellij.spring.websocket
 com.intellij.spring.ws
 com.intellij.struts2
 com.intellij.tapestry
+com.intellij.tasks
 com.intellij.tasks.timeTracking
 com.intellij.thymeleaf
 com.intellij.uiDesigner
@@ -86,14 +89,16 @@ com.jetbrains.plugins.asp
 com.jetbrains.plugins.webDeployment
 com.jetbrains.restClient
 com.jetbrains.restWebServices
-cucumber
 cucumber-groovy
 cucumber-java
+gherkin
 hg4idea
 org.coffeescript
+org.editorconfig.editorconfigjetbrains
 org.intellij.grails
 org.intellij.groovy
 org.intellij.intelliLang
+org.intellij.plugins.markdown
 org.jetbrains.android
 org.jetbrains.idea.eclipse
 org.jetbrains.idea.maven
@@ -108,3 +113,4 @@ org.jetbrains.plugins.remote-run
 org.jetbrains.plugins.stylus
 org.jetbrains.plugins.yaml
 org.jetbrains.settingsRepository
+tslint
