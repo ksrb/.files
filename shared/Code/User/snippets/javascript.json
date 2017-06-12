@@ -1,0 +1,78 @@
+{
+	/*
+	// Place your snippets for JavaScript here. Each snippet is defined under a snippet name and has a prefix, body and
+	// description. The prefix is what is used to trigger the snippet and the body will be expanded and inserted. Possible variables are:
+	// $1, $2 for tab stops, $0 for the final cursor position, and ${1:label}, ${2:another} for placeholders. Placeholders with the
+	// same ids are connected.
+	*/
+	//General
+	"log": {
+		"prefix": "log",
+		"body": [
+			"console.log($1);"
+		],
+		"description": "Log output to console"
+	},
+	"imf": {
+		"prefix": "imf",
+		"body": [
+			"import $1 from '$2';"
+		],
+		"description": "Import module from"
+	},
+	"im": {
+		"prefix": "im",
+		"body": [
+			"import $1;"
+		],
+		"description": "Import module"
+	},
+	"imc": {
+		"prefix": "imc",
+		"body": [
+			"import classnames from 'classnames';"
+		],
+		"description": "Import classnames"
+	},
+	// React
+	"imr": {
+		"prefix": "imr",
+		"body": [
+			"import React, { Component, Proptypes } from 'react';"
+		],
+		"description": "Import React module"
+	},
+	"rcons": {
+		"prefix": "rcons",
+		"body": [
+			"constructor(props) {",
+			"  super(props);",
+			"  this.state = {$0};",
+			"}"
+		],
+		"description": "React constructor"
+	},
+	"sst": {
+		"prefix": "sst",
+		"body": [
+			"this.setState($0);"
+		],
+		"description": "Set state"
+	},
+	// TODO: wip no abililty to trim extension and capitalize file name
+	"rt": {
+		"prefix": "rt",
+		"body": [
+			"import React, { Component, PropTypes } from 'react';",
+			"",
+			"class ${TM_FILENAME} extends Component {",
+			"  render(){",
+			"    return (",
+			"      <div>$0</div>",
+			"   );",
+			"  }",
+			"}"
+		],
+		"description": "Set state"
+	}
+}

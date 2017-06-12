@@ -8,6 +8,7 @@ ignores_global=(README.md)
 shared_configs_dir="$configs_dir/shared"
 shared_config_ignores+=(
   "${ignores_global[@]}"
+  Code
   idea.properties
 )
 
@@ -159,12 +160,14 @@ linkSharedFiles() {
 linkWindowFiles() {
   local mode=$1
   linkDotFiles "$mode" "$windows_configs_dir" "ignores_global"
+  linkFile "$mode" "$shared_configs_dir/Code" "$target/AppData/Roaming/Code"
 }
 
 linkMacFiles() {
   local mode=$1
   linkDotFiles "$mode" "$mac_configs_dir" "mac_configs_ignores"
   linkFile "$mode" "$mac_configs_dir/Karabiner/private.xml" "$target/Library/Application Support/Karabiner/private.xml"
+  linkFile "$mode" "$shared_configs_dir/Code" "$target/Library/Application Support/Code"
 }
 
 linkNVim() {
