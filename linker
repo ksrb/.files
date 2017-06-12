@@ -8,6 +8,7 @@ ignores_global=(README.md)
 shared_configs_dir="$configs_dir/shared"
 shared_config_ignores+=(
   "${ignores_global[@]}"
+  idea.properties
 )
 
 mac_configs_dir="$configs_dir/mac"
@@ -149,18 +150,10 @@ linkDotFilesForOs() {
   esac
 }
 
-setIntelliJConfig() {
-  case "$(uname -s)" in
-    "Darwin")
-      echo idea.config.path=~/.IntelliJIdea/config >> "/Applications/IntelliJ IDEA.app/Contents/bin/idea.properties";;
-    "CYGWIN*")
-      echo idea.config.path=~/.IntelliJIdea/config >> "C:/Program Files (x86)/JetBrains/IntelliJ IDEA 2016.1/bin/idea.properties";;
-  esac
-}
-
 linkSharedFiles() {
   local mode=$1
   linkDotFiles "$mode" "$shared_configs_dir" "shared_config_ignores"
+  linkFile "$mode" "$shared_configs_dir/idea.properties" "$target/idea.properties"
 }
 
 linkWindowFiles() {
@@ -196,7 +189,7 @@ clean(){
 }
 
 help(){
-cat <<-EOF
+  cat <<-EOF
   Usage: linker [COMMAND]
   Commands:
   ln      Link dotfiles based on OS, will replace existing symlinks
@@ -214,8 +207,6 @@ process(){
   case "$1" in
     "ln")
       linkDotFilesForOs;;
-    "si")
-      setIntelliJConfig;;
     "ls")
       linkSharedFiles $link;;
     "lm")
