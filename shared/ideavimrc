@@ -1,9 +1,8 @@
-set surround        " vim-surround emulation
 set hlsearch        " Highlight searched
-set incsearch       " Progressive highlighting while searching
-" set relativenumber  " Show line numbers relative to cursor
-" set number          " Absolute line number at cursor
 set ic              " Case insensitive search
+set incsearch       " Progressive highlighting while searching
+set smartcase       " Only do case sensitive searching when there is a capitalized letter
+set surround        " vim-surround emulation
 
 " Ctrl + hjkl to switch splits
 nnoremap <C-j> <C-w>j
