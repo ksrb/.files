@@ -31,7 +31,6 @@
     "vim.enableNeovim": true,
     "vim.handleKeys": {},
     "vim.hlsearch": true,
-    "vim.statusBarColorControl": true,
     "vim.statusBarColors": {
         "normal": "#005f87",
         "insert": "#78ba78",
