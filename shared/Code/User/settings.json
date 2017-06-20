@@ -1,7 +1,13 @@
 {
+    "editor.autoClosingBrackets": true,
+    "editor.formatOnSave": true,
     "editor.lineNumbers": "relative",
     "editor.minimap.enabled": false,
+    "editor.rulers": [
+        80
+    ],
     "editor.tabSize": 2,
+    "files.insertFinalNewline": true,
     "files.trimTrailingWhitespace": true,
     "terminal.external.osxExec": "iTerm.app",
     "terminal.integrated.shell.windows": "C:\\Cygwin64\\bin\\bash.exe",
@@ -16,7 +22,7 @@
         "statusBar.noFolderBackground": "#005f87",
         "statusBar.debuggingBackground": "#005f87"
     },
-    "workbench.editor.enablePreview": true, // Open files in new tab
+    "workbench.editor.enablePreview": false, // Open files in new tab
     "workbench.iconTheme": null, // Disable icons for performance
     "workbench.statusBar.visible": true,
     "workbench.welcome.enabled": false,
