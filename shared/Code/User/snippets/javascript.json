@@ -1,11 +1,4 @@
 {
-	/*
-	// Place your snippets for JavaScript here. Each snippet is defined under a snippet name and has a prefix, body and
-	// description. The prefix is what is used to trigger the snippet and the body will be expanded and inserted. Possible variables are:
-	// $1, $2 for tab stops, $0 for the final cursor position, and ${1:label}, ${2:another} for placeholders. Placeholders with the
-	// same ids are connected.
-	*/
-	//General
 	"log": {
 		"prefix": "log",
 		"body": [
@@ -34,7 +27,7 @@
 		],
 		"description": "Import classnames"
 	},
-	// React
+	// =============== React ===============
 	"imr": {
 		"prefix": "imr",
 		"body": [
@@ -59,20 +52,99 @@
 		],
 		"description": "Set state"
 	},
-	// TODO: wip no abililty to trim extension and capitalize file name
-	"rt": {
-		"prefix": "rt",
+	"rc": { // TODO: wip no abililty to trim extension and capitalize file name
+		"prefix": "rc",
 		"body": [
-			"import React, { Component, PropTypes } from 'react';",
-			"",
-			"class ${TM_FILENAME} extends Component {",
+			"class RenameMe extends Component {",
 			"  render(){",
 			"    return (",
 			"      <div>$0</div>",
 			"   );",
 			"  }",
+			"}",
+			""
+		],
+		"description": "React component"
+	},
+	"rt": { // TODO: wip no abililty to trim extension and capitalize file name
+		"prefix": "rt",
+		"body": [
+			"import React, { Component, PropTypes } from 'react';",
+			"",
+			"class RenameMe extends Component {",
+			"  render(){",
+			"    return (",
+			"      <div>$0</div>",
+			"   );",
+			"  }",
+			"}",
+			"",
+			"export default RenameMe;"
+		],
+		"description": "React template - for new file that is a react component"
+	},
+	// =============== React life cycle ===============
+	"cwm": {
+		"prefix": "cwm",
+		"body": [
+			"componentWillMount() {",
+			"  $0",
 			"}"
 		],
-		"description": "Set state"
+		"description": "Component will mount"
+	},
+	"cwu": {
+		"prefix": "cwu",
+		"body": [
+			"componentWillUpdate() {",
+			"  $0",
+			"}"
+		],
+		"description": "Component will update"
+	},
+	"cdu": {
+		"prefix": "cdu",
+		"body": [
+			"componentDidUpdate(prevProps, prevState) {",
+			"  $0",
+			"}"
+		],
+		"description": "Component did update"
+	},
+	"cwum": {
+		"prefix": "cwum",
+		"body": [
+			"componentWillUnmount() {",
+			"  $0",
+			"}"
+		],
+		"description": "Component will unmount"
+	},
+	"cdm": {
+		"prefix": "cdm",
+		"body": [
+			"componentDidMount() {",
+			"  $0",
+			"}"
+		],
+		"description": "Component did mount"
+	},
+	"scu": {
+		"prefix": "scu",
+		"body": [
+			"shouldComponentUpdate(nextProps, nextState) {",
+			"  $0",
+			"}"
+		],
+		"description": "Should component update"
+	},
+	"cwrp": {
+		"prefix": "cwrp",
+		"body": [
+			"componentWillRecieveProps(nextProps) {",
+			"  $0",
+			"}"
+		],
+		"description": "Component will reciever props"
 	}
 }
