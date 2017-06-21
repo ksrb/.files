@@ -40,7 +40,7 @@
         "when": "explorerViewletVisible && filesExplorerFocus"
     },
     {
-        "key": "ctrl+alt+i shift+f",
+        "key": "ctrl+alt+i d",
         "command": "explorer.newFolder",
         "when": "explorerViewletVisible && filesExplorerFocus"
     },
