@@ -13,7 +13,7 @@ Plug 'vim-airline/vim-airline-themes'
 
 " Code
 Plug 'SirVer/ultisnips'
-Plug 'fatih/vim-go'
+Plug 'fatih/vim-go', { 'do': ':GoInstallBinaries' }
 Plug 'jiangmiao/auto-pairs'
 Plug 'ksrb/vim-javascript-es6-snippets'
 Plug 'majutsushi/tagbar'
