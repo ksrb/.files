@@ -42,7 +42,7 @@
     set shiftround             " Round indent to multiple of 'shiftwidth'
     set expandtab              " Insert spaces when tab is pressed
 
-    set re=1                   " Use old regex engine
+    set re=1                   " Use old regex engine (performance fix see: https://stackoverflow.com/a/38521226)
 " }
 
 " Wildmenu {
