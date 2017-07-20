@@ -1,7 +1,7 @@
 Plug 'marijnh/tern_for_vim', { 'do' : 'npm install' }
 
 if has('nvim')
-  Plug 'Shougo/deoplete.nvim'
+  Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
   Plug 'zchee/deoplete-go', { 'do': 'make'}
 
   " deoplete {
