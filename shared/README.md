@@ -12,9 +12,7 @@
   * CpuUsageIndicator
   * Docker-plugin
   * IdeaVim
-  * Kotlin
   * WrapToColumn
-  * fileWatcher
   * idea-multimarkdown
   * intellij-go
   * intellij-makefile
