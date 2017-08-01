@@ -1,22 +1,21 @@
 if !has("win32unix") " if not cygwin
+  " Code
   Plug 'Valloric/YouCompleteMe', { 'do': './install.py --gocode-completer --clang-completer' }
   Plug 'marijnh/tern_for_vim', { 'do' : 'npm install' }
 endif
 
 if has("win32unix") "if cygwin
+  " Code
   Plug 'Shougo/neocomplcache.vim'
-endif
 
-" neocomplcache {
-    let g:neocomplcache_enable_at_startup = 1
-    autocmd FileType *.go let g:neocomplcache_force_omni_patterns = '\h\w*\.\?'
-    inoremap <expr><TAB> pumvisible() ? "\<C-n>" : "\<TAB>"
-    inoremap <expr><S-TAB> pumvisible() ? "\<C-p>" : "\<S-TAB>"
-" }
+  " neocomplcache {
+      let g:neocomplcache_enable_at_startup = 1
+      autocmd FileType *.go let g:neocomplcache_force_omni_patterns = '\h\w*\.\?'
+      inoremap <expr><TAB> pumvisible() ? "\<C-n>" : "\<TAB>"
+      inoremap <expr><S-TAB> pumvisible() ? "\<C-p>" : "\<S-TAB>"
+  " }
 
-" ultiSnips {
-    " if cygwin
-    if has("win32unix")
+  " ultiSnips {
       let g:UltiSnipsExpandTrigger = "<C-@>"
-    endif
-" }
+  " }
+endif
