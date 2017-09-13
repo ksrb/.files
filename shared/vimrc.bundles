@@ -35,13 +35,14 @@ Plug 'tpope/vim-repeat'
 Plug 'tpope/vim-surround'
 
 " ctrlP {
-    let g:ctrlp_custom_ignore = '\v[\/](node_modules|build|jspm_packages)|(\.(git|hg|svn))$' " ignore node_modules|build|jspm_packages|git|hg|svn folders
-    let g:ctrlp_working_path_mode = 'ra'                                                     " Set working dir to first folder with .git or folder which file ctrlp was called on
-    let g:ctrlp_switch_buffer = 'et'                                                         " Jump to a file if it's open already
-    let g:ctrlp_mruf_max = 450                                                               " Number of recently opened files
-    let g:ctrlp_max_files = 0                                                                " Do not limit the number of searchable files
+    let g:ctrlp_custom_ignore = '\v[\/](jspm_packages|node_modules)|(\.(git|hg|svn))$' " ignore jspm_packages|node_modules|.git|.hg|.svn folders
+    let g:ctrlp_working_path_mode = 'ra'                                               " Set working dir to first folder with .git or folder which file ctrlp was called on
+    let g:ctrlp_switch_buffer = 'et'                                                   " Jump to a file if it's open already
+    let g:ctrlp_mruf_max = 450                                                         " Number of recently opened files
+    let g:ctrlp_max_files = 0                                                          " Do not limit the number of searchable files
 
-    " Use The Silver Searcher https://github.com/ggreer/the_silver_searcher
+    " Use The Silver Searcher
+    " From: https://github.com/ggreer/the_silver_searcher
     if executable('ag')
       " Use Ag over Grep
       set grepprg=ag\ --nogroup\ --nocolor
