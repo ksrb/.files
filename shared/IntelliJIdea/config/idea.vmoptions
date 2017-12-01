@@ -1,0 +1,4 @@
+-Xms2g
+-Xmx8g
+-XX:ReservedCodeCacheSize=1024m
+-XX:+UseCompressedOops
