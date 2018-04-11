@@ -1,4 +1,5 @@
 alias nvim=vim
+alias cygwin=C:/cygwin64/bin/mintty.exe /bin/sh -lc "cd "'"'"$(pwd)"'"'"; exec zsh"
 
 # Git {
     WINDOWS_GIT='/cygdrive/c/Program Files/Git/cmd'
@@ -10,7 +11,7 @@ alias nvim=vim
     }
 
     # Set git to cygwin git
-    unSetWindowsGit(){
+    unsetWindowsGit(){
       # http://stackoverflow.com/a/2108540
       # Normalize path to have ':' at start and end of path
       CURRENT_PATH=:$PATH:

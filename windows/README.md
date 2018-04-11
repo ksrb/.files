@@ -17,7 +17,6 @@
 * Set user folder as root
   * /etc/nsswitch.conf << echo "db_home: windows"
 
-
 ## [git-extras](https://github.com/tj/git-extras)
 * Install make
 
@@ -86,3 +85,8 @@ Node-gyp is a native build tool but has a extensive installation process for win
 * npm config set msvs_version 2015 --global
 * npm config set python python2.7
 * Additional information [here](https://github.com/nodejs/node-gyp/issues/629#issuecomment-153196245)
+
+## IntelliJ
+* Terminal in IntelliJ puts several \\\\\\ in the first line of the prompt and
+  inputs a '%' after ever command
+  * Tools -> Terminal -> Shell Path -> "C:\cygwin64\bin\zsh.exe" -is eval 'unsetopt PROMPT_SP'
