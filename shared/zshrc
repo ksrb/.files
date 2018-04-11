@@ -8,7 +8,7 @@
     # Base16 Shell colors
     source "$HOME/.files/config/base16-eighties.dark.sh"
 
-    plugins=(git docker)
+    plugins=(git git-extras docker)
 
     # Initialize oh-my-zsh
     source "$ZSH"/oh-my-zsh.sh

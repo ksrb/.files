@@ -36,5 +36,4 @@ Provided to create symlinks between the dotfiles and the users home directory e.
 The script will first remove conflicting symlinks and add its own
 
 ## TODO
-- [ ] Link files automatically based on platform
 - [ ] Linux dotfiles
