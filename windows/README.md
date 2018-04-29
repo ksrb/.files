@@ -87,6 +87,12 @@ Node-gyp is a native build tool but has a extensive installation process for win
 * Additional information [here](https://github.com/nodejs/node-gyp/issues/629#issuecomment-153196245)
 
 ## IntelliJ
-* Terminal in IntelliJ puts several \\\\\\ in the first line of the prompt and
-  inputs a '%' after ever command
-  * Tools -> Terminal -> Shell Path -> "C:\cygwin64\bin\zsh.exe" -is eval 'unsetopt PROMPT_SP'
+### Terminal
+* Zsh terminal has several \\\\\\ in the first line of the prompt and inputs a '%' after every command to fix set Tools -> Terminal -> Shell Path ->
+  ```
+  "[CYGWIN BIN PATH]\zsh.exe" -is eval 'unsetopt PROMPT_SP'
+  ```
+  or
+  ```
+  "[CYGWIN BIN PATH]\bash.exe" -lic "cd ${OLDPWD-.}; zsh;"
+  ```
