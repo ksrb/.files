@@ -4,7 +4,7 @@
       <option name="JS_STATEMENT" value="true" />
     </context>
   </template>
-  <template name="rt" value="import React, { Component, PropTypes } from 'react';&#10;&#10;class $className$ extends Component {&#10;&#10;  render() {&#10;    return (&#10;      &lt;div&gt;&#10;        $END$&#10;      &lt;/div&gt;&#10;    );&#10;  }&#10;  &#10;}&#10;&#10;export default $className$;&#10;" description="Create React component using template" toReformat="false" toShortenFQNames="true">
+  <template name="rt" value="import React, { Component } from 'react';&#10;&#10;class $className$ extends Component {&#10;&#10;  render() {&#10;    return (&#10;      &lt;div&gt;&#10;        $END$&#10;      &lt;/div&gt;&#10;    );&#10;  }&#10;  &#10;}&#10;&#10;export default $className$;&#10;" description="Create React component using template" toReformat="false" toShortenFQNames="true">
     <variable name="className" expression="capitalize(fileNameWithoutExtension())" defaultValue="" alwaysStopAt="true" />
     <context>
       <option name="JS_STATEMENT" value="true" />
@@ -28,7 +28,7 @@
       <option name="JS_STATEMENT" value="false" />
     </context>
   </template>
-  <template name="nbsp" value="{'\u00a0'}" description="Non-breaking space" toReformat="false" toShortenFQNames="true">
+  <template name="nbsp" value="{'\u00a0'}" description="Non-breaking space" toReformat="false" toShortenFQNames="true" deactivated="true">
     <context>
       <option name="JSX_HTML" value="true" />
     </context>
