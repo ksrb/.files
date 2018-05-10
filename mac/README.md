@@ -14,12 +14,6 @@
   * Profiles → Keys →  Left/Right Option key acts as: +Esc
 
 ## IntelliJ
-* Set config directory to ~/.IntelliJ[XX]
-    ```bash
-    rm -rf ~/Library/Preferences/IntelliJIdea[XX]
-    echo idea.config.path=~/.IntelliJIdea/config  >> "/Applications/IntelliJ IDEA [XX].app/Contents/bin/idea.properties"
-    ```
-
 * Conflicting Keys and Resolution
   * Ctrl + F4 - System Preferences → Keyboard → Shortcuts → Keyboard → Move Focus to active or next Window
   * Ctrl + F1 - System Preferences → Keyboard → Shortcuts → Turn keyboard access on or off
