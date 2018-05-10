@@ -1,0 +1,24 @@
+# General {
+    # Deduplicate path in tmux
+    # see https://github.com/thoughtbot/dotfiles/issues/443
+    export -U PATH
+
+    alias vim="nvim"
+    alias vi="/usr/local/bin/vim"
+    alias v="/usr/local/bin/vim -u NONE"
+
+    alias iterm="open -a iterm "
+    alias terminal="open -a terminal "
+    alias finder="open -a finder "
+# }
+
+# Emacs {
+    # Allow emacs to use Shift + tab in term mode when showing completion list
+    bindkey '^[[Z' reverse-menu-complete
+# }
+
+# IntelliJ {
+    # https://youtrack.jetbrains.com/issue/IDEA-165184
+    bindkey 'ƒ' forward-word
+    bindkey '∫' backward-word
+# }
