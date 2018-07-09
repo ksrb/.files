@@ -91,6 +91,21 @@
     nnoremap Q <nop>
 " }
 
+if has("nvim")
+  " Bindings {
+      " Allow split switching using C-h/j/k/k in terminal
+      tnoremap <C-h> <C-\><C-n><C-w>h
+      tnoremap <C-j> <C-\><C-n><C-w>j
+      tnoremap <C-k> <C-\><C-n><C-w>k
+      tnoremap <C-l> <C-\><C-n><C-w>l
+
+      " Use Ctrl+hjkl to switch buffers while in terminal mode
+      nnoremap <C-M-h> :bp <CR>
+      nnoremap <C-M-l> :bn <CR>
+  " }
+
+endif
+
 " Load plugins
 if filereadable(expand("~/.vimrc.bundles"))
   source ~/.vimrc.bundles

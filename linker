@@ -168,12 +168,13 @@ linkMacFiles() {
   linkDotFiles "$mode" "$mac_configs_dir" "mac_configs_ignores"
   linkFile "$mode" "$mac_configs_dir/Karabiner/private.xml" "$target/Library/Application Support/Karabiner/private.xml"
   linkFile "$mode" "$shared_configs_dir/Code" "$target/Library/Application Support/Code"
+  linkNVim "$mode"
 }
 
 linkNVim() {
-  linkFile $link "$shared_configs_dir/vimrc" "$target/.config/nvim/init.vim"
-  linkFile $link "$shared_configs_dir/vimrc.bundles" "$target/.config/nvim/vimrc.bundles"
-  linkFile $link "$mac_configs_dir/vimrc.bundles.oss" "$target/.config/nvim/vimrc.bundles.oss"
+  local mode=$1
+  mkdir -p "$target/.config/nvim"
+  linkFile "$mode" "$shared_configs_dir/vimrc" "$target/.config/nvim/init.vim"
 }
 
 clean(){

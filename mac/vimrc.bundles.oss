@@ -8,6 +8,7 @@ Plug 'marijnh/tern_for_vim', { 'do' : 'npm install' }
 
 if has('nvim')
   Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
+  Plug 'neomake/neomake'
   Plug 'zchee/deoplete-go', { 'do': 'make'}
 
   " deoplete {
@@ -15,6 +16,13 @@ if has('nvim')
       let g:deoplete#auto_complete_start_length = 1
       inoremap <expr><TAB> pumvisible() ? "\<C-n>" : "\<TAB>"
       inoremap <expr><S-TAB> pumvisible() ? "\<C-p>" : "\<S-TAB>"
+  " }
+
+  " neomake {
+    let g:neomake_javascript_enabled_makers = ['eslint']
+
+    autocmd! BufWritePost * Neomake
+    autocmd! QuitPre * let g:neomake_verbose = 0
   " }
 
   " tern_for_vim {
