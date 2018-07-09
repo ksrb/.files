@@ -76,11 +76,14 @@
 " }
 
 " Misc {
-    let mapleader = "\<SPACE>"           " Leader key to ','
-    autocmd FileType qf wincmd J         " Move quickfix window to the bottom
+    " Move quickfix window to the bottom
+    autocmd FileType qf wincmd J
 " }
 
 " Bindings {
+    " Leader key to ','
+    let mapleader = "\<SPACE>"
+
     " Strip Trailing Whitespace & turn off hightlighting
     nnoremap <Leader>kw :%s/\s\+$//e<CR>:noh<CR>
 
