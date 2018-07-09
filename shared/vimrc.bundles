@@ -13,6 +13,7 @@ Plug 'vim-airline/vim-airline-themes'
 
 " Code
 Plug 'SirVer/ultisnips'
+Plug 'alvan/vim-closetag'
 Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
 Plug 'jiangmiao/auto-pairs'
 Plug 'ksrb/vim-javascript-es6-snippets'
@@ -123,6 +124,11 @@ Plug 'tpope/vim-surround'
 " vim-polyglot {
     let g:polyglot_disabled = ['js', 'jsx', 'go']
 " }
+
+" vim-closetag {
+    let g:closetag_close_shortcut = ''
+    let g:closetag_filenames = '*.html,*.js'
+"}
 
 " OS Specific settings
 if filereadable(expand("~/.vimrc.bundles.oss"))
