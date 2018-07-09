@@ -81,7 +81,7 @@ Plug 'tpope/vim-surround'
 
 " tcomment {
     " Turn off leader key shortcuts
-    let g:tcommentMapLeader2 = ''
+    let g:tcomment_mapleader2 = ''
 " }
 
 " vim-go {
