@@ -1,9 +1,7 @@
 # Dotfiles
 
-## Description##
+## Description
 Various dotfiles used across Linux, Mac, and Windows
-
-Heavily based off of [bodhi5/.dotfiles](https://github.com/bodhi5/.dotfiles)
 
 ## Installation
 ### Windows
