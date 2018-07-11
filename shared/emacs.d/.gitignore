@@ -1,0 +1,11 @@
+auto-save-list/
+backups/
+elpa/
+elpa-cygwin/
+eshell/
+games/
+url/
+
+*.cache
+*.eld
+recentf
