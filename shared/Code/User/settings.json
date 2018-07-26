@@ -10,7 +10,7 @@
     "files.insertFinalNewline": true,
     "files.trimTrailingWhitespace": true,
     "terminal.external.osxExec": "iTerm.app",
-    "terminal.integrated.shell.windows": "C:\\Cygwin64\\bin\\bash.exe",
+    "terminal.integrated.shell.windows": "C:\\tools\\cygwin\\bin\\bash.exe",
     "terminal.integrated.shellArgs.windows": [
         "/bin/xhere",
         "/bin/zsh"

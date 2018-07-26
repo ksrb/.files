@@ -58,21 +58,21 @@
     {
         // Override
         "key": "ctrl+h",
-        "command": "extension.vim_navigateLeft"
+        "command": "workbench.action.navigateLeft"
     },
     {
         // Override
         "key": "ctrl+j",
-        "command": "extension.vim_navigateDown"
+        "command": "workbench.action.navigateDown"
     },
     {
         // Override
         "key": "ctrl+k",
-        "command": "extension.vim_navigateUp"
+        "command": "workbench.action.navigateUp"
     },
     {
         "key": "ctrl+l",
-        "command": "extension.vim_navigateRight"
+        "command": "workbench.action.navigateRight"
     },
     {
         "key": "alt+1",
