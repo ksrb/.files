@@ -20,6 +20,37 @@
     export PATH=$PATH:./bin
     # Add relative node_modules/.bin to PATH
     export PATH=$PATH:./node_modules/.bin
+# }
+
+# Functions {
+    # Get dangling commits
+    # See post for single quote escaping method: https://stackoverflow.com/a/1250279
+    gitkfsck() {
+      gitk --all $(git fsck --no-reflog | awk '/dangling commit/ {print $3}')
+    }
+
+    leIgnores=(
+      -g '!/.git'
+      -g '!/node_modules'
+    )
+
+    # Convert files recursively to have windows (CRLF) Line Endings
+    crlfle() {
+      rg . \
+        --null \
+        --files \
+        "${leIgnores[@]}" \
+        | xargs -0 unix2dos
+    }
+
+    # Convert files recursively to have linux/mac (LF) Line Ending
+    lfle() {
+      rg . \
+        --null \
+        --files \
+        "${leIgnores[@]}" \
+        | xargs -0 dos2unix
+    }
 
     # Directory shortcuts
     prog (){ cd ~/Documents/Programming/$1; }
