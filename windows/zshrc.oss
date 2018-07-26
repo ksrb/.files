@@ -3,12 +3,22 @@
 # }
 
 # Functions {
+    # Open cygwin terminal at current path
     cygwin() {
       C:/tools/cygwin/bin/mintty.exe /bin/sh -lc "cd '$(pwd)'; exec zsh"
     }
-# }
 
-# Git {
+    # Kill Proccess On Port
+    killpop() {
+      local port=$1
+      powershell "Stop-Process -Id (Get-NetTCPConnection -LocalPort $port).OwningProcess -Force"
+    }
+
+    # Kill all node processes
+    killnode() {
+      taskkill /f /im node.exe
+    }
+
     WINDOWS_GIT='/cygdrive/c/Program Files/Git/cmd'
 
     # Set git to windows git for node, git gui/gitk
@@ -32,7 +42,6 @@
     }
 # }
 
-
 # IntelliJ {
     # Execute command if first argument is 'eval'
     # see http://superuser.com/a/230090
@@ -42,16 +51,4 @@
     # Combine with "C:\cygwin64\bin\zsh.exe" -is eval 'unsetopt PROMPT_SP'
     # To eliminate extra '%' after every prompt
     # See http://superuser.com/questions/645599/why-is-a-percent-sign-appearing-before-each-prompt-on-zsh-in-windows
-# }
-
-# Node {
-    killnode() {
-       taskkill /f /im node.exe
-    }
-
-    # Kill Proccess On Port
-    killpop() {
-      local port=$1
-      powershell "Stop-Process -Id (Get-NetTCPConnection -LocalPort $port).OwningProcess -Force"
-    }
 # }
