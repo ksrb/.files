@@ -36,11 +36,16 @@ Plug 'tpope/vim-repeat'
 Plug 'tpope/vim-surround'
 
 " ctrlP {
-    let g:ctrlp_custom_ignore = '\v[\/](jspm_packages|node_modules)|(\.(git|hg|svn))$' " ignore jspm_packages|node_modules|.git|.hg|.svn folders
-    let g:ctrlp_working_path_mode = 'ra'                                               " Set working dir to first folder with .git or folder which file ctrlp was called on
-    let g:ctrlp_switch_buffer = 'et'                                                   " Jump to a file if it's open already
-    let g:ctrlp_mruf_max = 450                                                         " Number of recently opened files
-    let g:ctrlp_max_files = 0                                                          " Do not limit the number of searchable files
+    " ignore node_modules|.git folders
+    let g:ctrlp_custom_ignore = '\v[\/](node_modules)|(\.(git))$'
+    " Set working dir to first folder with .git or folder which file ctrlp was called on
+    let g:ctrlp_working_path_mode = 'ra'
+    " Jump to a file if it's open already
+    let g:ctrlp_switch_buffer = 'et'
+    " Number of recently opened files
+    let g:ctrlp_mruf_max = 450
+    " Do not limit the number of searchable files
+    let g:ctrlp_max_files = 0
 
     " Use The Silver Searcher
     " From: https://github.com/ggreer/the_silver_searcher
@@ -52,11 +57,9 @@ Plug 'tpope/vim-surround'
             \ -l
             \ --nocolor
             \ --hidden
+            \ --ignore "/node_modules"
             \ --ignore ".*"
             \ --ignore ".git"
-            \ --ignore ".hg"
-            \ --ignore ".svn"
-            \ --ignore "/node_modules"
             \ -g ""'
       " ag is fast enough that CtrlP doesn't need to cache
       let g:ctrlp_use_caching = 0
