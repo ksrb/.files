@@ -1,5 +1,12 @@
-alias nvim=vim
-alias cygwin=C:/cygwin64/bin/mintty.exe /bin/sh -lc "cd "'"'"$(pwd)"'"'"; exec zsh"
+# Aliases  {
+    alias nvim=vim
+# }
+
+# Functions {
+    cygwin() {
+      C:/tools/cygwin/bin/mintty.exe /bin/sh -lc "cd '$(pwd)'; exec zsh"
+    }
+# }
 
 # Git {
     WINDOWS_GIT='/cygdrive/c/Program Files/Git/cmd'
@@ -38,7 +45,13 @@ alias cygwin=C:/cygwin64/bin/mintty.exe /bin/sh -lc "cd "'"'"$(pwd)"'"'"; exec z
 # }
 
 # Node {
-    killNode() {
+    killnode() {
        taskkill /f /im node.exe
+    }
+
+    # Kill Proccess On Port
+    killpop() {
+      local port=$1
+      powershell "Stop-Process -Id (Get-NetTCPConnection -LocalPort $port).OwningProcess -Force"
     }
 # }
