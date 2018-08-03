@@ -18,6 +18,7 @@
 
     # Add relative bin to PATH
     export PATH=$PATH:./bin
+
     # Add relative node_modules/.bin to PATH
     export PATH=$PATH:./node_modules/.bin
 # }
@@ -36,20 +37,48 @@
 
     # Convert files recursively to have windows (CRLF) Line Endings
     crlfle() {
-      rg . \
-        --null \
-        --files \
-        "${leIgnores[@]}" \
-        | xargs -0 unix2dos
+      local pathVar
+      pathVar=${1:-$(pwd)}
+
+
+      # Is a directory
+      if [[ -d $pathVar ]]; then
+        # Not the same directory ($(pwd) or '.')
+        if [[ ! "$pathVar" -ef $(pwd) ]]; then
+          pushd "$pathVar" 1> /dev/null || exit
+        fi
+        rg . \
+          --null \
+          --files \
+          | xargs -0 unix2dos
+        if [[ ! "$pathVar" -ef $(pwd) ]]; then
+          popd 1> /dev/null || exit
+        fi
+      else # Not a directory
+        unix2dos "$pathVar"
+      fi
     }
 
     # Convert files recursively to have linux/mac (LF) Line Ending
     lfle() {
-      rg . \
-        --null \
-        --files \
-        "${leIgnores[@]}" \
-        | xargs -0 dos2unix
+      local pathVar
+      pathVar=${1:-$(pwd)}
+
+
+      if [[ -d $pathVar ]]; then
+        if [[ ! "$pathVar" -ef $(pwd) ]]; then
+          pushd "$pathVar" 1> /dev/null || exit
+        fi
+        rg . \
+          --null \
+          --files \
+          | xargs -0 dos2unix
+        if [[ ! "$pathVar" -ef $(pwd) ]]; then
+          popd 1> /dev/null || exit
+        fi
+      else
+        dos2unix "$pathVar"
+      fi
     }
 
     # Directory shortcuts
