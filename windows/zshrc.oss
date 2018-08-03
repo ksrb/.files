@@ -5,7 +5,13 @@
 # Functions {
     # Open cygwin terminal at current path
     cygwin() {
-      C:/tools/cygwin/bin/mintty.exe /bin/sh -lc "cd '$(pwd)'; exec zsh"
+      local pathVar=$1
+      # Is a directory
+      if [[ -d $pathVar ]]; then
+        C:/tools/cygwin/bin/mintty.exe /bin/sh -lc "cd '$(pwd)/$pathVar'; exec zsh"
+      else
+        C:/tools/cygwin/bin/mintty.exe /bin/sh -lc "cd '$(pwd)'; exec zsh"
+      fi
     }
 
     # Kill Proccess On Port
