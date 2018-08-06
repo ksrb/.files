@@ -1,7 +1,9 @@
 [core]
-  editor = vim
-  excludesfile = ~/.gitignore
+	editor = vim
+	excludesfile = ~/.gitignore
 [include]
-  path = ~/.gitconfig_local
+	path = ~/.gitconfig_local
 [help]
-  autocorrect = 1
+	autocorrect = 1
+[alias]
+	quick-stats = ! /usr/local/bin/git-quick-stats
