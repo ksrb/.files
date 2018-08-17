@@ -1,0 +1,52 @@
+#!/usr/bin/env bash
+
+paths=(
+C:\\Program Files\\Git\\cmd\;
+C:\\WINDOWS\\System32\\OpenSSH\;
+C:\\tools\\cygwin\\bin\;
+C:\\ProgramData\\chocolatey\\bin\;
+C:\\Program Files\\nodejs\;
+%JAVA_HOME%\;
+C:\\tools\\go\\bin\;
+C:\\Python27\;
+C:\\Python27\\Scripts\;
+C:\\Program Files \(x86\)\\vim\\vim80\;
+C:\\tools\\neovim\\Neovim\\bin\;
+C:\\Program Files\\Microsoft VS Code\\bin\;
+C:\\Program Files\\Notepad++\;
+C:\\Program Files\\Docker\\Docker\\Resources\\bin\;
+)
+
+save() {
+  mkdir -p path-backups
+  local date
+  date=$(date +'%Y-%m-%d_%H-%M-%S')
+  cygpath -pw "$PATH" >> "path-backups/$date.txt"
+}
+
+set() {
+  echo "${paths[@]}"
+}
+
+remove() {
+  echo
+}
+
+add() {
+  echo
+}
+
+process(){
+  case "$1" in
+    "save")
+      save;;
+    "set")
+      set;;
+    "remove")
+      remove;;
+    "add")
+      add;;
+  esac
+}
+
+process "$@"
