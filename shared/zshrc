@@ -17,10 +17,12 @@
     stty -ixon
 
     # Add relative bin to PATH
-    export PATH=$PATH:./bin
+    dotBin=./bin
+    [[ ":$PATH:" != *"$dotBin"* ]] && PATH="$dotBin:${PATH}"
 
     # Add relative node_modules/.bin to PATH
-    export PATH=$PATH:./node_modules/.bin
+    dotNodeModuleBin=./node_modules/.bin
+    [[ ":$PATH:" != *"$dotNodeModuleBin"* ]] && PATH="$dotNodeModuleBin:${PATH}"
 # }
 
 # Functions {
