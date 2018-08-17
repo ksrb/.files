@@ -21,11 +21,11 @@ mac_configs_ignores+=(
 )
 
 windows_configs_dir="$configs_dir/windows"
-window_configs_ignores+=(
+windows_configs_ignores+=(
   "${shared_config_ignores[@]}"
 )
 
-setEnv(){
+setEnv() {
   case "$(uname -s)" in
     CYGWIN*)
       export CYGWIN=winsymlinks:native
@@ -51,7 +51,7 @@ ignored() {
 link="link"
 clean="clean"
 
-linkDotFiles(){
+linkDotFiles() {
   local mode=$1
   local configs_dir=$2
   local ignores_local=$3
@@ -103,7 +103,7 @@ linkDotFiles(){
   done
 }
 
-linkFile(){
+linkFile() {
   local mode=$1
   local src=$2
   local dest=$3
@@ -159,7 +159,7 @@ linkSharedFiles() {
 
 linkWindowFiles() {
   local mode=$1
-  linkDotFiles "$mode" "$windows_configs_dir" "ignores_global"
+  linkDotFiles "$mode" "$windows_configs_dir" "windows_configs_ignores"
   linkFile "$mode" "$shared_configs_dir/Code" "$target/AppData/Roaming/Code"
 }
 
@@ -177,7 +177,7 @@ linkNVim() {
   linkFile "$mode" "$shared_configs_dir/vimrc" "$target/.config/nvim/init.vim"
 }
 
-clean(){
+clean() {
   echo "Clean OS independent dotfiles"
   linkDotFiles $clean "$shared_configs_dir" "shared_config_ignores"
   case "$(uname -s)" in
@@ -192,7 +192,7 @@ clean(){
   esac
 }
 
-help(){
+help() {
   cat <<-EOF
   Usage: linker [COMMAND]
   Commands:
@@ -207,7 +207,7 @@ help(){
 EOF
 }
 
-process(){
+process() {
   case "$1" in
     "ln")
       linkDotFilesForOs;;
