@@ -8,8 +8,7 @@
   "files.insertFinalNewline": true,
   "files.trimTrailingWhitespace": true,
   "terminal.external.osxExec": "iTerm.app",
-  "terminal.integrated.shell.windows": "C:\\tools\\cygwin\\bin\\bash.exe",
-  "terminal.integrated.shellArgs.windows": ["/bin/xhere", "/bin/zsh"],
+  "terminal.integrated.shell.windows": "C:\\tools\\cygwin\\bin\\zsh.exe",
   "window.title": "${activeEditorMedium}",
   "workbench.activityBar.visible": false,
   "workbench.colorCustomizations": {
@@ -18,7 +17,6 @@
     "statusBar.debuggingBackground": "#005f87"
   },
   "workbench.editor.enablePreview": false, // Open files in new tab
-  "workbench.iconTheme": null, // Disable icons for performance
   "workbench.statusBar.visible": true,
   "workbench.welcome.enabled": false,
   // Vim settings
@@ -26,6 +24,7 @@
   "vim.enableNeovim": true,
   "vim.handleKeys": {},
   "vim.hlsearch": true,
+  "vim.smartcase": true,
   "vim.statusBarColors": {
     "normal": "#005f87",
     "insert": "#78ba78",
