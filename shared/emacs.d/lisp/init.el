@@ -185,11 +185,6 @@
       (define-key evil-normal-state-map (kbd "C-S-a") 'evil-numbers/inc-at-pt)
       )
 
-    (use-package key-chord
-      :config
-      (setq key-chord-two-keys-delay .3)
-      )
-
     (use-package powerline-evil
       :config
       ;; Custom powerline theme
@@ -357,6 +352,25 @@
       (kbd "C-<f3>") 'find-variable-at-point
       )
     )
+
+  ;; Org mode
+  (progn
+    (evil-define-key 'normal evil-org-mode-map
+      (kbd "<key-chord> cn") 'org-clock-in
+      (kbd "<key-chord> co") 'org-clock-out
+      (kbd "<key-chord> cq") 'org-clock-cancel
+      (kbd "<key-chord> cr") 'org-clock-in-last)
+
+    (add-hook 'org-mode-hook
+              (lambda()
+                (key-chord-mode t)))
+
+    (use-package key-chord
+      :config
+      (setq key-chord-two-keys-delay .3)
+      )
+    )
+
   ;; Code
   (progn
     (use-package web-mode
@@ -391,21 +405,6 @@
 
     (require 'antlr-mode)
     (add-to-list 'auto-mode-alist '("\\.g4$" . antlr-v4-mode))
-
-    ;; Allows for override of built in org mode
-    ;; See https://github.com/jwiegley/use-package/issues/319#issuecomment-186181569
-    ;; TODO error during package loading
-    ; (use-package org-plus-contrib)
-
-    (evil-define-key 'normal evil-org-mode-map
-      (kbd "<key-chord> cn") 'org-clock-in
-      (kbd "<key-chord> co") 'org-clock-out
-      (kbd "<key-chord> cq") 'org-clock-cancel
-      (kbd "<key-chord> cr") 'org-clock-in-last)
-
-    (add-hook 'org-mode-hook
-              (lambda()
-                (key-chord-mode t)))
 
     (use-package company
       :config
