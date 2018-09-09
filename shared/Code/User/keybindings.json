@@ -224,22 +224,12 @@
   {
     "key": "space ctrl+f",
     "command": "actions.find",
-    "when": "editorTextFocus && vim.active && !inDebugRepl && vim.mode == 'Normal'"
-  },
-  {
-    "key": "space ctrl+f",
-    "command": "actions.find",
-    "when": "editorTextFocus && vim.active && !inDebugRepl && vim.mode == 'Visual'"
+    "when": "editorTextFocus && vim.active && !inDebugRepl"
   },
   {
     "key": "space ctrl+h",
     "command": "workbench.view.search",
-    "when": "editorTextFocus && vim.active && !inDebugRepl  && vim.mode == 'Normal'"
-  },
-  {
-    "key": "space ctrl+h",
-    "command": "workbench.view.search",
-    "when": "editorTextFocus && vim.active && !inDebugRepl  && vim.mode == 'Visual'"
+    "when": "editorTextFocus && vim.active && !inDebugRepl"
   },
   {
     "key": "space ctrl+g",
