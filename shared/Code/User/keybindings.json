@@ -1,318 +1,323 @@
 // TODO: Double check when properties
 // TODO: Ctrl+j not working in terminal
 [
-    // =============== Globals ===============
-    {
-        "key": "ctrl+p",
-        "command": "workbench.action.quickOpen"
-    },
-    {
-        "key": "alt+x",
-        "command": "workbench.action.showCommands"
-    },
-    {
-        "key": "ctrl+shift+z",
-        "command": "toggleVim"
-    },
-    {
-        // Override (Mac)
-        "key": "cmd+w",
-        "command": "workbench.action.closeWindow"
-    },
-    {
-        // Override
-        "key": "alt-left",
-        "command": "workbench.action.navigateBack"
-    },
-    {
-        // Override
-        "key": "alt-right",
-        "command": "workbench.action.navigateForward"
-    },
-    { // =============== File explorer focused ===============
-        "key": "alt+shift+r",
-        "command": "renameFile",
-        "when": "explorerViewletVisible && filesExplorerFocus"
-    },
-    {
-        "key": "ctrl+alt+i f",
-        "command": "explorer.newFile",
-        "when": "explorerViewletVisible && filesExplorerFocus"
-    },
-    {
-        "key": "ctrl+alt+i d",
-        "command": "explorer.newFolder",
-        "when": "explorerViewletVisible && filesExplorerFocus"
-    },
-    {
-        // Override (Mac)
-        "key": "enter",
-        "command": "list.select",
-        "when": "listFocus"
-    },
-    { // =============== Window commands ===============
-        // Used to go to editor from terminal
-        "key": "shift+ctrl+k",
-        "command": "workbench.action.focusActiveEditorGroup"
-    },
-    {
-        // Override
-        "key": "ctrl+h",
-        "command": "workbench.action.navigateLeft"
-    },
-    {
-        // Override
-        "key": "ctrl+j",
-        "command": "workbench.action.navigateDown"
-    },
-    {
-        // Override
-        "key": "ctrl+k",
-        "command": "workbench.action.navigateUp"
-    },
-    {
-        "key": "ctrl+l",
-        "command": "workbench.action.navigateRight"
-    },
-    {
-        "key": "alt+1",
-        "command": "workbench.files.action.focusFilesExplorer"
-    },
-    {
-        "key": "alt+1",
-        "command": "workbench.action.toggleSidebarVisibility",
-        "when": "explorerViewletFocus && explorerViewletVisible"
-    },
-    {
-        "key": "escape",
-        "command": "workbench.action.focusActiveEditorGroup",
-        "when": "explorerViewletFocus && explorerViewletVisible"
-    },
-    {
-        "key": "alt+3",
-        "command": "workbench.view.search",
-        "when": "!searchInputBoxFocus"
-    },
-    {
-        "key": "alt+3",
-        "command": "workbench.action.toggleSidebarVisibility",
-        "when": "searchInputBoxFocus && searchViewletVisible"
-    },
-    {
-        // TODO: doesn't work when focused on result list
-        "key": "escape",
-        "command": "workbench.action.focusActiveEditorGroup",
-        "when": "searchInputBoxFocus && searchViewletVisible"
-    },
-    {
-        "key": "alt+4",
-        "command": "workbench.view.debug"
-    },
-    {
-        "key": "alt+4",
-        "command": "workbench.action.toggleSidebarVisibility",
-        // TODO: need detection when debug viewlet is visible
-        "when": "!searchViewletVisible && !explorerViewletVisible"
-    },
-    {
-        "key": "alt+9",
-        "command": "workbench.view.git"
-    },
-    {
-        "key": "alt+9",
-        "command": "workbench.action.toggleSidebarVisibility",
-        // TODO: need detection when git viewlet is visible
-        "when": "!searchViewletVisible && !explorerViewletVisible"
-    },
-    {
-        // Override
-        "key": "alt+f12",
-        "command": "workbench.action.terminal.toggleTerminal"
-    },
-    {
-        // Override
-        "key": "alt+f12",
-        "command": "workbench.action.terminal.focus",
-        "when": "!terminalFocus"
-    },
-    { // =============== Tab management ===============
-        "key": "ctrl+alt+l",
-        "command": "workbench.action.nextEditor",
-        // TODO: doesn't work
-        "when": "editorTextFocus"
-    },
-    {
-        "key": "ctrl+alt+h",
-        "command": "workbench.action.previousEditor",
-        // TODO: doesn't work
-        "when": "editorTextFocus"
-    },
-    {
-        "key": "ctrl+alt+=",
-        "command": "workbench.action.increaseViewSize"
-    },
-    {
-        "key": "ctrl+alt+-",
-        "command": "workbench.action.decreaseViewSize"
-    },
-    // =============== Editor focused ===============
-    {
-        "key": "ctrl+shift+f",
-        "command": "editor.action.formatDocument",
-        "when": "editorHasDocumentFormattingProvider && !editorHasSelection && editorTextFocus && !editorReadonly"
-    },
-    {
-        "key": "ctrl+shift+f",
-        "command": "editor.action.formatSelection",
-        "when": "editorHasDocumentSelectionFormattingProvider && editorHasSelection && editorTextFocus && !editorReadonly"
-    },
-    {
-        // Override
-        "key": "f3",
-        "command": "editor.action.goToDeclaration",
-        "when": "editorHasDefinitionProvider && editorTextFocus && !isInEmbeddedEditor"
-    },
-    {
-        "key": "shift+alt+r",
-        "command": "editor.action.rename",
-        "when": "editorHasRenameProvider && editorTextFocus && !editorReadonly"
-    },
-    {
-        "key": "ctrl+/",
-        "command": "editor.action.commentLine",
-        "when": "editorTextFocus && !editorReadonly"
-    },
-    {
-        "key": "shift+ctrl+/",
-        "command": "editor.action.blockComment",
-        "when": "editorTextFocus && !editorReadonly"
-    },
-    {
-        "key": "ctrl+left",
-        "command": "cursorWordStartLeft",
-        "when": "editorTextFocus"
-    },
-    {
-        "key": "ctrl+right",
-        "command": "cursorWordEndRight",
-        "when": "editorTextFocus"
-    },
-    {
-        "key": "shift+ctrl+left",
-        "command": "cursorWordStartLeftSelect",
-        "when": "editorTextFocus"
-    },
-    {
-        "key": "shift+ctrl+right",
-        "command": "cursorWordEndRightSelect",
-        "when": "editorTextFocus"
-    },
-    { // =============== Window commands ===============
-        "key": "ctrl+w v",
-        "command": "workbench.action.splitEditor",
-        "when": "editorTextFocus"
-    },
-    {
-        "key": "ctrl+w shift+h",
-        "command": "workbench.action.moveEditorToPreviousGroup",
-        "when": "editorTextFocus"
-    },
-    {
-        "key": "ctrl+w shift+l",
-        "command": "workbench.action.moveEditorToNextGroup",
-        "when": "editorTextFocus"
-    },
-    {
-        "key": "ctrl+w shift+alt+h",
-        "command": "workbench.action.moveActiveEditorGroupLeft",
-        "when": "editorTextFocus"
-    },
-    {
-        "key": "ctrl+w shift+alt+l",
-        "command": "workbench.action.moveActiveEditorGroupRight",
-        "when": "editorTextFocus"
-    },
-    {
-        // TODO: Not sure if it's worth redoing all the ctrl keys consider waiting on
-        // response from https://github.com/VSCodeVim/Vim/issues/1738
-        "key": "ctrl+w h",
-        "command": "extension.vim_navigateLeft",
-        "when": "vim.active && vim.use<C-w> && editorTextFocus"
-    },
-    {
-        "key": "ctrl+w l",
-        "command": "extension.vim_navigateRight",
-        "when": "vim.active && vim.use<C-w> && editorTextFocus"
-    },
-    {
-        // TODO: Doesn't work
-        "key": "ctrl+w ctrl+w",
-        "command": "extension.vim_navigateGroups",
-        "when": "vim.active && vim.use<C-w> && editorTextFocus"
-    },
-    {
-        "key": "ctrl+w j",
-        "command": "extension.vim_navigateDown",
-        "when": "vim.active && vim.use<C-w> && editorTextFocus"
-    },
-    {
-        "key": "ctrl+w k",
-        "command": "extension.vim_navigateUp",
-        "when": "vim.active && vim.use<C-w> && editorTextFocus"
-    },
-    { // =============== Leader commands ===============
-        "key": "space n",
-        "command": "workbench.view.explorer",
-        "when": "editorTextFocus && vim.active && !inDebugRepl && vim.mode == 'Normal'"
-    },
-    {
-        "key": "space n",
-        "command": "workbench.action.toggleSidebarVisibility",
-        "when": "explorerViewletFocus && vim.active && explorerViewletVisible"
-    },
-    {
-        "key": "space ctrl+f",
-        "command": "actions.find",
-        "when": "editorTextFocus && vim.active && !inDebugRepl && vim.mode == 'Normal'"
-    },
-    {
-        "key": "space ctrl+f",
-        "command": "actions.find",
-        "when": "editorTextFocus && vim.active && !inDebugRepl && vim.mode == 'Visual'"
-    },
-    {
-        "key": "space ctrl+h",
-        "command": "workbench.view.search",
-        "when": "editorTextFocus && vim.active && !inDebugRepl  && vim.mode == 'Normal'"
-    },
-    {
-        "key": "space ctrl+h",
-        "command": "workbench.view.search",
-        "when": "editorTextFocus && vim.active && !inDebugRepl  && vim.mode == 'Visual'"
-    },
-    {
-        "key": "space ctrl+g",
-        "command": "editor.action.referenceSearch.trigger",
-        "when": "editorHasReferenceProvider && editorTextFocus && !inReferenceSearchEditor && !isInEmbeddedEditor && vim.active && !inDebugRepl && vim.mode == 'Normal'"
-    },
-    {
-        "key": "space ctrl+e",
-        "command": "workbench.action.openRecent",
-        "when": "editorTextFocus && vim.active && !inDebugRepl && vim.mode == 'Normal'"
-    },
-    {
-        "key": "space c o",
-        "command": "workbench.action.closeOtherEditors",
-        "when": "editorTextFocus && vim.active && !inDebugRepl && vim.mode == 'Normal'"
-    },
-    {
-        "key": "space r",
-        "command": "workbench.action.files.revert",
-        "when": "editorTextFocus && vim.active && !inDebugRepl && vim.mode == 'Normal'"
-    },
-    {
-        "key": "space space",
-        "command": "cursorRight",
-        "when": "editorTextFocus && vim.active && !inDebugRepl && vim.mode == 'Normal'"
-    }
+  // =============== Globals ===============
+  {
+    "key": "ctrl+p",
+    "command": "workbench.action.quickOpen"
+  },
+  {
+    "key": "alt+x",
+    "command": "workbench.action.showCommands"
+  },
+  {
+    "key": "ctrl+shift+z",
+    "command": "toggleVim"
+  },
+  {
+    // Override (Mac)
+    "key": "cmd+w",
+    "command": "workbench.action.closeWindow"
+  },
+  {
+    // Override
+    "key": "alt-left",
+    "command": "workbench.action.navigateBack"
+  },
+  {
+    // Override
+    "key": "alt-right",
+    "command": "workbench.action.navigateForward"
+  },
+  {
+    // =============== File explorer focused ===============
+    "key": "alt+shift+r",
+    "command": "renameFile",
+    "when": "explorerViewletVisible && filesExplorerFocus"
+  },
+  {
+    "key": "ctrl+alt+i f",
+    "command": "explorer.newFile",
+    "when": "explorerViewletVisible && filesExplorerFocus"
+  },
+  {
+    "key": "ctrl+alt+i d",
+    "command": "explorer.newFolder",
+    "when": "explorerViewletVisible && filesExplorerFocus"
+  },
+  {
+    // Override (Mac)
+    "key": "enter",
+    "command": "list.select",
+    "when": "listFocus"
+  },
+  {
+    // =============== Window commands ===============
+    // Used to go to editor from terminal
+    "key": "shift+ctrl+k",
+    "command": "workbench.action.focusActiveEditorGroup"
+  },
+  {
+    // Override
+    "key": "ctrl+h",
+    "command": "workbench.action.navigateLeft"
+  },
+  {
+    // Override
+    "key": "ctrl+j",
+    "command": "workbench.action.navigateDown"
+  },
+  {
+    // Override
+    "key": "ctrl+k",
+    "command": "workbench.action.navigateUp"
+  },
+  {
+    "key": "ctrl+l",
+    "command": "workbench.action.navigateRight"
+  },
+  {
+    "key": "alt+1",
+    "command": "workbench.files.action.focusFilesExplorer"
+  },
+  {
+    "key": "alt+1",
+    "command": "workbench.action.toggleSidebarVisibility",
+    "when": "explorerViewletFocus && explorerViewletVisible"
+  },
+  {
+    "key": "escape",
+    "command": "workbench.action.focusActiveEditorGroup",
+    "when": "explorerViewletFocus && explorerViewletVisible"
+  },
+  {
+    "key": "alt+3",
+    "command": "workbench.view.search",
+    "when": "!searchInputBoxFocus"
+  },
+  {
+    "key": "alt+3",
+    "command": "workbench.action.toggleSidebarVisibility",
+    "when": "searchInputBoxFocus && searchViewletVisible"
+  },
+  {
+    // TODO: doesn't work when focused on result list
+    "key": "escape",
+    "command": "workbench.action.focusActiveEditorGroup",
+    "when": "searchInputBoxFocus && searchViewletVisible"
+  },
+  {
+    "key": "alt+4",
+    "command": "workbench.view.debug"
+  },
+  {
+    "key": "alt+4",
+    "command": "workbench.action.toggleSidebarVisibility",
+    // TODO: need detection when debug viewlet is visible
+    "when": "!searchViewletVisible && !explorerViewletVisible"
+  },
+  {
+    "key": "alt+9",
+    "command": "workbench.view.git"
+  },
+  {
+    "key": "alt+9",
+    "command": "workbench.action.toggleSidebarVisibility",
+    // TODO: need detection when git viewlet is visible
+    "when": "!searchViewletVisible && !explorerViewletVisible"
+  },
+  {
+    // Override
+    "key": "alt+f12",
+    "command": "workbench.action.terminal.toggleTerminal"
+  },
+  {
+    // Override
+    "key": "alt+f12",
+    "command": "workbench.action.terminal.focus",
+    "when": "!terminalFocus"
+  },
+  {
+    // =============== Tab management ===============
+    "key": "ctrl+alt+l",
+    "command": "workbench.action.nextEditor",
+    // TODO: doesn't work
+    "when": "editorTextFocus"
+  },
+  {
+    "key": "ctrl+alt+h",
+    "command": "workbench.action.previousEditor",
+    // TODO: doesn't work
+    "when": "editorTextFocus"
+  },
+  {
+    "key": "ctrl+alt+=",
+    "command": "workbench.action.increaseViewSize"
+  },
+  {
+    "key": "ctrl+alt+-",
+    "command": "workbench.action.decreaseViewSize"
+  },
+  // =============== Editor focused ===============
+  {
+    "key": "ctrl+shift+f",
+    "command": "editor.action.formatDocument",
+    "when": "editorHasDocumentFormattingProvider && !editorHasSelection && editorTextFocus && !editorReadonly"
+  },
+  {
+    "key": "ctrl+shift+f",
+    "command": "editor.action.formatSelection",
+    "when": "editorHasDocumentSelectionFormattingProvider && editorHasSelection && editorTextFocus && !editorReadonly"
+  },
+  {
+    // Override
+    "key": "f3",
+    "command": "editor.action.goToDeclaration",
+    "when": "editorHasDefinitionProvider && editorTextFocus && !isInEmbeddedEditor"
+  },
+  {
+    "key": "shift+alt+r",
+    "command": "editor.action.rename",
+    "when": "editorHasRenameProvider && editorTextFocus && !editorReadonly"
+  },
+  {
+    "key": "ctrl+/",
+    "command": "editor.action.commentLine",
+    "when": "editorTextFocus && !editorReadonly"
+  },
+  {
+    "key": "shift+ctrl+/",
+    "command": "editor.action.blockComment",
+    "when": "editorTextFocus && !editorReadonly"
+  },
+  {
+    "key": "ctrl+left",
+    "command": "cursorWordStartLeft",
+    "when": "editorTextFocus"
+  },
+  {
+    "key": "ctrl+right",
+    "command": "cursorWordEndRight",
+    "when": "editorTextFocus"
+  },
+  {
+    "key": "shift+ctrl+left",
+    "command": "cursorWordStartLeftSelect",
+    "when": "editorTextFocus"
+  },
+  {
+    "key": "shift+ctrl+right",
+    "command": "cursorWordEndRightSelect",
+    "when": "editorTextFocus"
+  },
+  {
+    // =============== Window commands ===============
+    "key": "ctrl+w v",
+    "command": "workbench.action.splitEditor",
+    "when": "editorTextFocus"
+  },
+  {
+    "key": "ctrl+w shift+h",
+    "command": "workbench.action.moveEditorToPreviousGroup",
+    "when": "editorTextFocus"
+  },
+  {
+    "key": "ctrl+w shift+l",
+    "command": "workbench.action.moveEditorToNextGroup",
+    "when": "editorTextFocus"
+  },
+  {
+    "key": "ctrl+w shift+alt+h",
+    "command": "workbench.action.moveActiveEditorGroupLeft",
+    "when": "editorTextFocus"
+  },
+  {
+    "key": "ctrl+w shift+alt+l",
+    "command": "workbench.action.moveActiveEditorGroupRight",
+    "when": "editorTextFocus"
+  },
+  {
+    // TODO: Not sure if it's worth redoing all the ctrl keys consider waiting on
+    // response from https://github.com/VSCodeVim/Vim/issues/1738
+    "key": "ctrl+w h",
+    "command": "extension.vim_navigateLeft",
+    "when": "vim.active && vim.use<C-w> && editorTextFocus"
+  },
+  {
+    "key": "ctrl+w l",
+    "command": "extension.vim_navigateRight",
+    "when": "vim.active && vim.use<C-w> && editorTextFocus"
+  },
+  {
+    // TODO: Doesn't work
+    "key": "ctrl+w ctrl+w",
+    "command": "extension.vim_navigateGroups",
+    "when": "vim.active && vim.use<C-w> && editorTextFocus"
+  },
+  {
+    "key": "ctrl+w j",
+    "command": "extension.vim_navigateDown",
+    "when": "vim.active && vim.use<C-w> && editorTextFocus"
+  },
+  {
+    "key": "ctrl+w k",
+    "command": "extension.vim_navigateUp",
+    "when": "vim.active && vim.use<C-w> && editorTextFocus"
+  },
+  {
+    // =============== Leader commands ===============
+    "key": "space n",
+    "command": "workbench.view.explorer",
+    "when": "editorTextFocus && vim.active && !inDebugRepl && vim.mode == 'Normal'"
+  },
+  {
+    "key": "space n",
+    "command": "workbench.action.toggleSidebarVisibility",
+    "when": "explorerViewletFocus && vim.active && explorerViewletVisible"
+  },
+  {
+    "key": "space ctrl+f",
+    "command": "actions.find",
+    "when": "editorTextFocus && vim.active && !inDebugRepl && vim.mode == 'Normal'"
+  },
+  {
+    "key": "space ctrl+f",
+    "command": "actions.find",
+    "when": "editorTextFocus && vim.active && !inDebugRepl && vim.mode == 'Visual'"
+  },
+  {
+    "key": "space ctrl+h",
+    "command": "workbench.view.search",
+    "when": "editorTextFocus && vim.active && !inDebugRepl  && vim.mode == 'Normal'"
+  },
+  {
+    "key": "space ctrl+h",
+    "command": "workbench.view.search",
+    "when": "editorTextFocus && vim.active && !inDebugRepl  && vim.mode == 'Visual'"
+  },
+  {
+    "key": "space ctrl+g",
+    "command": "editor.action.referenceSearch.trigger",
+    "when": "editorHasReferenceProvider && editorTextFocus && !inReferenceSearchEditor && !isInEmbeddedEditor && vim.active && !inDebugRepl && vim.mode == 'Normal'"
+  },
+  {
+    "key": "space ctrl+e",
+    "command": "workbench.action.openRecent",
+    "when": "editorTextFocus && vim.active && !inDebugRepl && vim.mode == 'Normal'"
+  },
+  {
+    "key": "space c o",
+    "command": "workbench.action.closeOtherEditors",
+    "when": "editorTextFocus && vim.active && !inDebugRepl && vim.mode == 'Normal'"
+  },
+  {
+    "key": "space r",
+    "command": "workbench.action.files.revert",
+    "when": "editorTextFocus && vim.active && !inDebugRepl && vim.mode == 'Normal'"
+  },
+  {
+    "key": "space space",
+    "command": "cursorRight",
+    "when": "editorTextFocus && vim.active && !inDebugRepl && vim.mode == 'Normal'"
+  }
 ]

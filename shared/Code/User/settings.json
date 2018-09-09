@@ -1,69 +1,52 @@
 {
-    "editor.autoClosingBrackets": true,
-    "editor.formatOnSave": true,
-    "editor.lineNumbers": "relative",
-    "editor.minimap.enabled": false,
-    "editor.rulers": [
-        80
-    ],
-    "editor.tabSize": 2,
-    "files.insertFinalNewline": true,
-    "files.trimTrailingWhitespace": true,
-    "terminal.external.osxExec": "iTerm.app",
-    "terminal.integrated.shell.windows": "C:\\tools\\cygwin\\bin\\bash.exe",
-    "terminal.integrated.shellArgs.windows": [
-        "/bin/xhere",
-        "/bin/zsh"
-    ],
-    "window.title": "${activeEditorMedium}",
-    "workbench.activityBar.visible": false,
-    "workbench.colorCustomizations": {
-        "statusBar.background": "#005f87",
-        "statusBar.noFolderBackground": "#005f87",
-        "statusBar.debuggingBackground": "#005f87"
+  "editor.autoClosingBrackets": true,
+  "editor.formatOnSave": true,
+  "editor.lineNumbers": "relative",
+  "editor.minimap.enabled": false,
+  "editor.rulers": [80],
+  "editor.tabSize": 2,
+  "files.insertFinalNewline": true,
+  "files.trimTrailingWhitespace": true,
+  "terminal.external.osxExec": "iTerm.app",
+  "terminal.integrated.shell.windows": "C:\\tools\\cygwin\\bin\\bash.exe",
+  "terminal.integrated.shellArgs.windows": ["/bin/xhere", "/bin/zsh"],
+  "window.title": "${activeEditorMedium}",
+  "workbench.activityBar.visible": false,
+  "workbench.colorCustomizations": {
+    "statusBar.background": "#005f87",
+    "statusBar.noFolderBackground": "#005f87",
+    "statusBar.debuggingBackground": "#005f87"
+  },
+  "workbench.editor.enablePreview": false, // Open files in new tab
+  "workbench.iconTheme": null, // Disable icons for performance
+  "workbench.statusBar.visible": true,
+  "workbench.welcome.enabled": false,
+  // Vim settings
+  "vim.disableAnnoyingNeovimMessage": true,
+  "vim.enableNeovim": true,
+  "vim.handleKeys": {},
+  "vim.hlsearch": true,
+  "vim.statusBarColors": {
+    "normal": "#005f87",
+    "insert": "#78ba78",
+    "visual": "#bc78bb",
+    "visualline": "#bc78bb",
+    "visualblock": "#bc78bb",
+    "replace": "#000000"
+  },
+  "vim.visualstar": true,
+  "vim.otherModesKeyBindingsNonRecursive": [
+    // Map gc -> gb (line comment)
+    // See: https://github.com/VSCodeVim/Vim#vscodevim-tricks
+    {
+      "before": ["g", "c"],
+      "after": ["g", "b"]
     },
-    "workbench.editor.enablePreview": false, // Open files in new tab
-    "workbench.iconTheme": null, // Disable icons for performance
-    "workbench.statusBar.visible": true,
-    "workbench.welcome.enabled": false,
-    // Vim settings
-    "vim.disableAnnoyingNeovimMessage": true,
-    "vim.enableNeovim": true,
-    "vim.handleKeys": {},
-    "vim.hlsearch": true,
-    "vim.statusBarColors": {
-        "normal": "#005f87",
-        "insert": "#78ba78",
-        "visual": "#bc78bb",
-        "visualline": "#bc78bb",
-        "visualblock": "#bc78bb",
-        "replace": "#000000"
-    },
-    "vim.visualstar": true,
-    "vim.otherModesKeyBindingsNonRecursive": [
-        // Map gc -> gb (line comment)
-        // See: https://github.com/VSCodeVim/Vim#vscodevim-tricks
-        {
-            "before": [
-                "g",
-                "c"
-            ],
-            "after": [
-                "g",
-                "b"
-            ]
-        },
-        // Map gC -> gB (block comment)
-        // See above
-        {
-            "before": [
-                "g",
-                "C"
-            ],
-            "after": [
-                "g",
-                "B"
-            ]
-        }
-    ]
+    // Map gC -> gB (block comment)
+    // See above
+    {
+      "before": ["g", "C"],
+      "after": ["g", "B"]
+    }
+  ]
 }
