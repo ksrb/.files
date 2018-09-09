@@ -211,60 +211,6 @@
     "when": "editorTextFocus"
   },
   {
-    // =============== Window commands ===============
-    "key": "ctrl+w v",
-    "command": "workbench.action.splitEditor",
-    "when": "editorTextFocus"
-  },
-  {
-    "key": "ctrl+w shift+h",
-    "command": "workbench.action.moveEditorToPreviousGroup",
-    "when": "editorTextFocus"
-  },
-  {
-    "key": "ctrl+w shift+l",
-    "command": "workbench.action.moveEditorToNextGroup",
-    "when": "editorTextFocus"
-  },
-  {
-    "key": "ctrl+w shift+alt+h",
-    "command": "workbench.action.moveActiveEditorGroupLeft",
-    "when": "editorTextFocus"
-  },
-  {
-    "key": "ctrl+w shift+alt+l",
-    "command": "workbench.action.moveActiveEditorGroupRight",
-    "when": "editorTextFocus"
-  },
-  {
-    // TODO: Not sure if it's worth redoing all the ctrl keys consider waiting on
-    // response from https://github.com/VSCodeVim/Vim/issues/1738
-    "key": "ctrl+w h",
-    "command": "extension.vim_navigateLeft",
-    "when": "vim.active && vim.use<C-w> && editorTextFocus"
-  },
-  {
-    "key": "ctrl+w l",
-    "command": "extension.vim_navigateRight",
-    "when": "vim.active && vim.use<C-w> && editorTextFocus"
-  },
-  {
-    // TODO: Doesn't work
-    "key": "ctrl+w ctrl+w",
-    "command": "extension.vim_navigateGroups",
-    "when": "vim.active && vim.use<C-w> && editorTextFocus"
-  },
-  {
-    "key": "ctrl+w j",
-    "command": "extension.vim_navigateDown",
-    "when": "vim.active && vim.use<C-w> && editorTextFocus"
-  },
-  {
-    "key": "ctrl+w k",
-    "command": "extension.vim_navigateUp",
-    "when": "vim.active && vim.use<C-w> && editorTextFocus"
-  },
-  {
     // =============== Leader commands ===============
     "key": "space n",
     "command": "workbench.view.explorer",
