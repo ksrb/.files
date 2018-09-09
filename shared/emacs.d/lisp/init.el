@@ -186,6 +186,11 @@
       (define-key evil-normal-state-map (kbd "C-S-a") 'evil-numbers/inc-at-pt)
       )
 
+    (use-package evil-commentary
+      :config
+      (evil-commentary-mode)
+      )
+
     (use-package powerline-evil
       :config
       ;; Custom powerline theme
