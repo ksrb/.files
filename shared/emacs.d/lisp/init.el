@@ -25,7 +25,6 @@
   (load-theme 'base16-eighties-dark t)
   (menu-bar-mode -1)     ;; Remove menu bar
   (tool-bar-mode -1)     ;; Remove tool bar
-  ; (scroll-bar-mode -1)   ;; Remove scroll bars
   (electric-pair-mode t) ;; Automatically complete parens
   (show-paren-mode t)    ;; Show matching paren
 
@@ -61,6 +60,10 @@
                (setq tab-width 2
                      css-indent-offset 2
                      )))
+
+  (when (display-graphic-p)
+    (scroll-bar-mode -1)
+    )
   )
 
 ;; Bindings
