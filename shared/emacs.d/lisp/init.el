@@ -359,7 +359,7 @@
     (use-package flycheck-gometalinter
       :ensure t
       :config
-      (progn (flycheck-gometalinter-setup))
+      (flycheck-gometalinter-setup)
       )
     )
 

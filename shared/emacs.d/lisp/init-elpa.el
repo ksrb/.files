@@ -32,7 +32,8 @@
      (package-install package)))
  (list 'use-package))
 
-(require 'use-package)
+(eval-when-compile
+  (require 'use-package))
 (setq use-package-always-ensure t)
 
 (provide 'init-elpa)
