@@ -10,7 +10,7 @@
 (require 'init-elpa)
 (add-to-list 'custom-theme-load-path (expand-file-name "themes" user-emacs-directory))
 
-;; Recursive load forks directory
+;; Recursively load forks directory
 (let ((default-directory  "~/.emacs.d/forks"))
   (setq load-path
         (append
@@ -20,24 +20,6 @@
             (normal-top-level-add-subdirs-to-load-path)))
          load-path)))
 
-;; https://gist.github.com/jpanganiban/2157d3e16b42b1959560
-(defcustom windmove-pre-move-hook nil
-  "Hook run before windmove select is triggered."
-  :group 'windmove
-  :type 'hook)
-
-(defcustom windmove-post-move-hook nil
-  "Hook run after windmove select is triggered."
-  :group 'windmove
-  :type 'hook)
-
-(defun advice/windowmove-do-window-select (orig-fun &rest args)
-  "Run pre and post hooks for windowmove-do-select passing ORIG-FUN the ARGS."
-  (run-hooks 'windmove-pre-move-hook)
-  (apply orig-fun args)
-  (run-hooks 'windmove-post-move-hook))
-
-(advice-add 'windmove-do-window-select :around 'advice/windowmove-do-window-select)
 ;; Settings
 (progn
   (load-theme 'base16-eighties-dark t)
@@ -583,7 +565,7 @@
 
       (defun advice/multi-term-kill-buffer-hook (&rest args)
         (if (eq major-mode 'term-mode)
-          (delete-window))
+            (delete-window))
         )
 
       (advice-add 'multi-term-kill-buffer-hook :after 'advice/multi-term-kill-buffer-hook)
@@ -596,12 +578,32 @@
                     (yas-minor-mode -1))
                   ))
 
+      ;; https://gist.github.com/jpanganiban/2157d3e16b42b1959560
+      (defcustom windmove-pre-move-hook nil
+        "Hook run before windmove select is triggered."
+        :group 'windmove
+        :type 'hook)
+
+      (defcustom windmove-post-move-hook nil
+        "Hook run after windmove select is triggered."
+        :group 'windmove
+        :type 'hook)
+
+      (defun advice/windowmove-do-window-select (orig-fun &rest args)
+        "Run pre and post hooks for windowmove-do-select passing ORIG-FUN the ARGS."
+        (run-hooks 'windmove-pre-move-hook)
+        (apply orig-fun args)
+        (run-hooks 'windmove-post-move-hook))
+
+      (advice-add 'windmove-do-window-select :around 'advice/windowmove-do-window-select)
+
       (add-hook 'windmove-post-move-hook
                 (lambda ()
                   (when (derived-mode-p 'term-mode)
                     (evil-insert-state)
                     )
                   ))
+
       (cond
        ((equal system-type 'darwin)
         (evil-define-key 'insert term-raw-map
