@@ -169,6 +169,7 @@
       :config
       (global-evil-leader-mode)
       (evil-leader/set-leader "SPC")
+      (evil-leader/set-key "kw" 'delete-trailing-whitespace)
       )
 
     ;; TODO transfer bindings to remove evil-leader dependency
