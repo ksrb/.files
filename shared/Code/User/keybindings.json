@@ -30,6 +30,15 @@
     "command": "workbench.action.navigateForward"
   },
   {
+    // Override
+    "key": "ctrl+alt+s",
+    "command": "workbench.action.openGlobalSettings"
+  },
+  {
+    "key": "ctrl+shift+alt+s",
+    "command": "workbench.action.openWorkspaceSettings"
+  },
+  {
     // =============== File explorer focused ===============
     "key": "alt+shift+r",
     "command": "renameFile",
