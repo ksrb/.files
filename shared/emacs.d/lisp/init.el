@@ -472,12 +472,19 @@
 
   ;; UI
   (progn
+    (if (display-graphic-p)
+        (use-package git-gutter-fringe
+          :config
+          (global-git-gutter-mode)
+          )
+      )
 
-    ;; TODO error during package loading
-    ; (use-package git-gutter-fringe
-    ;   :config
-    ;   (global-git-gutter-mode)
-    ;   )
+    (if (not (display-graphic-p))
+        (use-package git-gutter
+          :config
+          (global-git-gutter-mode +1)
+          )
+      )
 
     (use-package form-feed
       :config
