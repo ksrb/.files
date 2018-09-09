@@ -312,6 +312,19 @@
       )
     )
 
+  ;; Typescript
+  (use-package tide
+    :config
+    (evil-define-key 'normal tide-mode-map
+      (kbd "<f2>") 'tide-documentation-at-point
+      (kbd "<f3>") 'tide-jump-to-definition
+      (kbd "M-R") 'tide-rename-symbol
+      (kbd "M-V") 'tide-refactor
+      ;; TODO: add jump location when using <f3> to evil jumplist
+      (kbd "M-<left>") 'tide-jump-back
+      )
+    )
+
   ;; Golang
   (progn
     (use-package go-mode
@@ -397,6 +410,7 @@
       (add-to-list 'auto-mode-alist '("\\.ejs$" . web-mode))
       (add-to-list 'auto-mode-alist '("\\.js$" . web-mode))
       (add-to-list 'auto-mode-alist '("\\.css$" . web-mode))
+      (add-to-list 'auto-mode-alist '("\\.tsx$" . web-mode))
 
       (setq web-mode-indent-style 2
             web-mode-markup-indent-offset 2
@@ -417,6 +431,13 @@
                         ))))
       )
 
+      (add-hook 'web-mode-hook
+                (lambda ()
+                  (when (string-equal "tsx" (file-name-extension buffer-file-name))
+                    (tide-setup)
+                    (tide-hl-identifier-mode)
+                    )))
+      )
 
     (use-package company
       :config
@@ -437,6 +458,7 @@
       (setq flycheck-emacs-lisp-load-path 'inherit)
       (flycheck-add-mode 'javascript-eslint 'javascript-mode)
       (flycheck-add-mode 'javascript-eslint 'web-mode)
+      (flycheck-add-mode 'typescript-tslint 'web-mode)
       )
 
     (use-package yasnippet
