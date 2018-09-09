@@ -251,6 +251,8 @@
     "when": "editorTextFocus && vim.active && !inDebugRepl && vim.mode == 'Normal'"
   },
   {
+    // TODO: Two key key chords don't work see:
+    // https://github.com/Microsoft/vscode/issues/6966
     "key": "space c o",
     "command": "workbench.action.closeOtherEditors",
     "when": "editorTextFocus && vim.active && !inDebugRepl && vim.mode == 'Normal'"
@@ -262,7 +264,16 @@
   },
   {
     "key": "space space",
-    "command": "cursorRight",
+    "command": "type",
+    "args": { "text": " " },
     "when": "editorTextFocus && vim.active && !inDebugRepl && vim.mode == 'Normal'"
+  },
+  {
+    "key": "space",
+    "command": "type",
+    "args": {
+      "text": " "
+    },
+    "when": "editorTextFocus && vim.active && !inDebugRepl && vim.mode == 'Insert'"
   }
 ]
