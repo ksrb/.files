@@ -205,6 +205,7 @@
       :config
       (projectile-mode)
       (helm-projectile-on)
+      (define-key projectile-mode-map (kbd "C-c p") 'projectile-command-map)
 
       (setq projectile-indexing-method 'alien   ;; Use external tools to perform indexing
             projectile-completion-system 'helm  ;; Set projectile to use helm to autocomplete
