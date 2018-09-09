@@ -35,6 +35,7 @@ map <leader><C-h> :action FindInPath<CR>
 map <leader><C-t> :action GotoImplementation<CR>
 map <leader>co :action CloseAllEditorsButActive<CR>
 map <leader>df :action ToggleDistractionFreeMode<CR>
+map <leader>fp :action ReformatWithPrettierAction<CR>
 map <leader>n :action ActivateProjectToolWindow<CR>
 map <leader>r :action ReloadFromDisk<CR>
 map <leader>s :action SynchronizeCurrentFile<CR> :action VimInsertExitMode<CR>
