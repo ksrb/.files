@@ -564,7 +564,10 @@
                   (define-key evil-normal-state-local-map (kbd "q") 'neotree-hide)
                   ))
       )
+    )
 
+  ;; Misc
+  (progn
     (use-package multi-term
       :config
       (setq multi-term-dedicated-select-after-open-p t
@@ -651,14 +654,11 @@
        )
       )
 
-    (require 'move-border)
-    )
 
-  ;; Misc
-  (progn
     (use-package hydra
       :config
 
+      (require 'move-border)
       (defhydra hydra-tmux-mode
         (global-map "C-a")
         "Tmux mode"
