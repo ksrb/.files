@@ -400,45 +400,45 @@
       )
     )
 
-  ;; Code
-  (progn
-    (use-package web-mode
-      :config
+  (use-package web-mode
+    :config
 
-      (evil-define-key 'normal web-mode-map
-        (kbd "M-R") 'tern-rename-variable
-        )
-
-      (add-to-list 'auto-mode-alist '("\\.html$" . web-mode))
-      (add-to-list 'auto-mode-alist '("\\.js$" . web-mode))
-      (add-to-list 'auto-mode-alist '("\\.css$" . web-mode))
-      (add-to-list 'auto-mode-alist '("\\.tsx$" . web-mode))
-
-      (setq web-mode-indent-style 2
-            web-mode-markup-indent-offset 2
-            web-mode-css-indent-offset 2
-            web-mode-enable-css-colorization t
-            web-mode-code-indent-offset 2
-            web-mode-attr-indent-offset 2
-            )
-
-      (add-hook 'web-mode-hook
-                (lambda ()
-                  (when (equal web-mode-content-type "javascript")
-                    (tern-mode t)
-                    (web-mode-set-content-type "jsx")
-                    (yas-activate-extra-mode 'js-mode)
-                    (setq-local web-mode-auto-quote-style 2)
-                    )))
-
-      (add-hook 'web-mode-hook
-                (lambda ()
-                  (when (string-equal "tsx" (file-name-extension buffer-file-name))
-                    (tide-setup)
-                    (tide-hl-identifier-mode)
-                    )))
+    (evil-define-key 'normal web-mode-map
+      (kbd "M-R") 'tern-rename-variable
       )
 
+    (add-to-list 'auto-mode-alist '("\\.html$" . web-mode))
+    (add-to-list 'auto-mode-alist '("\\.js$" . web-mode))
+    (add-to-list 'auto-mode-alist '("\\.css$" . web-mode))
+    (add-to-list 'auto-mode-alist '("\\.tsx$" . web-mode))
+
+    (setq web-mode-indent-style 2
+          web-mode-markup-indent-offset 2
+          web-mode-css-indent-offset 2
+          web-mode-enable-css-colorization t
+          web-mode-code-indent-offset 2
+          web-mode-attr-indent-offset 2
+          )
+
+    (add-hook 'web-mode-hook
+              (lambda ()
+                (when (equal web-mode-content-type "javascript")
+                  (tern-mode t)
+                  (web-mode-set-content-type "jsx")
+                  (yas-activate-extra-mode 'js-mode)
+                  (setq-local web-mode-auto-quote-style 2)
+                  )))
+
+    (add-hook 'web-mode-hook
+              (lambda ()
+                (when (string-equal "tsx" (file-name-extension buffer-file-name))
+                  (tide-setup)
+                  (tide-hl-identifier-mode)
+                  )))
+    )
+
+  ;; Util
+  (progn
     (use-package company
       :config
       (global-company-mode)
