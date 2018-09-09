@@ -360,6 +360,15 @@
       )
     )
 
+  ;; Markdown
+  (use-package markdown-mode)
+
+  ;; Antlr
+  (progn
+    (require 'antlr-mode)
+    (add-to-list 'auto-mode-alist '("\\.g4$" . antlr-v4-mode))
+    )
+
   ;; Org mode
   (progn
     (evil-define-key 'normal evil-org-mode-map
@@ -408,10 +417,6 @@
                         ))))
       )
 
-    (use-package markdown-mode)
-
-    (require 'antlr-mode)
-    (add-to-list 'auto-mode-alist '("\\.g4$" . antlr-v4-mode))
 
     (use-package company
       :config
