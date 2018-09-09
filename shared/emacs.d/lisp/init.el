@@ -27,6 +27,7 @@
   (tool-bar-mode -1)     ;; Remove tool bar
   (electric-pair-mode t) ;; Automatically complete parens
   (show-paren-mode t)    ;; Show matching paren
+  (global-display-line-numbers-mode t)
 
   (setq backup-directory-alist `(("." . "~/.emacs.d/backups"))           ;; Centeralize for backup directory
         auto-save-file-name-transforms `((".*" "~/.emacs.d/backups/" t)) ;; Centeralize temporary files
@@ -44,6 +45,7 @@
         sh-indentation 2                                                 ;; Use 2 spaces to indent shell scripts
         sh-basic-offset 2                                                ;; Use 2 spaces to indent for all indentation levels
         initial-frame-alist (quote ((fullscreen . maximized)))           ;; Maximize emacs on startup
+        display-line-numbers-type 'relative                              ;; Relative line numbering
         )
 
   (setq-default
@@ -459,11 +461,6 @@
 
   ;; UI
   (progn
-    (use-package linum-relative
-      :config
-      (linum-relative-global-mode)             ;; Show relative line numbers
-      (setq linum-relative-current-symbol "")  ;; Show absolute line number
-      )
 
     ;; TODO error during package loading
     ; (use-package git-gutter-fringe
