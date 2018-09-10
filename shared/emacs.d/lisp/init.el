@@ -591,7 +591,7 @@
         (kbd "C-l") 'evil-window-right
         (kbd "C-d") '(lambda() (interactive) (term-send-raw-string "\C-d"))
         (kbd "C-c") '(lambda() (interactive) (term-send-raw-string "\C-c"))
-        (kbd "C-a") '(lambda() (interactive) (term-send-raw-string "\C-a"))          ;; Go to beginning of line
+        (kbd "C-a") 'hydra-tmux-mode/body
         (kbd "C-e") '(lambda() (interactive) (term-send-raw-string "\C-e"))          ;; Go to end of line
         (kbd "C-w") '(lambda() (interactive) (term-send-raw-string "\C-w"))          ;; Delete word before cursor
         (kbd "C-u") '(lambda() (interactive) (term-send-raw-string "\C-u"))          ;; Clear entire line
@@ -676,6 +676,7 @@
         ("C-j" move-border-down "Move border down 3")
         ("C-k" move-border-up "Move border up 3")
         ("C-l" move-border-right "Move border right 3")
+        ("C-a" (lambda() (interactive) (term-send-raw-string "\C-a")) "Go to beginning of line")
 
         ("C-<left>" (lambda() (interactive) (move-border-left 1)) "Move border left 1")
         ("C-<down>" (lambda() (interactive) (move-border-down 2)) "Move border down 1")
