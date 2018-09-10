@@ -23,11 +23,11 @@
 ;; Settings
 (progn
   (load-theme 'base16-eighties-dark t)
-  (menu-bar-mode -1)     ;; Remove menu bar
-  (tool-bar-mode -1)     ;; Remove tool bar
-  (electric-pair-mode t) ;; Automatically complete parens
-  (show-paren-mode t)    ;; Show matching paren
-  (global-display-line-numbers-mode t)
+  (menu-bar-mode -1)                   ;; Remove menu bar
+  (tool-bar-mode -1)                   ;; Remove tool bar
+  (electric-pair-mode t)               ;; Automatically complete parens
+  (show-paren-mode t)                  ;; Show matching paren
+  (global-display-line-numbers-mode t) ;; Display line numbers
 
   (setq backup-directory-alist `(("." . "~/.emacs.d/backups"))           ;; Centeralize for backup directory
         auto-save-file-name-transforms `((".*" "~/.emacs.d/backups/" t)) ;; Centeralize temporary files
