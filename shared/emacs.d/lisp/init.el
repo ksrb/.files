@@ -446,10 +446,18 @@
       (setq company-idle-delay 0.2
             company-minimum-prefix-length 1
             company-selection-wrap-around t)
-      (define-key company-active-map [tab] 'company-select-next-or-abort)
-      (define-key company-active-map [backtab] 'company-select-previous-or-abort)
-      (define-key company-active-map (kbd "<S-tab>") 'company-select-previous-or-abort)
-      (define-key company-active-map (kbd "<C-SPC>") 'company-complete-selection)
+
+      (when (display-graphic-p)
+        (define-key company-active-map (kbd "<tab>") 'company-select-next-or-abort)
+        (define-key company-active-map (kbd "<S-tab>") 'company-select-previous-or-abort)
+        (define-key company-active-map (kbd "<C-SPC>") 'company-complete-selection)
+        )
+
+      (when (not (display-graphic-p))
+        (define-key company-active-map (kbd "TAB") 'company-select-next-or-abort)
+        (define-key company-active-map (kbd "<backtab>") 'company-select-previous-or-abort)
+        (define-key company-active-map (kbd "C-@") 'company-complete-selection)
+        )
       )
 
     (use-package flycheck
