@@ -32,7 +32,7 @@
   (setq backup-directory-alist `(("." . "~/.emacs.d/backups"))           ;; Centeralize for backup directory
         auto-save-file-name-transforms `((".*" "~/.emacs.d/backups/" t)) ;; Centeralize temporary files
         inhibit-startup-message t                                        ;; Disable startup screen
-        make-backup-files -1                                             ;; Disable creating of backup files
+        make-backup-files -1                                             ;; Disable creation of backup files
         default-directory (concat (getenv "HOME") "/")                   ;; Set emacs starting directory to $HOME
         help-window-select t                                             ;; Select help window after prompt
         auto-window-vscroll nil                                          ;; Disable automatic vertical recenter
@@ -322,6 +322,34 @@
       (kbd "M-V") 'tide-refactor
       ;; TODO: add jump location when using <f3> to evil jumplist
       (kbd "M-<left>") 'tide-jump-back
+      )
+    )
+
+  (use-package prettier-js
+    :config
+    (defun enable-minor-mode (extension mode)
+      "Enable minor MODE if EXTENSION regex and filename match."
+      (if (buffer-file-name)
+          (if (string-match extension buffer-file-name)
+              (funcall mode))))
+
+    (add-hook 'web-mode-hook (lambda()
+                               (enable-minor-mode "\\.tsx$" 'prettier-js-mode)
+                               ))
+
+    (advice-add 'prettier-js-mode :around 'advice/prettier-js-mode)
+
+    (defun advice/prettier-js-mode (orig-fun &rest args)
+      "Enable prettier minor mode but disable automatic formatting on file save"
+      (apply orig-fun args)
+      (remove-hook 'before-save-hook 'prettier-js 'local)
+      )
+    )
+
+  (use-package add-node-modules-path
+    :config
+    (eval-after-load 'web-mode
+      '(add-hook 'web-mode-hook 'add-node-modules-path)
       )
     )
 
@@ -690,3 +718,6 @@
 
 (provide 'init)
 ;;; init.el ends here
+;; Local Variables:
+;; byte-compile-warnings: (not free-vars)
+;; End:
