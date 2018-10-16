@@ -9,6 +9,7 @@ shared_configs_dir="$configs_dir/shared"
 shared_config_ignores+=(
   "${ignores_global[@]}"
   Code
+  gitignore_global
   idea.properties
 )
 
@@ -157,6 +158,7 @@ linkDotFilesForOs() {
 linkSharedFiles() {
   local mode=$1
   linkDotFiles "$mode" "$shared_configs_dir" "shared_config_ignores"
+  linkFile "$mode" "$shared_configs_dir/gitignore_global" "$target/.config/git/ignore"
   linkFile "$mode" "$shared_configs_dir/idea.properties" "$target/idea.properties"
 }
 
