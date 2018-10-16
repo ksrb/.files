@@ -46,6 +46,10 @@
       CURRENT_PATH=${CURRENT_PATH#:}
       export PATH=$CURRENT_PATH
     }
+
+    startCmd() {
+      cmd /c start cmd
+    }
 # }
 
 # IntelliJ {
