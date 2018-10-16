@@ -109,6 +109,7 @@ linkFile() {
   local dest=$3
 
   if [ "$mode" = $clean ]; then
+    # Not a symlink
     if [[ ! -L "$dest" ]]; then
       printf "Skipping: %s as it is not a symlink\\n" "$dest"
       return
@@ -119,7 +120,9 @@ linkFile() {
   fi
 
   if [ "$mode" = $link ]; then
+    # If destination is a symlink
     if [[ -L "$dest" ]]; then
+      # Override it
       rm "$dest"
       ln -s "$src" "$dest"
       printf "Overriding: %s => %s\\n" "$src" "$dest"
@@ -132,7 +135,7 @@ linkFile() {
     fi
 
     ln -s "$src" "$dest"
-    printf "%s => %s\\n" "$src" "$dest"
+    printf "Linking: %s => %s\\n" "$src" "$dest"
   fi
 }
 
