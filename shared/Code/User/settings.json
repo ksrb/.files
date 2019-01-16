@@ -18,9 +18,12 @@
   },
   "workbench.editor.enablePreview": false, // Open files in new tab
   "workbench.statusBar.visible": true,
+  "workbench.settings.openDefaultSettings": false,
+  "workbench.settings.openDefaultKeybindings": false,
+  "workbench.settings.editor": "json",
+  "workbench.startupEditor": "none",
   "workbench.welcome.enabled": false,
   // Vim settings
-  "vim.disableAnnoyingNeovimMessage": true,
   "vim.enableNeovim": true,
   "vim.handleKeys": {},
   "vim.hlsearch": true,
