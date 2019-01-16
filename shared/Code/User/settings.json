@@ -27,6 +27,7 @@
   "vim.enableNeovim": true,
   "vim.handleKeys": {},
   "vim.hlsearch": true,
+  "vim.leader": "<space>",
   "vim.smartcase": true,
   "vim.statusBarColors": {
     "normal": "#005f87",
@@ -37,18 +38,53 @@
     "replace": "#000000"
   },
   "vim.visualstar": true,
-  "vim.otherModesKeyBindingsNonRecursive": [
-    // Map gc -> gb (line comment)
-    // See: https://github.com/VSCodeVim/Vim#vscodevim-tricks
+  "vim.normalModeKeyBindingsNonRecursive": [
     {
-      "before": ["g", "c"],
-      "after": ["g", "b"]
+      "before": ["<leader>", "n"],
+      "commands": ["workbench.view.explorer"]
     },
-    // Map gC -> gB (block comment)
-    // See above
     {
-      "before": ["g", "C"],
-      "after": ["g", "B"]
+      "before": ["<leader>", "<C-f>"],
+      "commands": ["actions.find"]
+    },
+    // TODO: doesn't work
+    {
+      "before": ["<leader>", "<C-h>"],
+      "commands": ["workbench.view.search"]
+    },
+    // TODO: doesn't work
+    {
+      "before": ["<leader>", "<C-g>"],
+      "commands": ["editor.action.referenceSearch.trigger"]
+    },
+    // {
+    //   "before": ["<leader>", "<C-e>"],
+    //   "commands": ["workbench.action.openRecent"]
+    // },
+    {
+      "before": ["<leader>", "c", "o"],
+      "commands": ["workbench.action.closeOtherEditors"]
+    },
+    {
+      "before": ["<leader>", "r"],
+      "commands": ["workbench.action.files.revert"]
+    },
+    {
+      "before": ["<leader>", "<leader>"],
+      "commands": ["extension.vim_right"]
+    },
+    {
+      "before": ["<C-w>", "H"],
+      "commands": ["workbench.action.moveEditorToPreviousGroup"]
+    },
+    {
+      "before": ["<C-w>", "L"],
+      "commands": ["workbench.action.moveEditorToNextGroup"]
+    },
+    // TODO: ctrl+c binding preferred
+    {
+      "before": ["<leader>", "p", "p"],
+      "commands": ["workbench.action.openRecent"]
     }
   ]
 }
