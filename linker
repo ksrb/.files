@@ -208,7 +208,6 @@ help() {
   ls      Link only shared dotfiles
   lm      Link only Mac dotfiles
   lw      Link only Windows dotfiles
-  si      Set IntelliJ config directory to ~/.IntelliJIdea based on OS
 EOF
 }
 
