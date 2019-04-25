@@ -2,8 +2,6 @@ AngularJS
 AntSupport
 ByteCodeViewer
 CFML Support
-CVS
-ClearcasePlugin
 CloudBees
 CloudFoundry
 Coverage
@@ -24,7 +22,6 @@ PerforceDirectPlugin
 Resin
 StrutsAssistant
 Subversion
-TFS
 TestNG-J
 Tomcat
 WebSphere
@@ -38,7 +35,6 @@ com.intellij.appengine
 com.intellij.aspectj
 com.intellij.beanValidation
 com.intellij.cdi
-com.intellij.clion-python
 com.intellij.copyright
 com.intellij.database
 com.intellij.diagram
@@ -94,7 +90,6 @@ cucumber-groovy
 cucumber-java
 gherkin
 hg4idea
-mobi.hsz.idea.gitignore
 org.coffeescript
 org.editorconfig.editorconfigjetbrains
 org.intellij.grails
@@ -113,5 +108,6 @@ org.jetbrains.plugins.javaFX
 org.jetbrains.plugins.less
 org.jetbrains.plugins.remote-run
 org.jetbrains.plugins.stylus
+org.jetbrains.plugins.wsl
 org.jetbrains.settingsRepository
 tslint
