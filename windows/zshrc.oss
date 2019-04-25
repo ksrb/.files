@@ -3,15 +3,22 @@
 # }
 
 # Functions {
+
     # Open cygwin terminal at current path
     cygwin() {
       local pathVar=$1
-      # Is a directory
+      local cygwinPath=C:/tools/cygwin
+
+      # pathVar is a directory
       if [[ -d $pathVar ]]; then
-        C:/tools/cygwin/bin/mintty.exe /bin/sh -lc "cd '$(pwd)/$pathVar'; exec zsh"
-      else
-        C:/tools/cygwin/bin/mintty.exe /bin/sh -lc "cd '$(pwd)'; exec zsh"
+        # Open terminal in the given directory
+        $cygwinPath/bin/mintty.exe /bin/sh -lc "cd '$(pwd)/$pathVar'; exec zsh"
+        return
       fi
+
+      # Else pathVar is not a directory
+      # Open terminal in the current directory
+      $cygwinPath/bin/mintty.exe /bin/sh -lc "cd '$(pwd)'; exec zsh"
     }
 
     # Kill Proccess On Port
