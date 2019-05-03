@@ -80,12 +80,13 @@
     }
 
     # Directory shortcuts
-    prog (){ cd ~/Documents/Programming/$1; }
-    compctl -W $HOME/Documents/programming/ -/ prog
+    programmingDir=$HOME/Documents/Programming
+    prog() { cd "$programmingDir/$1" || return; }
+    compctl -W "$programmingDir" -/ prog
 
     # Print Path in human readable format
-    ppath (){
-      echo -e ${PATH//:/\\n}
+    ppath() {
+      echo -e "${PATH//:/\\n}"
     }
 # }
 
