@@ -28,22 +28,22 @@ let mapleader = " "
 " https://github.com/JetBrains/intellij-community/blob/master/platform/platform-resources-en/src/messages/ActionsBundle.properties
 " Or use :actionlist [pattern] see:
 " https://github.com/JetBrains/ideavim#executing-ide-actions
-map <leader>[{ :action EditorCodeBlockStart<CR>
-map <leader>]} :action EditorCodeBlockEnd<CR>
-map <leader><C-e> :action RecentFiles<CR>
-map <leader><C-f> :action Replace<CR>
-map <leader><C-g> :action FindUsages<CR>
-map <leader><C-h> :action FindInPath<CR>
-map <leader><C-t> :action GotoImplementation<CR>
-map <leader>co :action CloseAllEditorsButActive<CR>
-map <leader>cl :action CloseAllToTheRight<CR>
-map <leader>ch :action CloseAllToTheLeft<CR>
-map <leader>df :action ToggleDistractionFreeMode<CR>
-map <leader>fp :action ReformatWithPrettierAction<CR>
-map <leader>n :action ActivateProjectToolWindow<CR>
-map <leader>r :action ReloadFromDisk<CR>
-map <leader>s :action SynchronizeCurrentFile<CR> :action VimInsertExitMode<CR>
-map <leader>sa :action Synchronize<CR> :action VimInsertExitMode<CR>
-map <leader>t :action ActivateStructureToolWindow<CR>
-map <leader>wl :action com.andrewbrookins.idea.wrap.WrapAction<CR>
-map <leader>wp :action com.andrewbrookins.idea.wrap.WrapParagraphAction<CR>
+map <Leader>[{ :action EditorCodeBlockStart<CR>
+map <Leader>]} :action EditorCodeBlockEnd<CR>
+map <Leader><C-e> :action RecentFiles<CR>
+map <Leader><C-f> :action Replace<CR>
+map <Leader><C-g> :action FindUsages<CR>
+map <Leader><C-h> :action FindInPath<CR>
+map <Leader><C-t> :action GotoImplementation<CR>
+map <Leader>co :action CloseAllEditorsButActive<CR>
+map <Leader>cl :action CloseAllToTheRight<CR>
+map <Leader>ch :action CloseAllToTheLeft<CR>
+map <Leader>df :action ToggleDistractionFreeMode<CR>
+map <Leader>fp :action ReformatWithPrettierAction<CR>
+map <Leader>n :action ActivateProjectToolWindow<CR>
+map <Leader>r :action ReloadFromDisk<CR>
+map <Leader>s :action SynchronizeCurrentFile<CR> :action VimInsertExitMode<CR>
+map <Leader>sa :action Synchronize<CR> :action VimInsertExitMode<CR>
+map <Leader>t :action ActivateStructureToolWindow<CR>
+map <Leader>wl :action com.andrewbrookins.idea.wrap.WrapAction<CR>
+map <Leader>wp :action com.andrewbrookins.idea.wrap.WrapParagraphAction<CR>
