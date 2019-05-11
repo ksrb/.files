@@ -40,37 +40,39 @@
   "vim.visualstar": true,
   "vim.normalModeKeyBindingsNonRecursive": [
     {
-      "before": ["<leader>", "n"],
+      "before": ["<Leader>", "n"],
       "commands": ["workbench.view.explorer"]
     },
     {
-      "before": ["<leader>", "<C-f>"],
+      "before": ["<Leader>", "<C-f>"],
       "commands": ["actions.find"]
     },
     // TODO: doesn't work
     {
-      "before": ["<leader>", "<C-h>"],
+      "before": ["<Leader>", "<C-h>"],
       "commands": ["workbench.view.search"]
     },
     // TODO: doesn't work
     {
-      "before": ["<leader>", "<C-g>"],
+      "before": ["<Leader>", "<C-g>"],
       "commands": ["editor.action.referenceSearch.trigger"]
     },
+    // TODO: no command to open recent files see:
+    // https://github.com/Microsoft/vscode/issues/49629#issuecomment-388339735
     // {
     //   "before": ["<leader>", "<C-e>"],
-    //   "commands": ["workbench.action.openRecent"]
+    //   "commands": [""]
     // },
     {
-      "before": ["<leader>", "c", "o"],
+      "before": ["<Leader>", "c", "o"],
       "commands": ["workbench.action.closeOtherEditors"]
     },
     {
-      "before": ["<leader>", "r"],
+      "before": ["<Leader>", "r"],
       "commands": ["workbench.action.files.revert"]
     },
     {
-      "before": ["<leader>", "<leader>"],
+      "before": ["<Leader>", "<Leader>"],
       "commands": ["extension.vim_right"]
     },
     {
@@ -83,7 +85,7 @@
     },
     // TODO: ctrl+c binding preferred
     {
-      "before": ["<leader>", "p", "p"],
+      "before": ["<Leader>", "p", "p"],
       "commands": ["workbench.action.openRecent"]
     }
   ]
