@@ -1,6 +1,7 @@
 {
   "editor.autoClosingBrackets": true,
   "editor.formatOnSave": true,
+  "editor.fontSize": 12,
   "editor.lineNumbers": "relative",
   "editor.minimap.enabled": false,
   "editor.rulers": [80],
@@ -39,42 +40,7 @@
   },
   "vim.visualstar": true,
   "vim.normalModeKeyBindingsNonRecursive": [
-    {
-      "before": ["<Leader>", "n"],
-      "commands": ["workbench.view.explorer"]
-    },
-    {
-      "before": ["<Leader>", "<C-f>"],
-      "commands": ["actions.find"]
-    },
-    // TODO: doesn't work
-    {
-      "before": ["<Leader>", "<C-h>"],
-      "commands": ["workbench.view.search"]
-    },
-    // TODO: doesn't work
-    {
-      "before": ["<Leader>", "<C-g>"],
-      "commands": ["editor.action.referenceSearch.trigger"]
-    },
-    // TODO: no command to open recent files see:
-    // https://github.com/Microsoft/vscode/issues/49629#issuecomment-388339735
-    // {
-    //   "before": ["<leader>", "<C-e>"],
-    //   "commands": [""]
-    // },
-    {
-      "before": ["<Leader>", "c", "o"],
-      "commands": ["workbench.action.closeOtherEditors"]
-    },
-    {
-      "before": ["<Leader>", "r"],
-      "commands": ["workbench.action.files.revert"]
-    },
-    {
-      "before": ["<Leader>", "<Leader>"],
-      "commands": ["extension.vim_right"]
-    },
+    // Window
     {
       "before": ["<C-w>", "H"],
       "commands": ["workbench.action.moveEditorToPreviousGroup"]
@@ -83,10 +49,50 @@
       "before": ["<C-w>", "L"],
       "commands": ["workbench.action.moveEditorToNextGroup"]
     },
-    // TODO: ctrl+c binding preferred
+    // Leader
+    // {
+    //   // TODO: no command to open recent files see:
+    //   // https://github.com/Microsoft/vscode/issues/49629#issuecomment-388339735
+    //   "before": ["<leader>", "<C-e>"],
+    //   "commands": [""]
+    // },
     {
+      "before": ["<Leader>", "<C-f>"],
+      "commands": ["actions.find"]
+    },
+    {
+      "before": ["<Leader>", "<C-g>"],
+      "commands": ["editor.action.referenceSearch.trigger"]
+    },
+    // {
+    //   // TODO: doesn't work
+    //   "before": ["<Leader>", "<C-h>"],
+    //   "commands": ["workbench.view.search"]
+    // },
+    {
+      "before": ["<Leader>", "<Leader>"],
+      "commands": ["extension.vim_right"]
+    },
+    {
+      "before": ["<Leader>", "c", "o"],
+      "commands": ["workbench.action.closeOtherEditors"]
+    },
+    {
+      "before": ["<Leader>", "n"],
+      "commands": ["workbench.view.explorer"]
+    },
+    {
+      // TODO: ctrl+c binding preferred
       "before": ["<Leader>", "p", "p"],
       "commands": ["workbench.action.openRecent"]
+    },
+    {
+      "before": ["<Leader>", "r"],
+      "commands": ["workbench.action.files.revert"]
+    },
+    {
+      "before": ["<Leader>", "s", "a"],
+      "commands": ["workbench.action.files.saveAll"]
     }
   ]
 }
