@@ -29,6 +29,7 @@ Weblogic
 XPathView
 XSLT-Debugger
 ZKM
+com.android.tools.idea.smali
 com.intellij.CloudConfig
 com.intellij.aop
 com.intellij.appengine
