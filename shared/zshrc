@@ -29,6 +29,11 @@
 # }
 
 # Functions {
+    # Directory shortcuts
+    programmingDir=$HOME/Documents/Programming
+    prog() { cd "$programmingDir/$1" || return; }
+    compctl -W "$programmingDir" -/ prog
+
     # Get dangling commits
     # See post for single quote escaping method: https://stackoverflow.com/a/1250279
     gitkfsck() {

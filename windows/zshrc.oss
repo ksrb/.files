@@ -32,16 +32,26 @@
       taskkill /f /im node.exe
     }
 
+    # Open CMD at current path
+    startCmd() {
+      cmd /c start cmd
+    }
+
+    # Open git-bash at current path
+    startGitBash() {
+      "C:/Program Files/Git/git-bash.exe"
+    }
+
     WINDOWS_GIT='/cygdrive/c/Program Files/Git/cmd'
 
     # Set git to windows git for node, git gui/gitk
     # git gui/gitk require x-windows
-    setWindowsGit(){
+    windowsGitSet(){
       export PATH=$WINDOWS_GIT:$PATH
     }
 
     # Set git to cygwin git
-    unsetWindowsGit(){
+    WindowsGitunset(){
       # http://stackoverflow.com/a/2108540
       # Normalize path to have ':' at start and end of path
       CURRENT_PATH=:$PATH:
@@ -52,10 +62,6 @@
       # Remove starting ':'
       CURRENT_PATH=${CURRENT_PATH#:}
       export PATH=$CURRENT_PATH
-    }
-
-    startCmd() {
-      cmd /c start cmd
     }
 # }
 
