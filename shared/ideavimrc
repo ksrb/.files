@@ -28,16 +28,17 @@ let mapleader = " "
 " https://github.com/JetBrains/intellij-community/blob/master/platform/platform-resources-en/src/messages/ActionsBundle.properties
 " Or use :actionlist [pattern] see:
 " https://github.com/JetBrains/ideavim#executing-ide-actions
-map <Leader>[{ :action EditorCodeBlockStart<CR>
-map <Leader>]} :action EditorCodeBlockEnd<CR>
 map <Leader><C-e> :action RecentFiles<CR>
 map <Leader><C-f> :action Replace<CR>
 map <Leader><C-g> :action FindUsages<CR>
 map <Leader><C-h> :action FindInPath<CR>
 map <Leader><C-t> :action GotoImplementation<CR>
-map <Leader>co :action CloseAllEditorsButActive<CR>
-map <Leader>cl :action CloseAllToTheRight<CR>
+map <Leader>[{ :action EditorCodeBlockStart<CR>
+map <Leader>]} :action EditorCodeBlockEnd<CR>
 map <Leader>ch :action CloseAllToTheLeft<CR>
+map <Leader>cl :action CloseAllToTheRight<CR>
+map <Leader>co :action CloseAllEditorsButActive<CR>
+map <Leader>ct :action CloseAllEditors<CR>
 map <Leader>df :action ToggleDistractionFreeMode<CR>
 map <Leader>fp :action ReformatWithPrettierAction<CR>
 map <Leader>n :action ActivateProjectToolWindow<CR>
