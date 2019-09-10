@@ -284,7 +284,7 @@
         </autogen>
       </item>
       <item>
-        <name>Option_L to Command_R (except TERMLIKE)</name>
+        <name>Option_L to Command_R (only TERMLIKE)</name>
         <identifier>laptop.OptionL2Command_R</identifier>
         <only>TERMLIKE</only>
         <autogen>
