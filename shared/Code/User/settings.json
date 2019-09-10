@@ -1,5 +1,5 @@
 {
-  "editor.autoClosingBrackets": true,
+  "editor.autoClosingBrackets": "always",
   "editor.formatOnSave": true,
   "editor.fontSize": 12,
   "editor.lineNumbers": "relative",
@@ -23,7 +23,6 @@
   "workbench.settings.openDefaultKeybindings": false,
   "workbench.settings.editor": "json",
   "workbench.startupEditor": "none",
-  "workbench.welcome.enabled": false,
   // Vim settings
   "vim.enableNeovim": true,
   "vim.handleKeys": {},
