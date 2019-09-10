@@ -7,19 +7,35 @@
     # Open cygwin terminal at current path
     cygwin() {
       local pathVar=$1
-      local cygwinPath=C:/tools/cygwin
+      local mintty=C:/tools/cygwin/bin/mintty.exe
 
       # pathVar is a directory
       if [[ -d $pathVar ]]; then
         # Open terminal in the given directory
-        $cygwinPath/bin/mintty.exe /bin/sh -lc "cd '$(pwd)/$pathVar'; exec zsh"
+        $mintty /bin/sh -lc "cd '$(readlink -f $pathVar)'; exec zsh"
         return
       fi
 
       # Else pathVar is not a directory
       # Open terminal in the current directory
-      $cygwinPath/bin/mintty.exe /bin/sh -lc "cd '$(pwd)'; exec zsh"
+      $mintty
     }
+
+    cygwinAsAdmin() {
+      local pathVar=$1
+
+      # pathVar is a directory
+      if [[ -d $pathVar ]]; then
+        # Open terminal in the given directory
+        cygstart --action=runas 'C:/tools/cygwin/bin/mintty.exe' "/bin/sh -lc 'cd '$(readlink -f $pathVar)'; exec zsh'"
+        return
+      fi
+
+      # Else pathVar is not a directory
+      # Open terminal in the current directory
+      cygstart --action=runas 'C:/tools/cygwin/bin/mintty.exe'
+    }
+
 
     # Kill Proccess On Port
     killPop() {
@@ -30,6 +46,19 @@
     # Kill all node processes
     killNode() {
       taskkill /f /im node.exe
+    }
+
+    runAsAdmin() {
+      local program=$1
+      local arguments=${*:2}
+      # No arguments passed
+      if [[ -z $arguments ]]; then
+        powershell -Command "Start-Process '$program' -Verb runAs"
+        return
+      fi
+
+      # Else arguments passed
+      powershell -Command "Start-Process '$program' '${@:2}' -Verb runAs"
     }
 
     # Open CMD at current path
