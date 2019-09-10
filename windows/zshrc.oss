@@ -22,13 +22,13 @@
     }
 
     # Kill Proccess On Port
-    killpop() {
+    killPop() {
       local port=$1
       powershell "Stop-Process -Id (Get-NetTCPConnection -LocalPort $port).OwningProcess -Force"
     }
 
     # Kill all node processes
-    killnode() {
+    killNode() {
       taskkill /f /im node.exe
     }
 
