@@ -16,7 +16,7 @@ shared_config_ignores+=(
 mac_configs_dir="$configs_dir/mac"
 mac_configs_ignores+=(
   "${shared_config_ignores[@]}"
-  Karabiner
+  karabiner
   defaults
   override
 )
@@ -171,7 +171,9 @@ linkWindowFiles() {
 linkMacFiles() {
   local mode=$1
   linkDotFiles "$mode" "$mac_configs_dir" "mac_configs_ignores"
-  linkFile "$mode" "$mac_configs_dir/Karabiner/private.xml" "$target/Library/Application Support/Karabiner/private.xml"
+
+  # Custom links
+  linkFile "$mode" "$mac_configs_dir/karabiner" "$target/.config/karabiner"
   linkFile "$mode" "$shared_configs_dir/Code" "$target/Library/Application Support/Code"
   linkNVim "$mode"
 }
