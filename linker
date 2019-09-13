@@ -158,7 +158,10 @@ linkDotFilesForOs() {
 linkSharedFiles() {
   local mode=$1
   linkDotFiles "$mode" "$shared_configs_dir" "shared_config_ignores"
+
+  mkdir -p "$target/.config/git"
   linkFile "$mode" "$shared_configs_dir/gitignore_global" "$target/.config/git/ignore"
+
   linkFile "$mode" "$shared_configs_dir/idea.properties" "$target/idea.properties"
 }
 
@@ -175,13 +178,12 @@ linkMacFiles() {
   # Custom links
   linkFile "$mode" "$mac_configs_dir/karabiner" "$target/.config/karabiner"
   linkFile "$mode" "$shared_configs_dir/Code" "$target/Library/Application Support/Code"
-  linkNVim "$mode"
-}
 
-linkNVim() {
-  local mode=$1
   mkdir -p "$target/.config/nvim"
   linkFile "$mode" "$shared_configs_dir/vimrc" "$target/.config/nvim/init.vim"
+
+  mkdir -p "$target/Library/Keyboard Layouts"
+  linkFile "$mode" "$mac_configs_dir/layout.keylayout" "$target/Library/Keyboard Layouts/layout.keylayout"
 }
 
 clean() {
