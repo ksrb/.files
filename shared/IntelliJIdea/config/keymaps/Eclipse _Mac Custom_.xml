@@ -40,6 +40,10 @@
   <action id="NextEditorTab">
     <keyboard-shortcut first-keystroke="shift ctrl alt right" />
   </action>
+  <action id="NextProjectWindow">
+    <keyboard-shortcut first-keystroke="ctrl alt close_bracket" />
+    <keyboard-shortcut first-keystroke="meta back_quote" />
+  </action>
   <action id="NextTab">
     <keyboard-shortcut first-keystroke="ctrl f6" />
     <keyboard-shortcut first-keystroke="ctrl page_down" />
@@ -47,6 +51,10 @@
   </action>
   <action id="PreviousEditorTab">
     <keyboard-shortcut first-keystroke="shift ctrl alt left" />
+  </action>
+  <action id="PreviousProjectWindow">
+    <keyboard-shortcut first-keystroke="ctrl alt open_bracket" />
+    <keyboard-shortcut first-keystroke="shift meta back_quote" />
   </action>
   <action id="PreviousTab">
     <keyboard-shortcut first-keystroke="shift ctrl f6" />
