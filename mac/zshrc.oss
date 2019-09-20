@@ -1,6 +1,10 @@
 # General {
+    # Brew path for admin (root user) tools
+    sbin=/usr/local/sbin
+    [[ ":$PATH:" != *"$sbin"* ]] && PATH="$sbin:${PATH}"
+
     # Deduplicate path in tmux
-    # see https://github.com/thoughtbot/dotfiles/issues/443
+    # See: https://github.com/thoughtbot/dotfiles/issues/443
     export -U PATH
 
     alias vim="nvim"
