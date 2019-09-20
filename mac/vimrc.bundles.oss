@@ -42,7 +42,7 @@ if has('nvim')
 
   " ultisnips {
       " Change ultisnip trigger to Ctrl-Space
-      let g:UltiSnipsExpandTrigger = "<C-@>"
+      let g:UltiSnipsExpandTrigger = "<C-Space>"
   " }
 endif
 
