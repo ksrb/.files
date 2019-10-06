@@ -1,0 +1,12 @@
+#!/usr/bin/env bash
+
+karabiner_cli="/Library/Application Support/org.pqrs/Karabiner-Elements/bin/karabiner_cli"
+currentProfile=$("$karabiner_cli" --show-current-profile-name)
+
+laptop="Laptop"
+defaultProfile="Default Profile"
+if [[ $currentProfile == "$laptop" ]]; then
+  "$karabiner_cli" --select-profile "$defaultProfile"
+else
+  "$karabiner_cli" --select-profile "$laptop"
+fi

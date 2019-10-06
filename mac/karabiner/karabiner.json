@@ -511,6 +511,29 @@
                                 "type": "basic"
                             }
                         ]
+                    },
+                    {
+                        "description": "Pass through",
+                        "manipulators": [
+                            {
+                                "from": {
+                                    "simultaneous": [
+                                        {
+                                            "key_code": "tab"
+                                        },
+                                        {
+                                            "key_code": "escape"
+                                        }
+                                    ]
+                                },
+                                "to": [
+                                    {
+                                        "shell_command": "sh ~/.config/karabiner/passthrough"
+                                    }
+                                ],
+                                "type": "basic"
+                            }
+                        ]
                     }
                 ]
             },
@@ -647,7 +670,31 @@
                     "basic.to_if_held_down_threshold_milliseconds": 500,
                     "mouse_motion_to_scroll.speed": 100
                 },
-                "rules": []
+                "rules": [
+                    {
+                        "description": "Pass through",
+                        "manipulators": [
+                            {
+                                "from": {
+                                    "simultaneous": [
+                                        {
+                                            "key_code": "tab"
+                                        },
+                                        {
+                                            "key_code": "escape"
+                                        }
+                                    ]
+                                },
+                                "to": [
+                                    {
+                                        "shell_command": "sh ~/.config/karabiner/passthrough"
+                                    }
+                                ],
+                                "type": "basic"
+                            }
+                        ]
+                    }
+                ]
             },
             "devices": [
                 {
