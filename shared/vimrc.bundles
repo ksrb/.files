@@ -47,21 +47,18 @@ Plug 'tpope/vim-surround'
     " Do not limit the number of searchable files
     let g:ctrlp_max_files = 0
 
-    " Use The Silver Searcher
-    " From: https://github.com/ggreer/the_silver_searcher
-    if executable('ag')
-      " Use Ag over Grep
-      set grepprg=ag\ --nogroup\ --nocolor
-      " Use ag in CtrlP for listing files. Lightning fast and respects .gitignore
-      let g:ctrlp_user_command = 'ag %s
-            \ -l
-            \ --nocolor
+    " From: https://elliotekj.com/2016/11/22/setup-ctrlp-to-use-ripgrep-in-vim
+    if executable('rg')
+      " From: https://github.com/BurntSushi/ripgrep/issues/425#issuecomment-381446152
+      set grepprg=rg\ --vimgrep\ --no-heading\ --smart-case
+
+      let g:ctrlp_user_command = 'rg %s
+            \ --files
+            \ --color=never
             \ --hidden
-            \ --ignore "/node_modules"
-            \ --ignore ".*"
-            \ --ignore ".git"
-            \ -g ""'
-      " ag is fast enough that CtrlP doesn't need to cache
+            \ --glob "!node_modules/*"
+            \ --glob "!.git/*"'
+
       let g:ctrlp_use_caching = 0
     endif
 " }
