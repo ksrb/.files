@@ -23,6 +23,7 @@ Plug 'pangloss/vim-javascript'
 Plug 'scrooloose/syntastic'
 Plug 'sheerun/vim-polyglot'
 Plug 'uarun/vim-protobuf'
+Plug 'z0mbix/vim-shfmt', { 'for': 'sh' }
 
 " Git
 Plug 'tpope/vim-fugitive'
@@ -129,6 +130,11 @@ Plug 'tpope/vim-surround'
     let g:closetag_close_shortcut = ''
     let g:closetag_filenames = '*.html,*.js'
 "}
+
+" vmi-shfmt {
+    let g:shfmt_extra_args = '-i 2'
+    let g:shfmt_fmt_on_save = 1
+" }
 
 " OS Specific settings
 if filereadable(expand("~/.vimrc.bundles.oss"))
