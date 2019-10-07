@@ -80,7 +80,7 @@
     }
 
     # Set git to cygwin git
-    WindowsGitunset(){
+    windowsGitUnset(){
       # http://stackoverflow.com/a/2108540
       # Normalize path to have ':' at start and end of path
       CURRENT_PATH=:$PATH:
