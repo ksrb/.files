@@ -8,14 +8,9 @@
 * vmoptions
   * Set following the advice of [article](http://tomaszdziurko.com/2015/11/1-and-the-only-one-to-customize-intellij-idea-memory-settings/)
 * Plugins
-  * BashSupport
   * CpuUsageIndicator
-  * Docker-plugin
   * IdeaVim
+  * Prettier
   * WrapToColumn
-  * idea-multimarkdown
-  * intellij-go
-  * intellij-makefile
-  * protobuf-jetbrains-plugin
   * relative-line-numbers.jar
   * shortcuttranslator.jar

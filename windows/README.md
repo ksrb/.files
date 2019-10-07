@@ -2,14 +2,15 @@
 
 ## Cygwin
 * Install
-  * ncures - for [clear](http://stackoverflow.com/a/11249071)
-  * python - Ultisnips dependency
   * curl
+  * dos2unix
   * git
-  * vim
-  * emacs
   * make - git-extras dependency
+  * python - Ultisnips dependency
   * tmux
+  * vim
+  * optional
+    * emacs
 
 ## Zsh
 * [Set as default shell](https://cygwin.com/cygwin-ug-net/ntsec.html#ntsec-mapping-nsswitch)
@@ -96,3 +97,4 @@ Node-gyp is a native build tool but has a extensive installation process for win
   ```
   "[CYGWIN BIN PATH]\bash.exe" -lic "cd ${OLDPWD-.}; zsh;"
   ```
+* If prompt shows commands missing like `env` add [CYGWIN BIN PATH] to PATH
