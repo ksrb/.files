@@ -196,6 +196,7 @@ linkMacFiles() {
 clean() {
   echo "Clean OS independent dotfiles"
   linkDotFiles $clean "$shared_configs_dir" "shared_config_ignores"
+
   case "$(uname -s)" in
   Darwin)
     echo "Darwin based environment detected"
@@ -213,15 +214,15 @@ clean() {
 
 help() {
   cat <<-EOF
-  Usage: linker [COMMAND]
-  Commands:
-  ln      Link dotfiles based on OS, will replace existing symlinks
-  clean   clean symlinks based on OS
+Usage: linker [COMMAND]
+Commands:
+ln      Link dotfiles based on OS, will replace existing symlinks
+clean   clean symlinks based on OS
 
-  Additional Commands:
-  ls      Link only shared dotfiles
-  lm      Link only Mac dotfiles
-  lw      Link only Windows dotfiles
+Additional Commands:
+ls      Link only shared dotfiles
+lm      Link only Mac dotfiles
+lw      Link only Windows dotfiles
 EOF
 }
 
@@ -246,7 +247,7 @@ process() {
     help
     ;;
   *)
-    echo "Not a valid command"
+    printf "Not a valid command\\n\\n"
     help
     ;;
   esac
