@@ -1,7 +1,10 @@
 #!/usr/bin/env bash
 
 # cd to the directory that script is being executed and set configs_dir to directory
-configs_dir=$( cd "$(dirname "$0")" || exit ; pwd )
+configs_dir=$(
+  cd "$(dirname "$0")" || exit
+  pwd
+)
 target="$configs_dir/.."
 ignores_global=(README.md)
 
@@ -28,8 +31,9 @@ windows_configs_ignores+=(
 
 setEnv() {
   case "$(uname -s)" in
-    CYGWIN*)
-      export CYGWIN=winsymlinks:native
+  CYGWIN*)
+    export CYGWIN=winsymlinks:native
+    ;;
   esac
 }
 
@@ -43,7 +47,7 @@ ignored() {
   for e in ${!elements}; do
     # If the element matches the 1st arg
     if [[ "$e" == "$1" ]]; then
-      return 1; #true, ignored
+      return 1 #true, ignored
     fi
   done
   return 0 #false, not ignored
@@ -144,14 +148,17 @@ linkDotFilesForOs() {
   echo "Link OS independent dotfiles"
   linkSharedFiles $link
   case "$(uname -s)" in
-    Darwin)
-      echo "Darwin based environment detected"
-      linkMacFiles $link;;
-    CYGWIN*)
-      echo "Cygwin based environment detected"
-      linkWindowFiles $link;;
-    *)
-      echo "No environment matched";;
+  Darwin)
+    echo "Darwin based environment detected"
+    linkMacFiles $link
+    ;;
+  CYGWIN*)
+    echo "Cygwin based environment detected"
+    linkWindowFiles $link
+    ;;
+  *)
+    echo "No environment matched"
+    ;;
   esac
 }
 
@@ -190,14 +197,17 @@ clean() {
   echo "Clean OS independent dotfiles"
   linkDotFiles $clean "$shared_configs_dir" "shared_config_ignores"
   case "$(uname -s)" in
-    Darwin)
-      echo "Darwin based environment detected"
-      linkMacFiles $clean;;
-    CYGWIN*)
-      echo "Cygwin based environment detected"
-      linkWindowFiles $clean;;
-    *)
-      echo "No environment matched";;
+  Darwin)
+    echo "Darwin based environment detected"
+    linkMacFiles $clean
+    ;;
+  CYGWIN*)
+    echo "Cygwin based environment detected"
+    linkWindowFiles $clean
+    ;;
+  *)
+    echo "No environment matched"
+    ;;
   esac
 }
 
@@ -217,21 +227,28 @@ EOF
 
 process() {
   case "$1" in
-    "ln")
-      linkDotFilesForOs;;
-    "ls")
-      linkSharedFiles $link;;
-    "lm")
-      linkMacFiles;;
-    "lw")
-      linkWindowFiles $link;;
-    "clean")
-      clean;;
-    "help")
-      help;;
-    *)
-      echo "Not a valid command"
-      help;;
+  "ln")
+    linkDotFilesForOs
+    ;;
+  "ls")
+    linkSharedFiles $link
+    ;;
+  "lm")
+    linkMacFiles
+    ;;
+  "lw")
+    linkWindowFiles $link
+    ;;
+  "clean")
+    clean
+    ;;
+  "help")
+    help
+    ;;
+  *)
+    echo "Not a valid command"
+    help
+    ;;
   esac
 }
 
