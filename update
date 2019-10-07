@@ -1,0 +1,72 @@
+#!/usr/bin/env bash
+
+updateForOs() {
+  echo "Update programs"
+  updateShared
+
+  case "$(uname -s)" in
+  Darwin)
+    echo "Darwin based environment detected"
+    updateMac
+    ;;
+  CYGWIN*)
+    echo "Cygwin based environment detected"
+    updateWindows
+    ;;
+  *)
+    echo "No environment matched"
+    ;;
+  esac
+}
+
+updateShared() {
+  sh "$HOME"/.oh-my-zsh/tools/upgrade.sh
+  vim +PlugUpgrade +PlugUpdate +qa
+}
+
+updateWindows() {
+  powershell -Command "Start-Process 'C:\\ProgramData\\chocolatey\\bin\\cup' 'all -y' -Verb runAs"
+  powershell -Command "Start-Process 'C:\\Users\\Kevin Suen\\scoop\\shims\\scoop' 'update *'"
+}
+
+updateMac() {
+  brew update
+  brew upgrade
+}
+
+help() {
+  cat <<-EOF
+Usage: update [COMMAND]
+Commands:
+all      Update shared and OS automatically update based on OS
+shared   Update shared
+windows  Update Windows
+mac      Update Mac
+EOF
+}
+
+process() {
+  case "$1" in
+  "all")
+    updateForOs
+    ;;
+  "shared")
+    updateShared
+    ;;
+  "mac")
+    updateMac
+    ;;
+  "windows")
+    updateWindows
+    ;;
+  "help")
+    help
+    ;;
+  *)
+    printf "Not a valid command\\n\\n"
+    help
+    ;;
+  esac
+}
+
+process "$@"
