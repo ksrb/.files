@@ -27,6 +27,7 @@ updateShared() {
 updateWindows() {
   powershell -Command "Start-Process 'C:\\ProgramData\\chocolatey\\bin\\cup' 'all -y' -Verb runAs"
   powershell -Command "Start-Process 'C:\\Users\\Kevin Suen\\scoop\\shims\\scoop' 'update *'"
+  powershell -Command "Start-Process 'C:\\tools\\cygwin\\cygwinsetup.exe' '--no-desktop --no-shortcuts --no-startmenu --quiet-mode'"
 }
 
 updateMac() {
