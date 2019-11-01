@@ -14,7 +14,6 @@ Plug 'vim-airline/vim-airline-themes'
 " Code
 Plug 'SirVer/ultisnips'
 Plug 'alvan/vim-closetag'
-Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
 Plug 'jiangmiao/auto-pairs'
 Plug 'ksrb/vim-javascript-es6-snippets'
 Plug 'majutsushi/tagbar'
@@ -86,20 +85,6 @@ Plug 'tpope/vim-surround'
     let g:tcomment_mapleader2 = ''
 " }
 
-" vim-go {
-    let g:go_fmt_command = "goimports"
-    let g:go_highlight_fields = 1
-    let g:go_highlight_functions = 1
-    let g:go_highlight_methods = 1
-    let g:go_highlight_operators = 1
-    let g:go_highlight_structs = 1
-
-    " Find reference
-    au FileType go nmap <F2> <Plug>(go-doc-vertical)
-    " Go to source
-    au FileType go nmap <F3> <Plug>(go-def-vertical)
-" }
-
 " vim-gitgutter {
     set updatetime=100
 " }
@@ -123,7 +108,7 @@ Plug 'tpope/vim-surround'
 " }
 
 " vim-polyglot {
-    let g:polyglot_disabled = ['js', 'jsx', 'go']
+    let g:polyglot_disabled = ['js', 'jsx']
 " }
 
 " vim-closetag {

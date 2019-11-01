@@ -9,7 +9,6 @@ Plug 'marijnh/tern_for_vim', { 'do' : 'npm install' }
 if has('nvim')
   Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
   Plug 'neomake/neomake'
-  Plug 'zchee/deoplete-go', { 'do': 'make'}
 
   " deoplete {
       let g:deoplete#enable_at_startup = 1
@@ -35,11 +34,6 @@ if has('nvim')
       map <M-e> <Plug>(easymotion-prefix)
   " }
 
-  " vim-go {
-      " Rename with Alt+Shift+R
-      au FileType go nmap <M-R> <Plug>(go-rename)
-  " }
-
   " ultisnips {
       " Change ultisnip trigger to Ctrl-Space
       let g:UltiSnipsExpandTrigger = "<C-Space>"
@@ -47,15 +41,10 @@ if has('nvim')
 endif
 
 if !has('nvim')
-  Plug 'Valloric/YouCompleteMe', { 'do': './install.py --gocode-completer --clang-completer' }
+  Plug 'Valloric/YouCompleteMe', { 'do': './install.py --clang-completer' }
 
   " vim-easymotion {
       map e <Plug>(easymotion-prefix)
-  " }
-
-  " vim-go {
-      " Rename with Alt+Shift+R
-      au FileType go nnoremap R <Plug>(go-rename)
   " }
 
   " tern_for_vim {
