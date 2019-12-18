@@ -1,20 +1,20 @@
 #!/usr/bin/env bash
 
 updateForOs() {
-  echo "Update programs"
+  printf "Updating programs\n"
   updateShared
 
   case "$(uname -s)" in
   Darwin)
-    echo "Darwin based environment detected"
+    printf "Darwin based environment detected\n"
     updateMac
     ;;
   CYGWIN*)
-    echo "Cygwin based environment detected"
+    printf "Cygwin based environment detected\n"
     updateWindows
     ;;
   *)
-    echo "No environment matched"
+    printf "No environment matched\n"
     ;;
   esac
 }
@@ -64,7 +64,7 @@ process() {
     help
     ;;
   *)
-    printf "Not a valid command\\n\\n"
+    printf "Not a valid command\n\n"
     help
     ;;
   esac
