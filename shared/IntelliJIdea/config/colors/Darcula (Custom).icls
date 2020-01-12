@@ -1,7 +1,8 @@
 <scheme name="Darcula Custom" version="142" parent_scheme="Darcula">
-  <option name="EDITOR_FONT_SIZE" value="12" />
   <option name="CONSOLE_FONT_NAME" value="Monospaced" />
+  <option name="EDITOR_FONT_SIZE" value="13" />
   <option name="EDITOR_FONT_NAME" value="Source Code Pro" />
+  <option name="CONSOLE_FONT_SIZE" value="12" />
   <attributes>
     <option name="CONSOLE_BLACK_OUTPUT">
       <value>
