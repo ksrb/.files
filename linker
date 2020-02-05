@@ -6,7 +6,11 @@ configs_dir=$(
   pwd
 )
 target="$configs_dir/.."
-ignores_global=(README.md)
+
+ignores_global=(
+  README.md
+  usr
+)
 
 shared_configs_dir="$configs_dir/shared"
 shared_config_ignores+=(
@@ -136,9 +140,21 @@ linkDotFilesForOs() {
   esac
 }
 
+linkFilesInDir() {
+  local mode=$1
+  local dir=$2
+  local dest=$3
+
+  for file in "$dir"/*; do
+    local dest=$dest/${file##*/}
+    linkFile "$mode" "$file" "$dest"
+  done
+}
+
 linkSharedFiles() {
   local mode=$1
   linkDotFiles "$mode" "$shared_configs_dir" "shared_config_ignores"
+  linkFilesInDir "$mode" "$shared_configs_dir/usr/local/bin" "/usr/local/bin"
 
   mkdir -p "$target/.config/git"
   linkFile "$mode" "$shared_configs_dir/gitignore_global" "$target/.config/git/ignore"
