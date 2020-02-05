@@ -56,58 +56,6 @@ ignored() {
 link="link"
 clean="clean"
 
-linkDotFiles() {
-  local mode=$1
-  local configs_dir=$2
-  local ignores_local=$3
-
-  # TODO: consider using find with while loop
-  # For each file in the configs_dir
-  for file in "$configs_dir"/*; do
-    # Get the filename by removing everything before the last '/'
-    # see: http://stackoverflow.com/a/9011264
-    local file=${file##*/}
-    # Check if the file is in list of ignores
-    ignored "$file" "$ignores_local"
-
-    # If the file is ignored
-    # Note: ($? gets the exit status of the previous command)
-    if [ $? -eq 1 ]; then
-      # Skip it
-      continue
-    fi
-
-    if [ "$mode" = $clean ]; then
-      # If the link does not exits
-      if [[ ! -L "$target/.$file" ]]; then
-        printf "Skipping: %s/.%s as it is not a symlink\\n" "$target" "$file"
-        continue
-      fi
-
-      printf "%s/.%s removed\\n" "$target" "$file"
-      rm "$target/.$file"
-    fi
-
-    if [ "$mode" = $link ]; then
-
-      if [[ -L "$target/.$file" ]]; then
-        rm "$target/.$file"
-        ln -s "$configs_dir/$file" "$target/.$file"
-        printf "Overriding: %s/%s => %s/.%s\\n" "$configs_dir" "$file" "$target" "$file"
-        continue
-      fi
-
-      if [[ -f "$target/.$file" || -d "$target/.$file" ]]; then
-        printf "Skipping: %s/.%s as there is already a file our folder there\\n" "$target" "$file"
-        continue
-      fi
-
-      ln -s "$configs_dir/$file" "$target/.$file"
-      printf "Linking: %s/%s => %s/.%s\\n" "$configs_dir" "$file" "$target" "$file"
-    fi
-  done
-}
-
 linkFile() {
   local mode=$1
   local src=$2
@@ -142,6 +90,32 @@ linkFile() {
     ln -s "$src" "$dest"
     printf "Linking: %s => %s\\n" "$src" "$dest"
   fi
+}
+
+linkDotFiles() {
+  local mode=$1
+  local configs_dir=$2
+  local ignores_local=$3
+
+  # TODO: consider using find with while loop
+  # For each file in the configs_dir
+  for file in "$configs_dir"/*; do
+    # Get the filename by removing everything before the last '/'
+    # see: http://stackoverflow.com/a/9011264
+    local file=${file##*/}
+
+    # Check if the file is in list of ignores
+    ignored "$file" "$ignores_local"
+
+    # If the file is ignored
+    # Note: ($? gets the exit status of the previous command)
+    if [ $? -eq 1 ]; then
+      # Skip it
+      continue
+    fi
+
+    linkFile "$mode" "$configs_dir/$file" "$target/.$file"
+  done
 }
 
 linkDotFilesForOs() {
