@@ -191,11 +191,11 @@
       (evil-commentary-mode)
       )
 
+
+    (use-package powerline)
     (use-package powerline-evil
       :config
-      ;; Custom powerline theme
-      (require 'init-powerline)
-      (air--powerline-default-theme)
+      (powerline-evil-vim-color-theme)
       )
     )
 
