@@ -24,7 +24,8 @@
                                         "bundle_identifiers": [
                                             "com.apple.Terminal",
                                             "com.jetbrains.intellij",
-                                            "com.microsoft.VSCode"
+                                            "com.microsoft.VSCode",
+                                            "org.gnu.Emacs"
                                         ],
                                         "type": "frontmost_application_unless"
                                     }
@@ -72,7 +73,8 @@
                                         "bundle_identifiers": [
                                             "com.apple.Terminal",
                                             "com.jetbrains.intellij",
-                                            "com.microsoft.VSCode"
+                                            "com.microsoft.VSCode",
+                                            "org.gnu.Emacs"
                                         ],
                                         "type": "frontmost_application_unless"
                                     }
@@ -101,7 +103,8 @@
                                         "bundle_identifiers": [
                                             "com.apple.Terminal",
                                             "com.jetbrains.intellij",
-                                            "com.microsoft.VSCode"
+                                            "com.microsoft.VSCode",
+                                            "org.gnu.Emacs"
                                         ],
                                         "type": "frontmost_application_if"
                                     }
@@ -203,7 +206,8 @@
                                         "bundle_identifiers": [
                                             "com.apple.Terminal",
                                             "com.jetbrains.intellij",
-                                            "com.microsoft.VSCode"
+                                            "com.microsoft.VSCode",
+                                            "org.gnu.Emacs"
                                         ],
                                         "type": "frontmost_application_if"
                                     }
@@ -234,7 +238,8 @@
                                         "bundle_identifiers": [
                                             "com.apple.Terminal",
                                             "com.jetbrains.intellij",
-                                            "com.microsoft.VSCode"
+                                            "com.microsoft.VSCode",
+                                            "org.gnu.Emacs"
                                         ],
                                         "type": "frontmost_application_if"
                                     }
@@ -265,7 +270,8 @@
                                         "bundle_identifiers": [
                                             "com.apple.Terminal",
                                             "com.jetbrains.intellij",
-                                            "com.microsoft.VSCode"
+                                            "com.microsoft.VSCode",
+                                            "org.gnu.Emacs"
                                         ],
                                         "type": "frontmost_application_if"
                                     }
@@ -296,7 +302,8 @@
                                         "bundle_identifiers": [
                                             "com.apple.Terminal",
                                             "com.jetbrains.intellij",
-                                            "com.microsoft.VSCode"
+                                            "com.microsoft.VSCode",
+                                            "org.gnu.Emacs"
                                         ],
                                         "type": "frontmost_application_if"
                                     }
@@ -327,7 +334,8 @@
                                         "bundle_identifiers": [
                                             "com.apple.Terminal",
                                             "com.jetbrains.intellij",
-                                            "com.microsoft.VSCode"
+                                            "com.microsoft.VSCode",
+                                            "org.gnu.Emacs"
                                         ],
                                         "type": "frontmost_application_if"
                                     }
@@ -358,7 +366,8 @@
                                         "bundle_identifiers": [
                                             "com.apple.Terminal",
                                             "com.jetbrains.intellij",
-                                            "com.microsoft.VSCode"
+                                            "com.microsoft.VSCode",
+                                            "org.gnu.Emacs"
                                         ],
                                         "type": "frontmost_application_if"
                                     }
@@ -389,7 +398,8 @@
                                         "bundle_identifiers": [
                                             "com.apple.Terminal",
                                             "com.jetbrains.intellij",
-                                            "com.microsoft.VSCode"
+                                            "com.microsoft.VSCode",
+                                            "org.gnu.Emacs"
                                         ],
                                         "type": "frontmost_application_if"
                                     }
@@ -420,7 +430,8 @@
                                         "bundle_identifiers": [
                                             "com.apple.Terminal",
                                             "com.jetbrains.intellij",
-                                            "com.microsoft.VSCode"
+                                            "com.microsoft.VSCode",
+                                            "org.gnu.Emacs"
                                         ],
                                         "type": "frontmost_application_if"
                                     }
@@ -451,7 +462,8 @@
                                         "bundle_identifiers": [
                                             "com.apple.Terminal",
                                             "com.jetbrains.intellij",
-                                            "com.microsoft.VSCode"
+                                            "com.microsoft.VSCode",
+                                            "org.gnu.Emacs"
                                         ],
                                         "type": "frontmost_application_if"
                                     }
@@ -487,7 +499,8 @@
                                         "bundle_identifiers": [
                                             "com.apple.Terminal",
                                             "com.jetbrains.intellij",
-                                            "com.microsoft.VSCode"
+                                            "com.microsoft.VSCode",
+                                            "org.gnu.Emacs"
                                         ],
                                         "type": "frontmost_application_unless"
                                     }
