@@ -1,13 +1,9 @@
-<keymap version="1" name="Eclipse (Mac Custom)" parent="Eclipse">
+<keymap version="1" name="Eclipse (Mac Custom)" parent="Eclipse (Custom)">
   <action id="$Copy">
-    <keyboard-shortcut first-keystroke="ctrl c" />
     <keyboard-shortcut first-keystroke="meta c" />
   </action>
   <action id="$Paste">
     <keyboard-shortcut first-keystroke="meta v" />
-  </action>
-  <action id="ActivateANTLRPreviewToolWindow">
-    <keyboard-shortcut first-keystroke="alt f9" />
   </action>
   <action id="ActivateInspectionResultsToolWindow">
     <keyboard-shortcut first-keystroke="alt 8" />
@@ -18,73 +14,19 @@
   <action id="CollapseAllRegions">
     <keyboard-shortcut first-keystroke="shift ctrl minus" />
   </action>
-  <action id="ContextHelp" />
   <action id="Editor Copy">
     <keyboard-shortcut first-keystroke="meta c" />
   </action>
   <action id="Editor Paste">
     <keyboard-shortcut first-keystroke="meta v" />
   </action>
-  <action id="ExpandAllRegions">
-    <keyboard-shortcut first-keystroke="shift ctrl equals" />
-  </action>
-  <action id="GotoAction">
-    <keyboard-shortcut first-keystroke="alt x" />
-  </action>
-  <action id="GotoFile">
-    <keyboard-shortcut first-keystroke="ctrl p" />
-  </action>
-  <action id="NewElement">
-    <keyboard-shortcut first-keystroke="ctrl alt i" />
-  </action>
-  <action id="NextEditorTab">
-    <keyboard-shortcut first-keystroke="shift ctrl alt right" />
-  </action>
   <action id="NextProjectWindow">
     <keyboard-shortcut first-keystroke="ctrl alt close_bracket" />
     <keyboard-shortcut first-keystroke="meta back_quote" />
-  </action>
-  <action id="NextTab">
-    <keyboard-shortcut first-keystroke="ctrl f6" />
-    <keyboard-shortcut first-keystroke="ctrl page_down" />
-    <keyboard-shortcut first-keystroke="ctrl alt l" />
-  </action>
-  <action id="PreviousEditorTab">
-    <keyboard-shortcut first-keystroke="shift ctrl alt left" />
   </action>
   <action id="PreviousProjectWindow">
     <keyboard-shortcut first-keystroke="ctrl alt open_bracket" />
     <keyboard-shortcut first-keystroke="shift meta back_quote" />
   </action>
-  <action id="PreviousTab">
-    <keyboard-shortcut first-keystroke="shift ctrl f6" />
-    <keyboard-shortcut first-keystroke="ctrl page_up" />
-    <keyboard-shortcut first-keystroke="ctrl alt h" />
-  </action>
-  <action id="Print" />
   <action id="RecentFiles" />
-  <action id="ShortcutLookup.ShortcutLookup">
-    <keyboard-shortcut first-keystroke="ctrl alt k" />
-  </action>
-  <action id="ShowListAction">
-    <keyboard-shortcut first-keystroke="ctrl alt k" />
-  </action>
-  <action id="SwitchApply">
-    <keyboard-shortcut first-keystroke="ctrl alt enter" />
-  </action>
-  <action id="SwitchDown">
-    <keyboard-shortcut first-keystroke="ctrl alt down" />
-  </action>
-  <action id="SwitchLeft">
-    <keyboard-shortcut first-keystroke="ctrl alt left" />
-  </action>
-  <action id="SwitchRight">
-    <keyboard-shortcut first-keystroke="ctrl alt right" />
-  </action>
-  <action id="SwitchUp">
-    <keyboard-shortcut first-keystroke="ctrl alt up" />
-  </action>
-  <action id="VimPluginToggle">
-    <keyboard-shortcut first-keystroke="shift ctrl z" />
-  </action>
 </keymap>
