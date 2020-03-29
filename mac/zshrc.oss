@@ -20,9 +20,3 @@
     # Allow emacs to use Shift + tab in term mode when showing completion list
     bindkey '^[[Z' reverse-menu-complete
 # }
-
-# IntelliJ {
-    # https://youtrack.jetbrains.com/issue/IDEA-165184
-    bindkey 'ƒ' forward-word
-    bindkey '∫' backward-word
-# }
