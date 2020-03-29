@@ -1,59 +1,28 @@
-" Code
-Plug 'marijnh/tern_for_vim', { 'do' : 'npm install' }
+Plug 'dense-analysis/ale'
 
-" tern_for_vim  {
-    au FileType javascript nnoremap <F2> :TernDoc<CR>
-    au FileType javascript nnoremap <F3> :TernDef<CR>
+" ale {
+    nmap <F2> <Plug>(ale_documentation)
+    nmap <F3> <Plug>(ale_go_to_definition)
+    let g:ale_completion_enabled = 1
 " }
 
 if has('nvim')
-  Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
-  Plug 'neomake/neomake'
-
-  " deoplete {
-      let g:deoplete#enable_at_startup = 1
-      let g:deoplete#auto_complete_start_length = 1
-      inoremap <expr><TAB> pumvisible() ? "\<C-n>" : "\<TAB>"
-      inoremap <expr><S-TAB> pumvisible() ? "\<C-p>" : "\<S-TAB>"
-  " }
-
-  " neomake {
-    let g:neomake_javascript_enabled_makers = ['eslint']
-
-    autocmd! BufWritePost * Neomake
-    autocmd! QuitPre * let g:neomake_verbose = 0
-  " }
-
-  " tern_for_vim {
-      " Tern commands are only loaded when a JS file is detected so using <Plug>
-      " bindings isn't possible
-      au FileType javascript nnoremap <M-R> :TernRename<CR>
-  " }
-
   " vim-easymotion {
       nmap <M-e> <Plug>(easymotion-prefix)
   " }
 
-  " ultisnips {
+  " Ultisnips {
       " Change ultisnip trigger to Ctrl-Space
       let g:UltiSnipsExpandTrigger = "<C-Space>"
   " }
 endif
 
 if !has('nvim')
-  Plug 'Valloric/YouCompleteMe', { 'do': './install.py --clang-completer' }
-
   " vim-easymotion {
       map e <Plug>(easymotion-prefix)
   " }
 
-  " tern_for_vim {
-      " Tern commands are only loaded when a JS file is detected so using <Plug>
-      " bindings isn't possible
-      au FileType javascript nnoremap R :TernRename<CR>
-  " }
-
-  " ultisnips {
+  " Ultisnips {
       " Change ultisnip trigger to Ctrl-Space
       let g:UltiSnipsExpandTrigger = "<C-Space>"
   " }
