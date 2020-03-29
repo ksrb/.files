@@ -17,7 +17,6 @@ Plug 'alvan/vim-closetag'
 Plug 'jiangmiao/auto-pairs'
 Plug 'ksrb/vim-javascript-es6-snippets'
 Plug 'majutsushi/tagbar'
-Plug 'scrooloose/syntastic'
 Plug 'sheerun/vim-polyglot'
 Plug 'z0mbix/vim-shfmt', { 'for': 'sh' }
 

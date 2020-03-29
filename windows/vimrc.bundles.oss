@@ -1,3 +1,5 @@
+Plug 'scrooloose/syntastic'
+
 if !has("win32unix") " if not cygwin
   " Code
   Plug 'Valloric/YouCompleteMe', { 'do': './install.py --clang-completer' }
@@ -14,7 +16,7 @@ if has("win32unix") "if cygwin
       inoremap <expr><S-TAB> pumvisible() ? "\<C-p>" : "\<S-TAB>"
   " }
 
-  " ultiSnips {
+  " UltiSnips {
       let g:UltiSnipsExpandTrigger = "<C-@>"
   " }
 endif
