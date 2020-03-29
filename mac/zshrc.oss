@@ -15,8 +15,3 @@
     alias terminal="open -a terminal "
     alias finder="open -a finder "
 # }
-
-# Emacs {
-    # Allow emacs to use Shift + tab in term mode when showing completion list
-    bindkey '^[[Z' reverse-menu-complete
-# }
