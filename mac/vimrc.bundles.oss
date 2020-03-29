@@ -31,7 +31,7 @@ if has('nvim')
   " }
 
   " vim-easymotion {
-      map <M-e> <Plug>(easymotion-prefix)
+      nmap <M-e> <Plug>(easymotion-prefix)
   " }
 
   " ultisnips {
