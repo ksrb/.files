@@ -25,19 +25,8 @@
   "workbench.startupEditor": "none",
   // Vim settings
   "vim.enableNeovim": true,
-  "vim.handleKeys": {},
   "vim.hlsearch": true,
   "vim.leader": "<space>",
-  "vim.smartcase": true,
-  "vim.statusBarColors": {
-    "normal": "#005f87",
-    "insert": "#78ba78",
-    "visual": "#bc78bb",
-    "visualline": "#bc78bb",
-    "visualblock": "#bc78bb",
-    "replace": "#000000"
-  },
-  "vim.visualstar": true,
   "vim.normalModeKeyBindingsNonRecursive": [
     // Window
     {
@@ -98,5 +87,7 @@
       "before": ["<Leader>", "s", "a"],
       "commands": ["workbench.action.files.saveAll"]
     }
-  ]
+  ],
+  "vim.smartcase": true,
+  "vim.visualstar": true,
 }
