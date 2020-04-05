@@ -1,6 +1,5 @@
 AngularJS
 AntSupport
-ByteCodeViewer
 CFML Support
 CloudFoundry
 Coverage
@@ -8,11 +7,12 @@ DevKit
 Emma
 GlassFish
 JBoss
+JSIntentionPowerPack
 JSR45Plugin
-Java EE: Web Services (JAX-WS)
 Jetty
 Osmorc
 PerforceDirectPlugin
+Refactor-X
 Resin
 Subversion
 TestNG-J
@@ -27,8 +27,6 @@ com.intellij.CloudConfig
 com.intellij.aop
 com.intellij.appengine
 com.intellij.aspectj
-com.intellij.beanValidation
-com.intellij.cdi
 com.intellij.copyright
 com.intellij.dmserver
 com.intellij.drools
@@ -36,20 +34,18 @@ com.intellij.dsm
 com.intellij.flex
 com.intellij.frameworks.reactor
 com.intellij.freemarker
-com.intellij.guice
 com.intellij.gwt
 com.intellij.helidon
 com.intellij.hibernate
 com.intellij.javaee.batch
 com.intellij.javaee.extensions
 com.intellij.javaee.view
-com.intellij.javaee.webSocket
 com.intellij.jboss.arquillian
-com.intellij.jboss.core
 com.intellij.jbpm
 com.intellij.jsf
 com.intellij.jsp
 com.intellij.micronaut
+com.intellij.microservices.java.clients
 com.intellij.play
 com.intellij.quarkus
 com.intellij.seam
@@ -75,6 +71,7 @@ com.intellij.tasks.timeTracking
 com.intellij.thymeleaf
 com.intellij.uiDesigner
 com.intellij.velocity
+com.jetbrains.performancePlugin
 com.jetbrains.plugins.asp
 com.jetbrains.plugins.webDeployment
 com.jetbrains.restClient
@@ -82,14 +79,13 @@ cucumber-groovy
 cucumber-java
 gherkin
 hg4idea
+krasa.CpuUsageIndicator
 org.coffeescript
 org.editorconfig.editorconfigjetbrains
 org.intellij.grails
 org.intellij.intelliLang
-org.intellij.plugins.markdown
 org.jetbrains.android
 org.jetbrains.idea.eclipse
-org.jetbrains.idea.gradle.ext
 org.jetbrains.java.decompiler
 org.jetbrains.kotlin
 org.jetbrains.plugins.haml
@@ -97,5 +93,6 @@ org.jetbrains.plugins.javaFX
 org.jetbrains.plugins.less
 org.jetbrains.plugins.remote-run
 org.jetbrains.plugins.stylus
+org.jetbrains.plugins.textmate
 org.jetbrains.settingsRepository
 tslint
