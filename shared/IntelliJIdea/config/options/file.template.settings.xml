@@ -1,0 +1,12 @@
+<application>
+  <component name="ExportableFileTemplateSettings">
+    <default_templates>
+      <template name="React component.tsx" reformat="true" live-template-enabled="false">
+        <template name="React component.tsx.child.0.tsx" file-name="styles" reformat="true" live-template-enabled="false" />
+        <template name="React component.tsx.child.1.tsx" file-name="index" reformat="true" live-template-enabled="false" />
+      </template>
+      <template name="React component.tsx.child.0.tsx" file-name="styles" reformat="true" live-template-enabled="false" />
+      <template name="React component.tsx.child.1.tsx" file-name="index" reformat="true" live-template-enabled="false" />
+    </default_templates>
+  </component>
+</application>

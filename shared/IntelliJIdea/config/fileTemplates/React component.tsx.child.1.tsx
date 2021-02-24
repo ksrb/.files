@@ -1,0 +1,1 @@
+export { default } from "./#parse("Capitalized Filename.js")";
