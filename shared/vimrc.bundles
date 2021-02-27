@@ -50,6 +50,7 @@ Plug 'tpope/vim-surround'
 
       let g:ctrlp_user_command = 'rg %s
             \ --files
+            \ --follow
             \ --color=never
             \ --hidden
             \ --glob "!node_modules/*"
