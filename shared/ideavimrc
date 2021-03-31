@@ -5,6 +5,8 @@ set smartcase           " Only do case sensitive searching when there is a capit
 set surround            " vim-surround emulation
 set ideajoin            " Use IntelliJ to join lines (<C-j>)
 set clipboard+=ideaput  " Use IntelliJ to put lines (will auto-import dependencies based on what was copied)
+set relativenumber      " Show line numbers relative to cursor
+set number              " Show line numbers
 
 " Ctrl + hjkl to switch splits
 nnoremap <C-j> <C-w>j
