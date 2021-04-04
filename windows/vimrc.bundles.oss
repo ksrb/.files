@@ -6,7 +6,7 @@ if !has("win32unix") " if not cygwin
   Plug 'marijnh/tern_for_vim', { 'do' : 'npm install' }
 endif
 
-if has("win32unix") "if cygwin
+if has("win32unix") " if cygwin
   " Code
   Plug 'Shougo/neocomplcache.vim'
 

@@ -1,6 +1,24 @@
 " Settings {
-    if !has("win32") " If not windows
+    set belloff=all
+
+    if !has("win32") && !has("nvim") " If not windows and not nvim
       set term=xterm-256color " Terminal color
+    endif
+
+    if has("win32") && has("nvim") " If windows and nvim
+      " From: https://superuser.com/a/1557751
+      let g:clipboard = {
+            \   'name': 'win32yank-wsl',
+            \   'copy': {
+            \      '+': 'win32yank.exe -i --crlf',
+            \      '*': 'win32yank.exe -i --crlf',
+            \    },
+            \   'paste': {
+            \      '+': 'win32yank.exe -o --lf',
+            \      '*': 'win32yank.exe -o --lf',
+            \   },
+            \   'cache_enabled': 0,
+            \ }
     endif
 " }
 

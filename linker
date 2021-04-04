@@ -165,7 +165,10 @@ linkSharedFiles() {
 linkWindowFiles() {
   local mode=$1
   linkDotFiles "$mode" "$windows_configs_dir" "windows_configs_ignores"
+
+  # Custom links
   linkFile "$mode" "$shared_configs_dir/Code" "$target/AppData/Roaming/Code"
+  linkFile "$mode" "$windows_configs_dir/settings.json" "$target/AppData/Local/Packages/Microsoft.WindowsTerminal_8wekyb3d8bbwe/LocalState/settings.json"
 }
 
 linkMacFiles() {

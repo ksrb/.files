@@ -98,3 +98,10 @@ Node-gyp is a native build tool but has a extensive installation process for win
   "[CYGWIN BIN PATH]\bash.exe" -lic "cd ${OLDPWD-.}; zsh;"
   ```
 * If prompt shows commands missing like `env` add [CYGWIN BIN PATH] to PATH
+
+# WSL
+## /etc/passwd
+Set the `$HOME` directory to the same as the windows home directory
+```
+[username]:x:1000:1000:,,,:/home/[username]:/usr/bin/zsh -> [username]:x:1000:1000:,,,:/mnt/c/Users/[windows home dir]:/usr/bin/zsh
+```

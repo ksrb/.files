@@ -5,3 +5,6 @@ set-environment -g CHERE_INVOKING 1
     # copy mode
     bind -T copy-mode-vi y send -X copy-pipe "cat > /dev/clipboard"
 # }
+
+# From: https://mitchellt.com/2020/04/01/copying-from-tmux-wsl-windows-terminal.html
+if-shell -b 'test -n "$isWSL"' 'bind-key -T copy-mode-vi Enter send-keys -X copy-pipe-and-cancel clip.exe'
