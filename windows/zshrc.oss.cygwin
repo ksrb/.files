@@ -1,49 +1,11 @@
 # General {
     # https://stackoverflow.com/a/38667859
     DISABLE_AUTO_TITLE="true"
-# }
 
-# Aliases  {
     alias nvim=vim
 # }
 
 # Functions {
-
-    # Open cygwin terminal at current path
-    cygwin() {
-      local pathVar=$1
-      local mintty=C:/tools/cygwin/bin/mintty.exe
-
-      # pathVar is a directory
-      if [[ -d $pathVar ]]; then
-        # Open terminal in the given directory
-        $mintty /bin/sh -lc "cd '$(readlink -f $pathVar)'; exec zsh"
-        return
-      fi
-
-      # Else pathVar is not a directory
-      # Open terminal in the current directory
-      $mintty
-    }
-
-    cygwinAsAdmin() {
-      local pathVar=$1
-
-      # pathVar is a directory
-      if [[ -d $pathVar ]]; then
-        # Open terminal in the given directory
-        cygstart --action=runas 'C:/tools/cygwin/bin/mintty.exe' "/bin/sh -lc 'cd '$(readlink -f $pathVar)'; exec zsh'"
-        return
-      fi
-
-      # Else pathVar is not a directory
-      # Open terminal in the current directory
-      cygstart --action=runas 'C:/tools/cygwin/bin/mintty.exe'
-    }
-
-    # docker() {
-    #   winpty docker ${@:1}
-    # }
 
     # Kill Proccess On Port
     killPop() {

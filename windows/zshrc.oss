@@ -1,3 +1,29 @@
+# Functions {
+
+    # Open cygwin terminal at current path
+    cygwin() {
+      local pathVar=${1:-$PWD}
+      local mintty=C:/tools/cygwin/bin/mintty.exe
+
+      if [[ $isWSL ]]; then
+        pathVar=$(wslpath -w $pathVar)
+        mintty=$(wslpath $mintty)
+      fi
+
+      $mintty -e /bin/sh -lc "cd '$pathVar'; exec zsh"
+    }
+
+    cygwinAsAdmin() {
+      local cygstart=C:/tools/cygwin/bin/cygstart.exe
+      if [[ $isWSL ]]; then
+        cygstart=$(wslpath $cygstart)
+      fi
+
+      $cygstart --action=runas 'C:/tools/cygwin/bin/mintty.exe'
+    }
+
+# }
+
 if [[ $isWSL ]]; then
   [[ -s "$HOME/.zshrc.oss.wsl" ]] && source "$HOME/.zshrc.oss.wsl"
 else
