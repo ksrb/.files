@@ -29,7 +29,7 @@
         {
             // Put settings here that you want to apply to all profiles.
             "fontSize": 10,
-            "fontFace": "Source Code Pro",
+            "fontFace": "Consolas",
             "closeOnExit": "always"
         },
         "list":
@@ -58,14 +58,40 @@
                 "guid": "{2c4de342-38b7-51cf-b940-2309a097f518}",
                 "hidden": false,
                 "name": "Ubuntu",
-                "source": "Windows.Terminal.Wsl"
+                "source": "Windows.Terminal.Wsl",
+                "colorScheme": "Eighties"
             }
         ]
     },
 
     // Add custom color schemes to this array.
     // To learn more about color schemes, visit https://aka.ms/terminal-color-schemes
-    "schemes": [],
+    "schemes": [
+        // From: https://github.com/ShiromMakkad/base16-windows-terminal
+        // This doesn't seem to actually do anything as the colors are also set from
+        // https://github.com/chriskempson/base16-shell
+        {
+            "name": "Eighties",
+            "background":    "#2d2d2d",
+            "foreground":    "#d3d0c8",
+            "black":         "#2d2d2d",
+            "red":           "#f2777a",
+            "green":         "#99cc99",
+            "yellow":        "#ffcc66",
+            "blue":          "#6699cc",
+            "purple":        "#cc99cc",
+            "cyan":          "#66cccc",
+            "white":         "#d3d0c8",
+            "brightBlack":   "#747369",
+            "brightRed":     "#f2777a",
+            "brightGreen":   "#99cc99",
+            "brightYellow":  "#ffcc66",
+            "brightBlue":    "#6699cc",
+            "brightPurple":  "#cc99cc",
+            "brightCyan":    "#66cccc",
+            "brightWhite":   "#f2f0ec"
+        }
+    ],
 
     // Add custom actions and keybindings to this array.
     // To unbind a key combination from your defaults.json, set the command to "unbound".
