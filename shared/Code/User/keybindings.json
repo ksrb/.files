@@ -39,6 +39,14 @@
     "command": "workbench.action.openWorkspaceSettings"
   },
   {
+    "key": "ctrl+alt+=",
+    "command": "workbench.action.increaseViewSize"
+  },
+  {
+    "key": "ctrl+alt+-",
+    "command": "workbench.action.decreaseViewSize"
+  },
+  {
     // =============== File explorer focused ===============
     "key": "alt+shift+r",
     "command": "renameFile",
@@ -69,21 +77,25 @@
   {
     // Override
     "key": "ctrl+h",
-    "command": "workbench.action.navigateLeft"
+    "command": "workbench.action.navigateLeft",
+    "when": "!neovim.init"
   },
   {
     // Override
     "key": "ctrl+j",
-    "command": "workbench.action.navigateDown"
+    "command": "workbench.action.navigateDown",
+    "when": "!neovim.init"
   },
   {
     // Override
     "key": "ctrl+k",
-    "command": "workbench.action.navigateUp"
+    "command": "workbench.action.navigateUp",
+    "when": "!neovim.init"
   },
   {
     "key": "ctrl+l",
-    "command": "workbench.action.navigateRight"
+    "command": "workbench.action.navigateRight",
+    "when": "!neovim.init"
   },
   {
     "key": "alt+1",
@@ -158,14 +170,6 @@
     "command": "workbench.action.previousEditor",
     // TODO: doesn't work
     "when": "editorTextFocus"
-  },
-  {
-    "key": "ctrl+alt+=",
-    "command": "workbench.action.increaseViewSize"
-  },
-  {
-    "key": "ctrl+alt+-",
-    "command": "workbench.action.decreaseViewSize"
   },
   // =============== Editor focused ===============
   {

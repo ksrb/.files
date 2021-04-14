@@ -90,4 +90,9 @@
   ],
   "vim.smartcase": true,
   "vim.visualstar": true,
+
+  // Neovim settings
+  "vscode-neovim.useWSL": true,
+  "vscode-neovim.neovimExecutablePaths.win32": "C:\\ProgramData\\chocolatey\\bin\\nvim.exe",
+  "vscode-neovim.neovimExecutablePaths.linux": "/usr/bin/nvim"
 }

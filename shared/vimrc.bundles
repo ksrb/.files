@@ -105,6 +105,15 @@ Plug 'tpope/vim-surround'
     let g:shfmt_fmt_on_save = 1
 " }
 
+
+if exists("g:vscode") " If vscode
+  Plug 'christoomey/vim-tmux-navigator', { 'on': [] }
+  Plug 'tomtom/tcomment_vim', { 'on': [] }
+
+  " TODO: Research method to install regular and vscode EasyMotion
+  " Plug 'asvetliakov/vim-easymotion
+endif
+
 " OS Specific settings
 if filereadable(expand("~/.vimrc.bundles.oss"))
   source ~/.vimrc.bundles.oss
