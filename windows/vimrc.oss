@@ -5,7 +5,7 @@
       set term=xterm-256color " Terminal color
     endif
 
-    if has("win32") && has("nvim") " If windows and nvim
+    if has("win32") && has("isWSL") && has("nvim") " If windows, WSL, and nvim
       " From: https://superuser.com/a/1557751
       let g:clipboard = {
             \   'name': 'win32yank-wsl',
@@ -20,8 +20,4 @@
             \   'cache_enabled': 0,
             \ }
     endif
-" }
-
-" Bindings {
-    noremap  <F5> :redraw!<CR>
 " }
