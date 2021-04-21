@@ -1,12 +1,19 @@
 # Functions {
 
+    mintty=C:/tools/cygwin/bin/mintty.exe
+
     # Open cygwin terminal at current path
     cygwin() {
       local pathVar=${1:-$PWD}
-      local mintty=C:/tools/cygwin/bin/mintty.exe
+      local mintty=$mintty
 
-      if [[ $isWSL ]]; then
-        pathVar=$(wslpath -w $pathVar)
+      if [[ "$isWSL" = false ]] && [[ -d "$pathVar" ]]; then
+        $mintty /bin/sh -lc "cd '$(readlink -f "$pathVar")'; exec zsh"
+        return
+      fi
+
+      if [[ "$isWSL" = true ]]; then
+        pathVar=$(wslpath -w "$pathVar")
         mintty=$(wslpath $mintty)
       fi
 
@@ -15,11 +22,13 @@
 
     cygwinAsAdmin() {
       local cygstart=C:/tools/cygwin/bin/cygstart.exe
-      if [[ $isWSL ]]; then
+      local mintty=$mintty
+
+      if [[ "$isWSL" = true ]]; then
         cygstart=$(wslpath $cygstart)
       fi
 
-      $cygstart --action=runas 'C:/tools/cygwin/bin/mintty.exe'
+      $cygstart --action=runas "$mintty"
     }
 
 # }

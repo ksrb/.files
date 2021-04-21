@@ -5,7 +5,7 @@
     fi
 
     # From: https://github.com/ohmyzsh/ohmyzsh/blob/2d40b562e5da4c885babc1f7f09aa33a8a891eb2/lib/compfix.zsh#L39-L41
-    if [[ $isWSL ]]; then
+    if [[ "$isWSL" = true ]]; then
       ZSH_DISABLE_COMPFIX=true
     fi
 # }
@@ -41,11 +41,6 @@
 # }
 
 # Functions {
-    # Directory shortcuts
-    programmingDir=$HOME/Documents/Programming
-    prog() { cd "$programmingDir/$1" || return; }
-    compctl -W "$programmingDir" -/ prog
-
     # Get dangling commits
     # See post for single quote escaping method: https://stackoverflow.com/a/1250279
     gitkfsck() {
