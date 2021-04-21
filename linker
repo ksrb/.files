@@ -146,8 +146,7 @@ linkFilesInDir() {
   local dest=$3
 
   for file in "$dir"/*; do
-    local dest=$dest/${file##*/}
-    linkFile "$mode" "$file" "$dest"
+    linkFile "$mode" "$file" "$dest/${file##*/}"
   done
 }
 
@@ -165,6 +164,7 @@ linkSharedFiles() {
 linkWindowFiles() {
   local mode=$1
   linkDotFiles "$mode" "$windows_configs_dir" "windows_configs_ignores"
+  linkFilesInDir "$mode" "$windows_configs_dir/usr/local/bin" "/usr/local/bin"
 
   # Custom links
   linkFile "$mode" "$shared_configs_dir/Code" "$target/AppData/Roaming/Code"

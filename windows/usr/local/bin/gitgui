@@ -1,0 +1,18 @@
+#!/usr/bin/env bash
+
+# TODO: modify linker to work with WSL, this script is used in conjunction
+# with:
+#
+# $HOME/.gitconfig_local
+# [alias]
+#   gui="!bash \"gitgui\""
+#
+# Allowing WSL terminal's 'git gui' command to open window's git-gui.exe
+
+# CYGWIN
+if [[ "$(uname)" == "CYGWIN"* ]]; then
+  "C:/Program Files/Git/cmd/git-gui.exe"
+# WSL
+elif [[ -n "$WSL_DISTRO_NAME" ]]; then
+  "/mnt/c/Program Files/Git/cmd/git-gui.exe"
+fi
