@@ -1,12 +1,5 @@
 #!/usr/bin/env bash
 
-# TODO: modify linker to work with WSL, this script is used in conjunction
-# with:
-#
-# ln -sf /usr/local/bin/gitk $HOME/windows/usr/local/bin/gitgitk
-#
-# Allowing WSL terminal's 'gitk' command to ope window's gitk.exe
-
 # CYGWIN
 if [[ "$(uname)" == "CYGWIN"* ]]; then
   "C:/Program Files/Git/cmd/gitk.exe"

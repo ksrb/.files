@@ -1,8 +1,6 @@
 #!/usr/bin/env bash
 
-# TODO: modify linker to work with WSL, this script is used in conjunction
-# with:
-#
+# Use with:
 # $HOME/.gitconfig_local
 # [alias]
 #   gui="!bash \"gitgui\""

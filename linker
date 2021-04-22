@@ -125,19 +125,22 @@ linkDotFiles() {
 linkDotFilesForOs() {
   echo "Link OS independent dotfiles"
   linkSharedFiles $link
-  case "$(uname -s)" in
-  Darwin)
+
+  local uname=$(uname)
+
+  # TODO: WSL detection does not work in sudo
+  if [[ "$uname" == "CYGWIN"* ]] || [[ -n "$WSL_DISTRO_NAME" ]]; then
+    echo "Cygwin/WSL based environment detected"
+    linkWindowFiles $link
+    return
+  fi
+
+  if [[ "$uname" == "Darwin"* ]]; then
     echo "Darwin based environment detected"
     linkMacFiles $link
-    ;;
-  CYGWIN*)
-    echo "Cygwin based environment detected"
-    linkWindowFiles $link
-    ;;
-  *)
-    echo "No environment matched"
-    ;;
-  esac
+  fi
+
+  echo "No environment matched"
 }
 
 linkFilesInDir() {
