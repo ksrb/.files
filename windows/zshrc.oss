@@ -31,6 +31,20 @@
       $cygstart --action=runas "$mintty"
     }
 
+    # Resets permission on provided file or directory
+    # Note: Recursively resets a directory
+    resetPermissions() {
+      local pathVar=${1:-$PWD}
+      if [[ "$isWSL" = false ]]; then
+        pathVar=$(cygpath -w "$pathVar")
+      fi
+
+      if [[ "$isWSL" = true ]]; then
+        pathVar=$(wslpath -w "$pathVar")
+      fi
+
+      icacls.exe "$pathVar" /T /Q /C /RESET
+    }
 # }
 
 if [[ $isWSL ]]; then
