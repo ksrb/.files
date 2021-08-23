@@ -47,6 +47,12 @@
     "command": "workbench.action.decreaseViewSize"
   },
   {
+    // See: https://github.com/asvetliakov/vscode-neovim/issues/677
+    "key": "Escape",
+    "command": "vscode-neovim.escape",
+    "when": "editorTextFocus && neovim.init"
+  },
+  {
     // =============== File explorer focused ===============
     "key": "alt+shift+r",
     "command": "renameFile",

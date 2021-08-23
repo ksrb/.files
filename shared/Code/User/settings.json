@@ -1,7 +1,7 @@
 {
   "editor.autoClosingBrackets": "always",
-  "editor.formatOnSave": true,
   "editor.fontSize": 12,
+  "editor.formatOnSave": true,
   "editor.lineNumbers": "relative",
   "editor.minimap.enabled": false,
   "editor.rulers": [80],
@@ -9,7 +9,12 @@
   "files.insertFinalNewline": true,
   "files.trimTrailingWhitespace": true,
   "terminal.external.osxExec": "iTerm.app",
-  "terminal.integrated.shell.windows": "C:\\tools\\cygwin\\bin\\zsh.exe",
+  "terminal.integrated.defaultProfile.windows": "zsh",
+  "terminal.integrated.profiles.windows": {
+    "zsh": {
+      "path": "C:\\tools\\cygwin\\bin\\zsh.exe"
+    }
+  },
   "window.title": "${activeEditorMedium}",
   "workbench.activityBar.visible": false,
   "workbench.colorCustomizations": {
@@ -18,11 +23,11 @@
     "statusBar.debuggingBackground": "#005f87"
   },
   "workbench.editor.enablePreview": false, // Open files in new tab
-  "workbench.statusBar.visible": true,
-  "workbench.settings.openDefaultSettings": false,
-  "workbench.settings.openDefaultKeybindings": false,
   "workbench.settings.editor": "json",
+  "workbench.settings.openDefaultKeybindings": false,
+  "workbench.settings.openDefaultSettings": false,
   "workbench.startupEditor": "none",
+  "workbench.statusBar.visible": true,
   // Vim settings
   "vim.enableNeovim": true,
   "vim.hlsearch": true,
@@ -92,7 +97,7 @@
   "vim.visualstar": true,
 
   // Neovim settings
-  "vscode-neovim.useWSL": true,
+  "vscode-neovim.neovimExecutablePaths.linux": "/usr/bin/nvim",
   "vscode-neovim.neovimExecutablePaths.win32": "C:\\ProgramData\\chocolatey\\bin\\nvim.exe",
-  "vscode-neovim.neovimExecutablePaths.linux": "/usr/bin/nvim"
+  "vscode-neovim.useWSL": true,
 }
