@@ -71,17 +71,11 @@
       "commands": ["workbench.action.closeOtherEditors"]
     },
     {
-      // Emulate prettier format in IntelliJ
-      "before": ["<Leader>", "f", "p"],
-      "commands": ["editor.action.formatDocument"]
-    },
-    {
       "before": ["<Leader>", "n"],
       "commands": ["workbench.view.explorer"]
     },
     {
-      // TODO: ctrl+c binding preferred
-      "before": ["<Leader>", "p", "p"],
+      "before": ["<C-c>", "p", "p"],
       "commands": ["workbench.action.openRecent"]
     },
     {
