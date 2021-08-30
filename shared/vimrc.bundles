@@ -5,7 +5,7 @@ call plug#begin('~/.vim/plugged')
 " Gui
 Plug 'airblade/vim-gitgutter'
 Plug 'christoomey/vim-tmux-navigator'
-Plug 'ksrb/base16-vim'
+Plug 'chriskempson/base16-vim'
 Plug 'nathanaelkane/vim-indent-guides'
 Plug 'scrooloose/nerdtree', { 'on':  'NERDTreeToggle' }
 Plug 'vim-airline/vim-airline'
