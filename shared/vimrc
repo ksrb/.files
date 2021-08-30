@@ -112,11 +112,20 @@ if exists("g:vscode") " If vscode
       omap gc  <Plug>VSCodeCommentary
       nmap gcc <Plug>VSCodeCommentaryLine
 
+      " IntelliJ like binding to comment code in visual mode see:
+      " (https://github.com/asvetliakov/vscode-neovim/issues/199#issuecomment-640333167)
+      xmap <C-/> <Plug>VSCodeCommentarygv
+      " IntelliJ like binding for '<C-S-/>', no command for block comments
+      xmap <C-?> <Plug>VSCodeCommentarygv
+
       " Navigate windows quickly
       nnoremap <silent> <C-h> <Cmd>call VSCodeCall("workbench.action.navigateLeft")<CR>
       nnoremap <silent> <C-j> <Cmd>call VSCodeCall("workbench.action.navigateDown")<CR>
       nnoremap <silent> <C-k> <Cmd>call VSCodeCall("workbench.action.navigateUp")<CR>
       nnoremap <silent> <C-l> <Cmd>call VSCodeCall("workbench.action.navigateRight")<CR>
+
+      " C-c
+      nnoremap <silent> <C-c>pp <Cmd>call VSCodeCall("workbench.action.openRecent")<CR>
 
       " C-w
       nnoremap <silent> <C-w>H <Cmd>call VSCodeCall("workbench.action.moveEditorToPreviousGroup")<CR>
@@ -124,12 +133,9 @@ if exists("g:vscode") " If vscode
 
       " Leader
       nnoremap <silent> <Leader><C-f> <Cmd>call VSCodeCall("actions.find")<CR>
-      " TODO: C-g Being overridden
       nnoremap <silent> <Leader><C-g> <Cmd>call VSCodeCall("editor.action.referenceSearch.trigger")<CR>
       nnoremap <silent> <Leader><C-h> <Cmd>call VSCodeCall("workbench.view.search")<CR>
       nnoremap <silent> <Leader>co <Cmd>call VSCodeCall("workbench.action.closeOtherEditors")<CR>
-      nnoremap <silent> <Leader>fp <Cmd>call VSCodeCall("editor.action.formatDocument")<CR>
-      nnoremap <silent> <Leader>pp <Cmd>call VSCodeCall("workbench.action.openRecent")<CR>
       nnoremap <silent> <Leader>r <Cmd>call VSCodeCall("workbench.action.files.revert")<CR>
       nnoremap <silent> <Leader>sa <Cmd>call VSCodeCall("workbench.action.files.saveAll")<CR>
   " }

@@ -208,12 +208,12 @@
   {
     "key": "ctrl+/",
     "command": "editor.action.commentLine",
-    "when": "editorTextFocus && !editorReadonly"
+    "when": "editorTextFocus && !editorReadonly && !neovim.init"
   },
   {
     "key": "shift+ctrl+/",
     "command": "editor.action.blockComment",
-    "when": "editorTextFocus && !editorReadonly"
+    "when": "editorTextFocus && !editorReadonly && !neovim.init"
   },
   {
     "key": "ctrl+left",
@@ -234,5 +234,36 @@
     "key": "shift+ctrl+right",
     "command": "cursorWordEndRightSelect",
     "when": "editorTextFocus"
+  },
+  {
+    // VScode Neovim
+    "key": "ctrl+c",
+    "command": "vscode-neovim.send",
+    "when": "editorTextFocus && neovim.ctrlKeysNormal && neovim.init && neovim.mode != 'insert'",
+    "args": "<C-c>"
+  },
+  {
+    "key": "ctrl+g",
+    "command": "vscode-neovim.send",
+    "when": "editorTextFocus && neovim.ctrlKeysNormal && neovim.init && neovim.mode != 'insert'",
+    "args": "<C-g>"
+  },
+  {
+    "key": "ctrl+f",
+    "command": "vscode-neovim.send",
+    "when": "editorTextFocus && neovim.ctrlKeysNormal && neovim.init && neovim.mode != 'insert'",
+    "args": "<C-f>"
+  },
+  {
+    "key": "ctrl+/",
+    "command": "vscode-neovim.send",
+    "when": "editorTextFocus && neovim.ctrlKeysNormal && neovim.init && neovim.mode != 'insert'",
+    "args": "<C-/>"
+  },
+  {
+    "key": "shift+ctrl+/",
+    "command": "vscode-neovim.send",
+    "when": "editorTextFocus && neovim.ctrlKeysNormal && neovim.init && neovim.mode != 'insert'",
+    "args": "<C-?>"
   }
 ]
