@@ -1,63 +1,59 @@
 " Settings {
-    set nocompatible           " Use Vim settings, over Vi settings, has side effects must be set as early as possible
-    set ttyfast                " Fast terminal connecion improves responsiveness
+    if has("gui_running")
+      set encoding=utf-8
+    endif
 
-    syntax sync minlines=256   " Start parsing for syntax highlighting 256 lines before buffer
-    set synmaxcol=150          " Stop syntax higlighting after 150 cols
+    set nocompatible          " Use Vim settings, over Vi settings, has side effects must be set as early as possible
+    set ttyfast               " Fast terminal connecion improves responsiveness
 
-    set exrc                   " Allow local (./) specific vimrc
-    set secure                 " Disable unsafe commands in local .vimrc files
+    syntax sync minlines=256  " Start parsing for syntax highlighting 256 lines before buffer
+    set synmaxcol=150         " Stop syntax higlighting after 150 cols
 
-    set completeopt=menu       " Show completion options as dropdown list
-    set relativenumber         " Show line numbers relative to cursor
-    set number                 " Show line numbers
-    set colorcolumn=80         " Color the 80th column (max line width for code)
-    set ruler                  " Show the cursor position all the time
-    set nowrap                 " Prevent word wrapping on long lines
-    set incsearch              " Shows the match while typing
-    set hlsearch               " Highlight found searches
-    set ic                     " Case insensitive search
-    set smartcase              " Only do case sensitive searching when there is a capitalized letter
-    set laststatus=2           " Always display the status line
-    set showmode               " Show the current mode
-    set nocursorcolumn         " Speed up syntax highlighting
-    set nocursorline           " Don't highlight line cursor is on
+    set exrc                  " Allow local (./) specific vimrc
+    set secure                " Disable unsafe commands in local .vimrc files
 
-    set history=50             " Search and command history to 50
-    set nobackup               " Don't create a backup file before overwriting
-    set nowritebackup          " Don't create a backup before writing
-    set noswapfile             " http://robots.thoughtbot.com/post/18739402579/global-gitignore#comment-458413287
-    set showcmd                " Display incomplete commands
-    set autowrite              " Automatically :write before running commands
-    set mouse=a                " Enable mouse use in all modes
-    set splitbelow             " Horizontal splits with open to the bottom
-    set splitright             " Vertical splits with open to the right
-    set timeoutlen=1000        " Wait 1s for followup keys after entering a mapped key (<Leader>)
-    set ttimeoutlen=0          " Don't Wait for follup keys after entering a keycodes (<ESC>)
-    set iminsert=0             " Disable capslock
-    set backspace=2            " Backspace deletes like most programs in insert mode
+    set completeopt=menu      " Show completion options as dropdown list
+    set relativenumber        " Show line numbers relative to cursor
+    set number                " Show line numbers
+    set colorcolumn=80        " Color the 80th column (max line width for code)
+    set ruler                 " Show the cursor position all the time
+    set nowrap                " Prevent word wrapping on long lines
+    set incsearch             " Shows the match while typing
+    set hlsearch              " Highlight found searches
+    set ic                    " Case insensitive search
+    set smartcase             " Only do case sensitive searching when there is a capitalized letter
+    set laststatus=2          " Always display the status line
+    set showmode              " Show the current mode
+    set nocursorcolumn        " Speed up syntax highlighting
+    set nocursorline          " Don't highlight line cursor is on
 
-    set tabstop=2              " Use 2 spaces for tabs
-    set shiftwidth=2           " >>, << to use 2 spaces
-    set shiftround             " Round indent to multiple of 'shiftwidth'
-    set expandtab              " Insert spaces when tab is pressed
+    set history=50            " Search and command history to 50
+    set nobackup              " Don't create a backup file before overwriting
+    set nowritebackup         " Don't create a backup before writing
+    set noswapfile            " http://robots.thoughtbot.com/post/18739402579/global-gitignore#comment-458413287
+    set showcmd               " Display incomplete commands
+    set autowrite             " Automatically :write before running commands
+    set mouse=a               " Enable mouse use in all modes
+    set splitbelow            " Horizontal splits with open to the bottom
+    set splitright            " Vertical splits with open to the right
+    set timeoutlen=1000       " Wait 1s for followup keys after entering a mapped key (<Leader>)
+    set ttimeoutlen=0         " Don't Wait for follup keys after entering a keycodes (<ESC>)
+    set iminsert=0            " Disable capslock
+    set backspace=2           " Backspace deletes like most programs in insert mode
+
+    set tabstop=2             " Use 2 spaces for tabs
+    set shiftwidth=2          " >>, << to use 2 spaces
+    set shiftround            " Round indent to multiple of 'shiftwidth'
+    set expandtab             " Insert spaces when tab is pressed
 " }
 
 " Wildmenu {
     set wildmenu
     set wildmode=list:longest
     set wildmode=list:full
-    set wildignore+=*.hg,*.git,*.svn                 " Version control
-    set wildignore+=*.aux,*.out,*.toc                " LaTeX intermediate files
-    set wildignore+=*.jpg,*.bmp,*.gif,*.png,*.jpeg   " Binary images
-    set wildignore+=*.o,*.obj,*.exe,*.dll,*.manifest " compiled object files
-    set wildignore+=*.spl                            " compiled spelling word lists
-    set wildignore+=*.sw?                            " Vim swap files
-    set wildignore+=*.DS_Store                       " OSX bullshit
-    set wildignore+=*.luac                           " Lua byte code
-    set wildignore+=migrations                       " Django migrations
-    set wildignore+=*.pyc                            " Python byte code
-    set wildignore+=*.orig                           " Merge resolution files
+    set wildignore+=*.hg,*.git,*.svn                " Version control
+    set wildignore+=*.jpg,*.bmp,*.gif,*.png,*.jpeg  " Binary images
+    set wildignore+=*.DS_Store                      " OSX file
 " }
 
 " FileType {
