@@ -86,9 +86,8 @@
     nnoremap Q <nop>
 
     " Switch buffers quickly
-    " Can't use C-M-h/l see: https://vi.stackexchange.com/a/4291
-    nnoremap <Leader><C-h> :bp<CR>
-    nnoremap <Leader><C-l> :bn<CR>
+    nnoremap <C-M-h> :bp<CR>
+    nnoremap <C-M-l> :bn<CR>
 " }
 
 if has("nvim")
