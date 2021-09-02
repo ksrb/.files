@@ -91,7 +91,8 @@
   "vim.visualstar": true,
 
   // Neovim settings
-  "vscode-neovim.neovimExecutablePaths.linux": "/usr/bin/nvim",
+  "vscode-neovim.neovimExecutablePaths.darwin": "/usr/local/bin/nvim",
+  "vscode-neovim.neovimExecutablePaths.linux": "/usr/local/bin/nvim",
   "vscode-neovim.neovimExecutablePaths.win32": "C:\\ProgramData\\chocolatey\\bin\\nvim.exe",
   "vscode-neovim.useWSL": true,
 }
