@@ -35,36 +35,24 @@
   "vim.normalModeKeyBindingsNonRecursive": [
     // Window
     {
-      "before": [
-        "<C-h>",
-      ],
-      "commands": [
-        "workbench.action.navigateLeft"
-      ]
+      "before": ["<C-h>"],
+      "commands": ["workbench.action.navigateLeft"]
     },
     {
-      "before": [
-        "<C-j>",
-      ],
-      "commands": [
-        "workbench.action.navigateDown"
-      ]
+      "before": ["<C-j>"],
+      "commands": ["workbench.action.navigateDown"]
     },
     {
-      "before": [
-        "<C-k>",
-      ],
-      "commands": [
-        "workbench.action.navigateUp"
-      ]
+      "before": ["<C-k>"],
+      "commands": ["workbench.action.navigateUp"]
     },
     {
-      "before": [
-        "<C-l>",
-      ],
-      "commands": [
-        "workbench.action.navigateRight"
-      ]
+      "before": ["<C-l>"],
+      "commands": ["workbench.action.navigateRight"]
+    },
+    {
+      "before": ["<C-w>", "H"],
+      "commands": ["workbench.action.moveEditorToPreviousGroup"]
     },
     {
       "before": ["<C-w>", "L"],
@@ -85,11 +73,10 @@
       "before": ["<Leader>", "<C-g>"],
       "commands": ["editor.action.referenceSearch.trigger"]
     },
-    // {
-    //   // TODO: doesn't work
-    //   "before": ["<Leader>", "<C-h>"],
-    //   "commands": ["workbench.view.search"]
-    // },
+    {
+      "before": ["<Leader>", "<C-h>"],
+      "commands": ["workbench.view.search"]
+    },
     {
       "before": ["<Leader>", "<Leader>"],
       "commands": ["extension.vim_right"]
@@ -117,7 +104,6 @@
   ],
   "vim.smartcase": true,
   "vim.visualstar": true,
-
   // Neovim settings
   "vscode-neovim.neovimExecutablePaths.darwin": "/usr/local/bin/nvim",
   "vscode-neovim.neovimExecutablePaths.linux": "/usr/local/bin/nvim",
