@@ -35,8 +35,36 @@
   "vim.normalModeKeyBindingsNonRecursive": [
     // Window
     {
-      "before": ["<C-w>", "H"],
-      "commands": ["workbench.action.moveEditorToPreviousGroup"]
+      "before": [
+        "<C-h>",
+      ],
+      "commands": [
+        "workbench.action.navigateLeft"
+      ]
+    },
+    {
+      "before": [
+        "<C-j>",
+      ],
+      "commands": [
+        "workbench.action.navigateDown"
+      ]
+    },
+    {
+      "before": [
+        "<C-k>",
+      ],
+      "commands": [
+        "workbench.action.navigateUp"
+      ]
+    },
+    {
+      "before": [
+        "<C-l>",
+      ],
+      "commands": [
+        "workbench.action.navigateRight"
+      ]
     },
     {
       "before": ["<C-w>", "L"],

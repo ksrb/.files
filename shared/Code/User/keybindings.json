@@ -81,29 +81,6 @@
     "command": "workbench.action.focusActiveEditorGroup"
   },
   {
-    // Override
-    "key": "ctrl+h",
-    "command": "workbench.action.navigateLeft",
-    "when": "!neovim.init"
-  },
-  {
-    // Override
-    "key": "ctrl+j",
-    "command": "workbench.action.navigateDown",
-    "when": "!neovim.init"
-  },
-  {
-    // Override
-    "key": "ctrl+k",
-    "command": "workbench.action.navigateUp",
-    "when": "!neovim.init"
-  },
-  {
-    "key": "ctrl+l",
-    "command": "workbench.action.navigateRight",
-    "when": "!neovim.init"
-  },
-  {
     "key": "alt+1",
     "command": "workbench.files.action.focusFilesExplorer"
   },
