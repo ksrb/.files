@@ -44,9 +44,10 @@ map <Leader>ct :action CloseAllEditors<CR>
 map <Leader>df :action ToggleDistractionFreeMode<CR>
 map <Leader>fp :action ReformatWithPrettierAction<CR>
 map <Leader>n :action ActivateProjectToolWindow<CR>
-map <Leader>r :action ReloadFromDisk<CR>
-map <Leader>s :action SynchronizeCurrentFile<CR> :action VimInsertExitMode<CR>
-map <Leader>sa :action Synchronize<CR> :action VimInsertExitMode<CR>
+map <Leader>r :action SynchronizeCurrentFile<CR>
+" Works but substitues character under cursor
+" map <Leader>s :action SynchronizeCurrentFile<CR>
+map <Leader>sa :action Synchronize<CR>
 map <Leader>t :action ActivateStructureToolWindow<CR>
 map <Leader>wl :action com.andrewbrookins.idea.wrap.WrapAction<CR>
 map <Leader>wp :action com.andrewbrookins.idea.wrap.WrapParagraphAction<CR>
