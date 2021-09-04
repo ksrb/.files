@@ -1,4 +1,5 @@
 Plug 'dense-analysis/ale'
+Plug 'Shougo/deoplete.nvim'
 
 " ale {
     nmap <F2> <Plug>(ale_documentation)
@@ -7,6 +8,13 @@ Plug 'dense-analysis/ale'
 " }
 
 if has('nvim')
+
+  " deoplete.nvim {
+      inoremap <silent><expr><tab> pumvisible() ? "\<c-n>" : "\<tab>"
+      inoremap <silent><expr><s-tab> pumvisible() ? "\<c-p>" : "\<s-tab>"
+      let g:deoplete#enable_at_startup = 1
+  " }
+
   " vim-easymotion {
       nmap <M-e> <Plug>(easymotion-prefix)
   " }
