@@ -1,11 +1,6 @@
 #!/usr/bin/env bash
 
-# cd to the directory that script is being executed and set configs_dir to directory
-configs_dir=$(
-  cd "$(dirname "$0")" || exit
-  pwd
-)
-target="$configs_dir/.."
+source "./scripts/variables"
 
 ignores_global=(
   README.md

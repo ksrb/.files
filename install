@@ -1,0 +1,72 @@
+#!/usr/bin/env bash
+
+source "./scripts/variables"
+
+remoteInstall() {
+  local host=$1
+  local hostDir=$2
+
+  echo "$host" "$hostDir"
+
+  if [[ -z $host ]]; then
+    printf "Missing host\\n"
+    return
+  fi
+
+  if [[ -z $hostDir ]]; then
+    printf "Missing hostDir\\n"
+    return
+  fi
+
+  rsync -r . "$host:$hostDir/.files"
+  rsync -r "$target/.config/base16-shell" "$host:$hostDir/.config"
+  rsync -r "$target/.oh-my-zsh" "$host:$hostDir"
+  rsync -r "$target/.vim" "$host:$hostDir"
+}
+
+remoteHelp() {
+  cat <<-EOF
+Usage: remote [COMMAND]
+Commands:
+install  <host> <hostDir> Copy files to a remote machine using rsync
+EOF
+}
+
+remoteProcess() {
+  case "$1" in
+  "install")
+    remoteInstall "${@:2}"
+    ;;
+  "setup")
+    remoteSetup
+    ;;
+  *)
+    printf "Not a valid command\\n\\n"
+    remoteHelp
+    ;;
+  esac
+}
+
+help() {
+  cat <<-EOF
+Usage: install [COMMAND]
+Commands:
+remote  Setup .files on a remote machine use remote help for more info
+EOF
+}
+
+process() {
+  case "$1" in
+  "remote")
+    remoteProcess "${@:2}"
+    ;;
+  "help")
+    help
+    ;;
+  *)
+    printf "Not a valid command\\n\\n"
+    help
+    ;;
+  esac
+}
+process "$@"
