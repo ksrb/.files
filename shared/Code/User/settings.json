@@ -32,6 +32,16 @@
   "vim.enableNeovim": true,
   "vim.hlsearch": true,
   "vim.leader": "<space>",
+  "vim.visualModeKeyBindingsNonRecursive": [
+    {
+      "before": ["<Leader>", "<C-h>"],
+      "commands": ["workbench.action.findInFiles"]
+    },
+    {
+      "before": ["<Leader>", "<C-f>"],
+      "commands": ["actions.find"]
+    }
+  ],
   "vim.normalModeKeyBindingsNonRecursive": [
     // Window
     {
@@ -75,7 +85,7 @@
     },
     {
       "before": ["<Leader>", "<C-h>"],
-      "commands": ["workbench.view.search"]
+      "commands": ["workbench.action.findInFiles"]
     },
     {
       "before": ["<Leader>", "<Leader>"],
