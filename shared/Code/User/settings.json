@@ -22,6 +22,7 @@
     "statusBar.noFolderBackground": "#005f87",
     "statusBar.debuggingBackground": "#005f87"
   },
+  "workbench.commandPalette.preserveInput": true,
   "workbench.editor.enablePreview": false, // Open files in new tab
   "workbench.settings.editor": "json",
   "workbench.settings.openDefaultKeybindings": false,
@@ -69,12 +70,10 @@
       "commands": ["workbench.action.moveEditorToNextGroup"]
     },
     // Leader
-    // {
-    //   // TODO: no command to open recent files see:
-    //   // https://github.com/Microsoft/vscode/issues/49629#issuecomment-388339735
-    //   "before": ["<leader>", "<C-e>"],
-    //   "commands": [""]
-    // },
+    {
+      "before": ["<Leader>", "<C-e>"],
+      "commands": ["workbench.action.showAllEditorsByMostRecentlyUsed"]
+    },
     {
       "before": ["<Leader>", "<C-f>"],
       "commands": ["actions.find"]
