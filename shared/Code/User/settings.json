@@ -69,6 +69,11 @@
       "before": ["<C-w>", "L"],
       "commands": ["workbench.action.moveEditorToNextGroup"]
     },
+    // <C-c>
+    {
+      "before": ["<C-c>", "p", "p"],
+      "commands": ["workbench.action.openRecent"]
+    },
     // Leader
     {
       "before": ["<Leader>", "<C-e>"],
@@ -99,8 +104,6 @@
       "commands": ["workbench.view.explorer"]
     },
     {
-      "before": ["<C-c>", "p", "p"],
-      "commands": ["workbench.action.openRecent"]
     },
     {
       "before": ["<Leader>", "r"],
