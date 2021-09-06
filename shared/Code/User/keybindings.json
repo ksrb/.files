@@ -144,13 +144,11 @@
   {
     // =============== Tab management ===============
     "key": "ctrl+alt+l",
-    "command": "workbench.action.nextEditor",
-    "when": "editorFocus"
+    "command": "workbench.action.nextEditor"
   },
   {
     "key": "ctrl+alt+h",
-    "command": "workbench.action.previousEditor",
-    "when": "editorFocus"
+    "command": "workbench.action.previousEditor"
   },
   // =============== Editor focused ===============
   {
