@@ -541,7 +541,7 @@
                                 },
                                 "to": [
                                     {
-                                        "shell_command": "sh ~/.config/karabiner/passthrough"
+                                        "shell_command": "~/.config/karabiner/passthrough"
                                     }
                                 ],
                                 "type": "basic"
@@ -725,7 +725,7 @@
                                 },
                                 "to": [
                                     {
-                                        "shell_command": "sh ~/.config/karabiner/passthrough"
+                                        "shell_command": "~/.config/karabiner/passthrough"
                                     }
                                 ],
                                 "type": "basic"
