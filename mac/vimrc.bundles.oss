@@ -7,6 +7,11 @@ Plug 'Shougo/deoplete.nvim'
     let g:ale_completion_enabled = 1
 " }
 
+" Ultisnips {
+    " Change ultisnip trigger to Ctrl-Space
+    let g:UltiSnipsExpandTrigger = "<C-Space>"
+" }
+
 if has('nvim')
 
   " deoplete.nvim {
@@ -18,20 +23,10 @@ if has('nvim')
   " vim-easymotion {
       nmap <M-e> <Plug>(easymotion-prefix)
   " }
-
-  " Ultisnips {
-      " Change ultisnip trigger to Ctrl-Space
-      let g:UltiSnipsExpandTrigger = "<C-Space>"
-  " }
 endif
 
 if !has('nvim')
   " vim-easymotion {
       map e <Plug>(easymotion-prefix)
-  " }
-
-  " Ultisnips {
-      " Change ultisnip trigger to Ctrl-Space
-      let g:UltiSnipsExpandTrigger = "<C-Space>"
   " }
 endif
