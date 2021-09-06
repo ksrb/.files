@@ -100,10 +100,12 @@
       "commands": ["workbench.action.closeOtherEditors"]
     },
     {
-      "before": ["<Leader>", "n"],
-      "commands": ["workbench.view.explorer"]
+      "before": ["<Leader>", "c", "t"],
+      "commands": ["workbench.action.closeEditorsInGroup"]
     },
     {
+      "before": ["<Leader>", "n"],
+      "commands": ["workbench.view.explorer"]
     },
     {
       "before": ["<Leader>", "r"],

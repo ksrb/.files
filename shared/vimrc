@@ -136,6 +136,7 @@ if exists("g:vscode") " If vscode
       nnoremap <silent> <Leader><C-g> <Cmd>call VSCodeCall("editor.action.referenceSearch.trigger")<CR>
       nnoremap <silent> <Leader><C-h> <Cmd>call VSCodeCall("workbench.view.search")<CR>
       nnoremap <silent> <Leader>co <Cmd>call VSCodeCall("workbench.action.closeOtherEditors")<CR>
+      nnoremap <silent> <Leader>ct <Cmd>call VSCodeCall("workbench.action.closeEditorsInGroup")<CR>
       nnoremap <silent> <Leader>r <Cmd>call VSCodeCall("workbench.action.files.revert")<CR>
       nnoremap <silent> <Leader>sa <Cmd>call VSCodeCall("workbench.action.files.saveAll")<CR>
   " }
