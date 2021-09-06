@@ -34,6 +34,7 @@ map <Leader><C-e> :action RecentFiles<CR>
 map <Leader><C-f> :action Replace<CR>
 map <Leader><C-g> :action FindUsages<CR>
 map <Leader><C-h> :action FindInPath<CR>
+map <Leader><C-r> :action ReplaceInPath<CR>
 map <Leader><C-t> :action GotoImplementation<CR>
 map <Leader>[{ :action EditorCodeBlockStart<CR>
 map <Leader>]} :action EditorCodeBlockEnd<CR>
@@ -42,7 +43,6 @@ map <Leader>cl :action CloseAllToTheRight<CR>
 map <Leader>co :action CloseAllEditorsButActive<CR>
 map <Leader>ct :action CloseAllEditors<CR>
 map <Leader>df :action ToggleDistractionFreeMode<CR>
-map <Leader>fp :action ReformatWithPrettierAction<CR>
 map <Leader>n :action ActivateProjectToolWindow<CR>
 map <Leader>r :action SynchronizeCurrentFile<CR>
 " Works but substitues character under cursor
