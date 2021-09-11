@@ -39,12 +39,24 @@
     "command": "workbench.action.openWorkspaceSettings"
   },
   {
+    "key": "ctrl+shift+alt+k",
+    "command": "workbench.action.openGlobalKeybindingsFile"
+  },
+  {
     "key": "ctrl+alt+=",
     "command": "workbench.action.increaseViewSize"
   },
   {
     "key": "ctrl+alt+-",
     "command": "workbench.action.decreaseViewSize"
+  },
+  {
+    "key": "ctrl+alt+]",
+    "command": "workbench.action.quickSwitchWindow"
+  },
+  {
+    "key": "ctrl+alt+[",
+    "command": "workbench.action.quickSwitchWindow"
   },
   {
     // See: https://github.com/asvetliakov/vscode-neovim/issues/677
@@ -70,6 +82,7 @@
   },
   {
     // Override (Mac)
+    // Stop enter from renaming file
     "key": "enter",
     "command": "list.select",
     "when": "listFocus"
@@ -96,13 +109,13 @@
   },
   {
     "key": "alt+3",
-    "command": "workbench.view.search",
+    "command": "workbench.action.findInFiles",
     "when": "!searchInputBoxFocus"
   },
   {
     "key": "alt+3",
     "command": "workbench.action.toggleSidebarVisibility",
-    "when": "searchInputBoxFocus && searchViewletVisible"
+    "when": "searchViewletVisible"
   },
   {
     // TODO: doesn't work when focused on result list
