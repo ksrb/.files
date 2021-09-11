@@ -34,6 +34,24 @@
   "vim.hlsearch": true,
   "vim.leader": "<space>",
   "vim.visualModeKeyBindingsNonRecursive": [
+    // Window
+    {
+      "before": ["<C-h>"],
+      "commands": ["workbench.action.navigateLeft"]
+    },
+    {
+      "before": ["<C-j>"],
+      "commands": ["workbench.action.navigateDown"]
+    },
+    {
+      "before": ["<C-k>"],
+      "commands": ["workbench.action.navigateUp"]
+    },
+    {
+      "before": ["<C-l>"],
+      "commands": ["workbench.action.navigateRight"]
+    },
+    // Leader
     {
       "before": ["<Leader>", "<C-h>"],
       "commands": ["workbench.action.findInFiles"]
