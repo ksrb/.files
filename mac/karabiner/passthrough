@@ -5,8 +5,12 @@ currentProfile=$("$karabiner_cli" --show-current-profile-name)
 
 laptop="Laptop"
 defaultProfile="Default Profile"
+externalKeyboard="External Keyboard"
+
 if [[ $currentProfile == "$laptop" ]]; then
   "$karabiner_cli" --select-profile "$defaultProfile"
-else
+elif [[ $currentProfile == "$defaultProfile" ]]; then
+  "$karabiner_cli" --select-profile "$externalKeyboard"
+elif [[ $currentProfile == "$externalKeyboard" ]]; then
   "$karabiner_cli" --select-profile "$laptop"
 fi
