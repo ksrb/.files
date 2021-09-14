@@ -187,7 +187,7 @@
     "when": "editorHasDefinitionProvider && editorTextFocus && !isInEmbeddedEditor"
   },
   {
-    "key": "shift+alt+r",
+    "key": "alt+shift+r",
     "command": "editor.action.rename",
     "when": "editorHasRenameProvider && editorTextFocus && !editorReadonly"
   },
@@ -197,7 +197,7 @@
     "when": "editorTextFocus && !editorReadonly && !neovim.init"
   },
   {
-    "key": "shift+ctrl+/",
+    "key": "ctrl+shift+/",
     "command": "editor.action.blockComment",
     "when": "editorTextFocus && !editorReadonly && !neovim.init"
   },
@@ -212,12 +212,12 @@
     "when": "editorTextFocus"
   },
   {
-    "key": "shift+ctrl+left",
+    "key": "ctrl+shift+left",
     "command": "cursorWordStartLeftSelect",
     "when": "editorTextFocus"
   },
   {
-    "key": "shift+ctrl+right",
+    "key": "ctrl+shift+right",
     "command": "cursorWordEndRightSelect",
     "when": "editorTextFocus"
   },

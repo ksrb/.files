@@ -23,7 +23,8 @@
     "statusBar.debuggingBackground": "#005f87"
   },
   "workbench.commandPalette.preserveInput": true,
-  "workbench.editor.enablePreview": false, // Open files in new tab
+  "workbench.editor.enablePreview": false, // When clicking files in file explorer open in new tab instead recycling in a preview tab
+  "workbench.quickOpen.preserveInput": true,
   "workbench.settings.editor": "json",
   "workbench.settings.openDefaultKeybindings": false,
   "workbench.settings.openDefaultSettings": false,
