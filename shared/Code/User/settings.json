@@ -32,6 +32,7 @@
   "workbench.statusBar.visible": true,
   // Vim settings
   "vim.enableNeovim": true,
+  "vim.highlightedyank.enable": true,
   "vim.hlsearch": true,
   "vim.leader": "<space>",
   "vim.visualModeKeyBindingsNonRecursive": [
