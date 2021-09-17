@@ -11,6 +11,12 @@ set number              " Show line numbers
 
 let g:highlightedyank_highlight_color = "rgba(250, 240, 170, 123)"
 
+" tcomment like comment command
+nnoremap gcc :action CommentByLineComment<CR>
+nnoremap gqq :action com.andrewbrookins.idea.wrap.WrapAction<CR>
+
+nnoremap gh :action QuickJavaDoc<CR>
+
 " Ctrl + hjkl to switch splits
 nnoremap <C-j> <C-w>j
 nnoremap <C-k> <C-w>k
@@ -23,10 +29,6 @@ nnoremap <C-c>pp :action ManageRecentProjects<CR>
 nnoremap <C-w>L :action MoveEditorToOppositeTabGroup<CR>
 nnoremap <C-w>H :action MoveEditorToOppositeTabGroup<CR>
 nnoremap <C-w>D :action OpenEditorInOppositeTabGroup<CR>
-
-" tcomment like comment command
-nnoremap gcc :action CommentByLineComment<CR>
-nnoremap gqq :action com.andrewbrookins.idea.wrap.WrapAction<CR>
 
 let mapleader = " "
 " For reference of available actions see:
