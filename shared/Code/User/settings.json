@@ -15,7 +15,8 @@
       "path": "C:\\tools\\cygwin\\bin\\zsh.exe"
     }
   },
-  "window.title": "${activeEditorMedium}",
+  "window.openFoldersInNewWindow": "on",
+  "window.title": "${rootName}${separator}${activeEditorMedium}",
   "workbench.activityBar.visible": false,
   "workbench.colorCustomizations": {
     "statusBar.background": "#005f87",
@@ -29,7 +30,6 @@
   "workbench.settings.openDefaultKeybindings": false,
   "workbench.settings.openDefaultSettings": false,
   "workbench.startupEditor": "none",
-  "workbench.statusBar.visible": true,
   // Vim settings
   "vim.enableNeovim": true,
   "vim.highlightedyank.enable": true,
