@@ -17,112 +17,11 @@
     "body": ["import $1;"],
     "description": "Import module"
   },
+  // Modules
   "imc": {
     "scope": "javascript, javascriptreact, typescript, typescriptreact",
     "prefix": "imc",
-    "body": ["import classnames from 'classnames';"],
+    "body": ["import clsx from 'clsx';"],
     "description": "Import classnames"
-  },
-  // =============== React ===============
-  "imr": {
-    "scope": "javascript, javascriptreact, typescript, typescriptreact",
-    "prefix": "imr",
-    "body": ["import React, { Component, Proptypes } from 'react';"],
-    "description": "Import React module"
-  },
-  "rcons": {
-    "scope": "javascript, javascriptreact, typescript, typescriptreact",
-    "prefix": "rcons",
-    "body": [
-      "constructor(props) {",
-      "  super(props);",
-      "  this.state = {$0};",
-      "}"
-    ],
-    "description": "React constructor"
-  },
-  "sst": {
-    "scope": "javascript, javascriptreact, typescript, typescriptreact",
-    "prefix": "sst",
-    "body": ["this.setState($0);"],
-    "description": "Set state"
-  },
-  "rc": {
-    // TODO: wip no abililty to trim extension and capitalize file name
-    "scope": "javascript, javascriptreact, typescript, typescriptreact",
-    "prefix": "rc",
-    "body": [
-      "class RenameMe extends Component {",
-      "  render(){",
-      "    return (",
-      "      <div>$0</div>",
-      "   );",
-      "  }",
-      "}",
-      ""
-    ],
-    "description": "React component"
-  },
-  "rt": {
-    // TODO: wip no abililty to trim extension and capitalize file name
-    "scope": "javascript, javascriptreact, typescript, typescriptreact",
-    "prefix": "rt",
-    "body": [
-      "import React, { Component, PropTypes } from 'react';",
-      "",
-      "class RenameMe extends Component {",
-      "  render(){",
-      "    return (",
-      "      <div>$0</div>",
-      "   );",
-      "  }",
-      "}",
-      "",
-      "export default RenameMe;"
-    ],
-    "description": "React template - for new file that is a react component"
-  },
-  // =============== React life cycle ===============
-  "cwm": {
-    "scope": "javascript, javascriptreact, typescript, typescriptreact",
-    "prefix": "cwm",
-    "body": ["componentWillMount() {", "  $0", "}"],
-    "description": "Component will mount"
-  },
-  "cwu": {
-    "scope": "javascript, javascriptreact, typescript, typescriptreact",
-    "prefix": "cwu",
-    "body": ["componentWillUpdate() {", "  $0", "}"],
-    "description": "Component will update"
-  },
-  "cdu": {
-    "scope": "javascript, javascriptreact, typescript, typescriptreact",
-    "prefix": "cdu",
-    "body": ["componentDidUpdate(prevProps, prevState) {", "  $0", "}"],
-    "description": "Component did update"
-  },
-  "cwum": {
-    "scope": "javascript, javascriptreact, typescript, typescriptreact",
-    "prefix": "cwum",
-    "body": ["componentWillUnmount() {", "  $0", "}"],
-    "description": "Component will unmount"
-  },
-  "cdm": {
-    "scope": "javascript, javascriptreact, typescript, typescriptreact",
-    "prefix": "cdm",
-    "body": ["componentDidMount() {", "  $0", "}"],
-    "description": "Component did mount"
-  },
-  "scu": {
-    "scope": "javascript, javascriptreact, typescript, typescriptreact",
-    "prefix": "scu",
-    "body": ["shouldComponentUpdate(nextProps, nextState) {", "  $0", "}"],
-    "description": "Should component update"
-  },
-  "cwrp": {
-    "scope": "javascript, javascriptreact, typescript, typescriptreact",
-    "prefix": "cwrp",
-    "body": ["componentWillRecieveProps(nextProps) {", "  $0", "}"],
-    "description": "Component will reciever props"
   }
 }
