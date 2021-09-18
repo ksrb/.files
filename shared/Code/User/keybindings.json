@@ -39,6 +39,10 @@
     "command": "workbench.action.openWorkspaceSettings"
   },
   {
+    "key": "ctrl+alt+k",
+    "command": "workbench.action.openDefaultKeybindingsFile"
+  },
+  {
     "key": "ctrl+shift+alt+k",
     "command": "workbench.action.openGlobalKeybindingsFile"
   },
@@ -115,7 +119,7 @@
   {
     "key": "alt+3",
     "command": "workbench.action.toggleSidebarVisibility",
-    "when": "searchViewletVisible"
+    "when": "searchInputBoxFocus && searchViewletVisible"
   },
   {
     // TODO: doesn't work when focused on result list
