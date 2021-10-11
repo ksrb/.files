@@ -33,3 +33,6 @@
 
 ## Defaults
 * Set using defaults.sh script
+
+## Speedcrunch
+* [Blurry text](https://bitbucket.org/heldercorreia/speedcrunch/issues/871/012-on-mac-has-blurry-text)
