@@ -6,4 +6,4 @@ configs_dir=$(
   pwd
 )
 
-export target="$configs_dir/.."
+export target=${TARGET:-"$configs_dir/.."}

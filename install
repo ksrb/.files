@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-source "./scripts/variables"
+source "./lib/variables"
 
 remoteInstall() {
   local host=$1
