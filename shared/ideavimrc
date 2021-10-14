@@ -15,7 +15,7 @@ let g:highlightedyank_highlight_color = "rgba(250, 240, 170, 123)"
 nnoremap gcc :action CommentByLineComment<CR>
 nnoremap gqq :action com.andrewbrookins.idea.wrap.WrapAction<CR>
 
-nnoremap gh :action QuickJavaDoc<CR>
+nnoremap gh :action ShowErrorDescription<CR>
 
 " Ctrl + hjkl to switch splits
 nnoremap <C-j> <C-w>j
@@ -35,6 +35,10 @@ let mapleader = " "
 " https://github.com/JetBrains/intellij-community/blob/master/platform/platform-resources-en/src/messages/ActionsBundle.properties
 " Or use :actionlist [pattern] see:
 " https://github.com/JetBrains/ideavim#executing-ide-actions
+
+noremap <Leader>y "+y
+noremap <Leader>p "+p
+
 noremap <Leader><C-e> :action RecentFiles<CR>
 noremap <Leader><C-f> :action Replace<CR>
 noremap <Leader><C-g> :action FindUsages<CR>

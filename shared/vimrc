@@ -76,6 +76,9 @@
     " Leader key to ','
     let mapleader = "\<SPACE>"
 
+    noremap <Leader>y "+y
+    noremap <Leader>p "+p
+
     " Strip Trailing Whitespace & turn off hightlighting
     nnoremap <Leader>kw :%s/\s\+$//e<CR>:noh<CR>
 
