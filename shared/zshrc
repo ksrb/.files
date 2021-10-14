@@ -17,19 +17,16 @@
     # Theme
     ZSH_THEME="robbyrussell"
 
-    # Base16 Shell from https://github.com/chriskempson/base16-shell
-    BASE16_SHELL="$HOME/.config/base16-shell/"
-    [ -n "$PS1" ] && \
-      [ -s "$BASE16_SHELL/profile_helper.sh" ] && \
-      eval "$("$BASE16_SHELL/profile_helper.sh")"
-
     plugins=(git git-extras docker)
 
     # Initialize oh-my-zsh
     source "$ZSH"/oh-my-zsh.sh
 
-    # Disable ctrl-s and ctrl-q http://unix.stackexchange.com/a/72092
-    stty -ixon
+    # Base16 Shell from https://github.com/chriskempson/base16-shell
+    BASE16_SHELL="$HOME/.config/base16-shell/"
+    [ -n "$PS1" ] && \
+      [ -s "$BASE16_SHELL/profile_helper.sh" ] && \
+      eval "$("$BASE16_SHELL/profile_helper.sh")"
 
     # Add relative bin to PATH
     dotBin=./bin
@@ -38,6 +35,9 @@
     # Add relative node_modules/.bin to PATH
     dotNodeModuleBin=./node_modules/.bin
     [[ ":$PATH:" != *"$dotNodeModuleBin"* ]] && PATH="$dotNodeModuleBin:${PATH}"
+
+    # Disable ctrl-s and ctrl-q http://unix.stackexchange.com/a/72092
+    stty -ixon
 # }
 
 # Functions {
