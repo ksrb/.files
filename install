@@ -18,10 +18,11 @@ remoteInstall() {
     return
   fi
 
-  rsync -r . "$host:$hostDir/.files"
-  rsync -r "$target/.config/base16-shell" "$host:$hostDir/.config"
-  rsync -r "$target/.oh-my-zsh" "$host:$hostDir"
-  rsync -r "$target/.vim" "$host:$hostDir"
+  rsync --stats -r "$configs_dir" "$host:$hostDir"
+  rsync --stats -r "$target/.config/base16-shell" "$host:$hostDir/.config"
+  rsync --stats -r "$target/.oh-my-zsh" "$host:$hostDir"
+  rsync --stats -r "$configs_dir/shared/custom/robbyrussell.zsh-theme" "$host:$hostDir/.oh-my-zsh/themes"
+  rsync --stats -r "$target/.vim" "$host:$hostDir"
 }
 
 remoteHelp() {

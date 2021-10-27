@@ -13,6 +13,7 @@ shared_config_ignores+=(
   Code
   gitignore_global
   idea.properties
+  oh-my-zsh
 )
 
 mac_configs_dir="$configs_dir/mac"
@@ -152,6 +153,9 @@ linkSharedFiles() {
   local mode=$1
   linkDotFiles "$mode" "$shared_configs_dir" "shared_config_ignores"
   linkFilesInDir "$mode" "$shared_configs_dir/usr/local/bin" "/usr/local/bin"
+
+  mkdir -p "$target/.oh-my-zsh/custom"
+  linkFilesInDir "$mode" "$shared_configs_dir/oh-my-zsh/custom" "$target/.oh-my-zsh/custom"
 
   mkdir -p "$target/.config/git"
   linkFile "$mode" "$shared_configs_dir/gitignore_global" "$target/.config/git/ignore"
