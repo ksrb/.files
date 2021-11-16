@@ -33,8 +33,8 @@ Plug 'tpope/vim-repeat'
 Plug 'tpope/vim-surround'
 
 " ctrlP {
-    " ignore node_modules|.git folders
-    let g:ctrlp_custom_ignore = '\v[\/](node_modules)|(\.(git))$'
+    " ignore .git|build|dist|node_modules folders
+    let g:ctrlp_custom_ignore = '\v[\/]\.(git)|build|dist|node_modules$'
     " Set working dir to first folder with .git or folder which file ctrlp was called on
     let g:ctrlp_working_path_mode = 'ra'
     " Jump to a file if it's open already
