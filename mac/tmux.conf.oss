@@ -1,8 +1,4 @@
-# enable system copy/paste:
-# https://github.com/ChrisJohnsen/t:ux-MacOSX-pasteboard
-set -g default-command "reattach-to-user-namespace -l ${SHELL}"
 
 # Bindings {
-    # copy mode
-    bind -T copy-mode-vi y send -X copy-pipe "reattach-to-user-namespace pbcopy"
+    bind -T copy-mode-vi y send -X copy-pipe "pbcopy"
 # }
