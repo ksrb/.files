@@ -152,12 +152,20 @@
       "commands": ["workbench.view.explorer"]
     },
     {
+      "before": ["<Leader>", "p"],
+      "after": ["\"", "+", "p"]
+    },
+    {
       "before": ["<Leader>", "r"],
       "commands": ["workbench.action.files.revert"]
     },
     {
       "before": ["<Leader>", "s", "a"],
       "commands": ["workbench.action.files.saveAll"]
+    },
+    {
+      "before": ["<Leader>", "y"],
+      "after": ["\"", "+", "y"]
     }
   ],
   "vim.smartcase": true,
