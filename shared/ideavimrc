@@ -8,6 +8,7 @@ set ideajoin            " Use IntelliJ to join lines (<C-j>)
 set clipboard+=ideaput  " Use IntelliJ to put lines (will auto-import dependencies based on what was copied)
 set relativenumber      " Show line numbers relative to cursor
 set number              " Show line numbers
+set matchit             " matchit emulation
 
 let g:highlightedyank_highlight_color = "rgba(250, 240, 170, 123)"
 
@@ -54,6 +55,7 @@ noremap <Leader>ct :action CloseAllEditors<CR>
 noremap <Leader>df :action ToggleDistractionFreeMode<CR>
 noremap <Leader>n :action ActivateProjectToolWindow<CR>
 noremap <Leader>r :action SynchronizeCurrentFile<CR>
+noremap <Leader>rl :action GotoRelated<CR>
 " Works but substitues character under cursor
 " map <Leader>s :action SynchronizeCurrentFile<CR>
 noremap <Leader>sa :action Synchronize<CR>
