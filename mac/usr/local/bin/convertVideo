@@ -1,0 +1,9 @@
+#!/usr/bin/env bash
+
+movToGif() {
+  local src=$1
+  local dest=${1%.*}.gif
+  ffmpeg -i "$src" -pix_fmt rgb24 -r 8 "$dest"
+}
+
+"$@"

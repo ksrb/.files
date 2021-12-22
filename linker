@@ -176,6 +176,7 @@ linkWindowFiles() {
 linkMacFiles() {
   local mode=$1
   linkDotFiles "$mode" "$mac_configs_dir" "mac_configs_ignores"
+  linkFilesInDir "$mode" "$mac_configs_dir/usr/local/bin" "/usr/local/bin"
 
   # Custom links
   linkFile "$mode" "$mac_configs_dir/karabiner" "$target/.config/karabiner"
