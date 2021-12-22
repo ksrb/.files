@@ -23,6 +23,7 @@
                                     {
                                         "bundle_identifiers": [
                                             "com.apple.Terminal",
+                                            "com.googlecode.iterm2",
                                             "com.jetbrains.intellij",
                                             "com.microsoft.VSCode",
                                             "org.gnu.Emacs"
@@ -72,6 +73,7 @@
                                     {
                                         "bundle_identifiers": [
                                             "com.apple.Terminal",
+                                            "com.googlecode.iterm2",
                                             "com.jetbrains.intellij",
                                             "com.microsoft.VSCode",
                                             "org.gnu.Emacs"
@@ -102,6 +104,7 @@
                                     {
                                         "bundle_identifiers": [
                                             "com.apple.Terminal",
+                                            "com.googlecode.iterm2",
                                             "com.jetbrains.intellij",
                                             "com.microsoft.VSCode",
                                             "org.gnu.Emacs"
@@ -205,6 +208,7 @@
                                     {
                                         "bundle_identifiers": [
                                             "com.apple.Terminal",
+                                            "com.googlecode.iterm2",
                                             "com.jetbrains.intellij",
                                             "com.microsoft.VSCode",
                                             "org.gnu.Emacs"
@@ -237,6 +241,7 @@
                                     {
                                         "bundle_identifiers": [
                                             "com.apple.Terminal",
+                                            "com.googlecode.iterm2",
                                             "com.jetbrains.intellij",
                                             "com.microsoft.VSCode",
                                             "org.gnu.Emacs"
@@ -269,6 +274,7 @@
                                     {
                                         "bundle_identifiers": [
                                             "com.apple.Terminal",
+                                            "com.googlecode.iterm2",
                                             "com.jetbrains.intellij",
                                             "com.microsoft.VSCode",
                                             "org.gnu.Emacs"
@@ -301,6 +307,7 @@
                                     {
                                         "bundle_identifiers": [
                                             "com.apple.Terminal",
+                                            "com.googlecode.iterm2",
                                             "com.jetbrains.intellij",
                                             "com.microsoft.VSCode",
                                             "org.gnu.Emacs"
@@ -333,6 +340,7 @@
                                     {
                                         "bundle_identifiers": [
                                             "com.apple.Terminal",
+                                            "com.googlecode.iterm2",
                                             "com.jetbrains.intellij",
                                             "com.microsoft.VSCode",
                                             "org.gnu.Emacs"
@@ -365,6 +373,7 @@
                                     {
                                         "bundle_identifiers": [
                                             "com.apple.Terminal",
+                                            "com.googlecode.iterm2",
                                             "com.jetbrains.intellij",
                                             "com.microsoft.VSCode",
                                             "org.gnu.Emacs"
@@ -397,6 +406,7 @@
                                     {
                                         "bundle_identifiers": [
                                             "com.apple.Terminal",
+                                            "com.googlecode.iterm2",
                                             "com.jetbrains.intellij",
                                             "com.microsoft.VSCode",
                                             "org.gnu.Emacs"
@@ -429,6 +439,7 @@
                                     {
                                         "bundle_identifiers": [
                                             "com.apple.Terminal",
+                                            "com.googlecode.iterm2",
                                             "com.jetbrains.intellij",
                                             "com.microsoft.VSCode",
                                             "org.gnu.Emacs"
@@ -461,6 +472,7 @@
                                     {
                                         "bundle_identifiers": [
                                             "com.apple.Terminal",
+                                            "com.googlecode.iterm2",
                                             "com.jetbrains.intellij",
                                             "com.microsoft.VSCode",
                                             "org.gnu.Emacs"
@@ -498,6 +510,7 @@
                                     {
                                         "bundle_identifiers": [
                                             "com.apple.Terminal",
+                                            "com.googlecode.iterm2",
                                             "com.jetbrains.intellij",
                                             "com.microsoft.VSCode",
                                             "org.gnu.Emacs"
