@@ -1,9 +1,9 @@
 {
-  "log": {
+  "logj": {
     "scope": "javascript, javascriptreact, typescript, typescriptreact",
-    "prefix": "log",
-    "body": ["console.log($1);"],
-    "description": "Log output to console"
+    "prefix": "logj",
+    "body": ["console.log(JSON.stringify($1, null, '  '));"],
+    "description": "Log to console with JSON.stringify"
   },
   "imf": {
     "scope": "javascript, javascriptreact, typescript, typescriptreact",

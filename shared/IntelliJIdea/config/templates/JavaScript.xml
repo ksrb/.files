@@ -18,10 +18,9 @@
       <option name="JAVA_SCRIPT" value="true" />
     </context>
   </template>
-  <template name="log" value="console.log($END$);" description="Print to console" toReformat="false" toShortenFQNames="true">
+  <template name="log" value="console.log($END$);" description="Log to console" toReformat="false" toShortenFQNames="true">
     <context>
       <option name="JS_EXPRESSION" value="true" />
-      <option name="JS_STATEMENT" value="true" />
     </context>
   </template>
   <template name="us" value="'use strict';&#10;$END$" description="Inserts 'use strict' statement" toReformat="true" toShortenFQNames="true">
@@ -54,6 +53,18 @@
   </template>
   <template name="imc" value="import classnames from 'classnames';" description="Import classnames" toReformat="false" toShortenFQNames="true">
     <context>
+      <option name="JS_STATEMENT" value="true" />
+    </context>
+  </template>
+  <template name="logj" value="console.log(JSON.stringify($END$, null, '  '));" description="Log to console with JSON.stringify" toReformat="false" toShortenFQNames="true">
+    <context>
+      <option name="JS_EXPRESSION" value="true" />
+      <option name="JS_STATEMENT" value="true" />
+    </context>
+  </template>
+  <template name="logjc" value="const getCircularReplacer = () =&gt; {&#10;  const seen = new WeakSet();&#10;  return (key, value) =&gt; {&#10;    if (typeof value === &quot;object&quot; &amp;&amp; value !== null) {&#10;      if (seen.has(value)) {&#10;        return;&#10;      }&#10;      seen.add(value);&#10;    }&#10;    return value;&#10;  };&#10;};&#10;&#10;console.log(JSON.stringify($END$, getCircularReplacer(), '  '));" description="Print to console with JSON.stringify with circular replacer" toReformat="false" toShortenFQNames="true">
+    <context>
+      <option name="JS_EXPRESSION" value="true" />
       <option name="JS_STATEMENT" value="true" />
     </context>
   </template>
