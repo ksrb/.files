@@ -69,6 +69,22 @@
       "before": ["<C-w>", "L"],
       "commands": ["workbench.action.moveEditorToRightGroup"]
     },
+    {
+      "before": ["<C-w>", "d", "h"],
+      "commands": ["workbench.action.splitEditorToLeftGroup"]
+    },
+    {
+      "before": ["<C-w>", "d", "j"],
+      "commands": ["workbench.action.splitEditorToBelowGroup"]
+    },
+    {
+      "before": ["<C-w>", "d", "k"],
+      "commands": ["workbench.action.splitEditorToAboveGroup"]
+    },
+    {
+      "before": ["<C-w>", "d", "l"],
+      "commands": ["workbench.action.splitEditorToRightGroup"]
+    },
     // Leader
     {
       "before": ["<Leader>", "<C-h>"],
@@ -112,6 +128,22 @@
     {
       "before": ["<C-w>", "L"],
       "commands": ["workbench.action.moveEditorToRightGroup"]
+    },
+    {
+      "before": ["<C-w>", "d", "h"],
+      "commands": ["workbench.action.splitEditorToLeftGroup"]
+    },
+    {
+      "before": ["<C-w>", "d", "j"],
+      "commands": ["workbench.action.splitEditorToBelowGroup"]
+    },
+    {
+      "before": ["<C-w>", "d", "k"],
+      "commands": ["workbench.action.splitEditorToAboveGroup"]
+    },
+    {
+      "before": ["<C-w>", "d", "l"],
+      "commands": ["workbench.action.splitEditorToRightGroup"]
     },
     // <C-c>
     {
