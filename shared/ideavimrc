@@ -16,8 +16,8 @@ let g:highlightedyank_highlight_color = "rgba(250, 240, 170, 123)"
 
 " tcomment like comment command
 nnoremap gcc :action CommentByLineComment<CR>
-nnoremap gqq :action com.andrewbrookins.idea.wrap.WrapAction<CR>
 
+nnoremap gqq :action com.andrewbrookins.idea.wrap.WrapAction<CR>
 nnoremap gh :action ShowErrorDescription<CR>
 
 " Ctrl + hjkl to switch splits
@@ -26,14 +26,15 @@ nnoremap <C-k> <C-w>k
 nnoremap <C-h> <C-w>h
 nnoremap <C-l> <C-w>l
 
-nnoremap <C-c>pp :action ManageRecentProjects<CR>
-
 " Emulate window move behavior
 nnoremap <C-w>L :action MoveEditorToOppositeTabGroup<CR>
 nnoremap <C-w>H :action MoveEditorToOppositeTabGroup<CR>
 nnoremap <C-w>D :action OpenEditorInOppositeTabGroup<CR>
 
+nnoremap <C-c>pp :action ManageRecentProjects<CR>
+
 let mapleader = " "
+
 " For reference of available actions see:
 " https://github.com/JetBrains/intellij-community/blob/master/platform/platform-resources-en/src/messages/ActionsBundle.properties
 " Or use :actionlist [pattern] see:
