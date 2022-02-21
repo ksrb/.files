@@ -1,5 +1,7 @@
 #!/usr/bin/env bash
 
+source "./lib/variables"
+
 updateForOs() {
   printf "Updating programs\n"
   updateShared
@@ -35,6 +37,16 @@ updateMac() {
   brew upgrade
 }
 
+updateLocal() {
+  local updateLocal="$target/.update.local"
+
+  if [[ ! -f "$updateLocal" ]]; then
+    return
+  fi
+
+  bash "$updateLocal"
+}
+
 help() {
   cat <<-EOF
 Usage: update [COMMAND]
@@ -43,6 +55,7 @@ all      Update shared and OS automatically update based on OS
 shared   Update shared
 windows  Update Windows
 mac      Update Mac
+local    Update local
 EOF
 }
 
@@ -50,6 +63,7 @@ process() {
   case "$1" in
   "all")
     updateForOs
+    updateLocal
     ;;
   "shared")
     updateShared
@@ -59,6 +73,9 @@ process() {
     ;;
   "windows")
     updateWindows
+    ;;
+  "local")
+    updateLocal
     ;;
   "help")
     help
