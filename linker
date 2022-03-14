@@ -27,6 +27,7 @@ mac_configs_ignores+=(
 windows_configs_dir="$configs_dir/windows"
 windows_configs_ignores+=(
   "${shared_config_ignores[@]}"
+  AppData
 )
 
 setEnv() {
