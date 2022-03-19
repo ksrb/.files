@@ -91,6 +91,12 @@
     " Switch buffers quickly
     nnoremap <C-M-h> :bp<CR>
     nnoremap <C-M-l> :bn<CR>
+
+    " Navigate windows quickly in visual mode
+    vnoremap <C-h> <C-w>h
+    vnoremap <C-j> <C-w>j
+    vnoremap <C-k> <C-w>k
+    vnoremap <C-l> <C-w>l
 " }
 
 if has("nvim")
@@ -100,10 +106,6 @@ if has("nvim")
       tnoremap <C-j> <C-\><C-n><C-w>j
       tnoremap <C-k> <C-\><C-n><C-w>k
       tnoremap <C-l> <C-\><C-n><C-w>l
-
-      " Use Ctrl+hjkl to switch buffers while in terminal mode
-      nnoremap <C-M-h> :bp <CR>
-      nnoremap <C-M-l> :bn <CR>
   " }
 endif
 
