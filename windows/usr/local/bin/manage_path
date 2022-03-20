@@ -1,0 +1,96 @@
+#!/usr/bin/env bash
+
+win_paths=(
+  "C:\tools\cygwin\bin"
+  "C:\ProgramData\chocolatey\bin"
+
+  # Node
+  "%NVM_HOME%"
+  "%NVM_SYMLINK%"
+
+  # Editors
+  "C:\Program Files\Microsoft VS Code\bin"
+  "C:\Program Files\Notepad++"
+  "C:\tools\neovim\Neovim\bin"
+
+  # Git
+  "C:\Program Files\Git\cmd"
+
+  # Docker
+  "C:\Program Files\Docker\Docker\resources\bin"
+  "C:\ProgramData\DockerDesktop\version-bin"
+
+  # Java
+  "%JAVA_HOME%"
+  "%JAVA_HOME%\missioncontrol\\"
+  "%JAVA_HOME%\webstart\\"
+  "%JAVA_HOME%\bin"
+  "%JAVA_HOME%\jre\bin"
+
+  # Windows
+  "%SystemRoot%\system32"
+  "%SystemRoot%"
+  "%SystemRoot%\System32\Wbem"
+  "%SYSTEMROOT%\System32\WindowsPowerShell\v1.0\\"
+  "%SYSTEMROOT%\System32\OpenSSH\\"
+  "C:\Windows"
+)
+
+winPathsPrint() {
+  printf "%s\n" "${win_paths[@]}"
+}
+
+winPathsPrintNoNewline() {
+  printf '%s;' "${win_paths[@]}"
+}
+
+winPathsCopyToClipboard() {
+  winPathPrintNoNewline >/dev/clipboard
+}
+
+systemPathsGet() {
+  local systemPathKey="    Path    REG_EXPAND_SZ    "
+
+  local system_paths_raw
+  system_paths_raw="$(reg query "HKLM\SYSTEM\CurrentControlSet\Control\Session Manager\Environment" | grep "$systemPathKey" | sed "s/$systemPathKey\(.*\)/\1/" | tr -d '\r\n')"
+
+  local -n variable=$1
+  local IFS=';'
+
+  # shellcheck disable=SC2034
+  read -r -a variable <<<"$system_paths_raw"
+}
+
+system_paths=()
+systemPathsGet system_paths
+
+systemPathsPrint() {
+  printf "%s\n" "${system_paths[@]}"
+}
+
+pathsCompare() {
+  local additional_paths=()
+
+  for system_path_index in "${!system_paths[@]}"; do
+
+    local system_path="${system_paths[$system_path_index]}"
+    local win_path="${win_paths[$system_path_index]}"
+
+    if [[ "$system_path" == "$win_path" ]]; then
+      continue
+    else
+      additional_paths+=("$system_path")
+    fi
+  done
+
+  printf "Additional paths\n"
+  printf "%s\n" "${additional_paths[@]}"
+  printf "\n"
+
+  printf "win_path with additional paths\n"
+  local win_paths_with_addtional_paths=("${win_paths[@]}" "${additional_paths[@]}")
+  printf -v joined '%s;' "${win_paths_with_addtional_paths[@]}"
+  echo "${joined%;}"
+}
+
+"$@"
