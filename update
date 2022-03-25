@@ -38,6 +38,7 @@ updateMac() {
 }
 
 updateLocal() {
+  printf "Updating local programs\n"
   local updateLocal="$target/.update.local"
 
   if [[ ! -f "$updateLocal" ]]; then
