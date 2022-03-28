@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-win_paths=(
+my_paths=(
   "C:\tools\cygwin\bin"
   "C:\ProgramData\chocolatey\bin"
 
@@ -36,16 +36,16 @@ win_paths=(
   "C:\Windows"
 )
 
-winPathsPrint() {
-  printf "%s\n" "${win_paths[@]}"
+myPathsPrint() {
+  printf "%s\n" "${my_paths[@]}"
 }
 
-winPathsPrintNoNewline() {
-  printf '%s;' "${win_paths[@]}"
+myPathsPrintNoNewline() {
+  printf '%s;' "${my_paths[@]}"
 }
 
-winPathsCopyToClipboard() {
-  winPathPrintNoNewline >/dev/clipboard
+myPathsCopyToClipboard() {
+  myPathPrintNoNewline >/dev/clipboard
 }
 
 systemPathsGet() {
@@ -74,22 +74,29 @@ pathsCompare() {
   for system_path_index in "${!system_paths[@]}"; do
 
     local system_path="${system_paths[$system_path_index]}"
-    local win_path="${win_paths[$system_path_index]}"
+    local my_path_found_in_system_path=false
 
-    if [[ "$system_path" == "$win_path" ]]; then
+    for my_path in "${my_paths[@]}"; do
+      if [[ "$system_path" == "$my_path" ]]; then
+        my_path_found_in_system_path=true
+        break
+      fi
+    done
+
+    if [[ $my_path_found_in_system_path = true ]]; then
       continue
-    else
-      additional_paths+=("$system_path")
     fi
+
+    additional_paths+=("$system_path")
   done
 
-  printf "Additional paths\n"
+  printf "\033[1mAdditional paths found in System Path\033[0m\n"
   printf "%s\n" "${additional_paths[@]}"
   printf "\n"
 
-  printf "win_path with additional paths\n"
-  local win_paths_with_addtional_paths=("${win_paths[@]}" "${additional_paths[@]}")
-  printf -v joined '%s;' "${win_paths_with_addtional_paths[@]}"
+  printf "\033[1mMy Path with additional System Paths\033[0m\n"
+  local my_paths_with_addtional_paths=("${my_paths[@]}" "${additional_paths[@]}")
+  printf -v joined '%s;' "${my_paths_with_addtional_paths[@]}"
   echo "${joined%;}"
 }
 
