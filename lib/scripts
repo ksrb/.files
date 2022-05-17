@@ -1,0 +1,96 @@
+#!/usr/bin/env bash
+
+ignored() {
+  # Ignore list not provided
+  if [[ -z "$2" ]]; then
+    return 0 # false, not ignored
+  fi
+
+  # TODO: consider string expanding the final parameter when invoking
+  # linkDotFiles and using ${@:3} to get remaining arguments instead of using a
+  # indirect reference see: http://stackoverflow.com/a/11180835
+  local elements="${2}[@]"
+  for e in ${!elements}; do
+    # If the element matches the 1st arg
+    if [[ "$e" == "$1" ]]; then
+      return 1 #true, ignored
+    fi
+  done
+  return 0 #false, not ignored
+}
+
+link="link"
+clean="clean"
+
+linkFile() {
+  local mode=$1
+  local src=$2
+  local dest=$3
+
+  if [ "$mode" = $clean ]; then
+    # Not a symlink
+    if [[ ! -L "$dest" ]]; then
+      printf "Skipping: %s as it is not a symlink\\n" "$dest"
+      return
+    fi
+
+    printf "%s removed\\n" "$dest"
+    rm "$dest"
+  fi
+
+  if [ "$mode" = $link ]; then
+    # If destination is a symlink
+    if [[ -L "$dest" ]]; then
+      # Override it
+      rm "$dest"
+      ln -s "$src" "$dest"
+      printf "Overriding: %s => %s\\n" "$src" "$dest"
+      return
+    fi
+
+    if [[ -f "$dest" || -d "$dest" ]]; then
+      printf "Skipping: %s as there is already a file our folder there\\n" "$dest"
+      return
+    fi
+
+    ln -s "$src" "$dest"
+    printf "Linking: %s => %s\\n" "$src" "$dest"
+  fi
+}
+
+linkFilesInDir() {
+  local mode=$1
+  local dir=$2
+  local dest=$3
+
+  for file in "$dir"/*; do
+    linkFile "$mode" "$file" "$dest/${file##*/}"
+  done
+}
+
+linkDotFiles() {
+  local mode=$1
+  local configs_dir=$2
+  local dest=$3
+  local ignores_local=$4
+
+  # TODO: consider using find with while loop
+  # For each file in the configs_dir
+  for file in "$configs_dir"/*; do
+    # Get the filename by removing everything before the last '/'
+    # see: http://stackoverflow.com/a/9011264
+    local file=${file##*/}
+
+    # Check if the file is in list of ignores
+    ignored "$file" "$ignores_local"
+
+    # If the file is ignored
+    # Note: ($? gets the exit status of the previous command)
+    if [ $? -eq 1 ]; then
+      # Skip it
+      continue
+    fi
+
+    linkFile "$mode" "$configs_dir/$file" "$dest/.$file"
+  done
+}

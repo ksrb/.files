@@ -6,4 +6,5 @@ configs_dir=$(
   pwd
 )
 
-export target=${TARGET:-"$configs_dir/.."}
+# shellcheck disable=SC2034 # sourced by other scripts
+target=${TARGET:-"$configs_dir/.."}
