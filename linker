@@ -12,7 +12,7 @@ shared_configs_dir="$configs_dir/shared"
 shared_config_ignores+=(
   "${ignores_global[@]}"
   Code
-  gitignore_global
+  config
   idea.properties
   oh-my-zsh
 )
@@ -72,7 +72,7 @@ linkSharedFiles() {
   linkFilesInDir "$mode" "$shared_configs_dir/oh-my-zsh/custom" "$target/.oh-my-zsh/custom"
 
   mkdir -p "$target/.config/git"
-  linkFile "$mode" "$shared_configs_dir/gitignore_global" "$target/.config/git/ignore"
+  linkFile "$mode" "$shared_configs_dir/config/git/ignore" "$target/.config/git/ignore"
 
   linkFile "$mode" "$shared_configs_dir/idea.properties" "$target/idea.properties"
 }
