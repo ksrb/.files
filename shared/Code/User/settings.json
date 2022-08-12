@@ -25,7 +25,8 @@
     "statusBar.debuggingBackground": "#005f87"
   },
   "workbench.commandPalette.preserveInput": true,
-  "workbench.editor.enablePreview": false, // When clicking files in file explorer open in new tab instead recycling in a preview tab
+  // When clicking files in file explorer open in new tab instead recycling in a preview tab
+  "workbench.editor.enablePreview": false,
   "workbench.quickOpen.preserveInput": true,
   "workbench.settings.editor": "json",
   "workbench.settings.openDefaultKeybindings": false,
@@ -94,6 +95,14 @@
     {
       "before": ["<Leader>", "<C-f>"],
       "commands": ["actions.find"]
+    },
+    {
+      "before": ["<Leader>", "p"],
+      "after": ["\"", "+", "p"]
+    },
+    {
+      "before": ["<Leader>", "y"],
+      "after": ["\"", "+", "y"]
     }
   ],
   "vim.normalModeKeyBindingsNonRecursive": [
