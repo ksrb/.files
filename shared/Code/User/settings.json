@@ -20,10 +20,12 @@
   "window.title": "${rootName}${separator}${activeEditorMedium}",
   "workbench.activityBar.visible": false,
   "workbench.colorCustomizations": {
+    "editor.findMatchBackground": "#99a4b2",
     "statusBar.background": "#005f87",
     "statusBar.noFolderBackground": "#005f87",
     "statusBar.debuggingBackground": "#005f87"
   },
+  "workbench.colorTheme": "Darcula",
   "workbench.commandPalette.preserveInput": true,
   // When clicking files in file explorer open in new tab instead recycling in a preview tab
   "workbench.editor.enablePreview": false,
@@ -35,6 +37,7 @@
   // Vim settings
   "vim.enableNeovim": true,
   "vim.highlightedyank.enable": true,
+  "vim.highlightedyank.duration": 1000,
   "vim.hlsearch": true,
   "vim.leader": "<space>",
   "vim.visualModeKeyBindingsNonRecursive": [
