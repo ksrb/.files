@@ -1,9 +1,11 @@
 <keymap version="1" name="Eclipse (Mac Custom)" parent="Eclipse (Custom)">
   <action id="$Copy">
     <keyboard-shortcut first-keystroke="meta c" />
+    <keyboard-shortcut first-keystroke="ctrl c" />
   </action>
   <action id="$Paste">
     <keyboard-shortcut first-keystroke="meta v" />
+    <keyboard-shortcut first-keystroke="ctrl v" />
   </action>
   <action id="ActivateInspectionResultsToolWindow">
     <keyboard-shortcut first-keystroke="alt 8" />
@@ -16,9 +18,11 @@
   </action>
   <action id="Editor Copy">
     <keyboard-shortcut first-keystroke="meta c" />
+    <keyboard-shortcut first-keystroke="ctrl c" />
   </action>
   <action id="Editor Paste">
     <keyboard-shortcut first-keystroke="meta v" />
+    <keyboard-shortcut first-keystroke="ctrl v" />
   </action>
   <action id="MinimizeCurrentWindow">
     <keyboard-shortcut first-keystroke="meta m" />

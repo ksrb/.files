@@ -33,6 +33,12 @@ nnoremap <C-w>D :action OpenEditorInOppositeTabGroup<CR>
 
 nnoremap <C-c>pp :action ManageRecentProjects<CR>
 
+" Hacky visual star select yanking text to v register and pasting into search
+" See: https://youtrack.jetbrains.com/issue/VIM-2089
+vnoremap * "vy <Esc>/<C-r>v<CR>
+
+nnoremap cc <C-y>cc
+
 let mapleader = " "
 
 " For reference of available actions see:
