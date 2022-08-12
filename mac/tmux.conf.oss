@@ -1,4 +1,3 @@
-
 # Bindings {
     bind -T copy-mode-vi y send -X copy-pipe "pbcopy"
 # }
