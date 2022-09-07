@@ -1,0 +1,15 @@
+<templateSet group="Ember.js">
+  <template name="test" value="test('$NAME$', async function(assert) {&#10;  $END$&#10;});" description="Insert test case" toReformat="false" toShortenFQNames="true">
+    <variable name="NAME" expression="" defaultValue="" alwaysStopAt="true" />
+    <context />
+  </template>
+  <template name="module" value="module('$NAME$', (hooks) =&gt; {&#10;  hooks.beforeEach(async function () {});&#10;  $END$&#10;});" description="Insert test module" toReformat="false" toShortenFQNames="true">
+    <variable name="NAME" expression="" defaultValue="" alwaysStopAt="true" />
+    <context>
+      <option name="JS_STATEMENT" value="true" />
+    </context>
+  </template>
+  <template name="pt" value="await this.pauseTest();" description="Insert pauseTest" toReformat="false" toShortenFQNames="true">
+    <context />
+  </template>
+</templateSet>
