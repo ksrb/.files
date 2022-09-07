@@ -5,17 +5,34 @@
     "body": ["console.log(JSON.stringify($1, null, '  '));"],
     "description": "Log to console with JSON.stringify"
   },
+  "im": {
+    "scope": "javascript, javascriptreact, typescript, typescriptreact",
+    "prefix": "im",
+    "body": ["import $1;"],
+    "description": "Import module"
+  },
   "imf": {
     "scope": "javascript, javascriptreact, typescript, typescriptreact",
     "prefix": "imf",
     "body": ["import $1 from '$2';"],
     "description": "Import module from"
   },
-  "im": {
+  "module": {
     "scope": "javascript, javascriptreact, typescript, typescriptreact",
-    "prefix": "im",
-    "body": ["import $1;"],
-    "description": "Import module"
+    "prefix": "module",
+    "body": [
+      "module('$1', (hooks) => {",
+      "  hooks.beforeEach(async function () {});",
+      "  $2",
+      "});"
+    ],
+    "description": "QUnit module"
+  },
+  "test": {
+    "scope": "javascript, javascriptreact, typescript, typescriptreact",
+    "prefix": "test",
+    "body": ["test('$1', async function (assert) {", "  $2", "});"],
+    "description": "QUnit test"
   },
   // Modules
   "imc": {
