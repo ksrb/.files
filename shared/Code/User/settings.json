@@ -27,6 +27,7 @@
   },
   "workbench.colorTheme": "Darcula",
   "workbench.commandPalette.preserveInput": true,
+  "workbench.list.openMode": "doubleClick",
   // When clicking files in file explorer open in new tab instead recycling in a preview tab
   "workbench.editor.enablePreview": false,
   "workbench.quickOpen.preserveInput": true,
@@ -34,6 +35,7 @@
   "workbench.settings.openDefaultKeybindings": false,
   "workbench.settings.openDefaultSettings": false,
   "workbench.startupEditor": "none",
+  "workbench.tree.expandMode": "doubleClick",
   // Vim settings
   "vim.enableNeovim": true,
   "vim.highlightedyank.enable": true,

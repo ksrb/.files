@@ -85,11 +85,6 @@
     "when": "explorerViewletVisible && filesExplorerFocus"
   },
   {
-    // Override (Mac)
-    // Stop enter from renaming file
-    "key": "enter",
-    "command": "list.select",
-    "when": "listFocus"
   },
   {
     // =============== Window commands ===============
