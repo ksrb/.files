@@ -1,77 +1,88 @@
-set clipboard+=ideaput  " Use IntelliJ to put lines (will auto-import dependencies based on what was copied)
-set highlightedyank     " Highlight yanked area
-set hlsearch            " Highlight searched
-set ic                  " Case insensitive search
-set ideajoin            " Use IntelliJ to join lines (<C-j>)
-set incsearch           " Progressive highlighting while searching
-set matchit             " matchit emulation
-set noerrorbells        " Disable system beep see https://superuser.com/a/677312
-set number              " Show line numbers
-set relativenumber      " Show line numbers relative to cursor
-set smartcase           " Only do case sensitive searching when there is a capitalized letter
-set surround            " vim-surround emulation
-set visualbell          " Disable system beep see https://superuser.com/a/677312
-
-let g:highlightedyank_highlight_color = "rgba(250, 240, 170, 123)"
+" Settings {
+    set clipboard+=ideaput  " Use IntelliJ to put lines (will auto-import dependencies based on what was copied)
+    set hlsearch            " Highlight searched
+    set ic                  " Case insensitive search
+    set ideajoin            " Use IntelliJ to join lines (<C-j>)
+    set incsearch           " Progressive highlighting while searching
+    set noerrorbells        " Disable system beep see https://superuser.com/a/677312
+    set number              " Show line numbers
+    set relativenumber      " Show line numbers relative to cursor
+    set smartcase           " Only do case sensitive searching when there is a capitalized letter
+    set visualbell          " Disable system beep see https://superuser.com/a/677312
+" }
 
 " For reference of available actions
 " See: https://github.com/JetBrains/intellij-community/blob/master/platform/platform-resources-en/src/messages/ActionsBundle.properties
 " Or use :actionlist [pattern]
 " See: https://github.com/JetBrains/ideavim#executing-ide-actions
 
-" tcomment like comment command
-nnoremap gcc :action CommentByLineComment<CR>
+" Bindings {
+    let mapleader = " "
 
-nnoremap gqq :action com.andrewbrookins.idea.wrap.WrapAction<CR>
-nnoremap gh :action ShowErrorDescription<CR>
+    " Visual star select yanking text to v register and pasting into search
+    " See: https://youtrack.jetbrains.com/issue/VIM-2089
+    vnoremap * "vy <Esc>/<C-r>v<CR>
 
-" Ctrl + hjkl to switch splits
-nnoremap <C-j> <C-w>j
-nnoremap <C-k> <C-w>k
-nnoremap <C-h> <C-w>h
-nnoremap <C-l> <C-w>l
+    " Shift window up oneline
+    " See: https://youtrack.jetbrains.com/issue/VIM-2737/cc-causes-a-one-line-scroll
+    nnoremap cc <C-y>cc
 
-" Emulate window move behavior
-nnoremap <C-w>L :action MoveEditorToOppositeTabGroup<CR>
-nnoremap <C-w>H :action MoveEditorToOppositeTabGroup<CR>
-nnoremap <C-w>D :action OpenEditorInOppositeTabGroup<CR>
+    " tcomment like comment command
+    nnoremap gcc :action CommentByLineComment<CR>
 
-nnoremap <C-p> :action GotoFile<CR>
+    " Wrap to line width
+    nnoremap gqq :action com.andrewbrookins.idea.wrap.WrapAction<CR>
 
-nnoremap <C-c>pp :action ManageRecentProjects<CR>
+    " Show hover
+    nnoremap gh :action ShowErrorDescription<CR>
 
-" Hacky visual star select yanking text to v register and pasting into search
-" See: https://youtrack.jetbrains.com/issue/VIM-2089
-vnoremap * "vy <Esc>/<C-r>v<CR>
+    " Ctrl + hjkl to switch splits
+    nnoremap <C-j> <C-w>j
+    nnoremap <C-k> <C-w>k
+    nnoremap <C-h> <C-w>h
+    nnoremap <C-l> <C-w>l
 
-" Shift window up oneline
-" See: https://youtrack.jetbrains.com/issue/VIM-2737/cc-causes-a-one-line-scroll
-nnoremap cc <C-y>cc
+    nnoremap <C-c>pp :action ManageRecentProjects<CR>
 
-let mapleader = " "
+    nnoremap <C-p> :action GotoFile<CR>
 
-nnoremap <Leader>y "+y
-nnoremap <Leader>p "+p
+    " Emulate window move behavior
+    nnoremap <C-w>L :action MoveEditorToOppositeTabGroup<CR>
+    nnoremap <C-w>H :action MoveEditorToOppositeTabGroup<CR>
+    nnoremap <C-w>D :action OpenEditorInOppositeTabGroup<CR>
 
-nnoremap <Leader><C-e> :action RecentFiles<CR>
-nnoremap <Leader><C-f> :action Replace<CR>
-nnoremap <Leader><C-g> :action FindUsages<CR>
-nnoremap <Leader><C-h> :action FindInPath<CR>
-nnoremap <Leader><C-r> :action ReplaceInPath<CR>
-nnoremap <Leader><C-t> :action GotoImplementation<CR>
-nnoremap <Leader>[{ :action EditorCodeBlockStart<CR>
-nnoremap <Leader>]} :action EditorCodeBlockEnd<CR>
-nnoremap <Leader>ch :action CloseAllToTheLeft<CR>
-nnoremap <Leader>cl :action CloseAllToTheRight<CR>
-nnoremap <Leader>co :action CloseAllEditorsButActive<CR>
-nnoremap <Leader>ct :action CloseAllEditors<CR>
-nnoremap <Leader>df :action ToggleDistractionFreeMode<CR>
-nnoremap <Leader>n :action ActivateProjectToolWindow<CR>
-nnoremap <Leader>r :action SynchronizeCurrentFile<CR>
-nnoremap <Leader>rl :action GotoRelated<CR>
-" Works but substitues character under cursor
-" map <Leader>s :action SynchronizeCurrentFile<CR>
-nnoremap <Leader>sa :action Synchronize<CR>
-nnoremap <Leader>t :action ActivateStructureToolWindow<CR>
-nnoremap <Leader>wl :action com.andrewbrookins.idea.wrap.WrapAction<CR>
-nnoremap <Leader>wp :action com.andrewbrookins.idea.wrap.WrapParagraphAction<CR>
+    " Leader
+    nnoremap <Leader>y "+y
+    nnoremap <Leader>p "+p
+
+    nnoremap <Leader><C-e> :action RecentFiles<CR>
+    nnoremap <Leader><C-f> :action Replace<CR>
+    nnoremap <Leader><C-g> :action FindUsages<CR>
+    nnoremap <Leader><C-h> :action FindInPath<CR>
+    nnoremap <Leader><C-r> :action ReplaceInPath<CR>
+    nnoremap <Leader><C-t> :action GotoImplementation<CR>
+    nnoremap <Leader>[{ :action EditorCodeBlockStart<CR>
+    nnoremap <Leader>]} :action EditorCodeBlockEnd<CR>
+    nnoremap <Leader>ch :action CloseAllToTheLeft<CR>
+    nnoremap <Leader>cl :action CloseAllToTheRight<CR>
+    nnoremap <Leader>co :action CloseAllEditorsButActive<CR>
+    nnoremap <Leader>ct :action CloseAllEditors<CR>
+    nnoremap <Leader>df :action ToggleDistractionFreeMode<CR>
+    nnoremap <Leader>n :action ActivateProjectToolWindow<CR>
+    nnoremap <Leader>r :action SynchronizeCurrentFile<CR>
+    nnoremap <Leader>rl :action GotoRelated<CR>
+    " Works but substitues character under cursor
+    " map <Leader>s :action SynchronizeCurrentFile<CR>
+    nnoremap <Leader>sa :action Synchronize<CR>
+    nnoremap <Leader>t :action ActivateStructureToolWindow<CR>
+    nnoremap <Leader>wl :action com.andrewbrookins.idea.wrap.WrapAction<CR>
+    nnoremap <Leader>wp :action com.andrewbrookins.idea.wrap.WrapParagraphAction<CR>
+" }
+
+" Emulated plugins {
+   set surround         " vim-surround emulation
+   set matchit          " matchit emulation
+   set highlightedyank  " Highlight yanked area
+
+   let g:highlightedyank_highlight_color = "rgba(250, 240, 170, 123)"
+" }
