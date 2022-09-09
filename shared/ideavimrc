@@ -48,28 +48,28 @@ let mapleader = " "
 " Or use :actionlist [pattern] see:
 " https://github.com/JetBrains/ideavim#executing-ide-actions
 
-noremap <Leader>y "+y
-noremap <Leader>p "+p
+nnoremap <Leader>y "+y
+nnoremap <Leader>p "+p
 
-noremap <Leader><C-e> :action RecentFiles<CR>
-noremap <Leader><C-f> :action Replace<CR>
-noremap <Leader><C-g> :action FindUsages<CR>
-noremap <Leader><C-h> :action FindInPath<CR>
-noremap <Leader><C-r> :action ReplaceInPath<CR>
-noremap <Leader><C-t> :action GotoImplementation<CR>
-noremap <Leader>[{ :action EditorCodeBlockStart<CR>
-noremap <Leader>]} :action EditorCodeBlockEnd<CR>
-noremap <Leader>ch :action CloseAllToTheLeft<CR>
-noremap <Leader>cl :action CloseAllToTheRight<CR>
-noremap <Leader>co :action CloseAllEditorsButActive<CR>
-noremap <Leader>ct :action CloseAllEditors<CR>
-noremap <Leader>df :action ToggleDistractionFreeMode<CR>
-noremap <Leader>n :action ActivateProjectToolWindow<CR>
-noremap <Leader>r :action SynchronizeCurrentFile<CR>
-noremap <Leader>rl :action GotoRelated<CR>
+nnoremap <Leader><C-e> :action RecentFiles<CR>
+nnoremap <Leader><C-f> :action Replace<CR>
+nnoremap <Leader><C-g> :action FindUsages<CR>
+nnoremap <Leader><C-h> :action FindInPath<CR>
+nnoremap <Leader><C-r> :action ReplaceInPath<CR>
+nnoremap <Leader><C-t> :action GotoImplementation<CR>
+nnoremap <Leader>[{ :action EditorCodeBlockStart<CR>
+nnoremap <Leader>]} :action EditorCodeBlockEnd<CR>
+nnoremap <Leader>ch :action CloseAllToTheLeft<CR>
+nnoremap <Leader>cl :action CloseAllToTheRight<CR>
+nnoremap <Leader>co :action CloseAllEditorsButActive<CR>
+nnoremap <Leader>ct :action CloseAllEditors<CR>
+nnoremap <Leader>df :action ToggleDistractionFreeMode<CR>
+nnoremap <Leader>n :action ActivateProjectToolWindow<CR>
+nnoremap <Leader>r :action SynchronizeCurrentFile<CR>
+nnoremap <Leader>rl :action GotoRelated<CR>
 " Works but substitues character under cursor
 " map <Leader>s :action SynchronizeCurrentFile<CR>
-noremap <Leader>sa :action Synchronize<CR>
-noremap <Leader>t :action ActivateStructureToolWindow<CR>
-noremap <Leader>wl :action com.andrewbrookins.idea.wrap.WrapAction<CR>
-noremap <Leader>wp :action com.andrewbrookins.idea.wrap.WrapParagraphAction<CR>
+nnoremap <Leader>sa :action Synchronize<CR>
+nnoremap <Leader>t :action ActivateStructureToolWindow<CR>
+nnoremap <Leader>wl :action com.andrewbrookins.idea.wrap.WrapAction<CR>
+nnoremap <Leader>wp :action com.andrewbrookins.idea.wrap.WrapParagraphAction<CR>
