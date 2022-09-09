@@ -45,6 +45,7 @@
     nnoremap <C-c>pp :action ManageRecentProjects<CR>
 
     nnoremap <C-p> :action GotoFile<CR>
+    vnoremap <C-p> :action GotoFile<CR>
 
     " Emulate window move behavior
     nnoremap <C-w>L :action MoveEditorToOppositeTabGroup<CR>
