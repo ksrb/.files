@@ -31,6 +31,8 @@ nnoremap <C-w>L :action MoveEditorToOppositeTabGroup<CR>
 nnoremap <C-w>H :action MoveEditorToOppositeTabGroup<CR>
 nnoremap <C-w>D :action OpenEditorInOppositeTabGroup<CR>
 
+nnoremap <C-p> :action GotoFile<CR>
+
 nnoremap <C-c>pp :action ManageRecentProjects<CR>
 
 " Hacky visual star select yanking text to v register and pasting into search

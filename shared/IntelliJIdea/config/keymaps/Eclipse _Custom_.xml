@@ -6,11 +6,9 @@
   <action id="ExpandAllRegions">
     <keyboard-shortcut first-keystroke="shift ctrl equals" />
   </action>
+  <action id="FileChooser.TogglePathBar" />
   <action id="GotoAction">
     <keyboard-shortcut first-keystroke="alt x" />
-  </action>
-  <action id="GotoFile">
-    <keyboard-shortcut first-keystroke="ctrl p" />
   </action>
   <action id="NewElement">
     <keyboard-shortcut first-keystroke="alt insert" />
