@@ -14,6 +14,11 @@ set visualbell          " Disable system beep see https://superuser.com/a/677312
 
 let g:highlightedyank_highlight_color = "rgba(250, 240, 170, 123)"
 
+" For reference of available actions
+" See: https://github.com/JetBrains/intellij-community/blob/master/platform/platform-resources-en/src/messages/ActionsBundle.properties
+" Or use :actionlist [pattern]
+" See: https://github.com/JetBrains/ideavim#executing-ide-actions
+
 " tcomment like comment command
 nnoremap gcc :action CommentByLineComment<CR>
 
@@ -39,14 +44,11 @@ nnoremap <C-c>pp :action ManageRecentProjects<CR>
 " See: https://youtrack.jetbrains.com/issue/VIM-2089
 vnoremap * "vy <Esc>/<C-r>v<CR>
 
+" Shift window up oneline
+" See: https://youtrack.jetbrains.com/issue/VIM-2737/cc-causes-a-one-line-scroll
 nnoremap cc <C-y>cc
 
 let mapleader = " "
-
-" For reference of available actions see:
-" https://github.com/JetBrains/intellij-community/blob/master/platform/platform-resources-en/src/messages/ActionsBundle.properties
-" Or use :actionlist [pattern] see:
-" https://github.com/JetBrains/ideavim#executing-ide-actions
 
 nnoremap <Leader>y "+y
 nnoremap <Leader>p "+p
