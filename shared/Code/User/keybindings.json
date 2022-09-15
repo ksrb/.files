@@ -84,6 +84,14 @@
     "when": "explorerViewletVisible && filesExplorerFocus"
   },
   {
+    "key": "ctrl+h",
+    "command": "filesExplorer.findInFolder",
+    "when": "explorerResourceIsFolder && explorerViewletVisible && filesExplorerFocus && !inputFocus"
+  },
+  {
+    "key": "enter",
+    "command": "list.toggleExpand",
+    "when": "listFocus && !inputFocus"
   },
   // =============== Window commands ===============
   {
