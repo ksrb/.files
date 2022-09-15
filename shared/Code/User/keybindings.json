@@ -126,10 +126,9 @@
     "when": "searchInputBoxFocus && searchViewletVisible"
   },
   {
-    // TODO: doesn't work when focused on result list
     "key": "escape",
     "command": "workbench.action.focusActiveEditorGroup",
-    "when": "searchInputBoxFocus && searchViewletVisible"
+    "when": "searchViewletVisible"
   },
   {
     "key": "alt+4",
@@ -199,26 +198,6 @@
     "key": "ctrl+shift+/",
     "command": "editor.action.blockComment",
     "when": "editorTextFocus && !editorReadonly && !neovim.init"
-  },
-  {
-    "key": "ctrl+left",
-    "command": "cursorWordStartLeft",
-    "when": "editorTextFocus"
-  },
-  {
-    "key": "ctrl+right",
-    "command": "cursorWordEndRight",
-    "when": "editorTextFocus"
-  },
-  {
-    "key": "ctrl+shift+left",
-    "command": "cursorWordStartLeftSelect",
-    "when": "editorTextFocus"
-  },
-  {
-    "key": "ctrl+shift+right",
-    "command": "cursorWordEndRightSelect",
-    "when": "editorTextFocus"
   },
   // =============== Neovim ===============
   {
