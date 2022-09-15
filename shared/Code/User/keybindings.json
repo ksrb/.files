@@ -69,7 +69,16 @@
     "when": "editorTextFocus && neovim.init"
   },
   {
-    // =============== File explorer focused ===============
+    // =============== Tab management ===============
+    "key": "ctrl+alt+h",
+    "command": "workbench.action.previousEditor"
+  },
+  {
+    "key": "ctrl+alt+l",
+    "command": "workbench.action.nextEditor"
+  },
+  // =============== Explorer focused ===============
+  {
     "key": "alt+shift+r",
     "command": "renameFile",
     "when": "explorerViewletVisible && filesExplorerFocus"
@@ -86,8 +95,8 @@
   },
   {
   },
+  // =============== Window commands ===============
   {
-    // =============== Window commands ===============
     // Used to go to editor from terminal
     "key": "shift+ctrl+k",
     "command": "workbench.action.focusActiveEditorGroup"
@@ -134,12 +143,12 @@
   },
   {
     "key": "alt+9",
-    "command": "workbench.view.git"
+    "command": "workbench.view.scm"
   },
   {
     "key": "alt+9",
     "command": "workbench.action.toggleSidebarVisibility",
-    // TODO: need detection when git viewlet is visible
+    // TODO: need detection when scm viewlet is visible
     "when": "!searchViewletVisible && !explorerViewletVisible"
   },
   {
@@ -152,15 +161,6 @@
     "key": "alt+f12",
     "command": "workbench.action.terminal.focus",
     "when": "!terminalFocus"
-  },
-  {
-    // =============== Tab management ===============
-    "key": "ctrl+alt+l",
-    "command": "workbench.action.nextEditor"
-  },
-  {
-    "key": "ctrl+alt+h",
-    "command": "workbench.action.previousEditor"
   },
   // =============== Editor focused ===============
   {
@@ -220,8 +220,8 @@
     "command": "cursorWordEndRightSelect",
     "when": "editorTextFocus"
   },
+  // =============== Neovim ===============
   {
-    // VScode Neovim
     "key": "ctrl+c",
     "command": "vscode-neovim.send",
     "when": "editorTextFocus && neovim.ctrlKeysNormal && neovim.init && neovim.mode != 'insert'",
@@ -251,7 +251,7 @@
     "when": "editorTextFocus && neovim.ctrlKeysNormal && neovim.init && neovim.mode != 'insert'",
     "args": "<C-?>"
   },
-  // VScode Vim
+  // =============== VScode Vim ===============
   // Bindings to override https://marketplace.visualstudio.com/items?itemName=smcpeak.default-keys-windows
   {
     "key": "escape",
