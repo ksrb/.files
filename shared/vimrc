@@ -158,6 +158,6 @@ if filereadable(expand("~/.vimrc.oss"))
 endif
 
 " Local config
-if filereadable(expand("/.vimrc.local"))
+if filereadable(expand("~/.vimrc.local"))
   source ~/.vimrc.local
 endif

@@ -11,6 +11,6 @@ if filereadable(expand("~/.gvimrc.oss"))
 endif
 
 " Local config
-if filereadable(expand("/.gvimrc.local"))
+if filereadable(expand("~/.gvimrc.local"))
   source ~/.gvimrc.local
 endif
