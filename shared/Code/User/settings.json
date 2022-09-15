@@ -187,6 +187,15 @@
       "commands": ["extension.vim_right"]
     },
     {
+      "before": ["<Leader>", "[", "{"],
+      "commands": ["editor.gotoParentFold"]
+    },
+    {
+      "before": ["<Leader>", "]", "}"],
+      // TODO: need command like editor.goToParentFoldBottom
+      "commands": ["editor.gotoNextFold"]
+    },
+    {
       "before": ["<Leader>", "c", "o"],
       "commands": ["workbench.action.closeOtherEditors"]
     },
