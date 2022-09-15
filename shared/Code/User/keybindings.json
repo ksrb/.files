@@ -213,6 +213,12 @@
     "command": "editor.action.blockComment",
     "when": "editorTextFocus && !editorReadonly && !neovim.init"
   },
+  {
+    // =============== Search Viewlet ===============
+    "key": "ctrl+k",
+    "command": "workbench.action.search.toggleQueryDetails",
+    "when": "inSearchEditor || searchViewletFocus"
+  },
   // =============== VScode Neovim ===============
   {
     "key": "ctrl+c",
