@@ -101,6 +101,11 @@ linkMacFiles() {
 
   mkdir -p "$target/Library/Keyboard Layouts"
   linkFile "$mode" "$mac_configs_dir/Library/Keyboard Layouts/layout.keylayout" "$target/Library/Keyboard Layouts/layout.keylayout"
+
+  # Prevent bell sound when Ctrl+/ is pressed in VSCode
+  # See: https://stackoverflow.com/a/57651703
+  mkdir -p "$target/Library/KeyBindings"
+  linkFile "$mode" "$mac_configs_dir/Library/KeyBindings/DefaultKeyBinding.dict" "$target/Library/KeyBindings/DefaultKeyBinding.dict"
 }
 
 clean() {
