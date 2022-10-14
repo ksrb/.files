@@ -100,7 +100,7 @@ linkMacFiles() {
   linkFile "$mode" "$shared_configs_dir/vimrc" "$target/.config/nvim/init.vim"
 
   mkdir -p "$target/Library/Keyboard Layouts"
-  linkFile "$mode" "$mac_configs_dir/layout.keylayout" "$target/Library/Keyboard Layouts/layout.keylayout"
+  linkFile "$mode" "$mac_configs_dir/Library/Keyboard Layouts/layout.keylayout" "$target/Library/Keyboard Layouts/layout.keylayout"
 }
 
 clean() {
