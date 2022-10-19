@@ -42,8 +42,10 @@
     nnoremap <C-h> <C-w>h
     nnoremap <C-l> <C-w>l
 
+    " Projectile switch project emulation
     nnoremap <C-c>pp :action ManageRecentProjects<CR>
 
+    " Ctrlp emulation
     nnoremap <C-p> :action GotoFile<CR>
     vnoremap <C-p> :action GotoFile<CR>
 
@@ -51,6 +53,9 @@
     nnoremap <C-w>L :action MoveEditorToOppositeTabGroup<CR>
     nnoremap <C-w>H :action MoveEditorToOppositeTabGroup<CR>
     nnoremap <C-w>D :action OpenEditorInOppositeTabGroup<CR>
+
+    " Re-enable IntelliJ binding
+    nnoremap <C-S-c> :action CopyAbsolutePath<CR>
 
     " Leader
     noremap <Leader>y "+y
