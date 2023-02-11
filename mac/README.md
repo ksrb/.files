@@ -17,6 +17,9 @@
 * Conflicting Keys and Resolution
   * Ctrl + F4 - System Preferences → Keyboard → Shortcuts → Keyboard → Move Focus to active or next Window
   * Ctrl + F1 - System Preferences → Keyboard → Shortcuts → Turn keyboard access on or off
+* Terminal cursor misaligned
+  * Know issue see: https://github.com/JetBrains/jediterm/issues/148
+  * Splitting vertical re-aligns the cursor
 
 ## [BetterSnapTool](https://itunes.apple.com/us/app/bettersnaptool/id417375580?mt=12)
 
