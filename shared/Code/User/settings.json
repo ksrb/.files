@@ -102,6 +102,10 @@
       "commands": ["actions.find"]
     },
     {
+      "before": ["<Leader>", "d", "p"],
+      "after": ["\"", "_", "d", "P"]
+    },
+    {
       "before": ["<Leader>", "p"],
       "after": ["\"", "+", "p"]
     },

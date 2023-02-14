@@ -58,6 +58,9 @@
     nnoremap <C-S-c> :action CopyAbsolutePath<CR>
 
     " Leader
+    " Delete into blackhole register and paste
+    noremap <Leader>dp "_dP
+
     noremap <Leader>y "+y
     noremap <Leader>p "+p
 

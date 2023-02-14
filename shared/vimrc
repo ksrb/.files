@@ -79,6 +79,9 @@
     noremap <Leader>y "+y
     noremap <Leader>p "+p
 
+    " Delete into blackhole register and paste
+    noremap <Leader>dp "_dP
+
     " Strip Trailing Whitespace & turn off hightlighting
     nnoremap <Leader>kw :%s/\s\+$//e<CR>:noh<CR>
 
