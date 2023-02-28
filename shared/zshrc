@@ -103,16 +103,21 @@
       echo -e "${PATH//:/\\n}"
     }
 
-    # Kill Process On Port
+    # Kill Process(es) On Port
     killpop () {
-      local port="$1"
+      for port in "$@"; do
+        if [[ ! $(lsof -i ":$port") ]]; then
+          printf "No process found on port: %s\n" "$port"
+          continue
+        fi
 
-      printf "Killing process on port: %s\n" "$port"
-      lsof -ti ":$port" | xargs kill -9
+        printf "Killing process on port: %s\n" "$port"
+        lsof -ti ":$port" | xargs kill -9
 
-      if [[ ! $(lsof -i ":$port") ]]; then
-        printf "No process on port: %s\n" "$port"
-      fi
+        if [[ ! $(lsof -i ":$port") ]]; then
+          printf "Killed process on port: %s\n" "$port"
+        fi
+      done
     }
 
     alias rgf='rg --files | rg'
