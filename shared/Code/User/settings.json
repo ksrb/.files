@@ -9,7 +9,8 @@
   "files.insertFinalNewline": true,
   "files.trimTrailingWhitespace": true,
   "terminal.external.osxExec": "iTerm.app",
-  "terminal.integrated.defaultProfile.linux": "zsh",
+  "terminal.integrated.defaultProfile.linux": "tmux",
+  "terminal.integrated.defaultProfile.osx": "tmux",
   "terminal.integrated.defaultProfile.windows": "zsh",
   "terminal.integrated.profiles.windows": {
     "zsh": {
