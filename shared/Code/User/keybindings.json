@@ -37,6 +37,11 @@
     "command": "workbench.action.openGlobalKeybindingsFile"
   },
   {
+    // Override
+    "key": "ctrl+shift+o",
+    "command": "editor.action.organizeImports"
+  },
+  {
     "key": "ctrl+alt+=",
     "command": "workbench.action.increaseViewSize"
   },
@@ -51,6 +56,10 @@
   {
     "key": "ctrl+alt+[",
     "command": "workbench.action.quickSwitchWindow"
+  },
+  {
+    "key": "ctrl+\\",
+    "command": "-workbench.action.splitEditor"
   },
   {
     // =============== Tab management ===============
@@ -114,7 +123,7 @@
   },
   {
     "key": "alt+3",
-    "command": "workbench.action.toggleSidebarVisibility",
+    "command": "workbench.action.togglePanel",
     "when": "searchInputBoxFocus && searchViewletVisible"
   },
   {
@@ -215,7 +224,7 @@
   },
   {
     // =============== Search Viewlet ===============
-    "key": "ctrl+k",
+    "key": "alt+k",
     "command": "workbench.action.search.toggleQueryDetails",
     "when": "inSearchEditor || searchViewletFocus"
   },
