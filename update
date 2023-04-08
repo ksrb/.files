@@ -22,7 +22,7 @@ updateForOs() {
 }
 
 updateShared() {
-  sh "$HOME"/.oh-my-zsh/tools/upgrade.sh
+  "$HOME"/.oh-my-zsh/tools/upgrade.sh
   vim +PlugUpgrade +PlugUpdate +qa
 }
 
