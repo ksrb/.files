@@ -49,7 +49,7 @@ linkFile() {
     fi
 
     if [[ -f "$dest" || -d "$dest" ]]; then
-      printf "Skipping: %s as there is already a file our folder there\\n" "$dest"
+      printf "Skipping: %s as there is already a file or folder there\\n" "$dest"
       return
     fi
 
@@ -74,7 +74,9 @@ linkDotFiles() {
   local dest=$3
   local ignores_local=$4
 
-  # TODO: consider using find with while loop
+  # TODO: consider using find with while loop,
+  # TODO: does not check for empty $configs_dir and will create '.*' symlink
+  # file in $dest if $configs_dir is empty
   # For each file in the configs_dir
   for file in "$configs_dir"/*; do
     # Get the filename by removing everything before the last '/'

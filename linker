@@ -83,7 +83,10 @@ linkWindowFiles() {
   linkFilesInDir "$mode" "$windows_configs_dir/usr/local/bin" "/usr/local/bin"
 
   # Custom links
+
+  # VSCode
   linkFile "$mode" "$shared_configs_dir/Code" "$target/AppData/Roaming/Code"
+
   linkFile "$mode" "$windows_configs_dir/AppData/Local/Packages/Microsoft.WindowsTerminal_8wekyb3d8bbwe/settings.json" "$target/AppData/Local/Packages/Microsoft.WindowsTerminal_8wekyb3d8bbwe/LocalState/settings.json"
 }
 
