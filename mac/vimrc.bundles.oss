@@ -5,7 +5,6 @@ Plug 'Shougo/deoplete.nvim'
     nmap <F2> <Plug>(ale_documentation)
     nmap <F3> <Plug>(ale_go_to_definition)
     let g:ale_completion_enabled = 1
-    let g:ale_sh_shellcheck_options = '-x'
 " }
 
 " Ultisnips {
