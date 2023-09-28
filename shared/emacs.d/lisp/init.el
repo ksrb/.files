@@ -107,6 +107,8 @@
             evil-want-fine-undo 'fine
             )
 
+      (evil-set-undo-system 'undo-tree)
+
       (defun define-evil-fast-window-traversal (key-map)
         "For a KEY-MAP define key bindings that allow for C-h/j/k/l to change buffers"
         (define-key key-map (kbd "C-h") 'evil-window-left)
@@ -169,6 +171,7 @@
       :config
       (global-evil-leader-mode)
       (evil-leader/set-leader "SPC")
+
       (evil-leader/set-key "kw" 'delete-trailing-whitespace)
       )
 
@@ -196,6 +199,11 @@
     (use-package powerline-evil
       :config
       (powerline-evil-vim-color-theme)
+      )
+
+    (use-package undo-tree
+      :config
+      (global-undo-tree-mode)
       )
     )
 
