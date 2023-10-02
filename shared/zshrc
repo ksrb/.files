@@ -120,7 +120,11 @@
       done
     }
 
+    # RipGrep Files
     alias rgf='rg --files | rg'
+
+    # Tmux Close Other (sessions)
+    alias tco='tmux kill-session -a -t $(tmux display-message -p "#S")'
 # }
 
 # Emacs {
