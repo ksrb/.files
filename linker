@@ -1,5 +1,6 @@
 #!/usr/bin/env bash
 
+source "./lib/colors"
 source "./lib/scripts"
 source "./lib/variables"
 
@@ -42,25 +43,27 @@ setEnv() {
 setEnv
 
 linkDotFilesForOs() {
-  echo "Link OS independent dotfiles"
+  printf "%bLink OS independent dotfiles\n%b" "$Bold" "$Text_Reset"
   linkSharedFiles $link
+  printf "\n"
 
   local uname
   uname=$(uname)
 
   # TODO: WSL detection does not work in sudo
   if [[ "$uname" == "CYGWIN"* ]] || [[ -n "$WSL_DISTRO_NAME" ]]; then
-    echo "Cygwin/WSL based environment detected"
+    printf "%bCygwin/WSL based environment detected\n%b" "$Bold" "$Text_Reset"
     linkWindowFiles $link
     return
   fi
 
   if [[ "$uname" == "Darwin"* ]]; then
-    echo "Darwin based environment detected"
+    printf "%bDarwin based environment detected\n%b" "$Bold" "$Text_Reset"
     linkMacFiles $link
+    return
   fi
 
-  echo "No environment matched"
+  printf "%bNo environment matched%b" "$Red" "$Text_Reset"
 }
 
 linkSharedFiles() {
@@ -112,20 +115,21 @@ linkMacFiles() {
 }
 
 clean() {
-  echo "Clean OS independent dotfiles"
+  printf "%bClean OS independent dotfiles\n%b" "$Bold" "$Text_Reset"
   linkDotFiles $clean "$shared_configs_dir" "$target" "shared_config_ignores"
+  printf "\n"
 
   case "$(uname -s)" in
   Darwin)
-    echo "Darwin based environment detected"
+    printf "%bDarwin based environment detected\n%b" "$Bold" "$Text_Reset"
     linkMacFiles $clean
     ;;
   CYGWIN*)
-    echo "Cygwin based environment detected"
+    printf "%bCygwin based environment detected\n%b" "$Bold" "$Text_Reset"
     linkWindowFiles $clean
     ;;
   *)
-    echo "No environment matched"
+    printf "%bNo environment matched\n%b" "$Red" "$Text_Reset"
     ;;
   esac
 }
@@ -165,7 +169,7 @@ process() {
     help
     ;;
   *)
-    printf "Not a valid command\\n\\n"
+    printf "Not a valid command\n\n"
     help
     ;;
   esac
