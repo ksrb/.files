@@ -28,13 +28,16 @@
     nnoremap cc <C-y>cc
 
     " tcomment like comment command
-    nnoremap gcc :action CommentByLineComment<CR>
+    nmap gcc <Action>(CommentByLineComment)
 
     " Wrap to line width
-    nnoremap gqq :action com.andrewbrookins.idea.wrap.WrapAction<CR>
+    nmap gqq <Action>(com.andrewbrookins.idea.wrap.WrapAction)
 
     " Show hover
-    nnoremap gh :action ShowErrorDescription<CR>
+    " Action will be available in 2023.3
+    " See: https://youtrack.jetbrains.com/issue/VIM-2106
+    " nmap gh <Action>(ShowHoverInfo)
+    nmap gh <Action>(ShowErrorDescription)
 
     " Ctrl + hjkl to switch splits
     nnoremap <C-j> <C-w>j
@@ -43,50 +46,50 @@
     nnoremap <C-l> <C-w>l
 
     " Projectile switch project emulation
-    nnoremap <C-c>pp :action ManageRecentProjects<CR>
+    nmap <C-c>pp <Action>(ManageRecentProjects)
 
     " Ctrlp emulation
-    nnoremap <C-p> :action GotoFile<CR>
-    vnoremap <C-p> :action GotoFile<CR>
+    nmap <C-p> <Action>(GotoFile)
+    vnoremap <C-p> <Action>(GotoFile)
 
     " Emulate window move behavior
-    nnoremap <C-w>L :action MoveEditorToOppositeTabGroup<CR>
-    nnoremap <C-w>H :action MoveEditorToOppositeTabGroup<CR>
-    nnoremap <C-w>D :action OpenEditorInOppositeTabGroup<CR>
+    nmap <C-w>L <Action>(MoveEditorToOppositeTabGroup)
+    nmap <C-w>H <Action>(MoveEditorToOppositeTabGroup)
+    nmap <C-w>D <Action>(OpenEditorInOppositeTabGroup)
 
     " Re-enable IntelliJ binding
-    nnoremap <C-S-c> :action CopyAbsolutePath<CR>
+    nmap <C-S-c> <Action>(CopyAbsolutePath)
 
     " Leader
     " Delete into blackhole register and paste
-    noremap <Leader>dp "_dP
+    nmap <Leader>dp "_dP
 
-    noremap <Leader>y "+y
-    noremap <Leader>p "+p
+    nmap <Leader>y "+y
+    nmap <Leader>p "+p
 
     " TODO: Using nnoremap for Leader bindings is failing
-    noremap <Leader><C-e> :action RecentFiles<CR>
-    noremap <Leader><C-f> :action Replace<CR>
-    noremap <Leader><C-g> :action FindUsages<CR>
-    noremap <Leader><C-h> :action FindInPath<CR>
-    noremap <Leader><C-r> :action ReplaceInPath<CR>
-    noremap <Leader><C-t> :action GotoImplementation<CR>
-    noremap <Leader>[{ :action EditorCodeBlockStart<CR>
-    noremap <Leader>]} :action EditorCodeBlockEnd<CR>
-    noremap <Leader>ch :action CloseAllToTheLeft<CR>
-    noremap <Leader>cl :action CloseAllToTheRight<CR>
-    noremap <Leader>co :action CloseAllEditorsButActive<CR>
-    noremap <Leader>ct :action CloseAllEditors<CR>
-    noremap <Leader>df :action ToggleDistractionFreeMode<CR>
-    noremap <Leader>n :action ActivateProjectToolWindow<CR>
-    noremap <Leader>r :action SynchronizeCurrentFile<CR>
-    noremap <Leader>rl :action GotoRelated<CR>
+    nmap <Leader><C-e> <Action>(RecentFiles)
+    nmap <Leader><C-f> <Action>(Replace)
+    nmap <Leader><C-g> <Action>(FindUsages)
+    nmap <Leader><C-h> <Action>(FindInPath)
+    nmap <Leader><C-r> <Action>(ReplaceInPath)
+    nmap <Leader><C-t> <Action>(GotoImplementation)
+    nmap <Leader>[{ <Action>(EditorCodeBlockStart)
+    nmap <Leader>]} <Action>(EditorCodeBlockEnd)
+    nmap <Leader>ch <Action>(CloseAllToTheLeft)
+    nmap <Leader>cl <Action>(CloseAllToTheRight)
+    nmap <Leader>co <Action>(CloseAllEditorsButActive)
+    nmap <Leader>ct <Action>(CloseAllEditors)
+    nmap <Leader>df <Action>(ToggleDistractionFreeMode)
+    nmap <Leader>n <Action>(ActivateProjectToolWindow)
+    nmap <Leader>r <Action>(SynchronizeCurrentFile)
+    nmap <Leader>rl <Action>(GotoRelated)
     " Works but substitues character under cursor
-    " map <Leader>s :action SynchronizeCurrentFile<CR>
-    noremap <Leader>sa :action Synchronize<CR>
-    noremap <Leader>t :action ActivateStructureToolWindow<CR>
-    noremap <Leader>wl :action com.andrewbrookins.idea.wrap.WrapAction<CR>
-    noremap <Leader>wp :action com.andrewbrookins.idea.wrap.WrapParagraphAction<CR>
+    nmap <Leader>s <Action>(SynchronizeCurrentFile)
+    nmap <Leader>sa <Action>(Synchronize)
+    nmap <Leader>t <Action>(ActivateStructureToolWindow)
+    nmap <Leader>wl <Action>(com).andrewbrookins.idea.wrap.WrapAction
+    nmap <Leader>wp <Action>(com).andrewbrookins.idea.wrap.WrapParagraphAction
 " }
 
 " Emulated plugins {
