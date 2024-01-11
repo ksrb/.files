@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-source "./colors"
+[[ -s "./colors" ]] && source "./colors"
 
 ignored() {
   # Ignore list not provided
