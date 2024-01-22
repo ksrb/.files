@@ -32,11 +32,11 @@ linkFile() {
   if [ "$mode" = $clean ]; then
     # Not a symlink
     if [[ ! -L "$dest" ]]; then
-      printf "%bSkipping: %s as it is not a symlink\\n%b" "$Red" "$dest" "$Text_Reset"
+      printf "%bSkipping: %s as it is not a symlink\n%b" "$Red" "$dest" "$Text_Reset"
       return
     fi
 
-    printf "%b%s removed\\n%b" "$Green" "$dest" "$Text_Reset"
+    printf "%b%s removed\n%b" "$Green" "$dest" "$Text_Reset"
     rm "$dest"
   fi
 
@@ -46,17 +46,17 @@ linkFile() {
       # Override it
       rm "$dest"
       ln -s "$src" "$dest"
-      printf "%bOverriding: %s => %s\\n%b" "$Yellow" "$src" "$dest" "$Text_Reset"
+      printf "%bOverriding: %s => %s\n%b" "$Yellow" "$src" "$dest" "$Text_Reset"
       return
     fi
 
     if [[ -f "$dest" || -d "$dest" ]]; then
-      printf "%bSkipping: %s as there is already a file or folder there\\n%b" "$Red" "$dest" "$Text_Reset"
+      printf "%bSkipping: %s as there is already a file or folder there\n%b" "$Red" "$dest" "$Text_Reset"
       return
     fi
 
     ln -s "$src" "$dest"
-    printf "%bLinking: %s => %s\\n%b" "$Green" "$src" "$dest" "$Text_Reset"
+    printf "%bLinking: %s => %s\n%b" "$Green" "$src" "$dest" "$Text_Reset"
   fi
 }
 
