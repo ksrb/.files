@@ -5,9 +5,12 @@
   "editor.lineNumbers": "relative",
   "editor.minimap.enabled": false,
   "editor.rulers": [80],
+  "editor.suggestSelection": "recentlyUsedByPrefix",
   "editor.tabSize": 2,
+  "explorer.autoReveal": true,
   "files.insertFinalNewline": true,
   "files.trimTrailingWhitespace": true,
+  "git.openDiffOnClick": false,
   "terminal.external.osxExec": "iTerm.app",
   "terminal.integrated.defaultProfile.linux": "tmux",
   "terminal.integrated.defaultProfile.osx": "tmux",
@@ -201,8 +204,16 @@
       "commands": ["editor.gotoNextFold"]
     },
     {
+      "before": ["<Leader>", "c", "n"],
+      "commands": ["workbench.action.editor.nextChange"]
+    },
+    {
       "before": ["<Leader>", "c", "o"],
       "commands": ["workbench.action.closeOtherEditors"]
+    },
+    {
+      "before": ["<Leader>", "c", "p"],
+      "commands": ["workbench.action.editor.previousChange"]
     },
     {
       "before": ["<Leader>", "c", "t"],
