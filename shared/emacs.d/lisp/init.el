@@ -53,12 +53,12 @@
    truncate-lines t)    ;; Disable line wrapping
 
   (add-hook 'text-mode-hook
-            '(lambda() (interactive)
+            (lambda() (interactive)
                (turn-on-visual-line-mode)
                (setq tab-width 2)))
 
   (add-hook 'css-mode-hook
-            '(lambda() (interactive)
+            (lambda() (interactive)
                (setq tab-width 2
                      css-indent-offset 2
                      )))
@@ -70,7 +70,7 @@
 
 ;; Bindings
 (progn
-  (global-set-key [(shift f5)] '(lambda() (interactive) (load-file "~/.emacs.d/lisp/init.el")))
+  (global-set-key [(shift f5)] (lambda() (interactive) (load-file "~/.emacs.d/lisp/init.el")))
   )
 
 ;; Packages
@@ -128,7 +128,7 @@
         )
 
       (define-key evil-normal-state-map (kbd "C-{")
-        '(lambda () (interactive) (jump-to-same-indent -1)))
+        (lambda () (interactive) (jump-to-same-indent -1)))
       (define-key evil-normal-state-map (kbd "C-}") 'jump-to-same-indent)
 
       (define-evil-fast-window-traversal evil-normal-state-map)
@@ -625,16 +625,16 @@
         (kbd "C-j") 'evil-window-down
         (kbd "C-k") 'evil-window-up
         (kbd "C-l") 'evil-window-right
-        (kbd "C-d") '(lambda() (interactive) (term-send-raw-string "\C-d"))
-        (kbd "C-c") '(lambda() (interactive) (term-send-raw-string "\C-c"))
+        (kbd "C-d") (lambda() (interactive) (term-send-raw-string "\C-d"))
+        (kbd "C-c") (lambda() (interactive) (term-send-raw-string "\C-c"))
         (kbd "C-a") 'hydra-tmux-mode/body
-        (kbd "C-e") '(lambda() (interactive) (term-send-raw-string "\C-e"))          ;; Go to end of line
-        (kbd "C-w") '(lambda() (interactive) (term-send-raw-string "\C-w"))          ;; Delete word before cursor
-        (kbd "C-u") '(lambda() (interactive) (term-send-raw-string "\C-u"))          ;; Clear entire line
-        (kbd "C-S-k") '(lambda() (interactive) (term-send-raw-string "\C-k"))        ;; Clear from cursor position to end of line C-k is already bound to evil-window-up so C-S-k is used
-        (kbd "<C-left>") '(lambda() (interactive) (term-send-raw-string "\e[1;5D"))
-        (kbd "<C-right>") '(lambda() (interactive) (term-send-raw-string "\e[1;5C"))
-        (kbd "<backtab>") '(lambda() (interactive) (term-send-raw-string "\e[Z"))    ;; Allow backtab to trigger completion combine with bindkey '^[[Z' reverse-menu-complete in .zshrc
+        (kbd "C-e") (lambda() (interactive) (term-send-raw-string "\C-e"))          ;; Go to end of line
+        (kbd "C-w") (lambda() (interactive) (term-send-raw-string "\C-w"))          ;; Delete word before cursor
+        (kbd "C-u") (lambda() (interactive) (term-send-raw-string "\C-u"))          ;; Clear entire line
+        (kbd "C-S-k") (lambda() (interactive) (term-send-raw-string "\C-k"))        ;; Clear from cursor position to end of line C-k is already bound to evil-window-up so C-S-k is used
+        (kbd "<C-left>") (lambda() (interactive) (term-send-raw-string "\e[1;5D"))
+        (kbd "<C-right>") (lambda() (interactive) (term-send-raw-string "\e[1;5C"))
+        (kbd "<backtab>") (lambda() (interactive) (term-send-raw-string "\e[Z"))    ;; Allow backtab to trigger completion combine with bindkey '^[[Z' reverse-menu-complete in .zshrc
         (kbd "<S-insert>") 'term-paste
         )
 
