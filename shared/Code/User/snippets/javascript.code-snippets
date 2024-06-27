@@ -1,23 +1,38 @@
 {
-  "logj": {
+  "log with `JSON.stringify`": {
     "scope": "javascript, javascriptreact, typescript, typescriptreact",
     "prefix": "logj",
-    "body": ["console.log(JSON.stringify($1, null, '  '));"],
-    "description": "Log to console with JSON.stringify"
+    "body": [
+      "console.log(JSON.stringify($1, null, '  '));"
+    ],
+    "description": "log with `JSON.stringify`"
   },
-  "im": {
+  "import module": {
     "scope": "javascript, javascriptreact, typescript, typescriptreact",
     "prefix": "im",
-    "body": ["import $1;"],
-    "description": "Import module"
+    "body": [
+      "import $1;"
+    ],
+    "description": "import module"
   },
-  "imf": {
+  "import module from": {
     "scope": "javascript, javascriptreact, typescript, typescriptreact",
     "prefix": "imf",
-    "body": ["import $1 from '$2';"],
-    "description": "Import module from"
+    "body": [
+      "import $1 from '$2';"
+    ],
+    "description": "import module from"
   },
-  "module": {
+  // Ember
+  "Qunit pauseTest": {
+    "scope": "javascript, javascriptreact, typescript, typescriptreact",
+    "prefix": "pt",
+    "body": [
+      "await this.pauseTest();"
+    ],
+    "description": "Qunit pauseTest"
+  },
+  "QUnit module": {
     "scope": "javascript, javascriptreact, typescript, typescriptreact",
     "prefix": "module",
     "body": [
@@ -28,17 +43,23 @@
     ],
     "description": "QUnit module"
   },
-  "test": {
+  "QUnit test": {
     "scope": "javascript, javascriptreact, typescript, typescriptreact",
     "prefix": "test",
-    "body": ["test('$1', async function (assert) {", "  $2", "});"],
+    "body": [
+      "test('$1', async function (assert) {",
+      "  $2",
+      "});"
+    ],
     "description": "QUnit test"
   },
   // Modules
-  "imc": {
+  "import `clsx`": {
     "scope": "javascript, javascriptreact, typescript, typescriptreact",
     "prefix": "imc",
-    "body": ["import clsx from 'clsx';"],
-    "description": "Import classnames"
+    "body": [
+      "import clsx from 'clsx';"
+    ],
+    "description": "import `clsx`"
   }
 }

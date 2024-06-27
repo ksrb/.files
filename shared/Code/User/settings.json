@@ -184,7 +184,7 @@
     },
     {
       "before": ["<Leader>", "<C-g>"],
-      "commands": ["editor.action.referenceSearch.trigger"]
+      "commands": ["references-view.find"]
     },
     {
       "before": ["<Leader>", "<C-h>"],
@@ -218,6 +218,16 @@
     {
       "before": ["<Leader>", "c", "t"],
       "commands": ["workbench.action.closeEditorsInGroup"]
+    },
+    {
+      "before": ["<Leader>", "e", "n"],
+      // Uses https://marketplace.visualstudio.com/items?itemName=yy0931.go-to-next-error
+      "commands": ["go-to-next-error.next.error"]
+    },
+    {
+      "before": ["<Leader>", "e", "p"],
+      // Uses https://marketplace.visualstudio.com/items?itemName=yy0931.go-to-next-error
+      "commands": ["go-to-next-error.prev.error"]
     },
     {
       "before": ["<Leader>", "n"],
