@@ -40,7 +40,8 @@
   "workbench.settings.openDefaultSettings": false,
   "workbench.startupEditor": "none",
   "workbench.tree.expandMode": "doubleClick",
-  // Vim settings
+  // =============== Extension settings ===============
+  // Vim
   "vim.enableNeovim": true,
   "vim.highlightedyank.enable": true,
   "vim.highlightedyank.duration": 1000,
@@ -238,6 +239,10 @@
       "after": ["\"", "+", "p"]
     },
     {
+      "before": ["<Leader>", "P"],
+      "after": ["\"", "+", "P"]
+    },
+    {
       "before": ["<Leader>", "r"],
       "commands": ["workbench.action.files.revert"]
     },
@@ -252,7 +257,8 @@
   ],
   "vim.smartcase": true,
   "vim.visualstar": true,
-  // Neovim settings
+
+  // Neovim
   "vscode-neovim.neovimExecutablePaths.darwin": "/usr/local/bin/nvim",
   "vscode-neovim.neovimExecutablePaths.linux": "/usr/local/bin/nvim",
   "vscode-neovim.neovimExecutablePaths.win32": "C:\\ProgramData\\chocolatey\\bin\\nvim.exe",
