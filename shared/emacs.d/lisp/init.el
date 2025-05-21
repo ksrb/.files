@@ -54,14 +54,14 @@
 
   (add-hook 'text-mode-hook
             (lambda() (interactive)
-               (turn-on-visual-line-mode)
-               (setq tab-width 2)))
+              (turn-on-visual-line-mode)
+              (setq tab-width 2)))
 
   (add-hook 'css-mode-hook
             (lambda() (interactive)
-               (setq tab-width 2
-                     css-indent-offset 2
-                     )))
+              (setq tab-width 2
+                    css-indent-offset 2
+                    )))
 
   (when (display-graphic-p)
     (scroll-bar-mode -1)
@@ -75,7 +75,6 @@
 
 ;; Packages
 (progn
-
   (cond
    ((equal system-type 'darwin)
     (set-face-attribute 'default nil :font "-*-Source Code Pro for Powerline-light-normal-normal-*-*-*-*-*-m-0-iso10646-1")
@@ -128,16 +127,16 @@
         )
 
       (define-key evil-normal-state-map (kbd "C-{")
-        (lambda () (interactive) (jump-to-same-indent -1)))
+                  (lambda () (interactive) (jump-to-same-indent -1)))
       (define-key evil-normal-state-map (kbd "C-}") 'jump-to-same-indent)
 
       (define-evil-fast-window-traversal evil-normal-state-map)
       (define-evil-fast-window-traversal evil-motion-state-map)
 
       (define-key evil-normal-state-map (kbd "<wheel-right>")
-        (lambda() (interactive) (evil-scroll-column-right 3)))
+                  (lambda() (interactive) (evil-scroll-column-right 3)))
       (define-key evil-normal-state-map (kbd "<wheel-left>")
-        (lambda() (interactive) (evil-scroll-column-left 3)))
+                  (lambda() (interactive) (evil-scroll-column-left 3)))
 
       (define-key evil-motion-state-map "$" 'evil-last-non-blank) ;; Stop '$' in visual line mode from selecting newline
       )
