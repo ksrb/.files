@@ -166,7 +166,7 @@
       (global-evil-visualstar-mode)
       )
 
-    ;; TODO Remove for hydra?
+    ;; TODO: Remove for hydra?
     (use-package evil-leader
       :config
       (global-evil-leader-mode)
@@ -180,7 +180,7 @@
         )
       )
 
-    ;; TODO transfer bindings to remove evil-leader dependency
+    ;; TODO: transfer bindings to remove evil-leader dependency
     (use-package evil-org)
 
     (use-package evil-matchit
