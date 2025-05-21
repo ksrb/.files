@@ -172,7 +172,12 @@
       (global-evil-leader-mode)
       (evil-leader/set-leader "SPC")
 
-      (evil-leader/set-key "kw" 'delete-trailing-whitespace)
+      (evil-leader/set-key
+        "kw" 'delete-trailing-whitespace
+        ;; TODO: yank only works in visual select mode
+        "y" (lambda () (interactive) (execute-kbd-macro (kbd "\"+y")))
+        "p" (lambda () (interactive) (execute-kbd-macro (kbd "\"+p")))
+        )
       )
 
     ;; TODO transfer bindings to remove evil-leader dependency
