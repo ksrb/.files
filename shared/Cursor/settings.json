@@ -1,0 +1,301 @@
+{
+  "editor.autoClosingBrackets": "always",
+  // "editor.folding": false,
+  // "editor.fontFamily": "Source Code Pro for Powerline",
+  "editor.formatOnSave": true,
+  "editor.glyphMargin": false, // hide debugger marks
+  "editor.lineNumbers": "relative",
+  "editor.minimap.enabled": false,
+  "editor.rulers": [120],
+  // "editor.suggest.snippetsPreventQuickSuggestions": false,
+  "editor.stickyScroll.enabled": false,
+  "editor.suggestSelection": "recentlyUsedByPrefix",
+  "editor.tabSize": 2,
+  "explorer.autoReveal": true,
+  "extensions.ignoreRecommendations": true,
+  "files.trimTrailingWhitespace": true,
+  "git.autofetch": true,
+  "git.openDiffOnClick": false,
+  "git.openRepositoryInParentFolders": "always",
+  // "terminal.external.osxExec": "iTerm.app",
+  "terminal.external.osxExec": "Terminal.app",
+  "terminal.integrated.defaultProfile.linux": "tmux",
+  "terminal.integrated.defaultProfile.osx": "tmux",
+  "terminal.integrated.defaultProfile.windows": "zsh",
+  "terminal.integrated.fontFamily": "Menlo, Monaco, 'Courier New', monospace",
+  "terminal.integrated.profiles.windows": {
+    "zsh": {
+      "path": "C:\\tools\\cygwin\\bin\\zsh.exe"
+    }
+  },
+  "terminal.integrated.shellIntegration.enabled": true,
+  "window.openFoldersInNewWindow": "on",
+  "workbench.colorCustomizations": {
+    // "editor.selectionBackground": "#99a4b2",
+    // "editor.findMatchBackground": "#515C6A",
+    // "editor.findMatchBackground": "#99a4b2",
+    "statusBar.background": "#005f87",
+    "statusBar.noFolderBackground": "#005f87",
+    "statusBar.debuggingBackground": "#005f87"
+  },
+  "workbench.colorTheme": "Darcula",
+  "workbench.commandPalette.preserveInput": true,
+  "workbench.list.openMode": "doubleClick",
+  // When clicking files in file explorer open in new tab instead recycling in a preview tab
+  "workbench.editor.enablePreview": false,
+  // See: https://github.com/microsoft/vscode/issues/45233#issuecomment-1037071113
+  "workbench.editor.navigationScope": "editorGroup",
+  "workbench.quickOpen.preserveInput": true,
+  "workbench.settings.editor": "json",
+  "workbench.settings.openDefaultKeybindings": false,
+  "workbench.settings.openDefaultSettings": false,
+  "workbench.startupEditor": "none",
+  "workbench.tree.expandMode": "doubleClick",
+
+  // =============== Extension settings ===============
+  // Vim
+  "vim.enableNeovim": true,
+  "vim.highlightedyank.enable": true,
+  "vim.highlightedyank.duration": 1000,
+  "vim.hlsearch": true,
+  "vim.leader": "<space>",
+  // "vim.searchHighlightColor": "rgba(150, 150, 255, 0.3)",
+  "vim.visualModeKeyBindingsNonRecursive": [
+    // {
+    //   "before": ["%"],
+    //   "commands": ["extension.matchitJumpItems"]
+    // },
+    // Window
+    {
+      "before": ["<C-h>"],
+      "commands": ["workbench.action.navigateLeft"]
+    },
+    {
+      "before": ["<C-j>"],
+      "commands": ["workbench.action.navigateDown"]
+    },
+    {
+      "before": ["<C-k>"],
+      "commands": ["workbench.action.navigateUp"]
+    },
+    {
+      "before": ["<C-l>"],
+      "commands": ["workbench.action.navigateRight"]
+    },
+    {
+      "before": ["<C-w>", "H"],
+      "commands": ["workbench.action.moveEditorToLeftGroup"]
+    },
+    {
+      "before": ["<C-w>", "J"],
+      "commands": ["workbench.action.moveEditorToBelowGroup"]
+    },
+    {
+      "before": ["<C-w>", "K"],
+      "commands": ["workbench.action.moveEditorToAboveGroup"]
+    },
+    {
+      "before": ["<C-w>", "L"],
+      "commands": ["workbench.action.moveEditorToRightGroup"]
+    },
+    {
+      "before": ["<C-w>", "d", "h"],
+      "commands": ["workbench.action.splitEditorToLeftGroup"]
+    },
+    {
+      "before": ["<C-w>", "d", "j"],
+      "commands": ["workbench.action.splitEditorToBelowGroup"]
+    },
+    {
+      "before": ["<C-w>", "d", "k"],
+      "commands": ["workbench.action.splitEditorToAboveGroup"]
+    },
+    {
+      "before": ["<C-w>", "d", "l"],
+      "commands": ["workbench.action.splitEditorToRightGroup"]
+    },
+    // Leader
+    {
+      "before": ["<Leader>", "<C-h>"],
+      "commands": ["workbench.action.findInFiles"]
+    },
+    {
+      "before": ["<Leader>", "<C-f>"],
+      "commands": ["actions.find"]
+    },
+    {
+      "before": ["<Leader>", "d", "p"],
+      "after": ["\"", "_", "d", "P"]
+    },
+    {
+      "before": ["<Leader>", "p"],
+      "after": ["\"", "+", "p"]
+    },
+    {
+      "before": ["<Leader>", "P"],
+      "after": ["\"", "+", "P"]
+    },
+    {
+      "before": ["<Leader>", "y"],
+      "after": ["\"", "+", "y"]
+    }
+  ],
+  "vim.normalModeKeyBindingsNonRecursive": [
+    // See: https://github.com/VSCodeVim/Vim/issues/8157#issuecomment-1426704638
+    // { "before": ["u"], "commands": ["undo"] },
+    // { "before": ["c-r"], "commands": ["redo"] },
+
+    // {
+    //   "before": ["%"],
+    //   "commands": ["extension.matchitJumpItems"]
+    // },
+
+    // Window
+    {
+      "before": ["<C-h>"],
+      "commands": ["workbench.action.navigateLeft"]
+    },
+    {
+      "before": ["<C-j>"],
+      "commands": ["workbench.action.navigateDown"]
+    },
+    {
+      "before": ["<C-k>"],
+      "commands": ["workbench.action.navigateUp"]
+    },
+    {
+      "before": ["<C-l>"],
+      "commands": ["workbench.action.navigateRight"]
+    },
+    {
+      "before": ["<C-w>", "H"],
+      "commands": ["workbench.action.moveEditorToLeftGroup"]
+    },
+    {
+      "before": ["<C-w>", "J"],
+      "commands": ["workbench.action.moveEditorToBelowGroup"]
+    },
+    {
+      "before": ["<C-w>", "K"],
+      "commands": ["workbench.action.moveEditorToAboveGroup"]
+    },
+    {
+      "before": ["<C-w>", "L"],
+      "commands": ["workbench.action.moveEditorToRightGroup"]
+    },
+    {
+      "before": ["<C-w>", "d", "h"],
+      "commands": ["workbench.action.splitEditorToLeftGroup"]
+    },
+    {
+      "before": ["<C-w>", "d", "j"],
+      "commands": ["workbench.action.splitEditorToBelowGroup"]
+    },
+    {
+      "before": ["<C-w>", "d", "k"],
+      "commands": ["workbench.action.splitEditorToAboveGroup"]
+    },
+    {
+      "before": ["<C-w>", "d", "l"],
+      "commands": ["workbench.action.splitEditorToRightGroup"]
+    },
+    // <C-c>
+    {
+      "before": ["<C-c>", "p", "p"],
+      "commands": ["workbench.action.openRecent"]
+    },
+    // Leader
+    {
+      "before": ["<Leader>", "<C-e>"],
+      "commands": ["workbench.action.showAllEditorsByMostRecentlyUsed"]
+    },
+    {
+      "before": ["<Leader>", "<C-f>"],
+      "commands": ["actions.find"]
+    },
+    {
+      "before": ["<Leader>", "<C-g>"],
+      "commands": ["references-view.find"]
+    },
+    {
+      "before": ["<Leader>", "<C-h>"],
+      "commands": ["workbench.action.findInFiles"]
+    },
+    {
+      "before": ["<Leader>", "<Leader>"],
+      "commands": ["extension.vim_right"]
+    },
+    {
+      "before": ["<Leader>", "[", "{"],
+      "commands": ["editor.gotoParentFold"]
+    },
+    {
+      "before": ["<Leader>", "]", "}"],
+      // TODO: need command like editor.goToParentFoldBottom
+      "commands": ["editor.gotoNextFold"]
+    },
+    {
+      "before": ["<Leader>", "c", "n"],
+      "commands": ["workbench.action.editor.nextChange"]
+    },
+    {
+      "before": ["<Leader>", "c", "o"],
+      "commands": ["workbench.action.closeOtherEditors"]
+    },
+    {
+      "before": ["<Leader>", "c", "p"],
+      "commands": ["workbench.action.editor.previousChange"]
+    },
+    {
+      "before": ["<Leader>", "c", "t"],
+      "commands": ["workbench.action.closeEditorsInGroup"]
+    },
+    {
+      "before": ["<Leader>", "e", "n"],
+      // Uses https://marketplace.visualstudio.com/items?itemName=yy0931.go-to-next-error
+      "commands": ["go-to-next-error.next.error"]
+    },
+    {
+      "before": ["<Leader>", "e", "p"],
+      // Uses https://marketplace.visualstudio.com/items?itemName=yy0931.go-to-next-error
+      "commands": ["go-to-next-error.prev.error"]
+    },
+    {
+      "before": ["<Leader>", "n"],
+      "commands": ["workbench.view.explorer"]
+    },
+    {
+      "before": ["<Leader>", "p"],
+      "after": ["\"", "+", "p"]
+    },
+    {
+      "before": ["<Leader>", "P"],
+      "after": ["\"", "+", "P"]
+    },
+    {
+      "before": ["<Leader>", "r"],
+      "commands": ["workbench.action.files.revert"]
+    },
+    {
+      "before": ["<Leader>", "r", "l"],
+      "commands": ["extension.relatedFiles"]
+    },
+    {
+      "before": ["<Leader>", "s", "a"],
+      "commands": ["workbench.action.files.saveAll"]
+    },
+    {
+      "before": ["<Leader>", "y"],
+      "after": ["\"", "+", "y"]
+    }
+  ],
+  "vim.smartcase": true,
+  "vim.visualstar": true,
+
+  // Neovim
+  "vscode-neovim.neovimExecutablePaths.darwin": "/usr/local/bin/nvim",
+  "vscode-neovim.neovimExecutablePaths.linux": "/usr/local/bin/nvim",
+  "vscode-neovim.neovimExecutablePaths.win32": "C:\\ProgramData\\chocolatey\\bin\\nvim.exe",
+  "vscode-neovim.useWSL": true,
+
+}

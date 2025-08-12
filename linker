@@ -13,6 +13,7 @@ shared_configs_dir="$configs_dir/shared"
 shared_config_ignores+=(
   "${ignores_global[@]}"
   Code
+  Cursor
   config
   idea.properties
   oh-my-zsh
@@ -101,6 +102,7 @@ linkMacFiles() {
   # Custom links
   linkFile "$mode" "$mac_configs_dir/karabiner" "$target/.config/karabiner"
   linkFile "$mode" "$shared_configs_dir/Code" "$target/Library/Application Support/Code"
+  linkFilesInDir "$mode" "$shared_configs_dir/Cursor" "$target/Library/Application Support/Cursor/User"
 
   mkdir -p "$target/.config/nvim"
   linkFile "$mode" "$shared_configs_dir/vimrc" "$target/.config/nvim/init.vim"
