@@ -15,6 +15,9 @@
                                             "com.googlecode.iterm2",
                                             "com.jetbrains.intellij",
                                             "com.microsoft.VSCode",
+                                            "com.microsoft.VSCodeInsiders",
+                                            "com.omnissa.horizon.client.mac",
+                                            "com.todesktop.230313mzl4w4u92",
                                             "org.gnu.Emacs"
                                         ],
                                         "type": "frontmost_application_unless"
@@ -53,6 +56,9 @@
                                             "com.googlecode.iterm2",
                                             "com.jetbrains.intellij",
                                             "com.microsoft.VSCode",
+                                            "com.microsoft.VSCodeInsiders",
+                                            "com.omnissa.horizon.client.mac",
+                                            "com.todesktop.230313mzl4w4u92",
                                             "org.gnu.Emacs"
                                         ],
                                         "type": "frontmost_application_unless"
@@ -78,6 +84,9 @@
                                             "com.googlecode.iterm2",
                                             "com.jetbrains.intellij",
                                             "com.microsoft.VSCode",
+                                            "com.microsoft.VSCodeInsiders",
+                                            "com.omnissa.horizon.client.mac",
+                                            "com.todesktop.230313mzl4w4u92",
                                             "org.gnu.Emacs"
                                         ],
                                         "type": "frontmost_application_if"
@@ -158,6 +167,9 @@
                                             "com.googlecode.iterm2",
                                             "com.jetbrains.intellij",
                                             "com.microsoft.VSCode",
+                                            "com.microsoft.VSCodeInsiders",
+                                            "com.omnissa.horizon.client.mac",
+                                            "com.todesktop.230313mzl4w4u92",
                                             "org.gnu.Emacs"
                                         ],
                                         "type": "frontmost_application_if"
@@ -183,6 +195,9 @@
                                             "com.googlecode.iterm2",
                                             "com.jetbrains.intellij",
                                             "com.microsoft.VSCode",
+                                            "com.microsoft.VSCodeInsiders",
+                                            "com.omnissa.horizon.client.mac",
+                                            "com.todesktop.230313mzl4w4u92",
                                             "org.gnu.Emacs"
                                         ],
                                         "type": "frontmost_application_if"
@@ -208,6 +223,9 @@
                                             "com.googlecode.iterm2",
                                             "com.jetbrains.intellij",
                                             "com.microsoft.VSCode",
+                                            "com.microsoft.VSCodeInsiders",
+                                            "com.omnissa.horizon.client.mac",
+                                            "com.todesktop.230313mzl4w4u92",
                                             "org.gnu.Emacs"
                                         ],
                                         "type": "frontmost_application_if"
@@ -233,6 +251,9 @@
                                             "com.googlecode.iterm2",
                                             "com.jetbrains.intellij",
                                             "com.microsoft.VSCode",
+                                            "com.microsoft.VSCodeInsiders",
+                                            "com.omnissa.horizon.client.mac",
+                                            "com.todesktop.230313mzl4w4u92",
                                             "org.gnu.Emacs"
                                         ],
                                         "type": "frontmost_application_if"
@@ -258,6 +279,9 @@
                                             "com.googlecode.iterm2",
                                             "com.jetbrains.intellij",
                                             "com.microsoft.VSCode",
+                                            "com.microsoft.VSCodeInsiders",
+                                            "com.omnissa.horizon.client.mac",
+                                            "com.todesktop.230313mzl4w4u92",
                                             "org.gnu.Emacs"
                                         ],
                                         "type": "frontmost_application_if"
@@ -283,6 +307,9 @@
                                             "com.googlecode.iterm2",
                                             "com.jetbrains.intellij",
                                             "com.microsoft.VSCode",
+                                            "com.microsoft.VSCodeInsiders",
+                                            "com.omnissa.horizon.client.mac",
+                                            "com.todesktop.230313mzl4w4u92",
                                             "org.gnu.Emacs"
                                         ],
                                         "type": "frontmost_application_if"
@@ -308,6 +335,9 @@
                                             "com.googlecode.iterm2",
                                             "com.jetbrains.intellij",
                                             "com.microsoft.VSCode",
+                                            "com.microsoft.VSCodeInsiders",
+                                            "com.omnissa.horizon.client.mac",
+                                            "com.todesktop.230313mzl4w4u92",
                                             "org.gnu.Emacs"
                                         ],
                                         "type": "frontmost_application_if"
@@ -333,6 +363,9 @@
                                             "com.googlecode.iterm2",
                                             "com.jetbrains.intellij",
                                             "com.microsoft.VSCode",
+                                            "com.microsoft.VSCodeInsiders",
+                                            "com.omnissa.horizon.client.mac",
+                                            "com.todesktop.230313mzl4w4u92",
                                             "org.gnu.Emacs"
                                         ],
                                         "type": "frontmost_application_if"
@@ -358,6 +391,9 @@
                                             "com.googlecode.iterm2",
                                             "com.jetbrains.intellij",
                                             "com.microsoft.VSCode",
+                                            "com.microsoft.VSCodeInsiders",
+                                            "com.omnissa.horizon.client.mac",
+                                            "com.todesktop.230313mzl4w4u92",
                                             "org.gnu.Emacs"
                                         ],
                                         "type": "frontmost_application_if"
@@ -388,6 +424,9 @@
                                             "com.googlecode.iterm2",
                                             "com.jetbrains.intellij",
                                             "com.microsoft.VSCode",
+                                            "com.microsoft.VSCodeInsiders",
+                                            "com.omnissa.horizon.client.mac",
+                                            "com.todesktop.230313mzl4w4u92",
                                             "org.gnu.Emacs"
                                         ],
                                         "type": "frontmost_application_unless"
@@ -418,6 +457,9 @@
                                             "com.googlecode.iterm2",
                                             "com.jetbrains.intellij",
                                             "com.microsoft.VSCode",
+                                            "com.microsoft.VSCodeInsiders",
+                                            "com.omnissa.horizon.client.mac",
+                                            "com.todesktop.230313mzl4w4u92",
                                             "org.gnu.Emacs"
                                         ],
                                         "type": "frontmost_application_unless"
@@ -494,8 +536,12 @@
                                     {
                                         "bundle_identifiers": [
                                             "com.apple.Terminal",
+                                            "com.googlecode.iterm2",
                                             "com.jetbrains.intellij",
                                             "com.microsoft.VSCode",
+                                            "com.microsoft.VSCodeInsiders",
+                                            "com.omnissa.horizon.client.mac",
+                                            "com.todesktop.230313mzl4w4u92",
                                             "org.gnu.Emacs"
                                         ],
                                         "type": "frontmost_application_unless"
@@ -573,8 +619,12 @@
                                     {
                                         "bundle_identifiers": [
                                             "com.apple.Terminal",
+                                            "com.googlecode.iterm2",
                                             "com.jetbrains.intellij",
                                             "com.microsoft.VSCode",
+                                            "com.microsoft.VSCodeInsiders",
+                                            "com.omnissa.horizon.client.mac",
+                                            "com.todesktop.230313mzl4w4u92",
                                             "org.gnu.Emacs"
                                         ],
                                         "type": "frontmost_application_if"
@@ -597,8 +647,12 @@
                                     {
                                         "bundle_identifiers": [
                                             "com.apple.Terminal",
+                                            "com.googlecode.iterm2",
                                             "com.jetbrains.intellij",
                                             "com.microsoft.VSCode",
+                                            "com.microsoft.VSCodeInsiders",
+                                            "com.omnissa.horizon.client.mac",
+                                            "com.todesktop.230313mzl4w4u92",
                                             "org.gnu.Emacs"
                                         ],
                                         "type": "frontmost_application_if"
@@ -621,8 +675,12 @@
                                     {
                                         "bundle_identifiers": [
                                             "com.apple.Terminal",
+                                            "com.googlecode.iterm2",
                                             "com.jetbrains.intellij",
                                             "com.microsoft.VSCode",
+                                            "com.microsoft.VSCodeInsiders",
+                                            "com.omnissa.horizon.client.mac",
+                                            "com.todesktop.230313mzl4w4u92",
                                             "org.gnu.Emacs"
                                         ],
                                         "type": "frontmost_application_if"
@@ -645,8 +703,12 @@
                                     {
                                         "bundle_identifiers": [
                                             "com.apple.Terminal",
+                                            "com.googlecode.iterm2",
                                             "com.jetbrains.intellij",
                                             "com.microsoft.VSCode",
+                                            "com.microsoft.VSCodeInsiders",
+                                            "com.omnissa.horizon.client.mac",
+                                            "com.todesktop.230313mzl4w4u92",
                                             "org.gnu.Emacs"
                                         ],
                                         "type": "frontmost_application_if"
@@ -669,8 +731,12 @@
                                     {
                                         "bundle_identifiers": [
                                             "com.apple.Terminal",
+                                            "com.googlecode.iterm2",
                                             "com.jetbrains.intellij",
                                             "com.microsoft.VSCode",
+                                            "com.microsoft.VSCodeInsiders",
+                                            "com.omnissa.horizon.client.mac",
+                                            "com.todesktop.230313mzl4w4u92",
                                             "org.gnu.Emacs"
                                         ],
                                         "type": "frontmost_application_if"
@@ -693,8 +759,12 @@
                                     {
                                         "bundle_identifiers": [
                                             "com.apple.Terminal",
+                                            "com.googlecode.iterm2",
                                             "com.jetbrains.intellij",
                                             "com.microsoft.VSCode",
+                                            "com.microsoft.VSCodeInsiders",
+                                            "com.omnissa.horizon.client.mac",
+                                            "com.todesktop.230313mzl4w4u92",
                                             "org.gnu.Emacs"
                                         ],
                                         "type": "frontmost_application_if"
@@ -717,8 +787,12 @@
                                     {
                                         "bundle_identifiers": [
                                             "com.apple.Terminal",
+                                            "com.googlecode.iterm2",
                                             "com.jetbrains.intellij",
                                             "com.microsoft.VSCode",
+                                            "com.microsoft.VSCodeInsiders",
+                                            "com.omnissa.horizon.client.mac",
+                                            "com.todesktop.230313mzl4w4u92",
                                             "org.gnu.Emacs"
                                         ],
                                         "type": "frontmost_application_if"
@@ -741,8 +815,12 @@
                                     {
                                         "bundle_identifiers": [
                                             "com.apple.Terminal",
+                                            "com.googlecode.iterm2",
                                             "com.jetbrains.intellij",
                                             "com.microsoft.VSCode",
+                                            "com.microsoft.VSCodeInsiders",
+                                            "com.omnissa.horizon.client.mac",
+                                            "com.todesktop.230313mzl4w4u92",
                                             "org.gnu.Emacs"
                                         ],
                                         "type": "frontmost_application_if"
@@ -765,8 +843,12 @@
                                     {
                                         "bundle_identifiers": [
                                             "com.apple.Terminal",
+                                            "com.googlecode.iterm2",
                                             "com.jetbrains.intellij",
                                             "com.microsoft.VSCode",
+                                            "com.microsoft.VSCodeInsiders",
+                                            "com.omnissa.horizon.client.mac",
+                                            "com.todesktop.230313mzl4w4u92",
                                             "org.gnu.Emacs"
                                         ],
                                         "type": "frontmost_application_if"
@@ -794,8 +876,12 @@
                                     {
                                         "bundle_identifiers": [
                                             "com.apple.Terminal",
+                                            "com.googlecode.iterm2",
                                             "com.jetbrains.intellij",
                                             "com.microsoft.VSCode",
+                                            "com.microsoft.VSCodeInsiders",
+                                            "com.omnissa.horizon.client.mac",
+                                            "com.todesktop.230313mzl4w4u92",
                                             "org.gnu.Emacs"
                                         ],
                                         "type": "frontmost_application_unless"
