@@ -26,7 +26,7 @@
     BASE16_SHELL="$HOME/.config/base16-shell/"
     [ -n "$PS1" ] && \
       [ -s "$BASE16_SHELL/profile_helper.sh" ] && \
-      eval "$("$BASE16_SHELL/profile_helper.sh")"
+      source "$BASE16_SHELL/profile_helper.sh"
 
     # Add relative bin to PATH
     dotBin=./bin
@@ -52,7 +52,6 @@
       local pathVar
       pathVar=${1:-$(pwd)}
 
-
       # Is a directory
       if [[ -d $pathVar ]]; then
         # Not the same directory ($(pwd) or '.')
@@ -75,7 +74,6 @@
     lfle() {
       local pathVar
       pathVar=${1:-$(pwd)}
-
 
       if [[ -d $pathVar ]]; then
         if [[ ! "$pathVar" -ef $(pwd) ]]; then
