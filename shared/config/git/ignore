@@ -1,3 +1,4 @@
+#=== IDEs ===
 # Idea
 *.iml
 .idea/
@@ -5,8 +6,21 @@
 # Vscode
 .vscode/
 
+# Other
+**/.windsurf/*
+**/.cursor/*
+
+#=== Languages ===
+
 # Node
 /node_modules
+jsconfig.json
+
+# Python
+__pycache__/
+
+#=== Misc ===
+**/.github/*
 
 # Mac
 .DS_Store
