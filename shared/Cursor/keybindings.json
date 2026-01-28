@@ -203,10 +203,22 @@
     "command": "workbench.action.toggleSidebarVisibility",
     "when": "!view.outline.visible && sideBarVisible"
   },
+  // SCM window moved to sidebar and cannot be moved to bottom panel
   {
     "key": "alt+9",
-    "command": "workbench.view.scm"
+    "command": "workbench.view.scm",
+    // "when": "!sideBarVisible && !activeViewlet.scm",
+    "when": "!view.workbench.scm.visible"
   },
+  {
+    "key": "alt+9",
+    "command": "workbench.action.toggleSidebarVisibility",
+    "when": "view.workbench.scm.visible"
+  },
+  // {
+  //   "key": "alt+9",
+  //   "command": "workbench.view.scm"
+  // },
   {
     // Override
     "key": "alt+f12",
