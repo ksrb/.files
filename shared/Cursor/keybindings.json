@@ -1,6 +1,22 @@
 // TODO: Double check when properties
 // TODO: Ctrl+j not working in terminal
 [
+  // =============== Cursor ===============
+  {
+    "key": "alt+l",
+    "command": "aichat.newchataction"
+  },
+  {
+    "key": "alt+k",
+    "command": "aipopup.action.modal.generate",
+    "when": "editorFocus && !composerBarIsVisible",
+    "args": { "invocationType": "new" }
+  },
+  {
+    "key": "alt+k",
+    "command": "cursorai.action.generateInTerminal",
+    "when": "terminalFocus && terminalHasBeenCreated || terminalFocus && terminalProcessSupported || terminalHasBeenCreated && terminalPromptBarVisible || terminalProcessSupported && terminalPromptBarVisible"
+  },
   // =============== Globals ===============
   {
     "key": "alt+x",
