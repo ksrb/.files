@@ -6,7 +6,7 @@ source "./lib/variables"
 
 ignores_global=(
   README.md
-  usr
+  local
 )
 
 shared_configs_dir="$configs_dir/shared"
@@ -70,13 +70,16 @@ linkDotFilesForOs() {
 linkSharedFiles() {
   local mode=$1
   linkDotFiles "$mode" "$shared_configs_dir" "$target" "shared_config_ignores"
-  linkFilesInDir "$mode" "$shared_configs_dir/usr/local/bin" "/usr/local/bin"
+
+  mkdir -p "$target/.config/git"
+  linkFile "$mode" "$shared_configs_dir/config/git/ignore" "$target/.config/git/ignore"
+
+  mkdir -p "$target/.local/bin"
+  linkFilesInDir "$mode" "$shared_configs_dir/local/bin" "$target/.local/bin"
 
   mkdir -p "$target/.oh-my-zsh/custom"
   linkFilesInDir "$mode" "$shared_configs_dir/oh-my-zsh/custom" "$target/.oh-my-zsh/custom"
 
-  mkdir -p "$target/.config/git"
-  linkFile "$mode" "$shared_configs_dir/config/git/ignore" "$target/.config/git/ignore"
 
   linkFile "$mode" "$shared_configs_dir/idea.properties" "$target/idea.properties"
 }
@@ -84,7 +87,7 @@ linkSharedFiles() {
 linkWindowFiles() {
   local mode=$1
   linkDotFiles "$mode" "$windows_configs_dir" "$target" "windows_configs_ignores"
-  linkFilesInDir "$mode" "$windows_configs_dir/usr/local/bin" "/usr/local/bin"
+  linkFilesInDir "$mode" "$windows_configs_dir/local/bin" "$target/.local/bin"
 
   # Custom links
 
@@ -97,7 +100,7 @@ linkWindowFiles() {
 linkMacFiles() {
   local mode=$1
   linkDotFiles "$mode" "$mac_configs_dir" "$target" "mac_configs_ignores"
-  linkFilesInDir "$mode" "$mac_configs_dir/usr/local/bin" "/usr/local/bin"
+  linkFilesInDir "$mode" "$mac_configs_dir/local/bin" "$target/.local/bin"
 
   # Custom links
   linkFile "$mode" "$mac_configs_dir/karabiner" "$target/.config/karabiner"

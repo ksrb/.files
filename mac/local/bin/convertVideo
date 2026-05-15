@@ -3,8 +3,9 @@
 movToGif() {
   local src=$1
   local dest=${1%.*}.gif
-  local frameRate=${2:-8}
+  local frameRate=${2:-24}
 
+  # ffmpeg -i "$src" -pix_fmt rgbaf32le -r "$frameRate" "$dest"
   ffmpeg -i "$src" -pix_fmt rgb24 -r "$frameRate" "$dest"
   ls -lh "$dest"
 }
