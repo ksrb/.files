@@ -1,5 +1,12 @@
 #!/usr/bin/env bash
 
+# Use with:
+# $HOME/.gitconfig_local
+# [alias]
+#   gui = "!bash \"gitgitk\""
+#
+# Allowing WSL terminal's 'gitk' command to open window's gitk.exe
+
 # CYGWIN
 if [[ "$(uname)" == "CYGWIN"* ]]; then
   "C:/Program Files/Git/cmd/gitk.exe"

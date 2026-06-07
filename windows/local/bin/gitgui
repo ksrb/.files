@@ -3,7 +3,7 @@
 # Use with:
 # $HOME/.gitconfig_local
 # [alias]
-#   gui="!bash \"gitgui\""
+#   gui = "!bash \"gitgui\""
 #
 # Allowing WSL terminal's 'git gui' command to open window's git-gui.exe
 
